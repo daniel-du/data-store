@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: @profiles.active@
+  application:
+    name: saasDataStore
+server:
+  port: 8080
+  servlet:
+    context-path: /saasDataStore
