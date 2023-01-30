@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkAdvertiserPlancostMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserPlancost">
+    <id column="MK_advertiser_plancost_no" jdbcType="VARCHAR" property="mkAdvertiserPlancostNo" />
+    <result column="MK_advertiser_plancost_date" jdbcType="VARCHAR" property="mkAdvertiserPlancostDate" />
+    <result column="MK_advertiser_plancost_time" jdbcType="VARCHAR" property="mkAdvertiserPlancostTime" />
+    <result column="MK_advertiser_plancost_advertiserid" jdbcType="VARCHAR" property="mkAdvertiserPlancostAdvertiserid" />
+    <result column="MK_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="MK_advertiser_info_code" jdbcType="VARCHAR" property="mkAdvertiserInfoCode" />
+    <result column="MK_Advertiser_media_Spid" jdbcType="VARCHAR" property="mkAdvertiserMediaSpid" />
+    <result column="MK_media_agent_Code" jdbcType="VARCHAR" property="mkMediaAgentCode" />
+    <result column="MK_advertiser_campaign_Id" jdbcType="VARCHAR" property="mkAdvertiserCampaignId" />
+    <result column="MK_advertiser_plancost_adid" jdbcType="VARCHAR" property="mkAdvertiserPlancostAdid" />
+    <result column="MK_advertiser_plancost_adname" jdbcType="VARCHAR" property="mkAdvertiserPlancostAdname" />
+    <result column="MK_advertiser_plancost_cost" jdbcType="NUMERIC" property="mkAdvertiserPlancostCost" />
+    <result column="MK_advertiser_plancost_show" jdbcType="BIGINT" property="mkAdvertiserPlancostShow" />
+    <result column="MK_advertiser_plancost_avgshowcost" jdbcType="NUMERIC" property="mkAdvertiserPlancostAvgshowcost" />
+    <result column="MK_advertiser_plancost_click" jdbcType="BIGINT" property="mkAdvertiserPlancostClick" />
+    <result column="MK_advertiser_plancost_avgclickcost" jdbcType="NUMERIC" property="mkAdvertiserPlancostAvgclickcost" />
+    <result column="MK_advertiser_plancost_ctr" jdbcType="NUMERIC" property="mkAdvertiserPlancostCtr" />
+    <result column="MK_advertiser_plancost_convert" jdbcType="BIGINT" property="mkAdvertiserPlancostConvert" />
+    <result column="MK_advertiser_plancost_convertcost" jdbcType="NUMERIC" property="mkAdvertiserPlancostConvertcost" />
+    <result column="MK_advertiser_plancost_convertrate" jdbcType="NUMERIC" property="mkAdvertiserPlancostConvertrate" />
+    <result column="MK_advertiser_plancost_deepconvert" jdbcType="BIGINT" property="mkAdvertiserPlancostDeepconvert" />
+    <result column="MK_advertiser_plancost_deepconvertcost" jdbcType="NUMERIC" property="mkAdvertiserPlancostDeepconvertcost" />
+    <result column="MK_advertiser_plancost_deepconvertrate" jdbcType="NUMERIC" property="mkAdvertiserPlancostDeepconvertrate" />
+    <result column="MK_advertiser_plancost_totalPlay" jdbcType="BIGINT" property="mkAdvertiserPlancostTotalplay" />
+    <result column="MK_advertiser_plancost_validPlay" jdbcType="BIGINT" property="mkAdvertiserPlancostValidplay" />
+    <result column="MK_advertiser_plancost_validPlayCost" jdbcType="NUMERIC" property="mkAdvertiserPlancostValidplaycost" />
+    <result column="MK_advertiser_plancost_validPlayRate" jdbcType="NUMERIC" property="mkAdvertiserPlancostValidplayrate" />
+    <result column="MK_advertiser_plancost_play25FeedBreak" jdbcType="BIGINT" property="mkAdvertiserPlancostPlay25feedbreak" />
+    <result column="MK_advertiser_plancost_play50FeedBreak" jdbcType="BIGINT" property="mkAdvertiserPlancostPlay50feedbreak" />
+    <result column="MK_advertiser_plancost_play75FeedBreak" jdbcType="BIGINT" property="mkAdvertiserPlancostPlay75feedbreak" />
+    <result column="MK_advertiser_plancost_play100FeedBreak" jdbcType="BIGINT" property="mkAdvertiserPlancostPlay100feedbreak" />
+    <result column="MK_advertiser_plancost_playOverRate" jdbcType="NUMERIC" property="mkAdvertiserPlancostPlayoverrate" />
+    <result column="MK_advertiser_plancost_wifiPlayRate" jdbcType="NUMERIC" property="mkAdvertiserPlancostWifiplayrate" />
+    <result column="MK_advertiser_plancost_wifiPlay" jdbcType="BIGINT" property="mkAdvertiserPlancostWifiplay" />
+    <result column="MK_advertiser_plancost_playDurationSum" jdbcType="BIGINT" property="mkAdvertiserPlancostPlaydurationsum" />
+    <result column="MK_advertiser_plancost_rtaId" jdbcType="VARCHAR" property="mkAdvertiserPlancostRtaid" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="MK_advertiser_plancost_createTM" jdbcType="TIMESTAMP" property="mkAdvertiserPlancostCreatetm" />
+    <result column="MK_advertiser_plancost_operationTM" jdbcType="TIMESTAMP" property="mkAdvertiserPlancostOperationtm" />
+    <result column="MK_advertiser_plancost_modifyTM" jdbcType="TIMESTAMP" property="mkAdvertiserPlancostModifytm" />
+    <result column="Mk_advertiser_Media_Appid" jdbcType="VARCHAR" property="mkAdvertiserMediaAppid" />
+    <result column="MK_advertiser_plan_bid" jdbcType="NUMERIC" property="mkAdvertiserPlanBid" />
+    <result column="MK_Advertiser_Plan_dataType" jdbcType="VARCHAR" property="mkAdvertiserPlanDatatype" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MK_advertiser_plancost_no, MK_advertiser_plancost_date, MK_advertiser_plancost_time, 
+    MK_advertiser_plancost_advertiserid, MK_media_info_code, MK_advertiser_info_code, 
+    MK_Advertiser_media_Spid, MK_media_agent_Code, MK_advertiser_campaign_Id, MK_advertiser_plancost_adid, 
+    MK_advertiser_plancost_adname, MK_advertiser_plancost_cost, MK_advertiser_plancost_show, 
+    MK_advertiser_plancost_avgshowcost, MK_advertiser_plancost_click, MK_advertiser_plancost_avgclickcost, 
+    MK_advertiser_plancost_ctr, MK_advertiser_plancost_convert, MK_advertiser_plancost_convertcost, 
+    MK_advertiser_plancost_convertrate, MK_advertiser_plancost_deepconvert, MK_advertiser_plancost_deepconvertcost, 
+    MK_advertiser_plancost_deepconvertrate, MK_advertiser_plancost_totalPlay, MK_advertiser_plancost_validPlay, 
+    MK_advertiser_plancost_validPlayCost, MK_advertiser_plancost_validPlayRate, MK_advertiser_plancost_play25FeedBreak, 
+    MK_advertiser_plancost_play50FeedBreak, MK_advertiser_plancost_play75FeedBreak, MK_advertiser_plancost_play100FeedBreak, 
+    MK_advertiser_plancost_playOverRate, MK_advertiser_plancost_wifiPlayRate, MK_advertiser_plancost_wifiPlay, 
+    MK_advertiser_plancost_playDurationSum, MK_advertiser_plancost_rtaId, OA_company_Account_code, 
+    MK_advertiser_plancost_createTM, MK_advertiser_plancost_operationTM, MK_advertiser_plancost_modifyTM, 
+    Mk_advertiser_Media_Appid, MK_advertiser_plan_bid, MK_Advertiser_Plan_dataType
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_advertiser_plancost
+    where MK_advertiser_plancost_no = #{mkAdvertiserPlancostNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_advertiser_plancost
+    where MK_advertiser_plancost_no = #{mkAdvertiserPlancostNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserPlancost">
+    insert into mk_advertiser_plancost (MK_advertiser_plancost_no, MK_advertiser_plancost_date, 
+      MK_advertiser_plancost_time, MK_advertiser_plancost_advertiserid, 
+      MK_media_info_code, MK_advertiser_info_code, 
+      MK_Advertiser_media_Spid, MK_media_agent_Code, 
+      MK_advertiser_campaign_Id, MK_advertiser_plancost_adid, 
+      MK_advertiser_plancost_adname, MK_advertiser_plancost_cost, 
+      MK_advertiser_plancost_show, MK_advertiser_plancost_avgshowcost, 
+      MK_advertiser_plancost_click, MK_advertiser_plancost_avgclickcost, 
+      MK_advertiser_plancost_ctr, MK_advertiser_plancost_convert, 
+      MK_advertiser_plancost_convertcost, MK_advertiser_plancost_convertrate, 
+      MK_advertiser_plancost_deepconvert, MK_advertiser_plancost_deepconvertcost, 
+      MK_advertiser_plancost_deepconvertrate, MK_advertiser_plancost_totalPlay, 
+      MK_advertiser_plancost_validPlay, MK_advertiser_plancost_validPlayCost, 
+      MK_advertiser_plancost_validPlayRate, MK_advertiser_plancost_play25FeedBreak, 
+      MK_advertiser_plancost_play50FeedBreak, MK_advertiser_plancost_play75FeedBreak, 
+      MK_advertiser_plancost_play100FeedBreak, MK_advertiser_plancost_playOverRate, 
+      MK_advertiser_plancost_wifiPlayRate, MK_advertiser_plancost_wifiPlay, 
+      MK_advertiser_plancost_playDurationSum, MK_advertiser_plancost_rtaId, 
+      OA_company_Account_code, MK_advertiser_plancost_createTM, 
+      MK_advertiser_plancost_operationTM, MK_advertiser_plancost_modifyTM, 
+      Mk_advertiser_Media_Appid, MK_advertiser_plan_bid, 
+      MK_Advertiser_Plan_dataType)
+    values (#{mkAdvertiserPlancostNo,jdbcType=VARCHAR}, #{mkAdvertiserPlancostDate,jdbcType=VARCHAR}, 
+      #{mkAdvertiserPlancostTime,jdbcType=VARCHAR}, #{mkAdvertiserPlancostAdvertiserid,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkAdvertiserInfoCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMediaSpid,jdbcType=VARCHAR}, #{mkMediaAgentCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserCampaignId,jdbcType=VARCHAR}, #{mkAdvertiserPlancostAdid,jdbcType=VARCHAR}, 
+      #{mkAdvertiserPlancostAdname,jdbcType=VARCHAR}, #{mkAdvertiserPlancostCost,jdbcType=NUMERIC}, 
+      #{mkAdvertiserPlancostShow,jdbcType=BIGINT}, #{mkAdvertiserPlancostAvgshowcost,jdbcType=NUMERIC}, 
+      #{mkAdvertiserPlancostClick,jdbcType=BIGINT}, #{mkAdvertiserPlancostAvgclickcost,jdbcType=NUMERIC}, 
+      #{mkAdvertiserPlancostCtr,jdbcType=NUMERIC}, #{mkAdvertiserPlancostConvert,jdbcType=BIGINT}, 
+      #{mkAdvertiserPlancostConvertcost,jdbcType=NUMERIC}, #{mkAdvertiserPlancostConvertrate,jdbcType=NUMERIC}, 
+      #{mkAdvertiserPlancostDeepconvert,jdbcType=BIGINT}, #{mkAdvertiserPlancostDeepconvertcost,jdbcType=NUMERIC}, 
+      #{mkAdvertiserPlancostDeepconvertrate,jdbcType=NUMERIC}, #{mkAdvertiserPlancostTotalplay,jdbcType=BIGINT}, 
+      #{mkAdvertiserPlancostValidplay,jdbcType=BIGINT}, #{mkAdvertiserPlancostValidplaycost,jdbcType=NUMERIC}, 
+      #{mkAdvertiserPlancostValidplayrate,jdbcType=NUMERIC}, #{mkAdvertiserPlancostPlay25feedbreak,jdbcType=BIGINT}, 
+      #{mkAdvertiserPlancostPlay50feedbreak,jdbcType=BIGINT}, #{mkAdvertiserPlancostPlay75feedbreak,jdbcType=BIGINT}, 
+      #{mkAdvertiserPlancostPlay100feedbreak,jdbcType=BIGINT}, #{mkAdvertiserPlancostPlayoverrate,jdbcType=NUMERIC}, 
+      #{mkAdvertiserPlancostWifiplayrate,jdbcType=NUMERIC}, #{mkAdvertiserPlancostWifiplay,jdbcType=BIGINT}, 
+      #{mkAdvertiserPlancostPlaydurationsum,jdbcType=BIGINT}, #{mkAdvertiserPlancostRtaid,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkAdvertiserPlancostCreatetm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserPlancostOperationtm,jdbcType=TIMESTAMP}, #{mkAdvertiserPlancostModifytm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserMediaAppid,jdbcType=VARCHAR}, #{mkAdvertiserPlanBid,jdbcType=NUMERIC}, 
+      #{mkAdvertiserPlanDatatype,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserPlancost">
+    insert into mk_advertiser_plancost
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserPlancostNo != null">
+        MK_advertiser_plancost_no,
+      </if>
+      <if test="mkAdvertiserPlancostDate != null">
+        MK_advertiser_plancost_date,
+      </if>
+      <if test="mkAdvertiserPlancostTime != null">
+        MK_advertiser_plancost_time,
+      </if>
+      <if test="mkAdvertiserPlancostAdvertiserid != null">
+        MK_advertiser_plancost_advertiserid,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_info_code,
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        MK_advertiser_info_code,
+      </if>
+      <if test="mkAdvertiserMediaSpid != null">
+        MK_Advertiser_media_Spid,
+      </if>
+      <if test="mkMediaAgentCode != null">
+        MK_media_agent_Code,
+      </if>
+      <if test="mkAdvertiserCampaignId != null">
+        MK_advertiser_campaign_Id,
+      </if>
+      <if test="mkAdvertiserPlancostAdid != null">
+        MK_advertiser_plancost_adid,
+      </if>
+      <if test="mkAdvertiserPlancostAdname != null">
+        MK_advertiser_plancost_adname,
+      </if>
+      <if test="mkAdvertiserPlancostCost != null">
+        MK_advertiser_plancost_cost,
+      </if>
+      <if test="mkAdvertiserPlancostShow != null">
+        MK_advertiser_plancost_show,
+      </if>
+      <if test="mkAdvertiserPlancostAvgshowcost != null">
+        MK_advertiser_plancost_avgshowcost,
+      </if>
+      <if test="mkAdvertiserPlancostClick != null">
+        MK_advertiser_plancost_click,
+      </if>
+      <if test="mkAdvertiserPlancostAvgclickcost != null">
+        MK_advertiser_plancost_avgclickcost,
+      </if>
+      <if test="mkAdvertiserPlancostCtr != null">
+        MK_advertiser_plancost_ctr,
+      </if>
+      <if test="mkAdvertiserPlancostConvert != null">
+        MK_advertiser_plancost_convert,
+      </if>
+      <if test="mkAdvertiserPlancostConvertcost != null">
+        MK_advertiser_plancost_convertcost,
+      </if>
+      <if test="mkAdvertiserPlancostConvertrate != null">
+        MK_advertiser_plancost_convertrate,
+      </if>
+      <if test="mkAdvertiserPlancostDeepconvert != null">
+        MK_advertiser_plancost_deepconvert,
+      </if>
+      <if test="mkAdvertiserPlancostDeepconvertcost != null">
+        MK_advertiser_plancost_deepconvertcost,
+      </if>
+      <if test="mkAdvertiserPlancostDeepconvertrate != null">
+        MK_advertiser_plancost_deepconvertrate,
+      </if>
+      <if test="mkAdvertiserPlancostTotalplay != null">
+        MK_advertiser_plancost_totalPlay,
+      </if>
+      <if test="mkAdvertiserPlancostValidplay != null">
+        MK_advertiser_plancost_validPlay,
+      </if>
+      <if test="mkAdvertiserPlancostValidplaycost != null">
+        MK_advertiser_plancost_validPlayCost,
+      </if>
+      <if test="mkAdvertiserPlancostValidplayrate != null">
+        MK_advertiser_plancost_validPlayRate,
+      </if>
+      <if test="mkAdvertiserPlancostPlay25feedbreak != null">
+        MK_advertiser_plancost_play25FeedBreak,
+      </if>
+      <if test="mkAdvertiserPlancostPlay50feedbreak != null">
+        MK_advertiser_plancost_play50FeedBreak,
+      </if>
+      <if test="mkAdvertiserPlancostPlay75feedbreak != null">
+        MK_advertiser_plancost_play75FeedBreak,
+      </if>
+      <if test="mkAdvertiserPlancostPlay100feedbreak != null">
+        MK_advertiser_plancost_play100FeedBreak,
+      </if>
+      <if test="mkAdvertiserPlancostPlayoverrate != null">
+        MK_advertiser_plancost_playOverRate,
+      </if>
+      <if test="mkAdvertiserPlancostWifiplayrate != null">
+        MK_advertiser_plancost_wifiPlayRate,
+      </if>
+      <if test="mkAdvertiserPlancostWifiplay != null">
+        MK_advertiser_plancost_wifiPlay,
+      </if>
+      <if test="mkAdvertiserPlancostPlaydurationsum != null">
+        MK_advertiser_plancost_playDurationSum,
+      </if>
+      <if test="mkAdvertiserPlancostRtaid != null">
+        MK_advertiser_plancost_rtaId,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="mkAdvertiserPlancostCreatetm != null">
+        MK_advertiser_plancost_createTM,
+      </if>
+      <if test="mkAdvertiserPlancostOperationtm != null">
+        MK_advertiser_plancost_operationTM,
+      </if>
+      <if test="mkAdvertiserPlancostModifytm != null">
+        MK_advertiser_plancost_modifyTM,
+      </if>
+      <if test="mkAdvertiserMediaAppid != null">
+        Mk_advertiser_Media_Appid,
+      </if>
+      <if test="mkAdvertiserPlanBid != null">
+        MK_advertiser_plan_bid,
+      </if>
+      <if test="mkAdvertiserPlanDatatype != null">
+        MK_Advertiser_Plan_dataType,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserPlancostNo != null">
+        #{mkAdvertiserPlancostNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlancostDate != null">
+        #{mkAdvertiserPlancostDate,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlancostTime != null">
+        #{mkAdvertiserPlancostTime,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlancostAdvertiserid != null">
+        #{mkAdvertiserPlancostAdvertiserid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaSpid != null">
+        #{mkAdvertiserMediaSpid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserCampaignId != null">
+        #{mkAdvertiserCampaignId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlancostAdid != null">
+        #{mkAdvertiserPlancostAdid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlancostAdname != null">
+        #{mkAdvertiserPlancostAdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlancostCost != null">
+        #{mkAdvertiserPlancostCost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostShow != null">
+        #{mkAdvertiserPlancostShow,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostAvgshowcost != null">
+        #{mkAdvertiserPlancostAvgshowcost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostClick != null">
+        #{mkAdvertiserPlancostClick,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostAvgclickcost != null">
+        #{mkAdvertiserPlancostAvgclickcost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostCtr != null">
+        #{mkAdvertiserPlancostCtr,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostConvert != null">
+        #{mkAdvertiserPlancostConvert,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostConvertcost != null">
+        #{mkAdvertiserPlancostConvertcost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostConvertrate != null">
+        #{mkAdvertiserPlancostConvertrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostDeepconvert != null">
+        #{mkAdvertiserPlancostDeepconvert,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostDeepconvertcost != null">
+        #{mkAdvertiserPlancostDeepconvertcost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostDeepconvertrate != null">
+        #{mkAdvertiserPlancostDeepconvertrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostTotalplay != null">
+        #{mkAdvertiserPlancostTotalplay,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostValidplay != null">
+        #{mkAdvertiserPlancostValidplay,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostValidplaycost != null">
+        #{mkAdvertiserPlancostValidplaycost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostValidplayrate != null">
+        #{mkAdvertiserPlancostValidplayrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostPlay25feedbreak != null">
+        #{mkAdvertiserPlancostPlay25feedbreak,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostPlay50feedbreak != null">
+        #{mkAdvertiserPlancostPlay50feedbreak,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostPlay75feedbreak != null">
+        #{mkAdvertiserPlancostPlay75feedbreak,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostPlay100feedbreak != null">
+        #{mkAdvertiserPlancostPlay100feedbreak,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostPlayoverrate != null">
+        #{mkAdvertiserPlancostPlayoverrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostWifiplayrate != null">
+        #{mkAdvertiserPlancostWifiplayrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostWifiplay != null">
+        #{mkAdvertiserPlancostWifiplay,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostPlaydurationsum != null">
+        #{mkAdvertiserPlancostPlaydurationsum,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostRtaid != null">
+        #{mkAdvertiserPlancostRtaid,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlancostCreatetm != null">
+        #{mkAdvertiserPlancostCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserPlancostOperationtm != null">
+        #{mkAdvertiserPlancostOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserPlancostModifytm != null">
+        #{mkAdvertiserPlancostModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMediaAppid != null">
+        #{mkAdvertiserMediaAppid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlanBid != null">
+        #{mkAdvertiserPlanBid,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlanDatatype != null">
+        #{mkAdvertiserPlanDatatype,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserPlancost">
+    update mk_advertiser_plancost
+    <set>
+      <if test="mkAdvertiserPlancostDate != null">
+        MK_advertiser_plancost_date = #{mkAdvertiserPlancostDate,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlancostTime != null">
+        MK_advertiser_plancost_time = #{mkAdvertiserPlancostTime,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlancostAdvertiserid != null">
+        MK_advertiser_plancost_advertiserid = #{mkAdvertiserPlancostAdvertiserid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        MK_advertiser_info_code = #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaSpid != null">
+        MK_Advertiser_media_Spid = #{mkAdvertiserMediaSpid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        MK_media_agent_Code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserCampaignId != null">
+        MK_advertiser_campaign_Id = #{mkAdvertiserCampaignId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlancostAdid != null">
+        MK_advertiser_plancost_adid = #{mkAdvertiserPlancostAdid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlancostAdname != null">
+        MK_advertiser_plancost_adname = #{mkAdvertiserPlancostAdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlancostCost != null">
+        MK_advertiser_plancost_cost = #{mkAdvertiserPlancostCost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostShow != null">
+        MK_advertiser_plancost_show = #{mkAdvertiserPlancostShow,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostAvgshowcost != null">
+        MK_advertiser_plancost_avgshowcost = #{mkAdvertiserPlancostAvgshowcost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostClick != null">
+        MK_advertiser_plancost_click = #{mkAdvertiserPlancostClick,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostAvgclickcost != null">
+        MK_advertiser_plancost_avgclickcost = #{mkAdvertiserPlancostAvgclickcost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostCtr != null">
+        MK_advertiser_plancost_ctr = #{mkAdvertiserPlancostCtr,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostConvert != null">
+        MK_advertiser_plancost_convert = #{mkAdvertiserPlancostConvert,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostConvertcost != null">
+        MK_advertiser_plancost_convertcost = #{mkAdvertiserPlancostConvertcost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostConvertrate != null">
+        MK_advertiser_plancost_convertrate = #{mkAdvertiserPlancostConvertrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostDeepconvert != null">
+        MK_advertiser_plancost_deepconvert = #{mkAdvertiserPlancostDeepconvert,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostDeepconvertcost != null">
+        MK_advertiser_plancost_deepconvertcost = #{mkAdvertiserPlancostDeepconvertcost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostDeepconvertrate != null">
+        MK_advertiser_plancost_deepconvertrate = #{mkAdvertiserPlancostDeepconvertrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostTotalplay != null">
+        MK_advertiser_plancost_totalPlay = #{mkAdvertiserPlancostTotalplay,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostValidplay != null">
+        MK_advertiser_plancost_validPlay = #{mkAdvertiserPlancostValidplay,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostValidplaycost != null">
+        MK_advertiser_plancost_validPlayCost = #{mkAdvertiserPlancostValidplaycost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostValidplayrate != null">
+        MK_advertiser_plancost_validPlayRate = #{mkAdvertiserPlancostValidplayrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostPlay25feedbreak != null">
+        MK_advertiser_plancost_play25FeedBreak = #{mkAdvertiserPlancostPlay25feedbreak,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostPlay50feedbreak != null">
+        MK_advertiser_plancost_play50FeedBreak = #{mkAdvertiserPlancostPlay50feedbreak,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostPlay75feedbreak != null">
+        MK_advertiser_plancost_play75FeedBreak = #{mkAdvertiserPlancostPlay75feedbreak,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostPlay100feedbreak != null">
+        MK_advertiser_plancost_play100FeedBreak = #{mkAdvertiserPlancostPlay100feedbreak,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostPlayoverrate != null">
+        MK_advertiser_plancost_playOverRate = #{mkAdvertiserPlancostPlayoverrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostWifiplayrate != null">
+        MK_advertiser_plancost_wifiPlayRate = #{mkAdvertiserPlancostWifiplayrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlancostWifiplay != null">
+        MK_advertiser_plancost_wifiPlay = #{mkAdvertiserPlancostWifiplay,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostPlaydurationsum != null">
+        MK_advertiser_plancost_playDurationSum = #{mkAdvertiserPlancostPlaydurationsum,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserPlancostRtaid != null">
+        MK_advertiser_plancost_rtaId = #{mkAdvertiserPlancostRtaid,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlancostCreatetm != null">
+        MK_advertiser_plancost_createTM = #{mkAdvertiserPlancostCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserPlancostOperationtm != null">
+        MK_advertiser_plancost_operationTM = #{mkAdvertiserPlancostOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserPlancostModifytm != null">
+        MK_advertiser_plancost_modifyTM = #{mkAdvertiserPlancostModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMediaAppid != null">
+        Mk_advertiser_Media_Appid = #{mkAdvertiserMediaAppid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlanBid != null">
+        MK_advertiser_plan_bid = #{mkAdvertiserPlanBid,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserPlanDatatype != null">
+        MK_Advertiser_Plan_dataType = #{mkAdvertiserPlanDatatype,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MK_advertiser_plancost_no = #{mkAdvertiserPlancostNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserPlancost">
+    update mk_advertiser_plancost
+    set MK_advertiser_plancost_date = #{mkAdvertiserPlancostDate,jdbcType=VARCHAR},
+      MK_advertiser_plancost_time = #{mkAdvertiserPlancostTime,jdbcType=VARCHAR},
+      MK_advertiser_plancost_advertiserid = #{mkAdvertiserPlancostAdvertiserid,jdbcType=VARCHAR},
+      MK_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      MK_advertiser_info_code = #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      MK_Advertiser_media_Spid = #{mkAdvertiserMediaSpid,jdbcType=VARCHAR},
+      MK_media_agent_Code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      MK_advertiser_campaign_Id = #{mkAdvertiserCampaignId,jdbcType=VARCHAR},
+      MK_advertiser_plancost_adid = #{mkAdvertiserPlancostAdid,jdbcType=VARCHAR},
+      MK_advertiser_plancost_adname = #{mkAdvertiserPlancostAdname,jdbcType=VARCHAR},
+      MK_advertiser_plancost_cost = #{mkAdvertiserPlancostCost,jdbcType=NUMERIC},
+      MK_advertiser_plancost_show = #{mkAdvertiserPlancostShow,jdbcType=BIGINT},
+      MK_advertiser_plancost_avgshowcost = #{mkAdvertiserPlancostAvgshowcost,jdbcType=NUMERIC},
+      MK_advertiser_plancost_click = #{mkAdvertiserPlancostClick,jdbcType=BIGINT},
+      MK_advertiser_plancost_avgclickcost = #{mkAdvertiserPlancostAvgclickcost,jdbcType=NUMERIC},
+      MK_advertiser_plancost_ctr = #{mkAdvertiserPlancostCtr,jdbcType=NUMERIC},
+      MK_advertiser_plancost_convert = #{mkAdvertiserPlancostConvert,jdbcType=BIGINT},
+      MK_advertiser_plancost_convertcost = #{mkAdvertiserPlancostConvertcost,jdbcType=NUMERIC},
+      MK_advertiser_plancost_convertrate = #{mkAdvertiserPlancostConvertrate,jdbcType=NUMERIC},
+      MK_advertiser_plancost_deepconvert = #{mkAdvertiserPlancostDeepconvert,jdbcType=BIGINT},
+      MK_advertiser_plancost_deepconvertcost = #{mkAdvertiserPlancostDeepconvertcost,jdbcType=NUMERIC},
+      MK_advertiser_plancost_deepconvertrate = #{mkAdvertiserPlancostDeepconvertrate,jdbcType=NUMERIC},
+      MK_advertiser_plancost_totalPlay = #{mkAdvertiserPlancostTotalplay,jdbcType=BIGINT},
+      MK_advertiser_plancost_validPlay = #{mkAdvertiserPlancostValidplay,jdbcType=BIGINT},
+      MK_advertiser_plancost_validPlayCost = #{mkAdvertiserPlancostValidplaycost,jdbcType=NUMERIC},
+      MK_advertiser_plancost_validPlayRate = #{mkAdvertiserPlancostValidplayrate,jdbcType=NUMERIC},
+      MK_advertiser_plancost_play25FeedBreak = #{mkAdvertiserPlancostPlay25feedbreak,jdbcType=BIGINT},
+      MK_advertiser_plancost_play50FeedBreak = #{mkAdvertiserPlancostPlay50feedbreak,jdbcType=BIGINT},
+      MK_advertiser_plancost_play75FeedBreak = #{mkAdvertiserPlancostPlay75feedbreak,jdbcType=BIGINT},
+      MK_advertiser_plancost_play100FeedBreak = #{mkAdvertiserPlancostPlay100feedbreak,jdbcType=BIGINT},
+      MK_advertiser_plancost_playOverRate = #{mkAdvertiserPlancostPlayoverrate,jdbcType=NUMERIC},
+      MK_advertiser_plancost_wifiPlayRate = #{mkAdvertiserPlancostWifiplayrate,jdbcType=NUMERIC},
+      MK_advertiser_plancost_wifiPlay = #{mkAdvertiserPlancostWifiplay,jdbcType=BIGINT},
+      MK_advertiser_plancost_playDurationSum = #{mkAdvertiserPlancostPlaydurationsum,jdbcType=BIGINT},
+      MK_advertiser_plancost_rtaId = #{mkAdvertiserPlancostRtaid,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      MK_advertiser_plancost_createTM = #{mkAdvertiserPlancostCreatetm,jdbcType=TIMESTAMP},
+      MK_advertiser_plancost_operationTM = #{mkAdvertiserPlancostOperationtm,jdbcType=TIMESTAMP},
+      MK_advertiser_plancost_modifyTM = #{mkAdvertiserPlancostModifytm,jdbcType=TIMESTAMP},
+      Mk_advertiser_Media_Appid = #{mkAdvertiserMediaAppid,jdbcType=VARCHAR},
+      MK_advertiser_plan_bid = #{mkAdvertiserPlanBid,jdbcType=NUMERIC},
+      MK_Advertiser_Plan_dataType = #{mkAdvertiserPlanDatatype,jdbcType=VARCHAR}
+    where MK_advertiser_plancost_no = #{mkAdvertiserPlancostNo,jdbcType=VARCHAR}
+  </update>
+</mapper>

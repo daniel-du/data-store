@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CusBasicWechatMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.CusBasicWechat">
+    <id column="cus_basic_wechat_unionid" jdbcType="VARCHAR" property="cusBasicWechatUnionid" />
+    <result column="cus_basic_wechat_nickname" jdbcType="VARCHAR" property="cusBasicWechatNickname" />
+    <result column="cus_basic_wechat_sex" jdbcType="VARCHAR" property="cusBasicWechatSex" />
+    <result column="cus_basic_wechat_birthday" jdbcType="VARCHAR" property="cusBasicWechatBirthday" />
+    <result column="cus_basic_wechat_smailid" jdbcType="VARCHAR" property="cusBasicWechatSmailid" />
+    <result column="cus_basic_wechat_publicid" jdbcType="VARCHAR" property="cusBasicWechatPublicid" />
+    <result column="cus_basic_wechat_step_publicid" jdbcType="VARCHAR" property="cusBasicWechatStepPublicid" />
+    <result column="cus_basic_wechat_email" jdbcType="VARCHAR" property="cusBasicWechatEmail" />
+    <result column="cus_basic_wechat_marry" jdbcType="VARCHAR" property="cusBasicWechatMarry" />
+    <result column="cus_basic_wechat_headurl" jdbcType="VARCHAR" property="cusBasicWechatHeadurl" />
+    <result column="cus_basic_wechat_country" jdbcType="VARCHAR" property="cusBasicWechatCountry" />
+    <result column="cus_basic_wechat_language" jdbcType="VARCHAR" property="cusBasicWechatLanguage" />
+    <result column="cus_basic_wechat_provice" jdbcType="VARCHAR" property="cusBasicWechatProvice" />
+    <result column="cus_basic_wechat_city" jdbcType="VARCHAR" property="cusBasicWechatCity" />
+    <result column="cus_basic_wechat_points" jdbcType="INTEGER" property="cusBasicWechatPoints" />
+    <result column="cus_basic_wechat_renewalstatus" jdbcType="VARCHAR" property="cusBasicWechatRenewalstatus" />
+    <result column="cus_basic_wechat_noticestatus" jdbcType="VARCHAR" property="cusBasicWechatNoticestatus" />
+    <result column="cus_basic_wechat_expirestatus" jdbcType="VARCHAR" property="cusBasicWechatExpirestatus" />
+    <result column="cus_basic_wechat_subscribe" jdbcType="SMALLINT" property="cusBasicWechatSubscribe" />
+    <result column="cus_basic_info_no" jdbcType="VARCHAR" property="cusBasicInfoNo" />
+    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="cus_basic_wechat_createtm" jdbcType="TIMESTAMP" property="cusBasicWechatCreatetm" />
+    <result column="cus_basic_wechat_operationtm" jdbcType="TIMESTAMP" property="cusBasicWechatOperationtm" />
+    <result column="cus_basic_wechat_modifytm" jdbcType="TIMESTAMP" property="cusBasicWechatModifytm" />
+    <result column="cus_basic_wechat_subscribetm" jdbcType="TIMESTAMP" property="cusBasicWechatSubscribetm" />
+    <result column="cus_basic_wechat_unsubscribetm" jdbcType="TIMESTAMP" property="cusBasicWechatUnsubscribetm" />
+    <result column="cus_basic_wechat_insuringstatus" jdbcType="VARCHAR" property="cusBasicWechatInsuringstatus" />
+    <result column="cus_basic_wechat_insuringtm" jdbcType="TIMESTAMP" property="cusBasicWechatInsuringtm" />
+    <result column="cus_basic_wechat_amount" jdbcType="NUMERIC" property="cusBasicWechatAmount" />
+    <result column="cus_basic_wechat_subscribe_scene" jdbcType="VARCHAR" property="cusBasicWechatSubscribeScene" />
+    <result column="cus_basic_wechat_qr_scene" jdbcType="VARCHAR" property="cusBasicWechatQrScene" />
+    <result column="cus_basic_wechat_oasubscribe" jdbcType="VARCHAR" property="cusBasicWechatOasubscribe" />
+    <result column="cus_basic_wechat_oaadddays" jdbcType="INTEGER" property="cusBasicWechatOaadddays" />
+    <result column="cus_basic_wechat_numres1" jdbcType="INTEGER" property="cusBasicWechatNumres1" />
+    <result column="cus_basic_wechat_strres1" jdbcType="VARCHAR" property="cusBasicWechatStrres1" />
+    <result column="cus_basic_wechat_strres2" jdbcType="VARCHAR" property="cusBasicWechatStrres2" />
+    <result column="cus_basic_wechat_strres3" jdbcType="VARCHAR" property="cusBasicWechatStrres3" />
+    <result column="cus_basic_wechat_tmres1" jdbcType="TIMESTAMP" property="cusBasicWechatTmres1" />
+    <result column="cus_basic_wechat_appid" jdbcType="VARCHAR" property="cusBasicWechatAppid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    cus_basic_wechat_unionid, cus_basic_wechat_nickname, cus_basic_wechat_sex, cus_basic_wechat_birthday, 
+    cus_basic_wechat_smailid, cus_basic_wechat_publicid, cus_basic_wechat_step_publicid, 
+    cus_basic_wechat_email, cus_basic_wechat_marry, cus_basic_wechat_headurl, cus_basic_wechat_country, 
+    cus_basic_wechat_language, cus_basic_wechat_provice, cus_basic_wechat_city, cus_basic_wechat_points, 
+    cus_basic_wechat_renewalstatus, cus_basic_wechat_noticestatus, cus_basic_wechat_expirestatus, 
+    cus_basic_wechat_subscribe, cus_basic_info_no, oa_company_account_code, cus_basic_wechat_createtm, 
+    cus_basic_wechat_operationtm, cus_basic_wechat_modifytm, cus_basic_wechat_subscribetm, 
+    cus_basic_wechat_unsubscribetm, cus_basic_wechat_insuringstatus, cus_basic_wechat_insuringtm, 
+    cus_basic_wechat_amount, cus_basic_wechat_subscribe_scene, cus_basic_wechat_qr_scene, 
+    cus_basic_wechat_oasubscribe, cus_basic_wechat_oaadddays, cus_basic_wechat_numres1, 
+    cus_basic_wechat_strres1, cus_basic_wechat_strres2, cus_basic_wechat_strres3, cus_basic_wechat_tmres1, 
+    cus_basic_wechat_appid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cus_basic_wechat
+    where cus_basic_wechat_unionid = #{cusBasicWechatUnionid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from cus_basic_wechat
+    where cus_basic_wechat_unionid = #{cusBasicWechatUnionid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.CusBasicWechat">
+    insert into cus_basic_wechat (cus_basic_wechat_unionid, cus_basic_wechat_nickname, 
+      cus_basic_wechat_sex, cus_basic_wechat_birthday, 
+      cus_basic_wechat_smailid, cus_basic_wechat_publicid, 
+      cus_basic_wechat_step_publicid, cus_basic_wechat_email, 
+      cus_basic_wechat_marry, cus_basic_wechat_headurl, 
+      cus_basic_wechat_country, cus_basic_wechat_language, 
+      cus_basic_wechat_provice, cus_basic_wechat_city, 
+      cus_basic_wechat_points, cus_basic_wechat_renewalstatus, 
+      cus_basic_wechat_noticestatus, cus_basic_wechat_expirestatus, 
+      cus_basic_wechat_subscribe, cus_basic_info_no, 
+      oa_company_account_code, cus_basic_wechat_createtm, 
+      cus_basic_wechat_operationtm, cus_basic_wechat_modifytm, 
+      cus_basic_wechat_subscribetm, cus_basic_wechat_unsubscribetm, 
+      cus_basic_wechat_insuringstatus, cus_basic_wechat_insuringtm, 
+      cus_basic_wechat_amount, cus_basic_wechat_subscribe_scene, 
+      cus_basic_wechat_qr_scene, cus_basic_wechat_oasubscribe, 
+      cus_basic_wechat_oaadddays, cus_basic_wechat_numres1, 
+      cus_basic_wechat_strres1, cus_basic_wechat_strres2, 
+      cus_basic_wechat_strres3, cus_basic_wechat_tmres1, 
+      cus_basic_wechat_appid)
+    values (#{cusBasicWechatUnionid,jdbcType=VARCHAR}, #{cusBasicWechatNickname,jdbcType=VARCHAR}, 
+      #{cusBasicWechatSex,jdbcType=VARCHAR}, #{cusBasicWechatBirthday,jdbcType=VARCHAR}, 
+      #{cusBasicWechatSmailid,jdbcType=VARCHAR}, #{cusBasicWechatPublicid,jdbcType=VARCHAR}, 
+      #{cusBasicWechatStepPublicid,jdbcType=VARCHAR}, #{cusBasicWechatEmail,jdbcType=VARCHAR}, 
+      #{cusBasicWechatMarry,jdbcType=VARCHAR}, #{cusBasicWechatHeadurl,jdbcType=VARCHAR}, 
+      #{cusBasicWechatCountry,jdbcType=VARCHAR}, #{cusBasicWechatLanguage,jdbcType=VARCHAR}, 
+      #{cusBasicWechatProvice,jdbcType=VARCHAR}, #{cusBasicWechatCity,jdbcType=VARCHAR}, 
+      #{cusBasicWechatPoints,jdbcType=INTEGER}, #{cusBasicWechatRenewalstatus,jdbcType=VARCHAR}, 
+      #{cusBasicWechatNoticestatus,jdbcType=VARCHAR}, #{cusBasicWechatExpirestatus,jdbcType=VARCHAR}, 
+      #{cusBasicWechatSubscribe,jdbcType=SMALLINT}, #{cusBasicInfoNo,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{cusBasicWechatCreatetm,jdbcType=TIMESTAMP}, 
+      #{cusBasicWechatOperationtm,jdbcType=TIMESTAMP}, #{cusBasicWechatModifytm,jdbcType=TIMESTAMP}, 
+      #{cusBasicWechatSubscribetm,jdbcType=TIMESTAMP}, #{cusBasicWechatUnsubscribetm,jdbcType=TIMESTAMP}, 
+      #{cusBasicWechatInsuringstatus,jdbcType=VARCHAR}, #{cusBasicWechatInsuringtm,jdbcType=TIMESTAMP}, 
+      #{cusBasicWechatAmount,jdbcType=NUMERIC}, #{cusBasicWechatSubscribeScene,jdbcType=VARCHAR}, 
+      #{cusBasicWechatQrScene,jdbcType=VARCHAR}, #{cusBasicWechatOasubscribe,jdbcType=VARCHAR}, 
+      #{cusBasicWechatOaadddays,jdbcType=INTEGER}, #{cusBasicWechatNumres1,jdbcType=INTEGER}, 
+      #{cusBasicWechatStrres1,jdbcType=VARCHAR}, #{cusBasicWechatStrres2,jdbcType=VARCHAR}, 
+      #{cusBasicWechatStrres3,jdbcType=VARCHAR}, #{cusBasicWechatTmres1,jdbcType=TIMESTAMP}, 
+      #{cusBasicWechatAppid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.CusBasicWechat">
+    insert into cus_basic_wechat
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cusBasicWechatUnionid != null">
+        cus_basic_wechat_unionid,
+      </if>
+      <if test="cusBasicWechatNickname != null">
+        cus_basic_wechat_nickname,
+      </if>
+      <if test="cusBasicWechatSex != null">
+        cus_basic_wechat_sex,
+      </if>
+      <if test="cusBasicWechatBirthday != null">
+        cus_basic_wechat_birthday,
+      </if>
+      <if test="cusBasicWechatSmailid != null">
+        cus_basic_wechat_smailid,
+      </if>
+      <if test="cusBasicWechatPublicid != null">
+        cus_basic_wechat_publicid,
+      </if>
+      <if test="cusBasicWechatStepPublicid != null">
+        cus_basic_wechat_step_publicid,
+      </if>
+      <if test="cusBasicWechatEmail != null">
+        cus_basic_wechat_email,
+      </if>
+      <if test="cusBasicWechatMarry != null">
+        cus_basic_wechat_marry,
+      </if>
+      <if test="cusBasicWechatHeadurl != null">
+        cus_basic_wechat_headurl,
+      </if>
+      <if test="cusBasicWechatCountry != null">
+        cus_basic_wechat_country,
+      </if>
+      <if test="cusBasicWechatLanguage != null">
+        cus_basic_wechat_language,
+      </if>
+      <if test="cusBasicWechatProvice != null">
+        cus_basic_wechat_provice,
+      </if>
+      <if test="cusBasicWechatCity != null">
+        cus_basic_wechat_city,
+      </if>
+      <if test="cusBasicWechatPoints != null">
+        cus_basic_wechat_points,
+      </if>
+      <if test="cusBasicWechatRenewalstatus != null">
+        cus_basic_wechat_renewalstatus,
+      </if>
+      <if test="cusBasicWechatNoticestatus != null">
+        cus_basic_wechat_noticestatus,
+      </if>
+      <if test="cusBasicWechatExpirestatus != null">
+        cus_basic_wechat_expirestatus,
+      </if>
+      <if test="cusBasicWechatSubscribe != null">
+        cus_basic_wechat_subscribe,
+      </if>
+      <if test="cusBasicInfoNo != null">
+        cus_basic_info_no,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code,
+      </if>
+      <if test="cusBasicWechatCreatetm != null">
+        cus_basic_wechat_createtm,
+      </if>
+      <if test="cusBasicWechatOperationtm != null">
+        cus_basic_wechat_operationtm,
+      </if>
+      <if test="cusBasicWechatModifytm != null">
+        cus_basic_wechat_modifytm,
+      </if>
+      <if test="cusBasicWechatSubscribetm != null">
+        cus_basic_wechat_subscribetm,
+      </if>
+      <if test="cusBasicWechatUnsubscribetm != null">
+        cus_basic_wechat_unsubscribetm,
+      </if>
+      <if test="cusBasicWechatInsuringstatus != null">
+        cus_basic_wechat_insuringstatus,
+      </if>
+      <if test="cusBasicWechatInsuringtm != null">
+        cus_basic_wechat_insuringtm,
+      </if>
+      <if test="cusBasicWechatAmount != null">
+        cus_basic_wechat_amount,
+      </if>
+      <if test="cusBasicWechatSubscribeScene != null">
+        cus_basic_wechat_subscribe_scene,
+      </if>
+      <if test="cusBasicWechatQrScene != null">
+        cus_basic_wechat_qr_scene,
+      </if>
+      <if test="cusBasicWechatOasubscribe != null">
+        cus_basic_wechat_oasubscribe,
+      </if>
+      <if test="cusBasicWechatOaadddays != null">
+        cus_basic_wechat_oaadddays,
+      </if>
+      <if test="cusBasicWechatNumres1 != null">
+        cus_basic_wechat_numres1,
+      </if>
+      <if test="cusBasicWechatStrres1 != null">
+        cus_basic_wechat_strres1,
+      </if>
+      <if test="cusBasicWechatStrres2 != null">
+        cus_basic_wechat_strres2,
+      </if>
+      <if test="cusBasicWechatStrres3 != null">
+        cus_basic_wechat_strres3,
+      </if>
+      <if test="cusBasicWechatTmres1 != null">
+        cus_basic_wechat_tmres1,
+      </if>
+      <if test="cusBasicWechatAppid != null">
+        cus_basic_wechat_appid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cusBasicWechatUnionid != null">
+        #{cusBasicWechatUnionid,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatNickname != null">
+        #{cusBasicWechatNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatSex != null">
+        #{cusBasicWechatSex,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatBirthday != null">
+        #{cusBasicWechatBirthday,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatSmailid != null">
+        #{cusBasicWechatSmailid,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatPublicid != null">
+        #{cusBasicWechatPublicid,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatStepPublicid != null">
+        #{cusBasicWechatStepPublicid,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatEmail != null">
+        #{cusBasicWechatEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatMarry != null">
+        #{cusBasicWechatMarry,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatHeadurl != null">
+        #{cusBasicWechatHeadurl,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatCountry != null">
+        #{cusBasicWechatCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatLanguage != null">
+        #{cusBasicWechatLanguage,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatProvice != null">
+        #{cusBasicWechatProvice,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatCity != null">
+        #{cusBasicWechatCity,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatPoints != null">
+        #{cusBasicWechatPoints,jdbcType=INTEGER},
+      </if>
+      <if test="cusBasicWechatRenewalstatus != null">
+        #{cusBasicWechatRenewalstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatNoticestatus != null">
+        #{cusBasicWechatNoticestatus,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatExpirestatus != null">
+        #{cusBasicWechatExpirestatus,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatSubscribe != null">
+        #{cusBasicWechatSubscribe,jdbcType=SMALLINT},
+      </if>
+      <if test="cusBasicInfoNo != null">
+        #{cusBasicInfoNo,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatCreatetm != null">
+        #{cusBasicWechatCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cusBasicWechatOperationtm != null">
+        #{cusBasicWechatOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cusBasicWechatModifytm != null">
+        #{cusBasicWechatModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cusBasicWechatSubscribetm != null">
+        #{cusBasicWechatSubscribetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cusBasicWechatUnsubscribetm != null">
+        #{cusBasicWechatUnsubscribetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cusBasicWechatInsuringstatus != null">
+        #{cusBasicWechatInsuringstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatInsuringtm != null">
+        #{cusBasicWechatInsuringtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cusBasicWechatAmount != null">
+        #{cusBasicWechatAmount,jdbcType=NUMERIC},
+      </if>
+      <if test="cusBasicWechatSubscribeScene != null">
+        #{cusBasicWechatSubscribeScene,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatQrScene != null">
+        #{cusBasicWechatQrScene,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatOasubscribe != null">
+        #{cusBasicWechatOasubscribe,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatOaadddays != null">
+        #{cusBasicWechatOaadddays,jdbcType=INTEGER},
+      </if>
+      <if test="cusBasicWechatNumres1 != null">
+        #{cusBasicWechatNumres1,jdbcType=INTEGER},
+      </if>
+      <if test="cusBasicWechatStrres1 != null">
+        #{cusBasicWechatStrres1,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatStrres2 != null">
+        #{cusBasicWechatStrres2,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatStrres3 != null">
+        #{cusBasicWechatStrres3,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatTmres1 != null">
+        #{cusBasicWechatTmres1,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cusBasicWechatAppid != null">
+        #{cusBasicWechatAppid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.CusBasicWechat">
+    update cus_basic_wechat
+    <set>
+      <if test="cusBasicWechatNickname != null">
+        cus_basic_wechat_nickname = #{cusBasicWechatNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatSex != null">
+        cus_basic_wechat_sex = #{cusBasicWechatSex,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatBirthday != null">
+        cus_basic_wechat_birthday = #{cusBasicWechatBirthday,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatSmailid != null">
+        cus_basic_wechat_smailid = #{cusBasicWechatSmailid,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatPublicid != null">
+        cus_basic_wechat_publicid = #{cusBasicWechatPublicid,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatStepPublicid != null">
+        cus_basic_wechat_step_publicid = #{cusBasicWechatStepPublicid,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatEmail != null">
+        cus_basic_wechat_email = #{cusBasicWechatEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatMarry != null">
+        cus_basic_wechat_marry = #{cusBasicWechatMarry,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatHeadurl != null">
+        cus_basic_wechat_headurl = #{cusBasicWechatHeadurl,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatCountry != null">
+        cus_basic_wechat_country = #{cusBasicWechatCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatLanguage != null">
+        cus_basic_wechat_language = #{cusBasicWechatLanguage,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatProvice != null">
+        cus_basic_wechat_provice = #{cusBasicWechatProvice,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatCity != null">
+        cus_basic_wechat_city = #{cusBasicWechatCity,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatPoints != null">
+        cus_basic_wechat_points = #{cusBasicWechatPoints,jdbcType=INTEGER},
+      </if>
+      <if test="cusBasicWechatRenewalstatus != null">
+        cus_basic_wechat_renewalstatus = #{cusBasicWechatRenewalstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatNoticestatus != null">
+        cus_basic_wechat_noticestatus = #{cusBasicWechatNoticestatus,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatExpirestatus != null">
+        cus_basic_wechat_expirestatus = #{cusBasicWechatExpirestatus,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatSubscribe != null">
+        cus_basic_wechat_subscribe = #{cusBasicWechatSubscribe,jdbcType=SMALLINT},
+      </if>
+      <if test="cusBasicInfoNo != null">
+        cus_basic_info_no = #{cusBasicInfoNo,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatCreatetm != null">
+        cus_basic_wechat_createtm = #{cusBasicWechatCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cusBasicWechatOperationtm != null">
+        cus_basic_wechat_operationtm = #{cusBasicWechatOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cusBasicWechatModifytm != null">
+        cus_basic_wechat_modifytm = #{cusBasicWechatModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cusBasicWechatSubscribetm != null">
+        cus_basic_wechat_subscribetm = #{cusBasicWechatSubscribetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cusBasicWechatUnsubscribetm != null">
+        cus_basic_wechat_unsubscribetm = #{cusBasicWechatUnsubscribetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cusBasicWechatInsuringstatus != null">
+        cus_basic_wechat_insuringstatus = #{cusBasicWechatInsuringstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatInsuringtm != null">
+        cus_basic_wechat_insuringtm = #{cusBasicWechatInsuringtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cusBasicWechatAmount != null">
+        cus_basic_wechat_amount = #{cusBasicWechatAmount,jdbcType=NUMERIC},
+      </if>
+      <if test="cusBasicWechatSubscribeScene != null">
+        cus_basic_wechat_subscribe_scene = #{cusBasicWechatSubscribeScene,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatQrScene != null">
+        cus_basic_wechat_qr_scene = #{cusBasicWechatQrScene,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatOasubscribe != null">
+        cus_basic_wechat_oasubscribe = #{cusBasicWechatOasubscribe,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatOaadddays != null">
+        cus_basic_wechat_oaadddays = #{cusBasicWechatOaadddays,jdbcType=INTEGER},
+      </if>
+      <if test="cusBasicWechatNumres1 != null">
+        cus_basic_wechat_numres1 = #{cusBasicWechatNumres1,jdbcType=INTEGER},
+      </if>
+      <if test="cusBasicWechatStrres1 != null">
+        cus_basic_wechat_strres1 = #{cusBasicWechatStrres1,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatStrres2 != null">
+        cus_basic_wechat_strres2 = #{cusBasicWechatStrres2,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatStrres3 != null">
+        cus_basic_wechat_strres3 = #{cusBasicWechatStrres3,jdbcType=VARCHAR},
+      </if>
+      <if test="cusBasicWechatTmres1 != null">
+        cus_basic_wechat_tmres1 = #{cusBasicWechatTmres1,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cusBasicWechatAppid != null">
+        cus_basic_wechat_appid = #{cusBasicWechatAppid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cus_basic_wechat_unionid = #{cusBasicWechatUnionid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.CusBasicWechat">
+    update cus_basic_wechat
+    set cus_basic_wechat_nickname = #{cusBasicWechatNickname,jdbcType=VARCHAR},
+      cus_basic_wechat_sex = #{cusBasicWechatSex,jdbcType=VARCHAR},
+      cus_basic_wechat_birthday = #{cusBasicWechatBirthday,jdbcType=VARCHAR},
+      cus_basic_wechat_smailid = #{cusBasicWechatSmailid,jdbcType=VARCHAR},
+      cus_basic_wechat_publicid = #{cusBasicWechatPublicid,jdbcType=VARCHAR},
+      cus_basic_wechat_step_publicid = #{cusBasicWechatStepPublicid,jdbcType=VARCHAR},
+      cus_basic_wechat_email = #{cusBasicWechatEmail,jdbcType=VARCHAR},
+      cus_basic_wechat_marry = #{cusBasicWechatMarry,jdbcType=VARCHAR},
+      cus_basic_wechat_headurl = #{cusBasicWechatHeadurl,jdbcType=VARCHAR},
+      cus_basic_wechat_country = #{cusBasicWechatCountry,jdbcType=VARCHAR},
+      cus_basic_wechat_language = #{cusBasicWechatLanguage,jdbcType=VARCHAR},
+      cus_basic_wechat_provice = #{cusBasicWechatProvice,jdbcType=VARCHAR},
+      cus_basic_wechat_city = #{cusBasicWechatCity,jdbcType=VARCHAR},
+      cus_basic_wechat_points = #{cusBasicWechatPoints,jdbcType=INTEGER},
+      cus_basic_wechat_renewalstatus = #{cusBasicWechatRenewalstatus,jdbcType=VARCHAR},
+      cus_basic_wechat_noticestatus = #{cusBasicWechatNoticestatus,jdbcType=VARCHAR},
+      cus_basic_wechat_expirestatus = #{cusBasicWechatExpirestatus,jdbcType=VARCHAR},
+      cus_basic_wechat_subscribe = #{cusBasicWechatSubscribe,jdbcType=SMALLINT},
+      cus_basic_info_no = #{cusBasicInfoNo,jdbcType=VARCHAR},
+      oa_company_account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      cus_basic_wechat_createtm = #{cusBasicWechatCreatetm,jdbcType=TIMESTAMP},
+      cus_basic_wechat_operationtm = #{cusBasicWechatOperationtm,jdbcType=TIMESTAMP},
+      cus_basic_wechat_modifytm = #{cusBasicWechatModifytm,jdbcType=TIMESTAMP},
+      cus_basic_wechat_subscribetm = #{cusBasicWechatSubscribetm,jdbcType=TIMESTAMP},
+      cus_basic_wechat_unsubscribetm = #{cusBasicWechatUnsubscribetm,jdbcType=TIMESTAMP},
+      cus_basic_wechat_insuringstatus = #{cusBasicWechatInsuringstatus,jdbcType=VARCHAR},
+      cus_basic_wechat_insuringtm = #{cusBasicWechatInsuringtm,jdbcType=TIMESTAMP},
+      cus_basic_wechat_amount = #{cusBasicWechatAmount,jdbcType=NUMERIC},
+      cus_basic_wechat_subscribe_scene = #{cusBasicWechatSubscribeScene,jdbcType=VARCHAR},
+      cus_basic_wechat_qr_scene = #{cusBasicWechatQrScene,jdbcType=VARCHAR},
+      cus_basic_wechat_oasubscribe = #{cusBasicWechatOasubscribe,jdbcType=VARCHAR},
+      cus_basic_wechat_oaadddays = #{cusBasicWechatOaadddays,jdbcType=INTEGER},
+      cus_basic_wechat_numres1 = #{cusBasicWechatNumres1,jdbcType=INTEGER},
+      cus_basic_wechat_strres1 = #{cusBasicWechatStrres1,jdbcType=VARCHAR},
+      cus_basic_wechat_strres2 = #{cusBasicWechatStrres2,jdbcType=VARCHAR},
+      cus_basic_wechat_strres3 = #{cusBasicWechatStrres3,jdbcType=VARCHAR},
+      cus_basic_wechat_tmres1 = #{cusBasicWechatTmres1,jdbcType=TIMESTAMP},
+      cus_basic_wechat_appid = #{cusBasicWechatAppid,jdbcType=VARCHAR}
+    where cus_basic_wechat_unionid = #{cusBasicWechatUnionid,jdbcType=VARCHAR}
+  </update>
+</mapper>
