@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkAdvertiserMaterialcost2vMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserMaterialcost2v">
+    <id column="Mk_Advertiser_materialcost_no" jdbcType="VARCHAR" property="mkAdvertiserMaterialcostNo" />
+    <result column="Mk_Advertiser_materialcost_date" jdbcType="VARCHAR" property="mkAdvertiserMaterialcostDate" />
+    <result column="Mk_Advertiser_materialcost_advertiserid" jdbcType="VARCHAR" property="mkAdvertiserMaterialcostAdvertiserid" />
+    <result column="MK_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="MK_advertiser_info_code" jdbcType="VARCHAR" property="mkAdvertiserInfoCode" />
+    <result column="Mk_Advertiser_materialcost_id" jdbcType="VARCHAR" property="mkAdvertiserMaterialcostId" />
+    <result column="Mk_Advertiser_material_imageMode" jdbcType="VARCHAR" property="mkAdvertiserMaterialImagemode" />
+    <result column="Mk_Advertiser_plan_code" jdbcType="VARCHAR" property="mkAdvertiserPlanCode" />
+    <result column="Mk_Advertiser_materialcost_cost" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostCost" />
+    <result column="Mk_Advertiser_materialcost_show" jdbcType="BIGINT" property="mkAdvertiserMaterialcostShow" />
+    <result column="Mk_Advertiser_materialcost_cpmPlatform" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostCpmplatform" />
+    <result column="Mk_Advertiser_materialcost_clickCnt" jdbcType="BIGINT" property="mkAdvertiserMaterialcostClickcnt" />
+    <result column="Mk_Advertiser_materialcost_ctr" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostCtr" />
+    <result column="Mk_Advertiser_materialcost_cpcPlatform" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostCpcplatform" />
+    <result column="Mk_Advertiser_materialcost_convertCnt" jdbcType="BIGINT" property="mkAdvertiserMaterialcostConvertcnt" />
+    <result column="Mk_Advertiser_materialcost_convertCost" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostConvertcost" />
+    <result column="Mk_Advertiser_materialcost_convertRate" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostConvertrate" />
+    <result column="Mk_Advertiser_materialcost_deepConvertCnt" jdbcType="BIGINT" property="mkAdvertiserMaterialcostDeepconvertcnt" />
+    <result column="Mk_Advertiser_materialcost_deepConvertCost" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostDeepconvertcost" />
+    <result column="Mk_Advertiser_materialcost_deepConvertRate" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostDeepconvertrate" />
+    <result column="Mk_Advertiser_materialcost_deliveryMode" jdbcType="VARCHAR" property="mkAdvertiserMaterialcostDeliverymode" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="Mk_Advertiser_materialcost_createTM" jdbcType="TIMESTAMP" property="mkAdvertiserMaterialcostCreatetm" />
+    <result column="Mk_Advertiser_materialcost_operationTM" jdbcType="TIMESTAMP" property="mkAdvertiserMaterialcostOperationtm" />
+    <result column="Mk_Advertiser_materialcost_modifyTM" jdbcType="TIMESTAMP" property="mkAdvertiserMaterialcostModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    Mk_Advertiser_materialcost_no, Mk_Advertiser_materialcost_date, Mk_Advertiser_materialcost_advertiserid, 
+    MK_media_info_code, MK_advertiser_info_code, Mk_Advertiser_materialcost_id, Mk_Advertiser_material_imageMode, 
+    Mk_Advertiser_plan_code, Mk_Advertiser_materialcost_cost, Mk_Advertiser_materialcost_show, 
+    Mk_Advertiser_materialcost_cpmPlatform, Mk_Advertiser_materialcost_clickCnt, Mk_Advertiser_materialcost_ctr, 
+    Mk_Advertiser_materialcost_cpcPlatform, Mk_Advertiser_materialcost_convertCnt, Mk_Advertiser_materialcost_convertCost, 
+    Mk_Advertiser_materialcost_convertRate, Mk_Advertiser_materialcost_deepConvertCnt, 
+    Mk_Advertiser_materialcost_deepConvertCost, Mk_Advertiser_materialcost_deepConvertRate, 
+    Mk_Advertiser_materialcost_deliveryMode, OA_company_Account_code, Mk_Advertiser_materialcost_createTM, 
+    Mk_Advertiser_materialcost_operationTM, Mk_Advertiser_materialcost_modifyTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_advertiser_materialcost2v
+    where Mk_Advertiser_materialcost_no = #{mkAdvertiserMaterialcostNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_advertiser_materialcost2v
+    where Mk_Advertiser_materialcost_no = #{mkAdvertiserMaterialcostNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMaterialcost2v">
+    insert into mk_advertiser_materialcost2v (Mk_Advertiser_materialcost_no, Mk_Advertiser_materialcost_date, 
+      Mk_Advertiser_materialcost_advertiserid, MK_media_info_code, 
+      MK_advertiser_info_code, Mk_Advertiser_materialcost_id, 
+      Mk_Advertiser_material_imageMode, Mk_Advertiser_plan_code, 
+      Mk_Advertiser_materialcost_cost, Mk_Advertiser_materialcost_show, 
+      Mk_Advertiser_materialcost_cpmPlatform, Mk_Advertiser_materialcost_clickCnt, 
+      Mk_Advertiser_materialcost_ctr, Mk_Advertiser_materialcost_cpcPlatform, 
+      Mk_Advertiser_materialcost_convertCnt, Mk_Advertiser_materialcost_convertCost, 
+      Mk_Advertiser_materialcost_convertRate, Mk_Advertiser_materialcost_deepConvertCnt, 
+      Mk_Advertiser_materialcost_deepConvertCost, Mk_Advertiser_materialcost_deepConvertRate, 
+      Mk_Advertiser_materialcost_deliveryMode, OA_company_Account_code, 
+      Mk_Advertiser_materialcost_createTM, Mk_Advertiser_materialcost_operationTM, 
+      Mk_Advertiser_materialcost_modifyTM)
+    values (#{mkAdvertiserMaterialcostNo,jdbcType=VARCHAR}, #{mkAdvertiserMaterialcostDate,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMaterialcostAdvertiserid,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoCode,jdbcType=VARCHAR}, #{mkAdvertiserMaterialcostId,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMaterialImagemode,jdbcType=VARCHAR}, #{mkAdvertiserPlanCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMaterialcostCost,jdbcType=NUMERIC}, #{mkAdvertiserMaterialcostShow,jdbcType=BIGINT}, 
+      #{mkAdvertiserMaterialcostCpmplatform,jdbcType=NUMERIC}, #{mkAdvertiserMaterialcostClickcnt,jdbcType=BIGINT}, 
+      #{mkAdvertiserMaterialcostCtr,jdbcType=NUMERIC}, #{mkAdvertiserMaterialcostCpcplatform,jdbcType=NUMERIC}, 
+      #{mkAdvertiserMaterialcostConvertcnt,jdbcType=BIGINT}, #{mkAdvertiserMaterialcostConvertcost,jdbcType=NUMERIC}, 
+      #{mkAdvertiserMaterialcostConvertrate,jdbcType=NUMERIC}, #{mkAdvertiserMaterialcostDeepconvertcnt,jdbcType=BIGINT}, 
+      #{mkAdvertiserMaterialcostDeepconvertcost,jdbcType=NUMERIC}, #{mkAdvertiserMaterialcostDeepconvertrate,jdbcType=NUMERIC}, 
+      #{mkAdvertiserMaterialcostDeliverymode,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMaterialcostCreatetm,jdbcType=TIMESTAMP}, #{mkAdvertiserMaterialcostOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserMaterialcostModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMaterialcost2v">
+    insert into mk_advertiser_materialcost2v
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserMaterialcostNo != null">
+        Mk_Advertiser_materialcost_no,
+      </if>
+      <if test="mkAdvertiserMaterialcostDate != null">
+        Mk_Advertiser_materialcost_date,
+      </if>
+      <if test="mkAdvertiserMaterialcostAdvertiserid != null">
+        Mk_Advertiser_materialcost_advertiserid,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_info_code,
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        MK_advertiser_info_code,
+      </if>
+      <if test="mkAdvertiserMaterialcostId != null">
+        Mk_Advertiser_materialcost_id,
+      </if>
+      <if test="mkAdvertiserMaterialImagemode != null">
+        Mk_Advertiser_material_imageMode,
+      </if>
+      <if test="mkAdvertiserPlanCode != null">
+        Mk_Advertiser_plan_code,
+      </if>
+      <if test="mkAdvertiserMaterialcostCost != null">
+        Mk_Advertiser_materialcost_cost,
+      </if>
+      <if test="mkAdvertiserMaterialcostShow != null">
+        Mk_Advertiser_materialcost_show,
+      </if>
+      <if test="mkAdvertiserMaterialcostCpmplatform != null">
+        Mk_Advertiser_materialcost_cpmPlatform,
+      </if>
+      <if test="mkAdvertiserMaterialcostClickcnt != null">
+        Mk_Advertiser_materialcost_clickCnt,
+      </if>
+      <if test="mkAdvertiserMaterialcostCtr != null">
+        Mk_Advertiser_materialcost_ctr,
+      </if>
+      <if test="mkAdvertiserMaterialcostCpcplatform != null">
+        Mk_Advertiser_materialcost_cpcPlatform,
+      </if>
+      <if test="mkAdvertiserMaterialcostConvertcnt != null">
+        Mk_Advertiser_materialcost_convertCnt,
+      </if>
+      <if test="mkAdvertiserMaterialcostConvertcost != null">
+        Mk_Advertiser_materialcost_convertCost,
+      </if>
+      <if test="mkAdvertiserMaterialcostConvertrate != null">
+        Mk_Advertiser_materialcost_convertRate,
+      </if>
+      <if test="mkAdvertiserMaterialcostDeepconvertcnt != null">
+        Mk_Advertiser_materialcost_deepConvertCnt,
+      </if>
+      <if test="mkAdvertiserMaterialcostDeepconvertcost != null">
+        Mk_Advertiser_materialcost_deepConvertCost,
+      </if>
+      <if test="mkAdvertiserMaterialcostDeepconvertrate != null">
+        Mk_Advertiser_materialcost_deepConvertRate,
+      </if>
+      <if test="mkAdvertiserMaterialcostDeliverymode != null">
+        Mk_Advertiser_materialcost_deliveryMode,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="mkAdvertiserMaterialcostCreatetm != null">
+        Mk_Advertiser_materialcost_createTM,
+      </if>
+      <if test="mkAdvertiserMaterialcostOperationtm != null">
+        Mk_Advertiser_materialcost_operationTM,
+      </if>
+      <if test="mkAdvertiserMaterialcostModifytm != null">
+        Mk_Advertiser_materialcost_modifyTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserMaterialcostNo != null">
+        #{mkAdvertiserMaterialcostNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialcostDate != null">
+        #{mkAdvertiserMaterialcostDate,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialcostAdvertiserid != null">
+        #{mkAdvertiserMaterialcostAdvertiserid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialcostId != null">
+        #{mkAdvertiserMaterialcostId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialImagemode != null">
+        #{mkAdvertiserMaterialImagemode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlanCode != null">
+        #{mkAdvertiserPlanCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialcostCost != null">
+        #{mkAdvertiserMaterialcostCost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostShow != null">
+        #{mkAdvertiserMaterialcostShow,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserMaterialcostCpmplatform != null">
+        #{mkAdvertiserMaterialcostCpmplatform,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostClickcnt != null">
+        #{mkAdvertiserMaterialcostClickcnt,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserMaterialcostCtr != null">
+        #{mkAdvertiserMaterialcostCtr,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostCpcplatform != null">
+        #{mkAdvertiserMaterialcostCpcplatform,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostConvertcnt != null">
+        #{mkAdvertiserMaterialcostConvertcnt,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserMaterialcostConvertcost != null">
+        #{mkAdvertiserMaterialcostConvertcost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostConvertrate != null">
+        #{mkAdvertiserMaterialcostConvertrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostDeepconvertcnt != null">
+        #{mkAdvertiserMaterialcostDeepconvertcnt,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserMaterialcostDeepconvertcost != null">
+        #{mkAdvertiserMaterialcostDeepconvertcost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostDeepconvertrate != null">
+        #{mkAdvertiserMaterialcostDeepconvertrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostDeliverymode != null">
+        #{mkAdvertiserMaterialcostDeliverymode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialcostCreatetm != null">
+        #{mkAdvertiserMaterialcostCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMaterialcostOperationtm != null">
+        #{mkAdvertiserMaterialcostOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMaterialcostModifytm != null">
+        #{mkAdvertiserMaterialcostModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMaterialcost2v">
+    update mk_advertiser_materialcost2v
+    <set>
+      <if test="mkAdvertiserMaterialcostDate != null">
+        Mk_Advertiser_materialcost_date = #{mkAdvertiserMaterialcostDate,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialcostAdvertiserid != null">
+        Mk_Advertiser_materialcost_advertiserid = #{mkAdvertiserMaterialcostAdvertiserid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        MK_advertiser_info_code = #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialcostId != null">
+        Mk_Advertiser_materialcost_id = #{mkAdvertiserMaterialcostId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialImagemode != null">
+        Mk_Advertiser_material_imageMode = #{mkAdvertiserMaterialImagemode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlanCode != null">
+        Mk_Advertiser_plan_code = #{mkAdvertiserPlanCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialcostCost != null">
+        Mk_Advertiser_materialcost_cost = #{mkAdvertiserMaterialcostCost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostShow != null">
+        Mk_Advertiser_materialcost_show = #{mkAdvertiserMaterialcostShow,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserMaterialcostCpmplatform != null">
+        Mk_Advertiser_materialcost_cpmPlatform = #{mkAdvertiserMaterialcostCpmplatform,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostClickcnt != null">
+        Mk_Advertiser_materialcost_clickCnt = #{mkAdvertiserMaterialcostClickcnt,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserMaterialcostCtr != null">
+        Mk_Advertiser_materialcost_ctr = #{mkAdvertiserMaterialcostCtr,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostCpcplatform != null">
+        Mk_Advertiser_materialcost_cpcPlatform = #{mkAdvertiserMaterialcostCpcplatform,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostConvertcnt != null">
+        Mk_Advertiser_materialcost_convertCnt = #{mkAdvertiserMaterialcostConvertcnt,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserMaterialcostConvertcost != null">
+        Mk_Advertiser_materialcost_convertCost = #{mkAdvertiserMaterialcostConvertcost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostConvertrate != null">
+        Mk_Advertiser_materialcost_convertRate = #{mkAdvertiserMaterialcostConvertrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostDeepconvertcnt != null">
+        Mk_Advertiser_materialcost_deepConvertCnt = #{mkAdvertiserMaterialcostDeepconvertcnt,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserMaterialcostDeepconvertcost != null">
+        Mk_Advertiser_materialcost_deepConvertCost = #{mkAdvertiserMaterialcostDeepconvertcost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostDeepconvertrate != null">
+        Mk_Advertiser_materialcost_deepConvertRate = #{mkAdvertiserMaterialcostDeepconvertrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostDeliverymode != null">
+        Mk_Advertiser_materialcost_deliveryMode = #{mkAdvertiserMaterialcostDeliverymode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialcostCreatetm != null">
+        Mk_Advertiser_materialcost_createTM = #{mkAdvertiserMaterialcostCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMaterialcostOperationtm != null">
+        Mk_Advertiser_materialcost_operationTM = #{mkAdvertiserMaterialcostOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMaterialcostModifytm != null">
+        Mk_Advertiser_materialcost_modifyTM = #{mkAdvertiserMaterialcostModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where Mk_Advertiser_materialcost_no = #{mkAdvertiserMaterialcostNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMaterialcost2v">
+    update mk_advertiser_materialcost2v
+    set Mk_Advertiser_materialcost_date = #{mkAdvertiserMaterialcostDate,jdbcType=VARCHAR},
+      Mk_Advertiser_materialcost_advertiserid = #{mkAdvertiserMaterialcostAdvertiserid,jdbcType=VARCHAR},
+      MK_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      MK_advertiser_info_code = #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      Mk_Advertiser_materialcost_id = #{mkAdvertiserMaterialcostId,jdbcType=VARCHAR},
+      Mk_Advertiser_material_imageMode = #{mkAdvertiserMaterialImagemode,jdbcType=VARCHAR},
+      Mk_Advertiser_plan_code = #{mkAdvertiserPlanCode,jdbcType=VARCHAR},
+      Mk_Advertiser_materialcost_cost = #{mkAdvertiserMaterialcostCost,jdbcType=NUMERIC},
+      Mk_Advertiser_materialcost_show = #{mkAdvertiserMaterialcostShow,jdbcType=BIGINT},
+      Mk_Advertiser_materialcost_cpmPlatform = #{mkAdvertiserMaterialcostCpmplatform,jdbcType=NUMERIC},
+      Mk_Advertiser_materialcost_clickCnt = #{mkAdvertiserMaterialcostClickcnt,jdbcType=BIGINT},
+      Mk_Advertiser_materialcost_ctr = #{mkAdvertiserMaterialcostCtr,jdbcType=NUMERIC},
+      Mk_Advertiser_materialcost_cpcPlatform = #{mkAdvertiserMaterialcostCpcplatform,jdbcType=NUMERIC},
+      Mk_Advertiser_materialcost_convertCnt = #{mkAdvertiserMaterialcostConvertcnt,jdbcType=BIGINT},
+      Mk_Advertiser_materialcost_convertCost = #{mkAdvertiserMaterialcostConvertcost,jdbcType=NUMERIC},
+      Mk_Advertiser_materialcost_convertRate = #{mkAdvertiserMaterialcostConvertrate,jdbcType=NUMERIC},
+      Mk_Advertiser_materialcost_deepConvertCnt = #{mkAdvertiserMaterialcostDeepconvertcnt,jdbcType=BIGINT},
+      Mk_Advertiser_materialcost_deepConvertCost = #{mkAdvertiserMaterialcostDeepconvertcost,jdbcType=NUMERIC},
+      Mk_Advertiser_materialcost_deepConvertRate = #{mkAdvertiserMaterialcostDeepconvertrate,jdbcType=NUMERIC},
+      Mk_Advertiser_materialcost_deliveryMode = #{mkAdvertiserMaterialcostDeliverymode,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      Mk_Advertiser_materialcost_createTM = #{mkAdvertiserMaterialcostCreatetm,jdbcType=TIMESTAMP},
+      Mk_Advertiser_materialcost_operationTM = #{mkAdvertiserMaterialcostOperationtm,jdbcType=TIMESTAMP},
+      Mk_Advertiser_materialcost_modifyTM = #{mkAdvertiserMaterialcostModifytm,jdbcType=TIMESTAMP}
+    where Mk_Advertiser_materialcost_no = #{mkAdvertiserMaterialcostNo,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserMaterialcost2v">
+    <result column="mk_advertiser_materialcost_no" jdbcType="VARCHAR" property="mkAdvertiserMaterialcostNo" />
+    <result column="mk_advertiser_materialcost_date" jdbcType="VARCHAR" property="mkAdvertiserMaterialcostDate" />
+    <result column="mk_advertiser_materialcost_advertiserid" jdbcType="VARCHAR" property="mkAdvertiserMaterialcostAdvertiserid" />
+    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="mk_advertiser_info_code" jdbcType="VARCHAR" property="mkAdvertiserInfoCode" />
+    <result column="mk_advertiser_materialcost_id" jdbcType="VARCHAR" property="mkAdvertiserMaterialcostId" />
+    <result column="mk_advertiser_material_imagemode" jdbcType="VARCHAR" property="mkAdvertiserMaterialImagemode" />
+    <result column="mk_advertiser_plan_code" jdbcType="VARCHAR" property="mkAdvertiserPlanCode" />
+    <result column="mk_advertiser_materialcost_cost" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostCost" />
+    <result column="mk_advertiser_materialcost_show" jdbcType="BIGINT" property="mkAdvertiserMaterialcostShow" />
+    <result column="mk_advertiser_materialcost_cpmplatform" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostCpmplatform" />
+    <result column="mk_advertiser_materialcost_clickcnt" jdbcType="BIGINT" property="mkAdvertiserMaterialcostClickcnt" />
+    <result column="mk_advertiser_materialcost_ctr" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostCtr" />
+    <result column="mk_advertiser_materialcost_cpcplatform" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostCpcplatform" />
+    <result column="mk_advertiser_materialcost_convertcnt" jdbcType="BIGINT" property="mkAdvertiserMaterialcostConvertcnt" />
+    <result column="mk_advertiser_materialcost_convertcost" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostConvertcost" />
+    <result column="mk_advertiser_materialcost_convertrate" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostConvertrate" />
+    <result column="mk_advertiser_materialcost_deepconvertcnt" jdbcType="BIGINT" property="mkAdvertiserMaterialcostDeepconvertcnt" />
+    <result column="mk_advertiser_materialcost_deepconvertcost" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostDeepconvertcost" />
+    <result column="mk_advertiser_materialcost_deepconvertrate" jdbcType="NUMERIC" property="mkAdvertiserMaterialcostDeepconvertrate" />
+    <result column="mk_advertiser_materialcost_deliverymode" jdbcType="VARCHAR" property="mkAdvertiserMaterialcostDeliverymode" />
+    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_advertiser_materialcost_createtm" jdbcType="TIMESTAMP" property="mkAdvertiserMaterialcostCreatetm" />
+    <result column="mk_advertiser_materialcost_operationtm" jdbcType="TIMESTAMP" property="mkAdvertiserMaterialcostOperationtm" />
+    <result column="mk_advertiser_materialcost_modifytm" jdbcType="TIMESTAMP" property="mkAdvertiserMaterialcostModifytm" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMaterialcost2v">
+    insert into mk_advertiser_materialcost2v (mk_advertiser_materialcost_no, mk_advertiser_materialcost_date, 
+      mk_advertiser_materialcost_advertiserid, mk_media_info_code, 
+      mk_advertiser_info_code, mk_advertiser_materialcost_id, 
+      mk_advertiser_material_imagemode, mk_advertiser_plan_code, 
+      mk_advertiser_materialcost_cost, mk_advertiser_materialcost_show, 
+      mk_advertiser_materialcost_cpmplatform, mk_advertiser_materialcost_clickcnt, 
+      mk_advertiser_materialcost_ctr, mk_advertiser_materialcost_cpcplatform, 
+      mk_advertiser_materialcost_convertcnt, mk_advertiser_materialcost_convertcost, 
+      mk_advertiser_materialcost_convertrate, mk_advertiser_materialcost_deepconvertcnt, 
+      mk_advertiser_materialcost_deepconvertcost, mk_advertiser_materialcost_deepconvertrate, 
+      mk_advertiser_materialcost_deliverymode, oa_company_account_code, 
+      mk_advertiser_materialcost_createtm, mk_advertiser_materialcost_operationtm, 
+      mk_advertiser_materialcost_modifytm)
+    values (#{mkAdvertiserMaterialcostNo,jdbcType=VARCHAR}, #{mkAdvertiserMaterialcostDate,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMaterialcostAdvertiserid,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoCode,jdbcType=VARCHAR}, #{mkAdvertiserMaterialcostId,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMaterialImagemode,jdbcType=VARCHAR}, #{mkAdvertiserPlanCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMaterialcostCost,jdbcType=NUMERIC}, #{mkAdvertiserMaterialcostShow,jdbcType=BIGINT}, 
+      #{mkAdvertiserMaterialcostCpmplatform,jdbcType=NUMERIC}, #{mkAdvertiserMaterialcostClickcnt,jdbcType=BIGINT}, 
+      #{mkAdvertiserMaterialcostCtr,jdbcType=NUMERIC}, #{mkAdvertiserMaterialcostCpcplatform,jdbcType=NUMERIC}, 
+      #{mkAdvertiserMaterialcostConvertcnt,jdbcType=BIGINT}, #{mkAdvertiserMaterialcostConvertcost,jdbcType=NUMERIC}, 
+      #{mkAdvertiserMaterialcostConvertrate,jdbcType=NUMERIC}, #{mkAdvertiserMaterialcostDeepconvertcnt,jdbcType=BIGINT}, 
+      #{mkAdvertiserMaterialcostDeepconvertcost,jdbcType=NUMERIC}, #{mkAdvertiserMaterialcostDeepconvertrate,jdbcType=NUMERIC}, 
+      #{mkAdvertiserMaterialcostDeliverymode,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMaterialcostCreatetm,jdbcType=TIMESTAMP}, #{mkAdvertiserMaterialcostOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserMaterialcostModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMaterialcost2v">
+    insert into mk_advertiser_materialcost2v
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserMaterialcostNo != null">
+        mk_advertiser_materialcost_no,
+      </if>
+      <if test="mkAdvertiserMaterialcostDate != null">
+        mk_advertiser_materialcost_date,
+      </if>
+      <if test="mkAdvertiserMaterialcostAdvertiserid != null">
+        mk_advertiser_materialcost_advertiserid,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code,
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        mk_advertiser_info_code,
+      </if>
+      <if test="mkAdvertiserMaterialcostId != null">
+        mk_advertiser_materialcost_id,
+      </if>
+      <if test="mkAdvertiserMaterialImagemode != null">
+        mk_advertiser_material_imagemode,
+      </if>
+      <if test="mkAdvertiserPlanCode != null">
+        mk_advertiser_plan_code,
+      </if>
+      <if test="mkAdvertiserMaterialcostCost != null">
+        mk_advertiser_materialcost_cost,
+      </if>
+      <if test="mkAdvertiserMaterialcostShow != null">
+        mk_advertiser_materialcost_show,
+      </if>
+      <if test="mkAdvertiserMaterialcostCpmplatform != null">
+        mk_advertiser_materialcost_cpmplatform,
+      </if>
+      <if test="mkAdvertiserMaterialcostClickcnt != null">
+        mk_advertiser_materialcost_clickcnt,
+      </if>
+      <if test="mkAdvertiserMaterialcostCtr != null">
+        mk_advertiser_materialcost_ctr,
+      </if>
+      <if test="mkAdvertiserMaterialcostCpcplatform != null">
+        mk_advertiser_materialcost_cpcplatform,
+      </if>
+      <if test="mkAdvertiserMaterialcostConvertcnt != null">
+        mk_advertiser_materialcost_convertcnt,
+      </if>
+      <if test="mkAdvertiserMaterialcostConvertcost != null">
+        mk_advertiser_materialcost_convertcost,
+      </if>
+      <if test="mkAdvertiserMaterialcostConvertrate != null">
+        mk_advertiser_materialcost_convertrate,
+      </if>
+      <if test="mkAdvertiserMaterialcostDeepconvertcnt != null">
+        mk_advertiser_materialcost_deepconvertcnt,
+      </if>
+      <if test="mkAdvertiserMaterialcostDeepconvertcost != null">
+        mk_advertiser_materialcost_deepconvertcost,
+      </if>
+      <if test="mkAdvertiserMaterialcostDeepconvertrate != null">
+        mk_advertiser_materialcost_deepconvertrate,
+      </if>
+      <if test="mkAdvertiserMaterialcostDeliverymode != null">
+        mk_advertiser_materialcost_deliverymode,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code,
+      </if>
+      <if test="mkAdvertiserMaterialcostCreatetm != null">
+        mk_advertiser_materialcost_createtm,
+      </if>
+      <if test="mkAdvertiserMaterialcostOperationtm != null">
+        mk_advertiser_materialcost_operationtm,
+      </if>
+      <if test="mkAdvertiserMaterialcostModifytm != null">
+        mk_advertiser_materialcost_modifytm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserMaterialcostNo != null">
+        #{mkAdvertiserMaterialcostNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialcostDate != null">
+        #{mkAdvertiserMaterialcostDate,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialcostAdvertiserid != null">
+        #{mkAdvertiserMaterialcostAdvertiserid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialcostId != null">
+        #{mkAdvertiserMaterialcostId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialImagemode != null">
+        #{mkAdvertiserMaterialImagemode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlanCode != null">
+        #{mkAdvertiserPlanCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialcostCost != null">
+        #{mkAdvertiserMaterialcostCost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostShow != null">
+        #{mkAdvertiserMaterialcostShow,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserMaterialcostCpmplatform != null">
+        #{mkAdvertiserMaterialcostCpmplatform,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostClickcnt != null">
+        #{mkAdvertiserMaterialcostClickcnt,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserMaterialcostCtr != null">
+        #{mkAdvertiserMaterialcostCtr,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostCpcplatform != null">
+        #{mkAdvertiserMaterialcostCpcplatform,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostConvertcnt != null">
+        #{mkAdvertiserMaterialcostConvertcnt,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserMaterialcostConvertcost != null">
+        #{mkAdvertiserMaterialcostConvertcost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostConvertrate != null">
+        #{mkAdvertiserMaterialcostConvertrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostDeepconvertcnt != null">
+        #{mkAdvertiserMaterialcostDeepconvertcnt,jdbcType=BIGINT},
+      </if>
+      <if test="mkAdvertiserMaterialcostDeepconvertcost != null">
+        #{mkAdvertiserMaterialcostDeepconvertcost,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostDeepconvertrate != null">
+        #{mkAdvertiserMaterialcostDeepconvertrate,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserMaterialcostDeliverymode != null">
+        #{mkAdvertiserMaterialcostDeliverymode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMaterialcostCreatetm != null">
+        #{mkAdvertiserMaterialcostCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMaterialcostOperationtm != null">
+        #{mkAdvertiserMaterialcostOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMaterialcostModifytm != null">
+        #{mkAdvertiserMaterialcostModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

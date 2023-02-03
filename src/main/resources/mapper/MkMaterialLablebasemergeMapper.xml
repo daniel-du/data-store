@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkMaterialLablebasemergeMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkMaterialLablebasemerge">
+    <id column="mk_material_lablebase_merge_id" jdbcType="VARCHAR" property="mkMaterialLablebaseMergeId" />
+    <result column="mk_material_lablebaseMerge_code" jdbcType="VARCHAR" property="mkMaterialLablebasemergeCode" />
+    <result column="mk_material_lablebaseMerge_name" jdbcType="VARCHAR" property="mkMaterialLablebasemergeName" />
+    <result column="mk_material_type_code" jdbcType="VARCHAR" property="mkMaterialTypeCode" />
+    <result column="mk_material_type_name" jdbcType="VARCHAR" property="mkMaterialTypeName" />
+    <result column="mk_sub_type_code" jdbcType="VARCHAR" property="mkSubTypeCode" />
+    <result column="mk_sub_type_name" jdbcType="VARCHAR" property="mkSubTypeName" />
+    <result column="mk_sub_lable_code" jdbcType="VARCHAR" property="mkSubLableCode" />
+    <result column="mk_sub_lable_name" jdbcType="VARCHAR" property="mkSubLableName" />
+    <result column="mk_material_lablebase_userCount" jdbcType="NUMERIC" property="mkMaterialLablebaseUsercount" />
+    <result column="mk_material_lablebaseMerge_crtUserCode" jdbcType="VARCHAR" property="mkMaterialLablebasemergeCrtusercode" />
+    <result column="mk_material_lablebaseMerge_crtTime" jdbcType="TIMESTAMP" property="mkMaterialLablebasemergeCrttime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_material_lablebase_merge_id, mk_material_lablebaseMerge_code, mk_material_lablebaseMerge_name, 
+    mk_material_type_code, mk_material_type_name, mk_sub_type_code, mk_sub_type_name, 
+    mk_sub_lable_code, mk_sub_lable_name, mk_material_lablebase_userCount, mk_material_lablebaseMerge_crtUserCode, 
+    mk_material_lablebaseMerge_crtTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_material_lablebasemerge
+    where mk_material_lablebase_merge_id = #{mkMaterialLablebaseMergeId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_material_lablebasemerge
+    where mk_material_lablebase_merge_id = #{mkMaterialLablebaseMergeId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkMaterialLablebasemerge">
+    insert into mk_material_lablebasemerge (mk_material_lablebase_merge_id, mk_material_lablebaseMerge_code, 
+      mk_material_lablebaseMerge_name, mk_material_type_code, 
+      mk_material_type_name, mk_sub_type_code, mk_sub_type_name, 
+      mk_sub_lable_code, mk_sub_lable_name, mk_material_lablebase_userCount, 
+      mk_material_lablebaseMerge_crtUserCode, mk_material_lablebaseMerge_crtTime
+      )
+    values (#{mkMaterialLablebaseMergeId,jdbcType=VARCHAR}, #{mkMaterialLablebasemergeCode,jdbcType=VARCHAR}, 
+      #{mkMaterialLablebasemergeName,jdbcType=VARCHAR}, #{mkMaterialTypeCode,jdbcType=VARCHAR}, 
+      #{mkMaterialTypeName,jdbcType=VARCHAR}, #{mkSubTypeCode,jdbcType=VARCHAR}, #{mkSubTypeName,jdbcType=VARCHAR}, 
+      #{mkSubLableCode,jdbcType=VARCHAR}, #{mkSubLableName,jdbcType=VARCHAR}, #{mkMaterialLablebaseUsercount,jdbcType=NUMERIC}, 
+      #{mkMaterialLablebasemergeCrtusercode,jdbcType=VARCHAR}, #{mkMaterialLablebasemergeCrttime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkMaterialLablebasemerge">
+    insert into mk_material_lablebasemerge
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkMaterialLablebaseMergeId != null">
+        mk_material_lablebase_merge_id,
+      </if>
+      <if test="mkMaterialLablebasemergeCode != null">
+        mk_material_lablebaseMerge_code,
+      </if>
+      <if test="mkMaterialLablebasemergeName != null">
+        mk_material_lablebaseMerge_name,
+      </if>
+      <if test="mkMaterialTypeCode != null">
+        mk_material_type_code,
+      </if>
+      <if test="mkMaterialTypeName != null">
+        mk_material_type_name,
+      </if>
+      <if test="mkSubTypeCode != null">
+        mk_sub_type_code,
+      </if>
+      <if test="mkSubTypeName != null">
+        mk_sub_type_name,
+      </if>
+      <if test="mkSubLableCode != null">
+        mk_sub_lable_code,
+      </if>
+      <if test="mkSubLableName != null">
+        mk_sub_lable_name,
+      </if>
+      <if test="mkMaterialLablebaseUsercount != null">
+        mk_material_lablebase_userCount,
+      </if>
+      <if test="mkMaterialLablebasemergeCrtusercode != null">
+        mk_material_lablebaseMerge_crtUserCode,
+      </if>
+      <if test="mkMaterialLablebasemergeCrttime != null">
+        mk_material_lablebaseMerge_crtTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkMaterialLablebaseMergeId != null">
+        #{mkMaterialLablebaseMergeId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialLablebasemergeCode != null">
+        #{mkMaterialLablebasemergeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialLablebasemergeName != null">
+        #{mkMaterialLablebasemergeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialTypeCode != null">
+        #{mkMaterialTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialTypeName != null">
+        #{mkMaterialTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubTypeCode != null">
+        #{mkSubTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubTypeName != null">
+        #{mkSubTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubLableCode != null">
+        #{mkSubLableCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubLableName != null">
+        #{mkSubLableName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialLablebaseUsercount != null">
+        #{mkMaterialLablebaseUsercount,jdbcType=NUMERIC},
+      </if>
+      <if test="mkMaterialLablebasemergeCrtusercode != null">
+        #{mkMaterialLablebasemergeCrtusercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialLablebasemergeCrttime != null">
+        #{mkMaterialLablebasemergeCrttime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkMaterialLablebasemerge">
+    update mk_material_lablebasemerge
+    <set>
+      <if test="mkMaterialLablebasemergeCode != null">
+        mk_material_lablebaseMerge_code = #{mkMaterialLablebasemergeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialLablebasemergeName != null">
+        mk_material_lablebaseMerge_name = #{mkMaterialLablebasemergeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialTypeCode != null">
+        mk_material_type_code = #{mkMaterialTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialTypeName != null">
+        mk_material_type_name = #{mkMaterialTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubTypeCode != null">
+        mk_sub_type_code = #{mkSubTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubTypeName != null">
+        mk_sub_type_name = #{mkSubTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubLableCode != null">
+        mk_sub_lable_code = #{mkSubLableCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubLableName != null">
+        mk_sub_lable_name = #{mkSubLableName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialLablebaseUsercount != null">
+        mk_material_lablebase_userCount = #{mkMaterialLablebaseUsercount,jdbcType=NUMERIC},
+      </if>
+      <if test="mkMaterialLablebasemergeCrtusercode != null">
+        mk_material_lablebaseMerge_crtUserCode = #{mkMaterialLablebasemergeCrtusercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialLablebasemergeCrttime != null">
+        mk_material_lablebaseMerge_crtTime = #{mkMaterialLablebasemergeCrttime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mk_material_lablebase_merge_id = #{mkMaterialLablebaseMergeId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkMaterialLablebasemerge">
+    update mk_material_lablebasemerge
+    set mk_material_lablebaseMerge_code = #{mkMaterialLablebasemergeCode,jdbcType=VARCHAR},
+      mk_material_lablebaseMerge_name = #{mkMaterialLablebasemergeName,jdbcType=VARCHAR},
+      mk_material_type_code = #{mkMaterialTypeCode,jdbcType=VARCHAR},
+      mk_material_type_name = #{mkMaterialTypeName,jdbcType=VARCHAR},
+      mk_sub_type_code = #{mkSubTypeCode,jdbcType=VARCHAR},
+      mk_sub_type_name = #{mkSubTypeName,jdbcType=VARCHAR},
+      mk_sub_lable_code = #{mkSubLableCode,jdbcType=VARCHAR},
+      mk_sub_lable_name = #{mkSubLableName,jdbcType=VARCHAR},
+      mk_material_lablebase_userCount = #{mkMaterialLablebaseUsercount,jdbcType=NUMERIC},
+      mk_material_lablebaseMerge_crtUserCode = #{mkMaterialLablebasemergeCrtusercode,jdbcType=VARCHAR},
+      mk_material_lablebaseMerge_crtTime = #{mkMaterialLablebasemergeCrttime,jdbcType=TIMESTAMP}
+    where mk_material_lablebase_merge_id = #{mkMaterialLablebaseMergeId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkMaterialLablebasemerge">
+    <id column="mk_material_lablebase_merge_id" jdbcType="VARCHAR" property="mkMaterialLablebaseMergeId" />
+    <result column="mk_material_lablebasemerge_code" jdbcType="VARCHAR" property="mkMaterialLablebasemergeCode" />
+    <result column="mk_material_lablebasemerge_name" jdbcType="VARCHAR" property="mkMaterialLablebasemergeName" />
+    <result column="mk_material_type_code" jdbcType="VARCHAR" property="mkMaterialTypeCode" />
+    <result column="mk_material_type_name" jdbcType="VARCHAR" property="mkMaterialTypeName" />
+    <result column="mk_sub_type_code" jdbcType="VARCHAR" property="mkSubTypeCode" />
+    <result column="mk_sub_type_name" jdbcType="VARCHAR" property="mkSubTypeName" />
+    <result column="mk_sub_lable_code" jdbcType="VARCHAR" property="mkSubLableCode" />
+    <result column="mk_sub_lable_name" jdbcType="VARCHAR" property="mkSubLableName" />
+    <result column="mk_material_lablebase_usercount" jdbcType="NUMERIC" property="mkMaterialLablebaseUsercount" />
+    <result column="mk_material_lablebasemerge_crtusercode" jdbcType="VARCHAR" property="mkMaterialLablebasemergeCrtusercode" />
+    <result column="mk_material_lablebasemerge_crttime" jdbcType="TIMESTAMP" property="mkMaterialLablebasemergeCrttime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_material_lablebase_merge_id, mk_material_lablebasemerge_code, mk_material_lablebasemerge_name, 
+    mk_material_type_code, mk_material_type_name, mk_sub_type_code, mk_sub_type_name, 
+    mk_sub_lable_code, mk_sub_lable_name, mk_material_lablebase_usercount, mk_material_lablebasemerge_crtusercode, 
+    mk_material_lablebasemerge_crttime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_material_lablebasemerge
+    where mk_material_lablebase_merge_id = #{mkMaterialLablebaseMergeId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_material_lablebasemerge
+    where mk_material_lablebase_merge_id = #{mkMaterialLablebaseMergeId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkMaterialLablebasemerge">
+    insert into mk_material_lablebasemerge (mk_material_lablebase_merge_id, mk_material_lablebasemerge_code, 
+      mk_material_lablebasemerge_name, mk_material_type_code, 
+      mk_material_type_name, mk_sub_type_code, mk_sub_type_name, 
+      mk_sub_lable_code, mk_sub_lable_name, mk_material_lablebase_usercount, 
+      mk_material_lablebasemerge_crtusercode, mk_material_lablebasemerge_crttime
+      )
+    values (#{mkMaterialLablebaseMergeId,jdbcType=VARCHAR}, #{mkMaterialLablebasemergeCode,jdbcType=VARCHAR}, 
+      #{mkMaterialLablebasemergeName,jdbcType=VARCHAR}, #{mkMaterialTypeCode,jdbcType=VARCHAR}, 
+      #{mkMaterialTypeName,jdbcType=VARCHAR}, #{mkSubTypeCode,jdbcType=VARCHAR}, #{mkSubTypeName,jdbcType=VARCHAR}, 
+      #{mkSubLableCode,jdbcType=VARCHAR}, #{mkSubLableName,jdbcType=VARCHAR}, #{mkMaterialLablebaseUsercount,jdbcType=NUMERIC}, 
+      #{mkMaterialLablebasemergeCrtusercode,jdbcType=VARCHAR}, #{mkMaterialLablebasemergeCrttime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkMaterialLablebasemerge">
+    insert into mk_material_lablebasemerge
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkMaterialLablebaseMergeId != null">
+        mk_material_lablebase_merge_id,
+      </if>
+      <if test="mkMaterialLablebasemergeCode != null">
+        mk_material_lablebasemerge_code,
+      </if>
+      <if test="mkMaterialLablebasemergeName != null">
+        mk_material_lablebasemerge_name,
+      </if>
+      <if test="mkMaterialTypeCode != null">
+        mk_material_type_code,
+      </if>
+      <if test="mkMaterialTypeName != null">
+        mk_material_type_name,
+      </if>
+      <if test="mkSubTypeCode != null">
+        mk_sub_type_code,
+      </if>
+      <if test="mkSubTypeName != null">
+        mk_sub_type_name,
+      </if>
+      <if test="mkSubLableCode != null">
+        mk_sub_lable_code,
+      </if>
+      <if test="mkSubLableName != null">
+        mk_sub_lable_name,
+      </if>
+      <if test="mkMaterialLablebaseUsercount != null">
+        mk_material_lablebase_usercount,
+      </if>
+      <if test="mkMaterialLablebasemergeCrtusercode != null">
+        mk_material_lablebasemerge_crtusercode,
+      </if>
+      <if test="mkMaterialLablebasemergeCrttime != null">
+        mk_material_lablebasemerge_crttime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkMaterialLablebaseMergeId != null">
+        #{mkMaterialLablebaseMergeId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialLablebasemergeCode != null">
+        #{mkMaterialLablebasemergeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialLablebasemergeName != null">
+        #{mkMaterialLablebasemergeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialTypeCode != null">
+        #{mkMaterialTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialTypeName != null">
+        #{mkMaterialTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubTypeCode != null">
+        #{mkSubTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubTypeName != null">
+        #{mkSubTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubLableCode != null">
+        #{mkSubLableCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubLableName != null">
+        #{mkSubLableName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialLablebaseUsercount != null">
+        #{mkMaterialLablebaseUsercount,jdbcType=NUMERIC},
+      </if>
+      <if test="mkMaterialLablebasemergeCrtusercode != null">
+        #{mkMaterialLablebasemergeCrtusercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialLablebasemergeCrttime != null">
+        #{mkMaterialLablebasemergeCrttime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkMaterialLablebasemerge">
+    update mk_material_lablebasemerge
+    <set>
+      <if test="mkMaterialLablebasemergeCode != null">
+        mk_material_lablebasemerge_code = #{mkMaterialLablebasemergeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialLablebasemergeName != null">
+        mk_material_lablebasemerge_name = #{mkMaterialLablebasemergeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialTypeCode != null">
+        mk_material_type_code = #{mkMaterialTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialTypeName != null">
+        mk_material_type_name = #{mkMaterialTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubTypeCode != null">
+        mk_sub_type_code = #{mkSubTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubTypeName != null">
+        mk_sub_type_name = #{mkSubTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubLableCode != null">
+        mk_sub_lable_code = #{mkSubLableCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkSubLableName != null">
+        mk_sub_lable_name = #{mkSubLableName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialLablebaseUsercount != null">
+        mk_material_lablebase_usercount = #{mkMaterialLablebaseUsercount,jdbcType=NUMERIC},
+      </if>
+      <if test="mkMaterialLablebasemergeCrtusercode != null">
+        mk_material_lablebasemerge_crtusercode = #{mkMaterialLablebasemergeCrtusercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialLablebasemergeCrttime != null">
+        mk_material_lablebasemerge_crttime = #{mkMaterialLablebasemergeCrttime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mk_material_lablebase_merge_id = #{mkMaterialLablebaseMergeId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkMaterialLablebasemerge">
+    update mk_material_lablebasemerge
+    set mk_material_lablebasemerge_code = #{mkMaterialLablebasemergeCode,jdbcType=VARCHAR},
+      mk_material_lablebasemerge_name = #{mkMaterialLablebasemergeName,jdbcType=VARCHAR},
+      mk_material_type_code = #{mkMaterialTypeCode,jdbcType=VARCHAR},
+      mk_material_type_name = #{mkMaterialTypeName,jdbcType=VARCHAR},
+      mk_sub_type_code = #{mkSubTypeCode,jdbcType=VARCHAR},
+      mk_sub_type_name = #{mkSubTypeName,jdbcType=VARCHAR},
+      mk_sub_lable_code = #{mkSubLableCode,jdbcType=VARCHAR},
+      mk_sub_lable_name = #{mkSubLableName,jdbcType=VARCHAR},
+      mk_material_lablebase_usercount = #{mkMaterialLablebaseUsercount,jdbcType=NUMERIC},
+      mk_material_lablebasemerge_crtusercode = #{mkMaterialLablebasemergeCrtusercode,jdbcType=VARCHAR},
+      mk_material_lablebasemerge_crttime = #{mkMaterialLablebasemergeCrttime,jdbcType=TIMESTAMP}
+    where mk_material_lablebase_merge_id = #{mkMaterialLablebaseMergeId,jdbcType=VARCHAR}
+  </update>
+</mapper>

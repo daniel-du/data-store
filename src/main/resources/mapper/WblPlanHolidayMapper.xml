@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WblPlanHolidayMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.WblPlanHoliday">
+    <id column="wbl_plan_holiday_id" jdbcType="INTEGER" property="wblPlanHolidayId" />
+    <result column="wbl_plan_holiday_Day" jdbcType="VARCHAR" property="wblPlanHolidayDay" />
+    <result column="wbl_plan_holiday_state" jdbcType="VARCHAR" property="wblPlanHolidayState" />
+    <result column="wbl_plan_holiday_CreateTM" jdbcType="TIMESTAMP" property="wblPlanHolidayCreatetm" />
+    <result column="wbl_plan_holiday_MODIFYTM" jdbcType="TIMESTAMP" property="wblPlanHolidayModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    wbl_plan_holiday_id, wbl_plan_holiday_Day, wbl_plan_holiday_state, wbl_plan_holiday_CreateTM, 
+    wbl_plan_holiday_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wbl_plan_holiday
+    where wbl_plan_holiday_id = #{wblPlanHolidayId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from wbl_plan_holiday
+    where wbl_plan_holiday_id = #{wblPlanHolidayId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.WblPlanHoliday">
+    insert into wbl_plan_holiday (wbl_plan_holiday_id, wbl_plan_holiday_Day, 
+      wbl_plan_holiday_state, wbl_plan_holiday_CreateTM, 
+      wbl_plan_holiday_MODIFYTM)
+    values (#{wblPlanHolidayId,jdbcType=INTEGER}, #{wblPlanHolidayDay,jdbcType=VARCHAR}, 
+      #{wblPlanHolidayState,jdbcType=VARCHAR}, #{wblPlanHolidayCreatetm,jdbcType=TIMESTAMP}, 
+      #{wblPlanHolidayModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.WblPlanHoliday">
+    insert into wbl_plan_holiday
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="wblPlanHolidayId != null">
+        wbl_plan_holiday_id,
+      </if>
+      <if test="wblPlanHolidayDay != null">
+        wbl_plan_holiday_Day,
+      </if>
+      <if test="wblPlanHolidayState != null">
+        wbl_plan_holiday_state,
+      </if>
+      <if test="wblPlanHolidayCreatetm != null">
+        wbl_plan_holiday_CreateTM,
+      </if>
+      <if test="wblPlanHolidayModifytm != null">
+        wbl_plan_holiday_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="wblPlanHolidayId != null">
+        #{wblPlanHolidayId,jdbcType=INTEGER},
+      </if>
+      <if test="wblPlanHolidayDay != null">
+        #{wblPlanHolidayDay,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanHolidayState != null">
+        #{wblPlanHolidayState,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanHolidayCreatetm != null">
+        #{wblPlanHolidayCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblPlanHolidayModifytm != null">
+        #{wblPlanHolidayModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.WblPlanHoliday">
+    update wbl_plan_holiday
+    <set>
+      <if test="wblPlanHolidayDay != null">
+        wbl_plan_holiday_Day = #{wblPlanHolidayDay,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanHolidayState != null">
+        wbl_plan_holiday_state = #{wblPlanHolidayState,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanHolidayCreatetm != null">
+        wbl_plan_holiday_CreateTM = #{wblPlanHolidayCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblPlanHolidayModifytm != null">
+        wbl_plan_holiday_MODIFYTM = #{wblPlanHolidayModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where wbl_plan_holiday_id = #{wblPlanHolidayId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.WblPlanHoliday">
+    update wbl_plan_holiday
+    set wbl_plan_holiday_Day = #{wblPlanHolidayDay,jdbcType=VARCHAR},
+      wbl_plan_holiday_state = #{wblPlanHolidayState,jdbcType=VARCHAR},
+      wbl_plan_holiday_CreateTM = #{wblPlanHolidayCreatetm,jdbcType=TIMESTAMP},
+      wbl_plan_holiday_MODIFYTM = #{wblPlanHolidayModifytm,jdbcType=TIMESTAMP}
+    where wbl_plan_holiday_id = #{wblPlanHolidayId,jdbcType=INTEGER}
+  </update>
+</mapper>

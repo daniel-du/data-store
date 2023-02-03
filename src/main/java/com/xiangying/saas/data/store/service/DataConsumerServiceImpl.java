@@ -6,6 +6,7 @@ import com.xiangying.saas.data.store.constant.Constant;
 import com.xiangying.saas.data.store.dao.DAO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 /**
@@ -40,6 +41,8 @@ public class DataConsumerServiceImpl implements DataConsumerService {
             Object jsonObject = JSONObject.toJavaObject(dataDetail.getFieldJson(), modelClass);
 //            dao.save("CusBasicWechatMapper.insertSelective", jsonObject);
             dao.save(modelName + "Mapper." + methodName, jsonObject);
+        } catch (DuplicateKeyException e) {
+            log.error("主键重复", e.getMessage());
         } catch (Exception e) {
             log.error("消费异常", e);
         }

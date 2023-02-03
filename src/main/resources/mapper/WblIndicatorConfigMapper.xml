@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WblIndicatorConfigMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.WblIndicatorConfig">
+    <id column="wbl_indicator_config_id" jdbcType="VARCHAR" property="wblIndicatorConfigId" />
+    <result column="wbl_indicator_config_name" jdbcType="VARCHAR" property="wblIndicatorConfigName" />
+    <result column="wbl_indicator_config_status" jdbcType="INTEGER" property="wblIndicatorConfigStatus" />
+    <result column="wbl_indicator_config_departmen" jdbcType="VARCHAR" property="wblIndicatorConfigDepartmen" />
+    <result column="wbl_indicator_config_cool" jdbcType="VARCHAR" property="wblIndicatorConfigCool" />
+    <result column="wbl_indicator_config_add" jdbcType="VARCHAR" property="wblIndicatorConfigAdd" />
+    <result column="wbl_indicator_config_type" jdbcType="VARCHAR" property="wblIndicatorConfigType" />
+    <result column="wbl_indicator_config_CreateTM" jdbcType="TIMESTAMP" property="wblIndicatorConfigCreatetm" />
+    <result column="wbl_indicator_config_MODIFYTM" jdbcType="TIMESTAMP" property="wblIndicatorConfigModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    wbl_indicator_config_id, wbl_indicator_config_name, wbl_indicator_config_status, 
+    wbl_indicator_config_departmen, wbl_indicator_config_cool, wbl_indicator_config_add, 
+    wbl_indicator_config_type, wbl_indicator_config_CreateTM, wbl_indicator_config_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wbl_indicator_config
+    where wbl_indicator_config_id = #{wblIndicatorConfigId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from wbl_indicator_config
+    where wbl_indicator_config_id = #{wblIndicatorConfigId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.WblIndicatorConfig">
+    insert into wbl_indicator_config (wbl_indicator_config_id, wbl_indicator_config_name, 
+      wbl_indicator_config_status, wbl_indicator_config_departmen, 
+      wbl_indicator_config_cool, wbl_indicator_config_add, 
+      wbl_indicator_config_type, wbl_indicator_config_CreateTM, 
+      wbl_indicator_config_MODIFYTM)
+    values (#{wblIndicatorConfigId,jdbcType=VARCHAR}, #{wblIndicatorConfigName,jdbcType=VARCHAR}, 
+      #{wblIndicatorConfigStatus,jdbcType=INTEGER}, #{wblIndicatorConfigDepartmen,jdbcType=VARCHAR}, 
+      #{wblIndicatorConfigCool,jdbcType=VARCHAR}, #{wblIndicatorConfigAdd,jdbcType=VARCHAR}, 
+      #{wblIndicatorConfigType,jdbcType=VARCHAR}, #{wblIndicatorConfigCreatetm,jdbcType=TIMESTAMP}, 
+      #{wblIndicatorConfigModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.WblIndicatorConfig">
+    insert into wbl_indicator_config
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="wblIndicatorConfigId != null">
+        wbl_indicator_config_id,
+      </if>
+      <if test="wblIndicatorConfigName != null">
+        wbl_indicator_config_name,
+      </if>
+      <if test="wblIndicatorConfigStatus != null">
+        wbl_indicator_config_status,
+      </if>
+      <if test="wblIndicatorConfigDepartmen != null">
+        wbl_indicator_config_departmen,
+      </if>
+      <if test="wblIndicatorConfigCool != null">
+        wbl_indicator_config_cool,
+      </if>
+      <if test="wblIndicatorConfigAdd != null">
+        wbl_indicator_config_add,
+      </if>
+      <if test="wblIndicatorConfigType != null">
+        wbl_indicator_config_type,
+      </if>
+      <if test="wblIndicatorConfigCreatetm != null">
+        wbl_indicator_config_CreateTM,
+      </if>
+      <if test="wblIndicatorConfigModifytm != null">
+        wbl_indicator_config_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="wblIndicatorConfigId != null">
+        #{wblIndicatorConfigId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorConfigName != null">
+        #{wblIndicatorConfigName,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorConfigStatus != null">
+        #{wblIndicatorConfigStatus,jdbcType=INTEGER},
+      </if>
+      <if test="wblIndicatorConfigDepartmen != null">
+        #{wblIndicatorConfigDepartmen,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorConfigCool != null">
+        #{wblIndicatorConfigCool,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorConfigAdd != null">
+        #{wblIndicatorConfigAdd,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorConfigType != null">
+        #{wblIndicatorConfigType,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorConfigCreatetm != null">
+        #{wblIndicatorConfigCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblIndicatorConfigModifytm != null">
+        #{wblIndicatorConfigModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.WblIndicatorConfig">
+    update wbl_indicator_config
+    <set>
+      <if test="wblIndicatorConfigName != null">
+        wbl_indicator_config_name = #{wblIndicatorConfigName,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorConfigStatus != null">
+        wbl_indicator_config_status = #{wblIndicatorConfigStatus,jdbcType=INTEGER},
+      </if>
+      <if test="wblIndicatorConfigDepartmen != null">
+        wbl_indicator_config_departmen = #{wblIndicatorConfigDepartmen,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorConfigCool != null">
+        wbl_indicator_config_cool = #{wblIndicatorConfigCool,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorConfigAdd != null">
+        wbl_indicator_config_add = #{wblIndicatorConfigAdd,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorConfigType != null">
+        wbl_indicator_config_type = #{wblIndicatorConfigType,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorConfigCreatetm != null">
+        wbl_indicator_config_CreateTM = #{wblIndicatorConfigCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblIndicatorConfigModifytm != null">
+        wbl_indicator_config_MODIFYTM = #{wblIndicatorConfigModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where wbl_indicator_config_id = #{wblIndicatorConfigId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.WblIndicatorConfig">
+    update wbl_indicator_config
+    set wbl_indicator_config_name = #{wblIndicatorConfigName,jdbcType=VARCHAR},
+      wbl_indicator_config_status = #{wblIndicatorConfigStatus,jdbcType=INTEGER},
+      wbl_indicator_config_departmen = #{wblIndicatorConfigDepartmen,jdbcType=VARCHAR},
+      wbl_indicator_config_cool = #{wblIndicatorConfigCool,jdbcType=VARCHAR},
+      wbl_indicator_config_add = #{wblIndicatorConfigAdd,jdbcType=VARCHAR},
+      wbl_indicator_config_type = #{wblIndicatorConfigType,jdbcType=VARCHAR},
+      wbl_indicator_config_CreateTM = #{wblIndicatorConfigCreatetm,jdbcType=TIMESTAMP},
+      wbl_indicator_config_MODIFYTM = #{wblIndicatorConfigModifytm,jdbcType=TIMESTAMP}
+    where wbl_indicator_config_id = #{wblIndicatorConfigId,jdbcType=VARCHAR}
+  </update>
+</mapper>

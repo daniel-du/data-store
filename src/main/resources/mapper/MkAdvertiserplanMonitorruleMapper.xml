@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkAdvertiserplanMonitorruleMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserplanMonitorrule">
+    <id column="mk_advertiserPlan_monitorRule_id" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorruleId" />
+    <result column="MK_media_Info_Code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="mk_advertiserPlan_monitorRule_type" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorruleType" />
+    <result column="mk_advertiserPlan_monitorRule_Code" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorruleCode" />
+    <result column="mk_advertiserPlan_monitorRule_remark" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorruleRemark" />
+    <result column="mk_advertiserPlan_monitorRule_State" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorruleState" />
+    <result column="mk_advertiserPlan_monitorRule_rule" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorruleRule" />
+    <result column="mk_advertiserPlan_monitorRule_Param" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorruleParam" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="MK_Advertiser_Info_CreateTM" jdbcType="TIMESTAMP" property="mkAdvertiserInfoCreatetm" />
+    <result column="MK_Advertiser_Info_OperationTM" jdbcType="TIMESTAMP" property="mkAdvertiserInfoOperationtm" />
+    <result column="MK_Advertiser_Info_MODIFYTM" jdbcType="TIMESTAMP" property="mkAdvertiserInfoModifytm" />
+    <result column="mk_advertiserPlan_monitorRule_StartDate" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorruleStartdate" />
+    <result column="mk_advertiserPlan_monitorRule_endDate" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorruleEnddate" />
+    <result column="mk_advertiserAgentacount_strategy_Id" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyId" />
+    <result column="mk_advertiserPlan_monitorRule_delayed" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorruleDelayed" />
+    <result column="mk_advertiserPlan_monitorRule_delayedTM" jdbcType="NUMERIC" property="mkAdvertiserplanMonitorruleDelayedtm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_advertiserPlan_monitorRule_id, MK_media_Info_Code, mk_advertiserPlan_monitorRule_type, 
+    mk_advertiserPlan_monitorRule_Code, mk_advertiserPlan_monitorRule_remark, mk_advertiserPlan_monitorRule_State, 
+    mk_advertiserPlan_monitorRule_rule, mk_advertiserPlan_monitorRule_Param, OA_company_Account_code, 
+    MK_Advertiser_Info_CreateTM, MK_Advertiser_Info_OperationTM, MK_Advertiser_Info_MODIFYTM, 
+    mk_advertiserPlan_monitorRule_StartDate, mk_advertiserPlan_monitorRule_endDate, mk_advertiserAgentacount_strategy_Id, 
+    mk_advertiserPlan_monitorRule_delayed, mk_advertiserPlan_monitorRule_delayedTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_advertiserplan_monitorrule
+    where mk_advertiserPlan_monitorRule_id = #{mkAdvertiserplanMonitorruleId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_advertiserplan_monitorrule
+    where mk_advertiserPlan_monitorRule_id = #{mkAdvertiserplanMonitorruleId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserplanMonitorrule">
+    insert into mk_advertiserplan_monitorrule (mk_advertiserPlan_monitorRule_id, MK_media_Info_Code, 
+      mk_advertiserPlan_monitorRule_type, mk_advertiserPlan_monitorRule_Code, 
+      mk_advertiserPlan_monitorRule_remark, mk_advertiserPlan_monitorRule_State, 
+      mk_advertiserPlan_monitorRule_rule, mk_advertiserPlan_monitorRule_Param, 
+      OA_company_Account_code, MK_Advertiser_Info_CreateTM, 
+      MK_Advertiser_Info_OperationTM, MK_Advertiser_Info_MODIFYTM, 
+      mk_advertiserPlan_monitorRule_StartDate, mk_advertiserPlan_monitorRule_endDate, 
+      mk_advertiserAgentacount_strategy_Id, mk_advertiserPlan_monitorRule_delayed, 
+      mk_advertiserPlan_monitorRule_delayedTM)
+    values (#{mkAdvertiserplanMonitorruleId,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserplanMonitorruleType,jdbcType=VARCHAR}, #{mkAdvertiserplanMonitorruleCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserplanMonitorruleRemark,jdbcType=VARCHAR}, #{mkAdvertiserplanMonitorruleState,jdbcType=VARCHAR}, 
+      #{mkAdvertiserplanMonitorruleRule,jdbcType=VARCHAR}, #{mkAdvertiserplanMonitorruleParam,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkAdvertiserInfoCreatetm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserInfoOperationtm,jdbcType=TIMESTAMP}, #{mkAdvertiserInfoModifytm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserplanMonitorruleStartdate,jdbcType=VARCHAR}, #{mkAdvertiserplanMonitorruleEnddate,jdbcType=VARCHAR}, 
+      #{mkAdvertiseragentacountStrategyId,jdbcType=VARCHAR}, #{mkAdvertiserplanMonitorruleDelayed,jdbcType=VARCHAR}, 
+      #{mkAdvertiserplanMonitorruleDelayedtm,jdbcType=NUMERIC})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserplanMonitorrule">
+    insert into mk_advertiserplan_monitorrule
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserplanMonitorruleId != null">
+        mk_advertiserPlan_monitorRule_id,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code,
+      </if>
+      <if test="mkAdvertiserplanMonitorruleType != null">
+        mk_advertiserPlan_monitorRule_type,
+      </if>
+      <if test="mkAdvertiserplanMonitorruleCode != null">
+        mk_advertiserPlan_monitorRule_Code,
+      </if>
+      <if test="mkAdvertiserplanMonitorruleRemark != null">
+        mk_advertiserPlan_monitorRule_remark,
+      </if>
+      <if test="mkAdvertiserplanMonitorruleState != null">
+        mk_advertiserPlan_monitorRule_State,
+      </if>
+      <if test="mkAdvertiserplanMonitorruleRule != null">
+        mk_advertiserPlan_monitorRule_rule,
+      </if>
+      <if test="mkAdvertiserplanMonitorruleParam != null">
+        mk_advertiserPlan_monitorRule_Param,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="mkAdvertiserInfoCreatetm != null">
+        MK_Advertiser_Info_CreateTM,
+      </if>
+      <if test="mkAdvertiserInfoOperationtm != null">
+        MK_Advertiser_Info_OperationTM,
+      </if>
+      <if test="mkAdvertiserInfoModifytm != null">
+        MK_Advertiser_Info_MODIFYTM,
+      </if>
+      <if test="mkAdvertiserplanMonitorruleStartdate != null">
+        mk_advertiserPlan_monitorRule_StartDate,
+      </if>
+      <if test="mkAdvertiserplanMonitorruleEnddate != null">
+        mk_advertiserPlan_monitorRule_endDate,
+      </if>
+      <if test="mkAdvertiseragentacountStrategyId != null">
+        mk_advertiserAgentacount_strategy_Id,
+      </if>
+      <if test="mkAdvertiserplanMonitorruleDelayed != null">
+        mk_advertiserPlan_monitorRule_delayed,
+      </if>
+      <if test="mkAdvertiserplanMonitorruleDelayedtm != null">
+        mk_advertiserPlan_monitorRule_delayedTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserplanMonitorruleId != null">
+        #{mkAdvertiserplanMonitorruleId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleType != null">
+        #{mkAdvertiserplanMonitorruleType,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleCode != null">
+        #{mkAdvertiserplanMonitorruleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleRemark != null">
+        #{mkAdvertiserplanMonitorruleRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleState != null">
+        #{mkAdvertiserplanMonitorruleState,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleRule != null">
+        #{mkAdvertiserplanMonitorruleRule,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleParam != null">
+        #{mkAdvertiserplanMonitorruleParam,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCreatetm != null">
+        #{mkAdvertiserInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserInfoOperationtm != null">
+        #{mkAdvertiserInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserInfoModifytm != null">
+        #{mkAdvertiserInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleStartdate != null">
+        #{mkAdvertiserplanMonitorruleStartdate,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleEnddate != null">
+        #{mkAdvertiserplanMonitorruleEnddate,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiseragentacountStrategyId != null">
+        #{mkAdvertiseragentacountStrategyId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleDelayed != null">
+        #{mkAdvertiserplanMonitorruleDelayed,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleDelayedtm != null">
+        #{mkAdvertiserplanMonitorruleDelayedtm,jdbcType=NUMERIC},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserplanMonitorrule">
+    update mk_advertiserplan_monitorrule
+    <set>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleType != null">
+        mk_advertiserPlan_monitorRule_type = #{mkAdvertiserplanMonitorruleType,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleCode != null">
+        mk_advertiserPlan_monitorRule_Code = #{mkAdvertiserplanMonitorruleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleRemark != null">
+        mk_advertiserPlan_monitorRule_remark = #{mkAdvertiserplanMonitorruleRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleState != null">
+        mk_advertiserPlan_monitorRule_State = #{mkAdvertiserplanMonitorruleState,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleRule != null">
+        mk_advertiserPlan_monitorRule_rule = #{mkAdvertiserplanMonitorruleRule,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleParam != null">
+        mk_advertiserPlan_monitorRule_Param = #{mkAdvertiserplanMonitorruleParam,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCreatetm != null">
+        MK_Advertiser_Info_CreateTM = #{mkAdvertiserInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserInfoOperationtm != null">
+        MK_Advertiser_Info_OperationTM = #{mkAdvertiserInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserInfoModifytm != null">
+        MK_Advertiser_Info_MODIFYTM = #{mkAdvertiserInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleStartdate != null">
+        mk_advertiserPlan_monitorRule_StartDate = #{mkAdvertiserplanMonitorruleStartdate,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleEnddate != null">
+        mk_advertiserPlan_monitorRule_endDate = #{mkAdvertiserplanMonitorruleEnddate,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiseragentacountStrategyId != null">
+        mk_advertiserAgentacount_strategy_Id = #{mkAdvertiseragentacountStrategyId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleDelayed != null">
+        mk_advertiserPlan_monitorRule_delayed = #{mkAdvertiserplanMonitorruleDelayed,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleDelayedtm != null">
+        mk_advertiserPlan_monitorRule_delayedTM = #{mkAdvertiserplanMonitorruleDelayedtm,jdbcType=NUMERIC},
+      </if>
+    </set>
+    where mk_advertiserPlan_monitorRule_id = #{mkAdvertiserplanMonitorruleId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserplanMonitorrule">
+    update mk_advertiserplan_monitorrule
+    set MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      mk_advertiserPlan_monitorRule_type = #{mkAdvertiserplanMonitorruleType,jdbcType=VARCHAR},
+      mk_advertiserPlan_monitorRule_Code = #{mkAdvertiserplanMonitorruleCode,jdbcType=VARCHAR},
+      mk_advertiserPlan_monitorRule_remark = #{mkAdvertiserplanMonitorruleRemark,jdbcType=VARCHAR},
+      mk_advertiserPlan_monitorRule_State = #{mkAdvertiserplanMonitorruleState,jdbcType=VARCHAR},
+      mk_advertiserPlan_monitorRule_rule = #{mkAdvertiserplanMonitorruleRule,jdbcType=VARCHAR},
+      mk_advertiserPlan_monitorRule_Param = #{mkAdvertiserplanMonitorruleParam,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      MK_Advertiser_Info_CreateTM = #{mkAdvertiserInfoCreatetm,jdbcType=TIMESTAMP},
+      MK_Advertiser_Info_OperationTM = #{mkAdvertiserInfoOperationtm,jdbcType=TIMESTAMP},
+      MK_Advertiser_Info_MODIFYTM = #{mkAdvertiserInfoModifytm,jdbcType=TIMESTAMP},
+      mk_advertiserPlan_monitorRule_StartDate = #{mkAdvertiserplanMonitorruleStartdate,jdbcType=VARCHAR},
+      mk_advertiserPlan_monitorRule_endDate = #{mkAdvertiserplanMonitorruleEnddate,jdbcType=VARCHAR},
+      mk_advertiserAgentacount_strategy_Id = #{mkAdvertiseragentacountStrategyId,jdbcType=VARCHAR},
+      mk_advertiserPlan_monitorRule_delayed = #{mkAdvertiserplanMonitorruleDelayed,jdbcType=VARCHAR},
+      mk_advertiserPlan_monitorRule_delayedTM = #{mkAdvertiserplanMonitorruleDelayedtm,jdbcType=NUMERIC}
+    where mk_advertiserPlan_monitorRule_id = #{mkAdvertiserplanMonitorruleId,jdbcType=VARCHAR}
+  </update>
+</mapper>

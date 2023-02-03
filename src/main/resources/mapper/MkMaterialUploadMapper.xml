@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkMaterialUploadMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkMaterialUpload">
+    <id column="mk_material_upload_id" jdbcType="VARCHAR" property="mkMaterialUploadId" />
+    <result column="mk_advertiser_media_id" jdbcType="VARCHAR" property="mkAdvertiserMediaId" />
+    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="mk_media_agent_code" jdbcType="VARCHAR" property="mkMediaAgentCode" />
+    <result column="mk_material_info_id" jdbcType="VARCHAR" property="mkMaterialInfoId" />
+    <result column="mk_material_upload_usercode" jdbcType="VARCHAR" property="mkMaterialUploadUsercode" />
+    <result column="mk_material_upload_username" jdbcType="VARCHAR" property="mkMaterialUploadUsername" />
+    <result column="mk_material_upload_state" jdbcType="CHAR" property="mkMaterialUploadState" />
+    <result column="mk_material_upload_createtime" jdbcType="TIMESTAMP" property="mkMaterialUploadCreatetime" />
+    <result column="mk_material_upload_updatetime" jdbcType="TIMESTAMP" property="mkMaterialUploadUpdatetime" />
+    <result column="mk_material_upload_modifytm" jdbcType="TIMESTAMP" property="mkMaterialUploadModifytm" />
+    <result column="mk_material_upload_batchid" jdbcType="VARCHAR" property="mkMaterialUploadBatchid" />
+    <result column="mk_material_upload_errreason" jdbcType="VARCHAR" property="mkMaterialUploadErrreason" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_material_upload_id, mk_advertiser_media_id, mk_media_info_code, mk_media_agent_code, 
+    mk_material_info_id, mk_material_upload_usercode, mk_material_upload_username, mk_material_upload_state, 
+    mk_material_upload_createtime, mk_material_upload_updatetime, mk_material_upload_modifytm, 
+    mk_material_upload_batchid, mk_material_upload_errreason
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_material_upload
+    where mk_material_upload_id = #{mkMaterialUploadId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_material_upload
+    where mk_material_upload_id = #{mkMaterialUploadId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkMaterialUpload">
+    insert into mk_material_upload (mk_material_upload_id, mk_advertiser_media_id, 
+      mk_media_info_code, mk_media_agent_code, mk_material_info_id, 
+      mk_material_upload_usercode, mk_material_upload_username, 
+      mk_material_upload_state, mk_material_upload_createtime, 
+      mk_material_upload_updatetime, mk_material_upload_modifytm, 
+      mk_material_upload_batchid, mk_material_upload_errreason
+      )
+    values (#{mkMaterialUploadId,jdbcType=VARCHAR}, #{mkAdvertiserMediaId,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkMediaAgentCode,jdbcType=VARCHAR}, #{mkMaterialInfoId,jdbcType=VARCHAR}, 
+      #{mkMaterialUploadUsercode,jdbcType=VARCHAR}, #{mkMaterialUploadUsername,jdbcType=VARCHAR}, 
+      #{mkMaterialUploadState,jdbcType=CHAR}, #{mkMaterialUploadCreatetime,jdbcType=TIMESTAMP}, 
+      #{mkMaterialUploadUpdatetime,jdbcType=TIMESTAMP}, #{mkMaterialUploadModifytm,jdbcType=TIMESTAMP}, 
+      #{mkMaterialUploadBatchid,jdbcType=VARCHAR}, #{mkMaterialUploadErrreason,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkMaterialUpload">
+    insert into mk_material_upload
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkMaterialUploadId != null">
+        mk_material_upload_id,
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        mk_advertiser_media_id,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code,
+      </if>
+      <if test="mkMediaAgentCode != null">
+        mk_media_agent_code,
+      </if>
+      <if test="mkMaterialInfoId != null">
+        mk_material_info_id,
+      </if>
+      <if test="mkMaterialUploadUsercode != null">
+        mk_material_upload_usercode,
+      </if>
+      <if test="mkMaterialUploadUsername != null">
+        mk_material_upload_username,
+      </if>
+      <if test="mkMaterialUploadState != null">
+        mk_material_upload_state,
+      </if>
+      <if test="mkMaterialUploadCreatetime != null">
+        mk_material_upload_createtime,
+      </if>
+      <if test="mkMaterialUploadUpdatetime != null">
+        mk_material_upload_updatetime,
+      </if>
+      <if test="mkMaterialUploadModifytm != null">
+        mk_material_upload_modifytm,
+      </if>
+      <if test="mkMaterialUploadBatchid != null">
+        mk_material_upload_batchid,
+      </if>
+      <if test="mkMaterialUploadErrreason != null">
+        mk_material_upload_errreason,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkMaterialUploadId != null">
+        #{mkMaterialUploadId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoId != null">
+        #{mkMaterialInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadUsercode != null">
+        #{mkMaterialUploadUsercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadUsername != null">
+        #{mkMaterialUploadUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadState != null">
+        #{mkMaterialUploadState,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialUploadCreatetime != null">
+        #{mkMaterialUploadCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialUploadUpdatetime != null">
+        #{mkMaterialUploadUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialUploadModifytm != null">
+        #{mkMaterialUploadModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialUploadBatchid != null">
+        #{mkMaterialUploadBatchid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadErrreason != null">
+        #{mkMaterialUploadErrreason,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkMaterialUpload">
+    update mk_material_upload
+    <set>
+      <if test="mkAdvertiserMediaId != null">
+        mk_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        mk_media_agent_code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoId != null">
+        mk_material_info_id = #{mkMaterialInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadUsercode != null">
+        mk_material_upload_usercode = #{mkMaterialUploadUsercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadUsername != null">
+        mk_material_upload_username = #{mkMaterialUploadUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadState != null">
+        mk_material_upload_state = #{mkMaterialUploadState,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialUploadCreatetime != null">
+        mk_material_upload_createtime = #{mkMaterialUploadCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialUploadUpdatetime != null">
+        mk_material_upload_updatetime = #{mkMaterialUploadUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialUploadModifytm != null">
+        mk_material_upload_modifytm = #{mkMaterialUploadModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialUploadBatchid != null">
+        mk_material_upload_batchid = #{mkMaterialUploadBatchid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadErrreason != null">
+        mk_material_upload_errreason = #{mkMaterialUploadErrreason,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where mk_material_upload_id = #{mkMaterialUploadId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkMaterialUpload">
+    update mk_material_upload
+    set mk_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      mk_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      mk_media_agent_code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      mk_material_info_id = #{mkMaterialInfoId,jdbcType=VARCHAR},
+      mk_material_upload_usercode = #{mkMaterialUploadUsercode,jdbcType=VARCHAR},
+      mk_material_upload_username = #{mkMaterialUploadUsername,jdbcType=VARCHAR},
+      mk_material_upload_state = #{mkMaterialUploadState,jdbcType=CHAR},
+      mk_material_upload_createtime = #{mkMaterialUploadCreatetime,jdbcType=TIMESTAMP},
+      mk_material_upload_updatetime = #{mkMaterialUploadUpdatetime,jdbcType=TIMESTAMP},
+      mk_material_upload_modifytm = #{mkMaterialUploadModifytm,jdbcType=TIMESTAMP},
+      mk_material_upload_batchid = #{mkMaterialUploadBatchid,jdbcType=VARCHAR},
+      mk_material_upload_errreason = #{mkMaterialUploadErrreason,jdbcType=VARCHAR}
+    where mk_material_upload_id = #{mkMaterialUploadId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkMaterialUpload">
+    <id column="mk_material_upload_id" jdbcType="VARCHAR" property="mkMaterialUploadId" />
+    <result column="MK_advertiser_media_id" jdbcType="VARCHAR" property="mkAdvertiserMediaId" />
+    <result column="MK_media_Info_Code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="MK_media_agent_Code" jdbcType="VARCHAR" property="mkMediaAgentCode" />
+    <result column="mk_material_info_id" jdbcType="VARCHAR" property="mkMaterialInfoId" />
+    <result column="mk_material_upload_UserCode" jdbcType="VARCHAR" property="mkMaterialUploadUsercode" />
+    <result column="mk_material_upload_UserName" jdbcType="VARCHAR" property="mkMaterialUploadUsername" />
+    <result column="mk_material_upload_State" jdbcType="CHAR" property="mkMaterialUploadState" />
+    <result column="mk_material_upload_CreateTime" jdbcType="TIMESTAMP" property="mkMaterialUploadCreatetime" />
+    <result column="mk_material_upload_updateTime" jdbcType="TIMESTAMP" property="mkMaterialUploadUpdatetime" />
+    <result column="mk_material_upload_MODIFYTM" jdbcType="TIMESTAMP" property="mkMaterialUploadModifytm" />
+    <result column="mk_material_upload_batchId" jdbcType="VARCHAR" property="mkMaterialUploadBatchid" />
+    <result column="mk_material_upload_errReason" jdbcType="VARCHAR" property="mkMaterialUploadErrreason" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_material_upload_id, MK_advertiser_media_id, MK_media_Info_Code, MK_media_agent_Code, 
+    mk_material_info_id, mk_material_upload_UserCode, mk_material_upload_UserName, mk_material_upload_State, 
+    mk_material_upload_CreateTime, mk_material_upload_updateTime, mk_material_upload_MODIFYTM, 
+    mk_material_upload_batchId, mk_material_upload_errReason
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_material_upload
+    where mk_material_upload_id = #{mkMaterialUploadId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_material_upload
+    where mk_material_upload_id = #{mkMaterialUploadId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkMaterialUpload">
+    insert into mk_material_upload (mk_material_upload_id, MK_advertiser_media_id, 
+      MK_media_Info_Code, MK_media_agent_Code, mk_material_info_id, 
+      mk_material_upload_UserCode, mk_material_upload_UserName, 
+      mk_material_upload_State, mk_material_upload_CreateTime, 
+      mk_material_upload_updateTime, mk_material_upload_MODIFYTM, 
+      mk_material_upload_batchId, mk_material_upload_errReason
+      )
+    values (#{mkMaterialUploadId,jdbcType=VARCHAR}, #{mkAdvertiserMediaId,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkMediaAgentCode,jdbcType=VARCHAR}, #{mkMaterialInfoId,jdbcType=VARCHAR}, 
+      #{mkMaterialUploadUsercode,jdbcType=VARCHAR}, #{mkMaterialUploadUsername,jdbcType=VARCHAR}, 
+      #{mkMaterialUploadState,jdbcType=CHAR}, #{mkMaterialUploadCreatetime,jdbcType=TIMESTAMP}, 
+      #{mkMaterialUploadUpdatetime,jdbcType=TIMESTAMP}, #{mkMaterialUploadModifytm,jdbcType=TIMESTAMP}, 
+      #{mkMaterialUploadBatchid,jdbcType=VARCHAR}, #{mkMaterialUploadErrreason,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkMaterialUpload">
+    insert into mk_material_upload
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkMaterialUploadId != null">
+        mk_material_upload_id,
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        MK_advertiser_media_id,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code,
+      </if>
+      <if test="mkMediaAgentCode != null">
+        MK_media_agent_Code,
+      </if>
+      <if test="mkMaterialInfoId != null">
+        mk_material_info_id,
+      </if>
+      <if test="mkMaterialUploadUsercode != null">
+        mk_material_upload_UserCode,
+      </if>
+      <if test="mkMaterialUploadUsername != null">
+        mk_material_upload_UserName,
+      </if>
+      <if test="mkMaterialUploadState != null">
+        mk_material_upload_State,
+      </if>
+      <if test="mkMaterialUploadCreatetime != null">
+        mk_material_upload_CreateTime,
+      </if>
+      <if test="mkMaterialUploadUpdatetime != null">
+        mk_material_upload_updateTime,
+      </if>
+      <if test="mkMaterialUploadModifytm != null">
+        mk_material_upload_MODIFYTM,
+      </if>
+      <if test="mkMaterialUploadBatchid != null">
+        mk_material_upload_batchId,
+      </if>
+      <if test="mkMaterialUploadErrreason != null">
+        mk_material_upload_errReason,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkMaterialUploadId != null">
+        #{mkMaterialUploadId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoId != null">
+        #{mkMaterialInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadUsercode != null">
+        #{mkMaterialUploadUsercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadUsername != null">
+        #{mkMaterialUploadUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadState != null">
+        #{mkMaterialUploadState,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialUploadCreatetime != null">
+        #{mkMaterialUploadCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialUploadUpdatetime != null">
+        #{mkMaterialUploadUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialUploadModifytm != null">
+        #{mkMaterialUploadModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialUploadBatchid != null">
+        #{mkMaterialUploadBatchid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadErrreason != null">
+        #{mkMaterialUploadErrreason,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkMaterialUpload">
+    update mk_material_upload
+    <set>
+      <if test="mkAdvertiserMediaId != null">
+        MK_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        MK_media_agent_Code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoId != null">
+        mk_material_info_id = #{mkMaterialInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadUsercode != null">
+        mk_material_upload_UserCode = #{mkMaterialUploadUsercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadUsername != null">
+        mk_material_upload_UserName = #{mkMaterialUploadUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadState != null">
+        mk_material_upload_State = #{mkMaterialUploadState,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialUploadCreatetime != null">
+        mk_material_upload_CreateTime = #{mkMaterialUploadCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialUploadUpdatetime != null">
+        mk_material_upload_updateTime = #{mkMaterialUploadUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialUploadModifytm != null">
+        mk_material_upload_MODIFYTM = #{mkMaterialUploadModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialUploadBatchid != null">
+        mk_material_upload_batchId = #{mkMaterialUploadBatchid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialUploadErrreason != null">
+        mk_material_upload_errReason = #{mkMaterialUploadErrreason,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where mk_material_upload_id = #{mkMaterialUploadId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkMaterialUpload">
+    update mk_material_upload
+    set MK_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      MK_media_agent_Code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      mk_material_info_id = #{mkMaterialInfoId,jdbcType=VARCHAR},
+      mk_material_upload_UserCode = #{mkMaterialUploadUsercode,jdbcType=VARCHAR},
+      mk_material_upload_UserName = #{mkMaterialUploadUsername,jdbcType=VARCHAR},
+      mk_material_upload_State = #{mkMaterialUploadState,jdbcType=CHAR},
+      mk_material_upload_CreateTime = #{mkMaterialUploadCreatetime,jdbcType=TIMESTAMP},
+      mk_material_upload_updateTime = #{mkMaterialUploadUpdatetime,jdbcType=TIMESTAMP},
+      mk_material_upload_MODIFYTM = #{mkMaterialUploadModifytm,jdbcType=TIMESTAMP},
+      mk_material_upload_batchId = #{mkMaterialUploadBatchid,jdbcType=VARCHAR},
+      mk_material_upload_errReason = #{mkMaterialUploadErrreason,jdbcType=VARCHAR}
+    where mk_material_upload_id = #{mkMaterialUploadId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkMaterialAuditMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkMaterialAudit">
+    <id column="mk_material_audit_id" jdbcType="VARCHAR" property="mkMaterialAuditId" />
+    <result column="MK_advertiser_media_id" jdbcType="VARCHAR" property="mkAdvertiserMediaId" />
+    <result column="MK_media_Info_Code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="MK_media_agent_Code" jdbcType="VARCHAR" property="mkMediaAgentCode" />
+    <result column="mk_material_info_id" jdbcType="VARCHAR" property="mkMaterialInfoId" />
+    <result column="mk_material_audit_state" jdbcType="CHAR" property="mkMaterialAuditState" />
+    <result column="mk_material_audit_reason" jdbcType="VARCHAR" property="mkMaterialAuditReason" />
+    <result column="mk_material_audit_userName" jdbcType="VARCHAR" property="mkMaterialAuditUsername" />
+    <result column="mk_material_audit_code" jdbcType="VARCHAR" property="mkMaterialAuditCode" />
+    <result column="mk_material_audit_time" jdbcType="TIMESTAMP" property="mkMaterialAuditTime" />
+    <result column="mk_material_audit_twoState" jdbcType="CHAR" property="mkMaterialAuditTwostate" />
+    <result column="mk_material_audit_twoReason" jdbcType="VARCHAR" property="mkMaterialAuditTworeason" />
+    <result column="mk_material_audit_twoUserCode" jdbcType="VARCHAR" property="mkMaterialAuditTwousercode" />
+    <result column="mk_material_audit_twoUserName" jdbcType="VARCHAR" property="mkMaterialAuditTwousername" />
+    <result column="mk_material_audit_twoTime" jdbcType="TIMESTAMP" property="mkMaterialAuditTwotime" />
+    <result column="mk_material_audit_auditSamplingState" jdbcType="CHAR" property="mkMaterialAuditAuditsamplingstate" />
+    <result column="mk_material_audit_auditSamplingReason" jdbcType="VARCHAR" property="mkMaterialAuditAuditsamplingreason" />
+    <result column="mk_material_info_auditSamplingUserCode" jdbcType="VARCHAR" property="mkMaterialInfoAuditsamplingusercode" />
+    <result column="mk_material_info_auditSamplingUserName" jdbcType="VARCHAR" property="mkMaterialInfoAuditsamplingusername" />
+    <result column="mk_material_info_auditSamplingTime" jdbcType="TIMESTAMP" property="mkMaterialInfoAuditsamplingtime" />
+    <result column="mk_material_info_auditSamplingTwoState" jdbcType="CHAR" property="mkMaterialInfoAuditsamplingtwostate" />
+    <result column="mk_material_audit_samplingTwoReason" jdbcType="VARCHAR" property="mkMaterialAuditSamplingtworeason" />
+    <result column="mk_material_info_auditSamplingTwoUserCode" jdbcType="VARCHAR" property="mkMaterialInfoAuditsamplingtwousercode" />
+    <result column="mk_material_info_auditSamplingTwoUserName" jdbcType="VARCHAR" property="mkMaterialInfoAuditsamplingtwousername" />
+    <result column="mk_material_info_auditSamplingTwoTime" jdbcType="TIMESTAMP" property="mkMaterialInfoAuditsamplingtwotime" />
+    <result column="mk_material_audit_newState" jdbcType="CHAR" property="mkMaterialAuditNewstate" />
+    <result column="mk_material_audit_CreateTime" jdbcType="TIMESTAMP" property="mkMaterialAuditCreatetime" />
+    <result column="mk_material_audit_updateTime" jdbcType="TIMESTAMP" property="mkMaterialAuditUpdatetime" />
+    <result column="mk_material_audit_MODIFYTM" jdbcType="TIMESTAMP" property="mkMaterialAuditModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_material_audit_id, MK_advertiser_media_id, MK_media_Info_Code, MK_media_agent_Code, 
+    mk_material_info_id, mk_material_audit_state, mk_material_audit_reason, mk_material_audit_userName, 
+    mk_material_audit_code, mk_material_audit_time, mk_material_audit_twoState, mk_material_audit_twoReason, 
+    mk_material_audit_twoUserCode, mk_material_audit_twoUserName, mk_material_audit_twoTime, 
+    mk_material_audit_auditSamplingState, mk_material_audit_auditSamplingReason, mk_material_info_auditSamplingUserCode, 
+    mk_material_info_auditSamplingUserName, mk_material_info_auditSamplingTime, mk_material_info_auditSamplingTwoState, 
+    mk_material_audit_samplingTwoReason, mk_material_info_auditSamplingTwoUserCode, mk_material_info_auditSamplingTwoUserName, 
+    mk_material_info_auditSamplingTwoTime, mk_material_audit_newState, mk_material_audit_CreateTime, 
+    mk_material_audit_updateTime, mk_material_audit_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_material_audit
+    where mk_material_audit_id = #{mkMaterialAuditId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_material_audit
+    where mk_material_audit_id = #{mkMaterialAuditId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkMaterialAudit">
+    insert into mk_material_audit (mk_material_audit_id, MK_advertiser_media_id, 
+      MK_media_Info_Code, MK_media_agent_Code, mk_material_info_id, 
+      mk_material_audit_state, mk_material_audit_reason, 
+      mk_material_audit_userName, mk_material_audit_code, 
+      mk_material_audit_time, mk_material_audit_twoState, 
+      mk_material_audit_twoReason, mk_material_audit_twoUserCode, 
+      mk_material_audit_twoUserName, mk_material_audit_twoTime, 
+      mk_material_audit_auditSamplingState, mk_material_audit_auditSamplingReason, 
+      mk_material_info_auditSamplingUserCode, mk_material_info_auditSamplingUserName, 
+      mk_material_info_auditSamplingTime, mk_material_info_auditSamplingTwoState, 
+      mk_material_audit_samplingTwoReason, mk_material_info_auditSamplingTwoUserCode, 
+      mk_material_info_auditSamplingTwoUserName, mk_material_info_auditSamplingTwoTime, 
+      mk_material_audit_newState, mk_material_audit_CreateTime, 
+      mk_material_audit_updateTime, mk_material_audit_MODIFYTM
+      )
+    values (#{mkMaterialAuditId,jdbcType=VARCHAR}, #{mkAdvertiserMediaId,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkMediaAgentCode,jdbcType=VARCHAR}, #{mkMaterialInfoId,jdbcType=VARCHAR}, 
+      #{mkMaterialAuditState,jdbcType=CHAR}, #{mkMaterialAuditReason,jdbcType=VARCHAR}, 
+      #{mkMaterialAuditUsername,jdbcType=VARCHAR}, #{mkMaterialAuditCode,jdbcType=VARCHAR}, 
+      #{mkMaterialAuditTime,jdbcType=TIMESTAMP}, #{mkMaterialAuditTwostate,jdbcType=CHAR}, 
+      #{mkMaterialAuditTworeason,jdbcType=VARCHAR}, #{mkMaterialAuditTwousercode,jdbcType=VARCHAR}, 
+      #{mkMaterialAuditTwousername,jdbcType=VARCHAR}, #{mkMaterialAuditTwotime,jdbcType=TIMESTAMP}, 
+      #{mkMaterialAuditAuditsamplingstate,jdbcType=CHAR}, #{mkMaterialAuditAuditsamplingreason,jdbcType=VARCHAR}, 
+      #{mkMaterialInfoAuditsamplingusercode,jdbcType=VARCHAR}, #{mkMaterialInfoAuditsamplingusername,jdbcType=VARCHAR}, 
+      #{mkMaterialInfoAuditsamplingtime,jdbcType=TIMESTAMP}, #{mkMaterialInfoAuditsamplingtwostate,jdbcType=CHAR}, 
+      #{mkMaterialAuditSamplingtworeason,jdbcType=VARCHAR}, #{mkMaterialInfoAuditsamplingtwousercode,jdbcType=VARCHAR}, 
+      #{mkMaterialInfoAuditsamplingtwousername,jdbcType=VARCHAR}, #{mkMaterialInfoAuditsamplingtwotime,jdbcType=TIMESTAMP}, 
+      #{mkMaterialAuditNewstate,jdbcType=CHAR}, #{mkMaterialAuditCreatetime,jdbcType=TIMESTAMP}, 
+      #{mkMaterialAuditUpdatetime,jdbcType=TIMESTAMP}, #{mkMaterialAuditModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkMaterialAudit">
+    insert into mk_material_audit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkMaterialAuditId != null">
+        mk_material_audit_id,
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        MK_advertiser_media_id,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code,
+      </if>
+      <if test="mkMediaAgentCode != null">
+        MK_media_agent_Code,
+      </if>
+      <if test="mkMaterialInfoId != null">
+        mk_material_info_id,
+      </if>
+      <if test="mkMaterialAuditState != null">
+        mk_material_audit_state,
+      </if>
+      <if test="mkMaterialAuditReason != null">
+        mk_material_audit_reason,
+      </if>
+      <if test="mkMaterialAuditUsername != null">
+        mk_material_audit_userName,
+      </if>
+      <if test="mkMaterialAuditCode != null">
+        mk_material_audit_code,
+      </if>
+      <if test="mkMaterialAuditTime != null">
+        mk_material_audit_time,
+      </if>
+      <if test="mkMaterialAuditTwostate != null">
+        mk_material_audit_twoState,
+      </if>
+      <if test="mkMaterialAuditTworeason != null">
+        mk_material_audit_twoReason,
+      </if>
+      <if test="mkMaterialAuditTwousercode != null">
+        mk_material_audit_twoUserCode,
+      </if>
+      <if test="mkMaterialAuditTwousername != null">
+        mk_material_audit_twoUserName,
+      </if>
+      <if test="mkMaterialAuditTwotime != null">
+        mk_material_audit_twoTime,
+      </if>
+      <if test="mkMaterialAuditAuditsamplingstate != null">
+        mk_material_audit_auditSamplingState,
+      </if>
+      <if test="mkMaterialAuditAuditsamplingreason != null">
+        mk_material_audit_auditSamplingReason,
+      </if>
+      <if test="mkMaterialInfoAuditsamplingusercode != null">
+        mk_material_info_auditSamplingUserCode,
+      </if>
+      <if test="mkMaterialInfoAuditsamplingusername != null">
+        mk_material_info_auditSamplingUserName,
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtime != null">
+        mk_material_info_auditSamplingTime,
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwostate != null">
+        mk_material_info_auditSamplingTwoState,
+      </if>
+      <if test="mkMaterialAuditSamplingtworeason != null">
+        mk_material_audit_samplingTwoReason,
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwousercode != null">
+        mk_material_info_auditSamplingTwoUserCode,
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwousername != null">
+        mk_material_info_auditSamplingTwoUserName,
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwotime != null">
+        mk_material_info_auditSamplingTwoTime,
+      </if>
+      <if test="mkMaterialAuditNewstate != null">
+        mk_material_audit_newState,
+      </if>
+      <if test="mkMaterialAuditCreatetime != null">
+        mk_material_audit_CreateTime,
+      </if>
+      <if test="mkMaterialAuditUpdatetime != null">
+        mk_material_audit_updateTime,
+      </if>
+      <if test="mkMaterialAuditModifytm != null">
+        mk_material_audit_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkMaterialAuditId != null">
+        #{mkMaterialAuditId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoId != null">
+        #{mkMaterialInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditState != null">
+        #{mkMaterialAuditState,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditReason != null">
+        #{mkMaterialAuditReason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditUsername != null">
+        #{mkMaterialAuditUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditCode != null">
+        #{mkMaterialAuditCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTime != null">
+        #{mkMaterialAuditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditTwostate != null">
+        #{mkMaterialAuditTwostate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditTworeason != null">
+        #{mkMaterialAuditTworeason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTwousercode != null">
+        #{mkMaterialAuditTwousercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTwousername != null">
+        #{mkMaterialAuditTwousername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTwotime != null">
+        #{mkMaterialAuditTwotime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditAuditsamplingstate != null">
+        #{mkMaterialAuditAuditsamplingstate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditAuditsamplingreason != null">
+        #{mkMaterialAuditAuditsamplingreason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingusercode != null">
+        #{mkMaterialInfoAuditsamplingusercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingusername != null">
+        #{mkMaterialInfoAuditsamplingusername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtime != null">
+        #{mkMaterialInfoAuditsamplingtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwostate != null">
+        #{mkMaterialInfoAuditsamplingtwostate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditSamplingtworeason != null">
+        #{mkMaterialAuditSamplingtworeason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwousercode != null">
+        #{mkMaterialInfoAuditsamplingtwousercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwousername != null">
+        #{mkMaterialInfoAuditsamplingtwousername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwotime != null">
+        #{mkMaterialInfoAuditsamplingtwotime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditNewstate != null">
+        #{mkMaterialAuditNewstate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditCreatetime != null">
+        #{mkMaterialAuditCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditUpdatetime != null">
+        #{mkMaterialAuditUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditModifytm != null">
+        #{mkMaterialAuditModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkMaterialAudit">
+    update mk_material_audit
+    <set>
+      <if test="mkAdvertiserMediaId != null">
+        MK_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        MK_media_agent_Code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoId != null">
+        mk_material_info_id = #{mkMaterialInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditState != null">
+        mk_material_audit_state = #{mkMaterialAuditState,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditReason != null">
+        mk_material_audit_reason = #{mkMaterialAuditReason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditUsername != null">
+        mk_material_audit_userName = #{mkMaterialAuditUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditCode != null">
+        mk_material_audit_code = #{mkMaterialAuditCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTime != null">
+        mk_material_audit_time = #{mkMaterialAuditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditTwostate != null">
+        mk_material_audit_twoState = #{mkMaterialAuditTwostate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditTworeason != null">
+        mk_material_audit_twoReason = #{mkMaterialAuditTworeason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTwousercode != null">
+        mk_material_audit_twoUserCode = #{mkMaterialAuditTwousercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTwousername != null">
+        mk_material_audit_twoUserName = #{mkMaterialAuditTwousername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTwotime != null">
+        mk_material_audit_twoTime = #{mkMaterialAuditTwotime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditAuditsamplingstate != null">
+        mk_material_audit_auditSamplingState = #{mkMaterialAuditAuditsamplingstate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditAuditsamplingreason != null">
+        mk_material_audit_auditSamplingReason = #{mkMaterialAuditAuditsamplingreason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingusercode != null">
+        mk_material_info_auditSamplingUserCode = #{mkMaterialInfoAuditsamplingusercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingusername != null">
+        mk_material_info_auditSamplingUserName = #{mkMaterialInfoAuditsamplingusername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtime != null">
+        mk_material_info_auditSamplingTime = #{mkMaterialInfoAuditsamplingtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwostate != null">
+        mk_material_info_auditSamplingTwoState = #{mkMaterialInfoAuditsamplingtwostate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditSamplingtworeason != null">
+        mk_material_audit_samplingTwoReason = #{mkMaterialAuditSamplingtworeason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwousercode != null">
+        mk_material_info_auditSamplingTwoUserCode = #{mkMaterialInfoAuditsamplingtwousercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwousername != null">
+        mk_material_info_auditSamplingTwoUserName = #{mkMaterialInfoAuditsamplingtwousername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwotime != null">
+        mk_material_info_auditSamplingTwoTime = #{mkMaterialInfoAuditsamplingtwotime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditNewstate != null">
+        mk_material_audit_newState = #{mkMaterialAuditNewstate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditCreatetime != null">
+        mk_material_audit_CreateTime = #{mkMaterialAuditCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditUpdatetime != null">
+        mk_material_audit_updateTime = #{mkMaterialAuditUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditModifytm != null">
+        mk_material_audit_MODIFYTM = #{mkMaterialAuditModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mk_material_audit_id = #{mkMaterialAuditId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkMaterialAudit">
+    update mk_material_audit
+    set MK_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      MK_media_agent_Code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      mk_material_info_id = #{mkMaterialInfoId,jdbcType=VARCHAR},
+      mk_material_audit_state = #{mkMaterialAuditState,jdbcType=CHAR},
+      mk_material_audit_reason = #{mkMaterialAuditReason,jdbcType=VARCHAR},
+      mk_material_audit_userName = #{mkMaterialAuditUsername,jdbcType=VARCHAR},
+      mk_material_audit_code = #{mkMaterialAuditCode,jdbcType=VARCHAR},
+      mk_material_audit_time = #{mkMaterialAuditTime,jdbcType=TIMESTAMP},
+      mk_material_audit_twoState = #{mkMaterialAuditTwostate,jdbcType=CHAR},
+      mk_material_audit_twoReason = #{mkMaterialAuditTworeason,jdbcType=VARCHAR},
+      mk_material_audit_twoUserCode = #{mkMaterialAuditTwousercode,jdbcType=VARCHAR},
+      mk_material_audit_twoUserName = #{mkMaterialAuditTwousername,jdbcType=VARCHAR},
+      mk_material_audit_twoTime = #{mkMaterialAuditTwotime,jdbcType=TIMESTAMP},
+      mk_material_audit_auditSamplingState = #{mkMaterialAuditAuditsamplingstate,jdbcType=CHAR},
+      mk_material_audit_auditSamplingReason = #{mkMaterialAuditAuditsamplingreason,jdbcType=VARCHAR},
+      mk_material_info_auditSamplingUserCode = #{mkMaterialInfoAuditsamplingusercode,jdbcType=VARCHAR},
+      mk_material_info_auditSamplingUserName = #{mkMaterialInfoAuditsamplingusername,jdbcType=VARCHAR},
+      mk_material_info_auditSamplingTime = #{mkMaterialInfoAuditsamplingtime,jdbcType=TIMESTAMP},
+      mk_material_info_auditSamplingTwoState = #{mkMaterialInfoAuditsamplingtwostate,jdbcType=CHAR},
+      mk_material_audit_samplingTwoReason = #{mkMaterialAuditSamplingtworeason,jdbcType=VARCHAR},
+      mk_material_info_auditSamplingTwoUserCode = #{mkMaterialInfoAuditsamplingtwousercode,jdbcType=VARCHAR},
+      mk_material_info_auditSamplingTwoUserName = #{mkMaterialInfoAuditsamplingtwousername,jdbcType=VARCHAR},
+      mk_material_info_auditSamplingTwoTime = #{mkMaterialInfoAuditsamplingtwotime,jdbcType=TIMESTAMP},
+      mk_material_audit_newState = #{mkMaterialAuditNewstate,jdbcType=CHAR},
+      mk_material_audit_CreateTime = #{mkMaterialAuditCreatetime,jdbcType=TIMESTAMP},
+      mk_material_audit_updateTime = #{mkMaterialAuditUpdatetime,jdbcType=TIMESTAMP},
+      mk_material_audit_MODIFYTM = #{mkMaterialAuditModifytm,jdbcType=TIMESTAMP}
+    where mk_material_audit_id = #{mkMaterialAuditId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkMaterialAudit">
+    <id column="mk_material_audit_id" jdbcType="VARCHAR" property="mkMaterialAuditId" />
+    <result column="mk_advertiser_media_id" jdbcType="VARCHAR" property="mkAdvertiserMediaId" />
+    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="mk_media_agent_code" jdbcType="VARCHAR" property="mkMediaAgentCode" />
+    <result column="mk_material_info_id" jdbcType="VARCHAR" property="mkMaterialInfoId" />
+    <result column="mk_material_audit_state" jdbcType="CHAR" property="mkMaterialAuditState" />
+    <result column="mk_material_audit_reason" jdbcType="VARCHAR" property="mkMaterialAuditReason" />
+    <result column="mk_material_audit_username" jdbcType="VARCHAR" property="mkMaterialAuditUsername" />
+    <result column="mk_material_audit_code" jdbcType="VARCHAR" property="mkMaterialAuditCode" />
+    <result column="mk_material_audit_time" jdbcType="TIMESTAMP" property="mkMaterialAuditTime" />
+    <result column="mk_material_audit_twostate" jdbcType="CHAR" property="mkMaterialAuditTwostate" />
+    <result column="mk_material_audit_tworeason" jdbcType="VARCHAR" property="mkMaterialAuditTworeason" />
+    <result column="mk_material_audit_twousercode" jdbcType="VARCHAR" property="mkMaterialAuditTwousercode" />
+    <result column="mk_material_audit_twousername" jdbcType="VARCHAR" property="mkMaterialAuditTwousername" />
+    <result column="mk_material_audit_twotime" jdbcType="TIMESTAMP" property="mkMaterialAuditTwotime" />
+    <result column="mk_material_audit_auditsamplingstate" jdbcType="CHAR" property="mkMaterialAuditAuditsamplingstate" />
+    <result column="mk_material_audit_auditsamplingreason" jdbcType="VARCHAR" property="mkMaterialAuditAuditsamplingreason" />
+    <result column="mk_material_info_auditsamplingusercode" jdbcType="VARCHAR" property="mkMaterialInfoAuditsamplingusercode" />
+    <result column="mk_material_info_auditsamplingusername" jdbcType="VARCHAR" property="mkMaterialInfoAuditsamplingusername" />
+    <result column="mk_material_info_auditsamplingtime" jdbcType="TIMESTAMP" property="mkMaterialInfoAuditsamplingtime" />
+    <result column="mk_material_info_auditsamplingtwostate" jdbcType="CHAR" property="mkMaterialInfoAuditsamplingtwostate" />
+    <result column="mk_material_audit_samplingtworeason" jdbcType="VARCHAR" property="mkMaterialAuditSamplingtworeason" />
+    <result column="mk_material_info_auditsamplingtwousercode" jdbcType="VARCHAR" property="mkMaterialInfoAuditsamplingtwousercode" />
+    <result column="mk_material_info_auditsamplingtwousername" jdbcType="VARCHAR" property="mkMaterialInfoAuditsamplingtwousername" />
+    <result column="mk_material_info_auditsamplingtwotime" jdbcType="TIMESTAMP" property="mkMaterialInfoAuditsamplingtwotime" />
+    <result column="mk_material_audit_newstate" jdbcType="CHAR" property="mkMaterialAuditNewstate" />
+    <result column="mk_material_audit_createtime" jdbcType="TIMESTAMP" property="mkMaterialAuditCreatetime" />
+    <result column="mk_material_audit_updatetime" jdbcType="TIMESTAMP" property="mkMaterialAuditUpdatetime" />
+    <result column="mk_material_audit_modifytm" jdbcType="TIMESTAMP" property="mkMaterialAuditModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_material_audit_id, mk_advertiser_media_id, mk_media_info_code, mk_media_agent_code, 
+    mk_material_info_id, mk_material_audit_state, mk_material_audit_reason, mk_material_audit_username, 
+    mk_material_audit_code, mk_material_audit_time, mk_material_audit_twostate, mk_material_audit_tworeason, 
+    mk_material_audit_twousercode, mk_material_audit_twousername, mk_material_audit_twotime, 
+    mk_material_audit_auditsamplingstate, mk_material_audit_auditsamplingreason, mk_material_info_auditsamplingusercode, 
+    mk_material_info_auditsamplingusername, mk_material_info_auditsamplingtime, mk_material_info_auditsamplingtwostate, 
+    mk_material_audit_samplingtworeason, mk_material_info_auditsamplingtwousercode, mk_material_info_auditsamplingtwousername, 
+    mk_material_info_auditsamplingtwotime, mk_material_audit_newstate, mk_material_audit_createtime, 
+    mk_material_audit_updatetime, mk_material_audit_modifytm
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_material_audit
+    where mk_material_audit_id = #{mkMaterialAuditId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_material_audit
+    where mk_material_audit_id = #{mkMaterialAuditId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkMaterialAudit">
+    insert into mk_material_audit (mk_material_audit_id, mk_advertiser_media_id, 
+      mk_media_info_code, mk_media_agent_code, mk_material_info_id, 
+      mk_material_audit_state, mk_material_audit_reason, 
+      mk_material_audit_username, mk_material_audit_code, 
+      mk_material_audit_time, mk_material_audit_twostate, 
+      mk_material_audit_tworeason, mk_material_audit_twousercode, 
+      mk_material_audit_twousername, mk_material_audit_twotime, 
+      mk_material_audit_auditsamplingstate, mk_material_audit_auditsamplingreason, 
+      mk_material_info_auditsamplingusercode, mk_material_info_auditsamplingusername, 
+      mk_material_info_auditsamplingtime, mk_material_info_auditsamplingtwostate, 
+      mk_material_audit_samplingtworeason, mk_material_info_auditsamplingtwousercode, 
+      mk_material_info_auditsamplingtwousername, mk_material_info_auditsamplingtwotime, 
+      mk_material_audit_newstate, mk_material_audit_createtime, 
+      mk_material_audit_updatetime, mk_material_audit_modifytm
+      )
+    values (#{mkMaterialAuditId,jdbcType=VARCHAR}, #{mkAdvertiserMediaId,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkMediaAgentCode,jdbcType=VARCHAR}, #{mkMaterialInfoId,jdbcType=VARCHAR}, 
+      #{mkMaterialAuditState,jdbcType=CHAR}, #{mkMaterialAuditReason,jdbcType=VARCHAR}, 
+      #{mkMaterialAuditUsername,jdbcType=VARCHAR}, #{mkMaterialAuditCode,jdbcType=VARCHAR}, 
+      #{mkMaterialAuditTime,jdbcType=TIMESTAMP}, #{mkMaterialAuditTwostate,jdbcType=CHAR}, 
+      #{mkMaterialAuditTworeason,jdbcType=VARCHAR}, #{mkMaterialAuditTwousercode,jdbcType=VARCHAR}, 
+      #{mkMaterialAuditTwousername,jdbcType=VARCHAR}, #{mkMaterialAuditTwotime,jdbcType=TIMESTAMP}, 
+      #{mkMaterialAuditAuditsamplingstate,jdbcType=CHAR}, #{mkMaterialAuditAuditsamplingreason,jdbcType=VARCHAR}, 
+      #{mkMaterialInfoAuditsamplingusercode,jdbcType=VARCHAR}, #{mkMaterialInfoAuditsamplingusername,jdbcType=VARCHAR}, 
+      #{mkMaterialInfoAuditsamplingtime,jdbcType=TIMESTAMP}, #{mkMaterialInfoAuditsamplingtwostate,jdbcType=CHAR}, 
+      #{mkMaterialAuditSamplingtworeason,jdbcType=VARCHAR}, #{mkMaterialInfoAuditsamplingtwousercode,jdbcType=VARCHAR}, 
+      #{mkMaterialInfoAuditsamplingtwousername,jdbcType=VARCHAR}, #{mkMaterialInfoAuditsamplingtwotime,jdbcType=TIMESTAMP}, 
+      #{mkMaterialAuditNewstate,jdbcType=CHAR}, #{mkMaterialAuditCreatetime,jdbcType=TIMESTAMP}, 
+      #{mkMaterialAuditUpdatetime,jdbcType=TIMESTAMP}, #{mkMaterialAuditModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkMaterialAudit">
+    insert into mk_material_audit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkMaterialAuditId != null">
+        mk_material_audit_id,
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        mk_advertiser_media_id,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code,
+      </if>
+      <if test="mkMediaAgentCode != null">
+        mk_media_agent_code,
+      </if>
+      <if test="mkMaterialInfoId != null">
+        mk_material_info_id,
+      </if>
+      <if test="mkMaterialAuditState != null">
+        mk_material_audit_state,
+      </if>
+      <if test="mkMaterialAuditReason != null">
+        mk_material_audit_reason,
+      </if>
+      <if test="mkMaterialAuditUsername != null">
+        mk_material_audit_username,
+      </if>
+      <if test="mkMaterialAuditCode != null">
+        mk_material_audit_code,
+      </if>
+      <if test="mkMaterialAuditTime != null">
+        mk_material_audit_time,
+      </if>
+      <if test="mkMaterialAuditTwostate != null">
+        mk_material_audit_twostate,
+      </if>
+      <if test="mkMaterialAuditTworeason != null">
+        mk_material_audit_tworeason,
+      </if>
+      <if test="mkMaterialAuditTwousercode != null">
+        mk_material_audit_twousercode,
+      </if>
+      <if test="mkMaterialAuditTwousername != null">
+        mk_material_audit_twousername,
+      </if>
+      <if test="mkMaterialAuditTwotime != null">
+        mk_material_audit_twotime,
+      </if>
+      <if test="mkMaterialAuditAuditsamplingstate != null">
+        mk_material_audit_auditsamplingstate,
+      </if>
+      <if test="mkMaterialAuditAuditsamplingreason != null">
+        mk_material_audit_auditsamplingreason,
+      </if>
+      <if test="mkMaterialInfoAuditsamplingusercode != null">
+        mk_material_info_auditsamplingusercode,
+      </if>
+      <if test="mkMaterialInfoAuditsamplingusername != null">
+        mk_material_info_auditsamplingusername,
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtime != null">
+        mk_material_info_auditsamplingtime,
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwostate != null">
+        mk_material_info_auditsamplingtwostate,
+      </if>
+      <if test="mkMaterialAuditSamplingtworeason != null">
+        mk_material_audit_samplingtworeason,
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwousercode != null">
+        mk_material_info_auditsamplingtwousercode,
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwousername != null">
+        mk_material_info_auditsamplingtwousername,
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwotime != null">
+        mk_material_info_auditsamplingtwotime,
+      </if>
+      <if test="mkMaterialAuditNewstate != null">
+        mk_material_audit_newstate,
+      </if>
+      <if test="mkMaterialAuditCreatetime != null">
+        mk_material_audit_createtime,
+      </if>
+      <if test="mkMaterialAuditUpdatetime != null">
+        mk_material_audit_updatetime,
+      </if>
+      <if test="mkMaterialAuditModifytm != null">
+        mk_material_audit_modifytm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkMaterialAuditId != null">
+        #{mkMaterialAuditId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoId != null">
+        #{mkMaterialInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditState != null">
+        #{mkMaterialAuditState,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditReason != null">
+        #{mkMaterialAuditReason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditUsername != null">
+        #{mkMaterialAuditUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditCode != null">
+        #{mkMaterialAuditCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTime != null">
+        #{mkMaterialAuditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditTwostate != null">
+        #{mkMaterialAuditTwostate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditTworeason != null">
+        #{mkMaterialAuditTworeason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTwousercode != null">
+        #{mkMaterialAuditTwousercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTwousername != null">
+        #{mkMaterialAuditTwousername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTwotime != null">
+        #{mkMaterialAuditTwotime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditAuditsamplingstate != null">
+        #{mkMaterialAuditAuditsamplingstate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditAuditsamplingreason != null">
+        #{mkMaterialAuditAuditsamplingreason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingusercode != null">
+        #{mkMaterialInfoAuditsamplingusercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingusername != null">
+        #{mkMaterialInfoAuditsamplingusername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtime != null">
+        #{mkMaterialInfoAuditsamplingtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwostate != null">
+        #{mkMaterialInfoAuditsamplingtwostate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditSamplingtworeason != null">
+        #{mkMaterialAuditSamplingtworeason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwousercode != null">
+        #{mkMaterialInfoAuditsamplingtwousercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwousername != null">
+        #{mkMaterialInfoAuditsamplingtwousername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwotime != null">
+        #{mkMaterialInfoAuditsamplingtwotime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditNewstate != null">
+        #{mkMaterialAuditNewstate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditCreatetime != null">
+        #{mkMaterialAuditCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditUpdatetime != null">
+        #{mkMaterialAuditUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditModifytm != null">
+        #{mkMaterialAuditModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkMaterialAudit">
+    update mk_material_audit
+    <set>
+      <if test="mkAdvertiserMediaId != null">
+        mk_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        mk_media_agent_code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoId != null">
+        mk_material_info_id = #{mkMaterialInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditState != null">
+        mk_material_audit_state = #{mkMaterialAuditState,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditReason != null">
+        mk_material_audit_reason = #{mkMaterialAuditReason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditUsername != null">
+        mk_material_audit_username = #{mkMaterialAuditUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditCode != null">
+        mk_material_audit_code = #{mkMaterialAuditCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTime != null">
+        mk_material_audit_time = #{mkMaterialAuditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditTwostate != null">
+        mk_material_audit_twostate = #{mkMaterialAuditTwostate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditTworeason != null">
+        mk_material_audit_tworeason = #{mkMaterialAuditTworeason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTwousercode != null">
+        mk_material_audit_twousercode = #{mkMaterialAuditTwousercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTwousername != null">
+        mk_material_audit_twousername = #{mkMaterialAuditTwousername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialAuditTwotime != null">
+        mk_material_audit_twotime = #{mkMaterialAuditTwotime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditAuditsamplingstate != null">
+        mk_material_audit_auditsamplingstate = #{mkMaterialAuditAuditsamplingstate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditAuditsamplingreason != null">
+        mk_material_audit_auditsamplingreason = #{mkMaterialAuditAuditsamplingreason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingusercode != null">
+        mk_material_info_auditsamplingusercode = #{mkMaterialInfoAuditsamplingusercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingusername != null">
+        mk_material_info_auditsamplingusername = #{mkMaterialInfoAuditsamplingusername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtime != null">
+        mk_material_info_auditsamplingtime = #{mkMaterialInfoAuditsamplingtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwostate != null">
+        mk_material_info_auditsamplingtwostate = #{mkMaterialInfoAuditsamplingtwostate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditSamplingtworeason != null">
+        mk_material_audit_samplingtworeason = #{mkMaterialAuditSamplingtworeason,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwousercode != null">
+        mk_material_info_auditsamplingtwousercode = #{mkMaterialInfoAuditsamplingtwousercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwousername != null">
+        mk_material_info_auditsamplingtwousername = #{mkMaterialInfoAuditsamplingtwousername,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMaterialInfoAuditsamplingtwotime != null">
+        mk_material_info_auditsamplingtwotime = #{mkMaterialInfoAuditsamplingtwotime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditNewstate != null">
+        mk_material_audit_newstate = #{mkMaterialAuditNewstate,jdbcType=CHAR},
+      </if>
+      <if test="mkMaterialAuditCreatetime != null">
+        mk_material_audit_createtime = #{mkMaterialAuditCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditUpdatetime != null">
+        mk_material_audit_updatetime = #{mkMaterialAuditUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMaterialAuditModifytm != null">
+        mk_material_audit_modifytm = #{mkMaterialAuditModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mk_material_audit_id = #{mkMaterialAuditId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkMaterialAudit">
+    update mk_material_audit
+    set mk_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      mk_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      mk_media_agent_code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      mk_material_info_id = #{mkMaterialInfoId,jdbcType=VARCHAR},
+      mk_material_audit_state = #{mkMaterialAuditState,jdbcType=CHAR},
+      mk_material_audit_reason = #{mkMaterialAuditReason,jdbcType=VARCHAR},
+      mk_material_audit_username = #{mkMaterialAuditUsername,jdbcType=VARCHAR},
+      mk_material_audit_code = #{mkMaterialAuditCode,jdbcType=VARCHAR},
+      mk_material_audit_time = #{mkMaterialAuditTime,jdbcType=TIMESTAMP},
+      mk_material_audit_twostate = #{mkMaterialAuditTwostate,jdbcType=CHAR},
+      mk_material_audit_tworeason = #{mkMaterialAuditTworeason,jdbcType=VARCHAR},
+      mk_material_audit_twousercode = #{mkMaterialAuditTwousercode,jdbcType=VARCHAR},
+      mk_material_audit_twousername = #{mkMaterialAuditTwousername,jdbcType=VARCHAR},
+      mk_material_audit_twotime = #{mkMaterialAuditTwotime,jdbcType=TIMESTAMP},
+      mk_material_audit_auditsamplingstate = #{mkMaterialAuditAuditsamplingstate,jdbcType=CHAR},
+      mk_material_audit_auditsamplingreason = #{mkMaterialAuditAuditsamplingreason,jdbcType=VARCHAR},
+      mk_material_info_auditsamplingusercode = #{mkMaterialInfoAuditsamplingusercode,jdbcType=VARCHAR},
+      mk_material_info_auditsamplingusername = #{mkMaterialInfoAuditsamplingusername,jdbcType=VARCHAR},
+      mk_material_info_auditsamplingtime = #{mkMaterialInfoAuditsamplingtime,jdbcType=TIMESTAMP},
+      mk_material_info_auditsamplingtwostate = #{mkMaterialInfoAuditsamplingtwostate,jdbcType=CHAR},
+      mk_material_audit_samplingtworeason = #{mkMaterialAuditSamplingtworeason,jdbcType=VARCHAR},
+      mk_material_info_auditsamplingtwousercode = #{mkMaterialInfoAuditsamplingtwousercode,jdbcType=VARCHAR},
+      mk_material_info_auditsamplingtwousername = #{mkMaterialInfoAuditsamplingtwousername,jdbcType=VARCHAR},
+      mk_material_info_auditsamplingtwotime = #{mkMaterialInfoAuditsamplingtwotime,jdbcType=TIMESTAMP},
+      mk_material_audit_newstate = #{mkMaterialAuditNewstate,jdbcType=CHAR},
+      mk_material_audit_createtime = #{mkMaterialAuditCreatetime,jdbcType=TIMESTAMP},
+      mk_material_audit_updatetime = #{mkMaterialAuditUpdatetime,jdbcType=TIMESTAMP},
+      mk_material_audit_modifytm = #{mkMaterialAuditModifytm,jdbcType=TIMESTAMP}
+    where mk_material_audit_id = #{mkMaterialAuditId,jdbcType=VARCHAR}
+  </update>
+</mapper>

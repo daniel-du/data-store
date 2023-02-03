@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkLiveAppMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkLiveApp">
+    <id column="mk_live_app_no" jdbcType="VARCHAR" property="mkLiveAppNo" />
+    <result column="MK_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="mk_live_app_id" jdbcType="VARCHAR" property="mkLiveAppId" />
+    <result column="mk_live_app_name" jdbcType="VARCHAR" property="mkLiveAppName" />
+    <result column="mk_live_app_secret" jdbcType="VARCHAR" property="mkLiveAppSecret" />
+    <result column="mk_live_app_parentId" jdbcType="VARCHAR" property="mkLiveAppParentid" />
+    <result column="MK_Advertiser_Info_CompanyBody" jdbcType="VARCHAR" property="mkAdvertiserInfoCompanybody" />
+    <result column="mk_live_app_status" jdbcType="SMALLINT" property="mkLiveAppStatus" />
+    <result column="mk_live_app_userSourceId" jdbcType="VARCHAR" property="mkLiveAppUsersourceid" />
+    <result column="mk_live_app_token" jdbcType="VARCHAR" property="mkLiveAppToken" />
+    <result column="mk_live_app_tokenCrtTm" jdbcType="TIMESTAMP" property="mkLiveAppTokencrttm" />
+    <result column="mk_live_app_tokenEndTm" jdbcType="TIMESTAMP" property="mkLiveAppTokenendtm" />
+    <result column="mk_live_app_refreshToken" jdbcType="VARCHAR" property="mkLiveAppRefreshtoken" />
+    <result column="mk_live_app_refreshTokenCrtTm" jdbcType="TIMESTAMP" property="mkLiveAppRefreshtokencrttm" />
+    <result column="mk_live_app_refreshTokenEndTm" jdbcType="TIMESTAMP" property="mkLiveAppRefreshtokenendtm" />
+    <result column="mk_live_app_accessUrl" jdbcType="VARCHAR" property="mkLiveAppAccessurl" />
+    <result column="mk_live_app_oauthTokenUrl" jdbcType="VARCHAR" property="mkLiveAppOauthtokenurl" />
+    <result column="mk_live_app_acessTokenUrl" jdbcType="VARCHAR" property="mkLiveAppAcesstokenurl" />
+    <result column="mk_live_app_refreshTokenUrl" jdbcType="VARCHAR" property="mkLiveAppRefreshtokenurl" />
+    <result column="OA_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_live_app_createTM" jdbcType="TIMESTAMP" property="mkLiveAppCreatetm" />
+    <result column="mk_live_app_operationTM" jdbcType="TIMESTAMP" property="mkLiveAppOperationtm" />
+    <result column="mk_live_app_modifyTM" jdbcType="TIMESTAMP" property="mkLiveAppModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_live_app_no, MK_media_info_code, mk_live_app_id, mk_live_app_name, mk_live_app_secret, 
+    mk_live_app_parentId, MK_Advertiser_Info_CompanyBody, mk_live_app_status, mk_live_app_userSourceId, 
+    mk_live_app_token, mk_live_app_tokenCrtTm, mk_live_app_tokenEndTm, mk_live_app_refreshToken, 
+    mk_live_app_refreshTokenCrtTm, mk_live_app_refreshTokenEndTm, mk_live_app_accessUrl, 
+    mk_live_app_oauthTokenUrl, mk_live_app_acessTokenUrl, mk_live_app_refreshTokenUrl, 
+    OA_company_account_code, mk_live_app_createTM, mk_live_app_operationTM, mk_live_app_modifyTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_live_app
+    where mk_live_app_no = #{mkLiveAppNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_live_app
+    where mk_live_app_no = #{mkLiveAppNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkLiveApp">
+    insert into mk_live_app (mk_live_app_no, MK_media_info_code, mk_live_app_id, 
+      mk_live_app_name, mk_live_app_secret, mk_live_app_parentId, 
+      MK_Advertiser_Info_CompanyBody, mk_live_app_status, 
+      mk_live_app_userSourceId, mk_live_app_token, 
+      mk_live_app_tokenCrtTm, mk_live_app_tokenEndTm, 
+      mk_live_app_refreshToken, mk_live_app_refreshTokenCrtTm, 
+      mk_live_app_refreshTokenEndTm, mk_live_app_accessUrl, 
+      mk_live_app_oauthTokenUrl, mk_live_app_acessTokenUrl, 
+      mk_live_app_refreshTokenUrl, OA_company_account_code, 
+      mk_live_app_createTM, mk_live_app_operationTM, 
+      mk_live_app_modifyTM)
+    values (#{mkLiveAppNo,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkLiveAppId,jdbcType=VARCHAR}, 
+      #{mkLiveAppName,jdbcType=VARCHAR}, #{mkLiveAppSecret,jdbcType=VARCHAR}, #{mkLiveAppParentid,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR}, #{mkLiveAppStatus,jdbcType=SMALLINT}, 
+      #{mkLiveAppUsersourceid,jdbcType=VARCHAR}, #{mkLiveAppToken,jdbcType=VARCHAR}, 
+      #{mkLiveAppTokencrttm,jdbcType=TIMESTAMP}, #{mkLiveAppTokenendtm,jdbcType=TIMESTAMP}, 
+      #{mkLiveAppRefreshtoken,jdbcType=VARCHAR}, #{mkLiveAppRefreshtokencrttm,jdbcType=TIMESTAMP}, 
+      #{mkLiveAppRefreshtokenendtm,jdbcType=TIMESTAMP}, #{mkLiveAppAccessurl,jdbcType=VARCHAR}, 
+      #{mkLiveAppOauthtokenurl,jdbcType=VARCHAR}, #{mkLiveAppAcesstokenurl,jdbcType=VARCHAR}, 
+      #{mkLiveAppRefreshtokenurl,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkLiveAppCreatetm,jdbcType=TIMESTAMP}, #{mkLiveAppOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkLiveAppModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkLiveApp">
+    insert into mk_live_app
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkLiveAppNo != null">
+        mk_live_app_no,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_info_code,
+      </if>
+      <if test="mkLiveAppId != null">
+        mk_live_app_id,
+      </if>
+      <if test="mkLiveAppName != null">
+        mk_live_app_name,
+      </if>
+      <if test="mkLiveAppSecret != null">
+        mk_live_app_secret,
+      </if>
+      <if test="mkLiveAppParentid != null">
+        mk_live_app_parentId,
+      </if>
+      <if test="mkAdvertiserInfoCompanybody != null">
+        MK_Advertiser_Info_CompanyBody,
+      </if>
+      <if test="mkLiveAppStatus != null">
+        mk_live_app_status,
+      </if>
+      <if test="mkLiveAppUsersourceid != null">
+        mk_live_app_userSourceId,
+      </if>
+      <if test="mkLiveAppToken != null">
+        mk_live_app_token,
+      </if>
+      <if test="mkLiveAppTokencrttm != null">
+        mk_live_app_tokenCrtTm,
+      </if>
+      <if test="mkLiveAppTokenendtm != null">
+        mk_live_app_tokenEndTm,
+      </if>
+      <if test="mkLiveAppRefreshtoken != null">
+        mk_live_app_refreshToken,
+      </if>
+      <if test="mkLiveAppRefreshtokencrttm != null">
+        mk_live_app_refreshTokenCrtTm,
+      </if>
+      <if test="mkLiveAppRefreshtokenendtm != null">
+        mk_live_app_refreshTokenEndTm,
+      </if>
+      <if test="mkLiveAppAccessurl != null">
+        mk_live_app_accessUrl,
+      </if>
+      <if test="mkLiveAppOauthtokenurl != null">
+        mk_live_app_oauthTokenUrl,
+      </if>
+      <if test="mkLiveAppAcesstokenurl != null">
+        mk_live_app_acessTokenUrl,
+      </if>
+      <if test="mkLiveAppRefreshtokenurl != null">
+        mk_live_app_refreshTokenUrl,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_account_code,
+      </if>
+      <if test="mkLiveAppCreatetm != null">
+        mk_live_app_createTM,
+      </if>
+      <if test="mkLiveAppOperationtm != null">
+        mk_live_app_operationTM,
+      </if>
+      <if test="mkLiveAppModifytm != null">
+        mk_live_app_modifyTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkLiveAppNo != null">
+        #{mkLiveAppNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppId != null">
+        #{mkLiveAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppName != null">
+        #{mkLiveAppName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppSecret != null">
+        #{mkLiveAppSecret,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppParentid != null">
+        #{mkLiveAppParentid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCompanybody != null">
+        #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppStatus != null">
+        #{mkLiveAppStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="mkLiveAppUsersourceid != null">
+        #{mkLiveAppUsersourceid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppToken != null">
+        #{mkLiveAppToken,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppTokencrttm != null">
+        #{mkLiveAppTokencrttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppTokenendtm != null">
+        #{mkLiveAppTokenendtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppRefreshtoken != null">
+        #{mkLiveAppRefreshtoken,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppRefreshtokencrttm != null">
+        #{mkLiveAppRefreshtokencrttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppRefreshtokenendtm != null">
+        #{mkLiveAppRefreshtokenendtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppAccessurl != null">
+        #{mkLiveAppAccessurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppOauthtokenurl != null">
+        #{mkLiveAppOauthtokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppAcesstokenurl != null">
+        #{mkLiveAppAcesstokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppRefreshtokenurl != null">
+        #{mkLiveAppRefreshtokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppCreatetm != null">
+        #{mkLiveAppCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppOperationtm != null">
+        #{mkLiveAppOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppModifytm != null">
+        #{mkLiveAppModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkLiveApp">
+    update mk_live_app
+    <set>
+      <if test="mkMediaInfoCode != null">
+        MK_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppId != null">
+        mk_live_app_id = #{mkLiveAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppName != null">
+        mk_live_app_name = #{mkLiveAppName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppSecret != null">
+        mk_live_app_secret = #{mkLiveAppSecret,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppParentid != null">
+        mk_live_app_parentId = #{mkLiveAppParentid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCompanybody != null">
+        MK_Advertiser_Info_CompanyBody = #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppStatus != null">
+        mk_live_app_status = #{mkLiveAppStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="mkLiveAppUsersourceid != null">
+        mk_live_app_userSourceId = #{mkLiveAppUsersourceid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppToken != null">
+        mk_live_app_token = #{mkLiveAppToken,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppTokencrttm != null">
+        mk_live_app_tokenCrtTm = #{mkLiveAppTokencrttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppTokenendtm != null">
+        mk_live_app_tokenEndTm = #{mkLiveAppTokenendtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppRefreshtoken != null">
+        mk_live_app_refreshToken = #{mkLiveAppRefreshtoken,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppRefreshtokencrttm != null">
+        mk_live_app_refreshTokenCrtTm = #{mkLiveAppRefreshtokencrttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppRefreshtokenendtm != null">
+        mk_live_app_refreshTokenEndTm = #{mkLiveAppRefreshtokenendtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppAccessurl != null">
+        mk_live_app_accessUrl = #{mkLiveAppAccessurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppOauthtokenurl != null">
+        mk_live_app_oauthTokenUrl = #{mkLiveAppOauthtokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppAcesstokenurl != null">
+        mk_live_app_acessTokenUrl = #{mkLiveAppAcesstokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppRefreshtokenurl != null">
+        mk_live_app_refreshTokenUrl = #{mkLiveAppRefreshtokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppCreatetm != null">
+        mk_live_app_createTM = #{mkLiveAppCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppOperationtm != null">
+        mk_live_app_operationTM = #{mkLiveAppOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppModifytm != null">
+        mk_live_app_modifyTM = #{mkLiveAppModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mk_live_app_no = #{mkLiveAppNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkLiveApp">
+    update mk_live_app
+    set MK_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      mk_live_app_id = #{mkLiveAppId,jdbcType=VARCHAR},
+      mk_live_app_name = #{mkLiveAppName,jdbcType=VARCHAR},
+      mk_live_app_secret = #{mkLiveAppSecret,jdbcType=VARCHAR},
+      mk_live_app_parentId = #{mkLiveAppParentid,jdbcType=VARCHAR},
+      MK_Advertiser_Info_CompanyBody = #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR},
+      mk_live_app_status = #{mkLiveAppStatus,jdbcType=SMALLINT},
+      mk_live_app_userSourceId = #{mkLiveAppUsersourceid,jdbcType=VARCHAR},
+      mk_live_app_token = #{mkLiveAppToken,jdbcType=VARCHAR},
+      mk_live_app_tokenCrtTm = #{mkLiveAppTokencrttm,jdbcType=TIMESTAMP},
+      mk_live_app_tokenEndTm = #{mkLiveAppTokenendtm,jdbcType=TIMESTAMP},
+      mk_live_app_refreshToken = #{mkLiveAppRefreshtoken,jdbcType=VARCHAR},
+      mk_live_app_refreshTokenCrtTm = #{mkLiveAppRefreshtokencrttm,jdbcType=TIMESTAMP},
+      mk_live_app_refreshTokenEndTm = #{mkLiveAppRefreshtokenendtm,jdbcType=TIMESTAMP},
+      mk_live_app_accessUrl = #{mkLiveAppAccessurl,jdbcType=VARCHAR},
+      mk_live_app_oauthTokenUrl = #{mkLiveAppOauthtokenurl,jdbcType=VARCHAR},
+      mk_live_app_acessTokenUrl = #{mkLiveAppAcesstokenurl,jdbcType=VARCHAR},
+      mk_live_app_refreshTokenUrl = #{mkLiveAppRefreshtokenurl,jdbcType=VARCHAR},
+      OA_company_account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      mk_live_app_createTM = #{mkLiveAppCreatetm,jdbcType=TIMESTAMP},
+      mk_live_app_operationTM = #{mkLiveAppOperationtm,jdbcType=TIMESTAMP},
+      mk_live_app_modifyTM = #{mkLiveAppModifytm,jdbcType=TIMESTAMP}
+    where mk_live_app_no = #{mkLiveAppNo,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkLiveApp">
+    <id column="mk_live_app_no" jdbcType="VARCHAR" property="mkLiveAppNo" />
+    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="mk_live_app_id" jdbcType="VARCHAR" property="mkLiveAppId" />
+    <result column="mk_live_app_name" jdbcType="VARCHAR" property="mkLiveAppName" />
+    <result column="mk_live_app_secret" jdbcType="VARCHAR" property="mkLiveAppSecret" />
+    <result column="mk_live_app_parentid" jdbcType="VARCHAR" property="mkLiveAppParentid" />
+    <result column="mk_advertiser_info_companybody" jdbcType="VARCHAR" property="mkAdvertiserInfoCompanybody" />
+    <result column="mk_live_app_status" jdbcType="SMALLINT" property="mkLiveAppStatus" />
+    <result column="mk_live_app_usersourceid" jdbcType="VARCHAR" property="mkLiveAppUsersourceid" />
+    <result column="mk_live_app_token" jdbcType="VARCHAR" property="mkLiveAppToken" />
+    <result column="mk_live_app_tokencrttm" jdbcType="TIMESTAMP" property="mkLiveAppTokencrttm" />
+    <result column="mk_live_app_tokenendtm" jdbcType="TIMESTAMP" property="mkLiveAppTokenendtm" />
+    <result column="mk_live_app_refreshtoken" jdbcType="VARCHAR" property="mkLiveAppRefreshtoken" />
+    <result column="mk_live_app_refreshtokencrttm" jdbcType="TIMESTAMP" property="mkLiveAppRefreshtokencrttm" />
+    <result column="mk_live_app_refreshtokenendtm" jdbcType="TIMESTAMP" property="mkLiveAppRefreshtokenendtm" />
+    <result column="mk_live_app_accessurl" jdbcType="VARCHAR" property="mkLiveAppAccessurl" />
+    <result column="mk_live_app_oauthtokenurl" jdbcType="VARCHAR" property="mkLiveAppOauthtokenurl" />
+    <result column="mk_live_app_acesstokenurl" jdbcType="VARCHAR" property="mkLiveAppAcesstokenurl" />
+    <result column="mk_live_app_refreshtokenurl" jdbcType="VARCHAR" property="mkLiveAppRefreshtokenurl" />
+    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_live_app_createtm" jdbcType="TIMESTAMP" property="mkLiveAppCreatetm" />
+    <result column="mk_live_app_operationtm" jdbcType="TIMESTAMP" property="mkLiveAppOperationtm" />
+    <result column="mk_live_app_modifytm" jdbcType="TIMESTAMP" property="mkLiveAppModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_live_app_no, mk_media_info_code, mk_live_app_id, mk_live_app_name, mk_live_app_secret, 
+    mk_live_app_parentid, mk_advertiser_info_companybody, mk_live_app_status, mk_live_app_usersourceid, 
+    mk_live_app_token, mk_live_app_tokencrttm, mk_live_app_tokenendtm, mk_live_app_refreshtoken, 
+    mk_live_app_refreshtokencrttm, mk_live_app_refreshtokenendtm, mk_live_app_accessurl, 
+    mk_live_app_oauthtokenurl, mk_live_app_acesstokenurl, mk_live_app_refreshtokenurl, 
+    oa_company_account_code, mk_live_app_createtm, mk_live_app_operationtm, mk_live_app_modifytm
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_live_app
+    where mk_live_app_no = #{mkLiveAppNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_live_app
+    where mk_live_app_no = #{mkLiveAppNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkLiveApp">
+    insert into mk_live_app (mk_live_app_no, mk_media_info_code, mk_live_app_id, 
+      mk_live_app_name, mk_live_app_secret, mk_live_app_parentid, 
+      mk_advertiser_info_companybody, mk_live_app_status, 
+      mk_live_app_usersourceid, mk_live_app_token, 
+      mk_live_app_tokencrttm, mk_live_app_tokenendtm, 
+      mk_live_app_refreshtoken, mk_live_app_refreshtokencrttm, 
+      mk_live_app_refreshtokenendtm, mk_live_app_accessurl, 
+      mk_live_app_oauthtokenurl, mk_live_app_acesstokenurl, 
+      mk_live_app_refreshtokenurl, oa_company_account_code, 
+      mk_live_app_createtm, mk_live_app_operationtm, 
+      mk_live_app_modifytm)
+    values (#{mkLiveAppNo,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkLiveAppId,jdbcType=VARCHAR}, 
+      #{mkLiveAppName,jdbcType=VARCHAR}, #{mkLiveAppSecret,jdbcType=VARCHAR}, #{mkLiveAppParentid,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR}, #{mkLiveAppStatus,jdbcType=SMALLINT}, 
+      #{mkLiveAppUsersourceid,jdbcType=VARCHAR}, #{mkLiveAppToken,jdbcType=VARCHAR}, 
+      #{mkLiveAppTokencrttm,jdbcType=TIMESTAMP}, #{mkLiveAppTokenendtm,jdbcType=TIMESTAMP}, 
+      #{mkLiveAppRefreshtoken,jdbcType=VARCHAR}, #{mkLiveAppRefreshtokencrttm,jdbcType=TIMESTAMP}, 
+      #{mkLiveAppRefreshtokenendtm,jdbcType=TIMESTAMP}, #{mkLiveAppAccessurl,jdbcType=VARCHAR}, 
+      #{mkLiveAppOauthtokenurl,jdbcType=VARCHAR}, #{mkLiveAppAcesstokenurl,jdbcType=VARCHAR}, 
+      #{mkLiveAppRefreshtokenurl,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkLiveAppCreatetm,jdbcType=TIMESTAMP}, #{mkLiveAppOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkLiveAppModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkLiveApp">
+    insert into mk_live_app
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkLiveAppNo != null">
+        mk_live_app_no,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code,
+      </if>
+      <if test="mkLiveAppId != null">
+        mk_live_app_id,
+      </if>
+      <if test="mkLiveAppName != null">
+        mk_live_app_name,
+      </if>
+      <if test="mkLiveAppSecret != null">
+        mk_live_app_secret,
+      </if>
+      <if test="mkLiveAppParentid != null">
+        mk_live_app_parentid,
+      </if>
+      <if test="mkAdvertiserInfoCompanybody != null">
+        mk_advertiser_info_companybody,
+      </if>
+      <if test="mkLiveAppStatus != null">
+        mk_live_app_status,
+      </if>
+      <if test="mkLiveAppUsersourceid != null">
+        mk_live_app_usersourceid,
+      </if>
+      <if test="mkLiveAppToken != null">
+        mk_live_app_token,
+      </if>
+      <if test="mkLiveAppTokencrttm != null">
+        mk_live_app_tokencrttm,
+      </if>
+      <if test="mkLiveAppTokenendtm != null">
+        mk_live_app_tokenendtm,
+      </if>
+      <if test="mkLiveAppRefreshtoken != null">
+        mk_live_app_refreshtoken,
+      </if>
+      <if test="mkLiveAppRefreshtokencrttm != null">
+        mk_live_app_refreshtokencrttm,
+      </if>
+      <if test="mkLiveAppRefreshtokenendtm != null">
+        mk_live_app_refreshtokenendtm,
+      </if>
+      <if test="mkLiveAppAccessurl != null">
+        mk_live_app_accessurl,
+      </if>
+      <if test="mkLiveAppOauthtokenurl != null">
+        mk_live_app_oauthtokenurl,
+      </if>
+      <if test="mkLiveAppAcesstokenurl != null">
+        mk_live_app_acesstokenurl,
+      </if>
+      <if test="mkLiveAppRefreshtokenurl != null">
+        mk_live_app_refreshtokenurl,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code,
+      </if>
+      <if test="mkLiveAppCreatetm != null">
+        mk_live_app_createtm,
+      </if>
+      <if test="mkLiveAppOperationtm != null">
+        mk_live_app_operationtm,
+      </if>
+      <if test="mkLiveAppModifytm != null">
+        mk_live_app_modifytm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkLiveAppNo != null">
+        #{mkLiveAppNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppId != null">
+        #{mkLiveAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppName != null">
+        #{mkLiveAppName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppSecret != null">
+        #{mkLiveAppSecret,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppParentid != null">
+        #{mkLiveAppParentid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCompanybody != null">
+        #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppStatus != null">
+        #{mkLiveAppStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="mkLiveAppUsersourceid != null">
+        #{mkLiveAppUsersourceid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppToken != null">
+        #{mkLiveAppToken,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppTokencrttm != null">
+        #{mkLiveAppTokencrttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppTokenendtm != null">
+        #{mkLiveAppTokenendtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppRefreshtoken != null">
+        #{mkLiveAppRefreshtoken,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppRefreshtokencrttm != null">
+        #{mkLiveAppRefreshtokencrttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppRefreshtokenendtm != null">
+        #{mkLiveAppRefreshtokenendtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppAccessurl != null">
+        #{mkLiveAppAccessurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppOauthtokenurl != null">
+        #{mkLiveAppOauthtokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppAcesstokenurl != null">
+        #{mkLiveAppAcesstokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppRefreshtokenurl != null">
+        #{mkLiveAppRefreshtokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppCreatetm != null">
+        #{mkLiveAppCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppOperationtm != null">
+        #{mkLiveAppOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppModifytm != null">
+        #{mkLiveAppModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkLiveApp">
+    update mk_live_app
+    <set>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppId != null">
+        mk_live_app_id = #{mkLiveAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppName != null">
+        mk_live_app_name = #{mkLiveAppName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppSecret != null">
+        mk_live_app_secret = #{mkLiveAppSecret,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppParentid != null">
+        mk_live_app_parentid = #{mkLiveAppParentid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCompanybody != null">
+        mk_advertiser_info_companybody = #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppStatus != null">
+        mk_live_app_status = #{mkLiveAppStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="mkLiveAppUsersourceid != null">
+        mk_live_app_usersourceid = #{mkLiveAppUsersourceid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppToken != null">
+        mk_live_app_token = #{mkLiveAppToken,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppTokencrttm != null">
+        mk_live_app_tokencrttm = #{mkLiveAppTokencrttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppTokenendtm != null">
+        mk_live_app_tokenendtm = #{mkLiveAppTokenendtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppRefreshtoken != null">
+        mk_live_app_refreshtoken = #{mkLiveAppRefreshtoken,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppRefreshtokencrttm != null">
+        mk_live_app_refreshtokencrttm = #{mkLiveAppRefreshtokencrttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppRefreshtokenendtm != null">
+        mk_live_app_refreshtokenendtm = #{mkLiveAppRefreshtokenendtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppAccessurl != null">
+        mk_live_app_accessurl = #{mkLiveAppAccessurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppOauthtokenurl != null">
+        mk_live_app_oauthtokenurl = #{mkLiveAppOauthtokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppAcesstokenurl != null">
+        mk_live_app_acesstokenurl = #{mkLiveAppAcesstokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppRefreshtokenurl != null">
+        mk_live_app_refreshtokenurl = #{mkLiveAppRefreshtokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAppCreatetm != null">
+        mk_live_app_createtm = #{mkLiveAppCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppOperationtm != null">
+        mk_live_app_operationtm = #{mkLiveAppOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAppModifytm != null">
+        mk_live_app_modifytm = #{mkLiveAppModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mk_live_app_no = #{mkLiveAppNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkLiveApp">
+    update mk_live_app
+    set mk_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      mk_live_app_id = #{mkLiveAppId,jdbcType=VARCHAR},
+      mk_live_app_name = #{mkLiveAppName,jdbcType=VARCHAR},
+      mk_live_app_secret = #{mkLiveAppSecret,jdbcType=VARCHAR},
+      mk_live_app_parentid = #{mkLiveAppParentid,jdbcType=VARCHAR},
+      mk_advertiser_info_companybody = #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR},
+      mk_live_app_status = #{mkLiveAppStatus,jdbcType=SMALLINT},
+      mk_live_app_usersourceid = #{mkLiveAppUsersourceid,jdbcType=VARCHAR},
+      mk_live_app_token = #{mkLiveAppToken,jdbcType=VARCHAR},
+      mk_live_app_tokencrttm = #{mkLiveAppTokencrttm,jdbcType=TIMESTAMP},
+      mk_live_app_tokenendtm = #{mkLiveAppTokenendtm,jdbcType=TIMESTAMP},
+      mk_live_app_refreshtoken = #{mkLiveAppRefreshtoken,jdbcType=VARCHAR},
+      mk_live_app_refreshtokencrttm = #{mkLiveAppRefreshtokencrttm,jdbcType=TIMESTAMP},
+      mk_live_app_refreshtokenendtm = #{mkLiveAppRefreshtokenendtm,jdbcType=TIMESTAMP},
+      mk_live_app_accessurl = #{mkLiveAppAccessurl,jdbcType=VARCHAR},
+      mk_live_app_oauthtokenurl = #{mkLiveAppOauthtokenurl,jdbcType=VARCHAR},
+      mk_live_app_acesstokenurl = #{mkLiveAppAcesstokenurl,jdbcType=VARCHAR},
+      mk_live_app_refreshtokenurl = #{mkLiveAppRefreshtokenurl,jdbcType=VARCHAR},
+      oa_company_account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      mk_live_app_createtm = #{mkLiveAppCreatetm,jdbcType=TIMESTAMP},
+      mk_live_app_operationtm = #{mkLiveAppOperationtm,jdbcType=TIMESTAMP},
+      mk_live_app_modifytm = #{mkLiveAppModifytm,jdbcType=TIMESTAMP}
+    where mk_live_app_no = #{mkLiveAppNo,jdbcType=VARCHAR}
+  </update>
+</mapper>

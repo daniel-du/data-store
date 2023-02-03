@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkAdvertiserAppMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserApp">
+    <result column="mk_advertiser_app_no" jdbcType="VARCHAR" property="mkAdvertiserAppNo" />
+    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="mk_advertiser_app_id" jdbcType="VARCHAR" property="mkAdvertiserAppId" />
+    <result column="mk_advertiser_app_name" jdbcType="VARCHAR" property="mkAdvertiserAppName" />
+    <result column="mk_advertiser_secret" jdbcType="VARCHAR" property="mkAdvertiserSecret" />
+    <result column="mk_advertiser_status" jdbcType="SMALLINT" property="mkAdvertiserStatus" />
+    <result column="mk_advertiser_media_usersourceid" jdbcType="VARCHAR" property="mkAdvertiserMediaUsersourceid" />
+    <result column="mk_advertiser_media_token" jdbcType="VARCHAR" property="mkAdvertiserMediaToken" />
+    <result column="mk_advertiser_media_tokencrttm" jdbcType="TIMESTAMP" property="mkAdvertiserMediaTokencrttm" />
+    <result column="mk_advertiser_media_tokenendtm" jdbcType="TIMESTAMP" property="mkAdvertiserMediaTokenendtm" />
+    <result column="mk_advertiser_media_refreshtoken" jdbcType="VARCHAR" property="mkAdvertiserMediaRefreshtoken" />
+    <result column="mk_advertiser_media_refreshtokencrttm" jdbcType="TIMESTAMP" property="mkAdvertiserMediaRefreshtokencrttm" />
+    <result column="mk_advertiser_media_refreshtokenendtm" jdbcType="TIMESTAMP" property="mkAdvertiserMediaRefreshtokenendtm" />
+    <result column="mk_media_access_url" jdbcType="VARCHAR" property="mkMediaAccessUrl" />
+    <result column="mk_media_oauth_tokenurl" jdbcType="VARCHAR" property="mkMediaOauthTokenurl" />
+    <result column="mk_media_acess_tokenurl" jdbcType="VARCHAR" property="mkMediaAcessTokenurl" />
+    <result column="mk_media_refresh_tokenurl" jdbcType="VARCHAR" property="mkMediaRefreshTokenurl" />
+    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_advertiser_app_createtm" jdbcType="TIMESTAMP" property="mkAdvertiserAppCreatetm" />
+    <result column="mk_advertiser_app_operationtm" jdbcType="TIMESTAMP" property="mkAdvertiserAppOperationtm" />
+    <result column="mk_advertiser_app_modifytm" jdbcType="TIMESTAMP" property="mkAdvertiserAppModifytm" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserApp">
+    insert into mk_advertiser_app (mk_advertiser_app_no, mk_media_info_code, 
+      mk_advertiser_app_id, mk_advertiser_app_name, 
+      mk_advertiser_secret, mk_advertiser_status, 
+      mk_advertiser_media_usersourceid, mk_advertiser_media_token, 
+      mk_advertiser_media_tokencrttm, mk_advertiser_media_tokenendtm, 
+      mk_advertiser_media_refreshtoken, mk_advertiser_media_refreshtokencrttm, 
+      mk_advertiser_media_refreshtokenendtm, mk_media_access_url, 
+      mk_media_oauth_tokenurl, mk_media_acess_tokenurl, 
+      mk_media_refresh_tokenurl, oa_company_account_code, 
+      mk_advertiser_app_createtm, mk_advertiser_app_operationtm, 
+      mk_advertiser_app_modifytm)
+    values (#{mkAdvertiserAppNo,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserAppId,jdbcType=VARCHAR}, #{mkAdvertiserAppName,jdbcType=VARCHAR}, 
+      #{mkAdvertiserSecret,jdbcType=VARCHAR}, #{mkAdvertiserStatus,jdbcType=SMALLINT}, 
+      #{mkAdvertiserMediaUsersourceid,jdbcType=VARCHAR}, #{mkAdvertiserMediaToken,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMediaTokencrttm,jdbcType=TIMESTAMP}, #{mkAdvertiserMediaTokenendtm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserMediaRefreshtoken,jdbcType=VARCHAR}, #{mkAdvertiserMediaRefreshtokencrttm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserMediaRefreshtokenendtm,jdbcType=TIMESTAMP}, #{mkMediaAccessUrl,jdbcType=VARCHAR}, 
+      #{mkMediaOauthTokenurl,jdbcType=VARCHAR}, #{mkMediaAcessTokenurl,jdbcType=VARCHAR}, 
+      #{mkMediaRefreshTokenurl,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserAppCreatetm,jdbcType=TIMESTAMP}, #{mkAdvertiserAppOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserAppModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserApp">
+    insert into mk_advertiser_app
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserAppNo != null">
+        mk_advertiser_app_no,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code,
+      </if>
+      <if test="mkAdvertiserAppId != null">
+        mk_advertiser_app_id,
+      </if>
+      <if test="mkAdvertiserAppName != null">
+        mk_advertiser_app_name,
+      </if>
+      <if test="mkAdvertiserSecret != null">
+        mk_advertiser_secret,
+      </if>
+      <if test="mkAdvertiserStatus != null">
+        mk_advertiser_status,
+      </if>
+      <if test="mkAdvertiserMediaUsersourceid != null">
+        mk_advertiser_media_usersourceid,
+      </if>
+      <if test="mkAdvertiserMediaToken != null">
+        mk_advertiser_media_token,
+      </if>
+      <if test="mkAdvertiserMediaTokencrttm != null">
+        mk_advertiser_media_tokencrttm,
+      </if>
+      <if test="mkAdvertiserMediaTokenendtm != null">
+        mk_advertiser_media_tokenendtm,
+      </if>
+      <if test="mkAdvertiserMediaRefreshtoken != null">
+        mk_advertiser_media_refreshtoken,
+      </if>
+      <if test="mkAdvertiserMediaRefreshtokencrttm != null">
+        mk_advertiser_media_refreshtokencrttm,
+      </if>
+      <if test="mkAdvertiserMediaRefreshtokenendtm != null">
+        mk_advertiser_media_refreshtokenendtm,
+      </if>
+      <if test="mkMediaAccessUrl != null">
+        mk_media_access_url,
+      </if>
+      <if test="mkMediaOauthTokenurl != null">
+        mk_media_oauth_tokenurl,
+      </if>
+      <if test="mkMediaAcessTokenurl != null">
+        mk_media_acess_tokenurl,
+      </if>
+      <if test="mkMediaRefreshTokenurl != null">
+        mk_media_refresh_tokenurl,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code,
+      </if>
+      <if test="mkAdvertiserAppCreatetm != null">
+        mk_advertiser_app_createtm,
+      </if>
+      <if test="mkAdvertiserAppOperationtm != null">
+        mk_advertiser_app_operationtm,
+      </if>
+      <if test="mkAdvertiserAppModifytm != null">
+        mk_advertiser_app_modifytm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserAppNo != null">
+        #{mkAdvertiserAppNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAppId != null">
+        #{mkAdvertiserAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAppName != null">
+        #{mkAdvertiserAppName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserSecret != null">
+        #{mkAdvertiserSecret,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserStatus != null">
+        #{mkAdvertiserStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="mkAdvertiserMediaUsersourceid != null">
+        #{mkAdvertiserMediaUsersourceid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaToken != null">
+        #{mkAdvertiserMediaToken,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaTokencrttm != null">
+        #{mkAdvertiserMediaTokencrttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMediaTokenendtm != null">
+        #{mkAdvertiserMediaTokenendtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMediaRefreshtoken != null">
+        #{mkAdvertiserMediaRefreshtoken,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaRefreshtokencrttm != null">
+        #{mkAdvertiserMediaRefreshtokencrttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMediaRefreshtokenendtm != null">
+        #{mkAdvertiserMediaRefreshtokenendtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaAccessUrl != null">
+        #{mkMediaAccessUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaOauthTokenurl != null">
+        #{mkMediaOauthTokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAcessTokenurl != null">
+        #{mkMediaAcessTokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaRefreshTokenurl != null">
+        #{mkMediaRefreshTokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAppCreatetm != null">
+        #{mkAdvertiserAppCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserAppOperationtm != null">
+        #{mkAdvertiserAppOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserAppModifytm != null">
+        #{mkAdvertiserAppModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserApp">
+    <id column="MK_advertiser_app_no" jdbcType="VARCHAR" property="mkAdvertiserAppNo" />
+    <result column="MK_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="MK_advertiser_app_id" jdbcType="VARCHAR" property="mkAdvertiserAppId" />
+    <result column="MK_advertiser_app_name" jdbcType="VARCHAR" property="mkAdvertiserAppName" />
+    <result column="MK_advertiser_secret" jdbcType="VARCHAR" property="mkAdvertiserSecret" />
+    <result column="MK_advertiser_status" jdbcType="SMALLINT" property="mkAdvertiserStatus" />
+    <result column="MK_Advertiser_media_userSourceId" jdbcType="VARCHAR" property="mkAdvertiserMediaUsersourceid" />
+    <result column="MK_Advertiser_media_token" jdbcType="VARCHAR" property="mkAdvertiserMediaToken" />
+    <result column="MK_Advertiser_media_tokenCrtTm" jdbcType="TIMESTAMP" property="mkAdvertiserMediaTokencrttm" />
+    <result column="MK_Advertiser_media_tokenEndTm" jdbcType="TIMESTAMP" property="mkAdvertiserMediaTokenendtm" />
+    <result column="MK_Advertiser_media_refreshToken" jdbcType="VARCHAR" property="mkAdvertiserMediaRefreshtoken" />
+    <result column="MK_Advertiser_media_refreshTokenCrtTm" jdbcType="TIMESTAMP" property="mkAdvertiserMediaRefreshtokencrttm" />
+    <result column="MK_Advertiser_media_refreshTokenEndTm" jdbcType="TIMESTAMP" property="mkAdvertiserMediaRefreshtokenendtm" />
+    <result column="MK_media_access_url" jdbcType="VARCHAR" property="mkMediaAccessUrl" />
+    <result column="MK_media_oauth_tokenUrl" jdbcType="VARCHAR" property="mkMediaOauthTokenurl" />
+    <result column="MK_media_acess_tokenUrl" jdbcType="VARCHAR" property="mkMediaAcessTokenurl" />
+    <result column="MK_media_refresh_tokenUrl" jdbcType="VARCHAR" property="mkMediaRefreshTokenurl" />
+    <result column="OA_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="MK_advertiser_app_createTM" jdbcType="TIMESTAMP" property="mkAdvertiserAppCreatetm" />
+    <result column="MK_advertiser_app_operationTM" jdbcType="TIMESTAMP" property="mkAdvertiserAppOperationtm" />
+    <result column="MK_advertiser_app_modifyTM" jdbcType="TIMESTAMP" property="mkAdvertiserAppModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MK_advertiser_app_no, MK_media_info_code, MK_advertiser_app_id, MK_advertiser_app_name, 
+    MK_advertiser_secret, MK_advertiser_status, MK_Advertiser_media_userSourceId, MK_Advertiser_media_token, 
+    MK_Advertiser_media_tokenCrtTm, MK_Advertiser_media_tokenEndTm, MK_Advertiser_media_refreshToken, 
+    MK_Advertiser_media_refreshTokenCrtTm, MK_Advertiser_media_refreshTokenEndTm, MK_media_access_url, 
+    MK_media_oauth_tokenUrl, MK_media_acess_tokenUrl, MK_media_refresh_tokenUrl, OA_company_account_code, 
+    MK_advertiser_app_createTM, MK_advertiser_app_operationTM, MK_advertiser_app_modifyTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_advertiser_app
+    where MK_advertiser_app_no = #{mkAdvertiserAppNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_advertiser_app
+    where MK_advertiser_app_no = #{mkAdvertiserAppNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserApp">
+    insert into mk_advertiser_app (MK_advertiser_app_no, MK_media_info_code, 
+      MK_advertiser_app_id, MK_advertiser_app_name, 
+      MK_advertiser_secret, MK_advertiser_status, 
+      MK_Advertiser_media_userSourceId, MK_Advertiser_media_token, 
+      MK_Advertiser_media_tokenCrtTm, MK_Advertiser_media_tokenEndTm, 
+      MK_Advertiser_media_refreshToken, MK_Advertiser_media_refreshTokenCrtTm, 
+      MK_Advertiser_media_refreshTokenEndTm, MK_media_access_url, 
+      MK_media_oauth_tokenUrl, MK_media_acess_tokenUrl, 
+      MK_media_refresh_tokenUrl, OA_company_account_code, 
+      MK_advertiser_app_createTM, MK_advertiser_app_operationTM, 
+      MK_advertiser_app_modifyTM)
+    values (#{mkAdvertiserAppNo,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserAppId,jdbcType=VARCHAR}, #{mkAdvertiserAppName,jdbcType=VARCHAR}, 
+      #{mkAdvertiserSecret,jdbcType=VARCHAR}, #{mkAdvertiserStatus,jdbcType=SMALLINT}, 
+      #{mkAdvertiserMediaUsersourceid,jdbcType=VARCHAR}, #{mkAdvertiserMediaToken,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMediaTokencrttm,jdbcType=TIMESTAMP}, #{mkAdvertiserMediaTokenendtm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserMediaRefreshtoken,jdbcType=VARCHAR}, #{mkAdvertiserMediaRefreshtokencrttm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserMediaRefreshtokenendtm,jdbcType=TIMESTAMP}, #{mkMediaAccessUrl,jdbcType=VARCHAR}, 
+      #{mkMediaOauthTokenurl,jdbcType=VARCHAR}, #{mkMediaAcessTokenurl,jdbcType=VARCHAR}, 
+      #{mkMediaRefreshTokenurl,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserAppCreatetm,jdbcType=TIMESTAMP}, #{mkAdvertiserAppOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserAppModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserApp">
+    insert into mk_advertiser_app
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserAppNo != null">
+        MK_advertiser_app_no,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_info_code,
+      </if>
+      <if test="mkAdvertiserAppId != null">
+        MK_advertiser_app_id,
+      </if>
+      <if test="mkAdvertiserAppName != null">
+        MK_advertiser_app_name,
+      </if>
+      <if test="mkAdvertiserSecret != null">
+        MK_advertiser_secret,
+      </if>
+      <if test="mkAdvertiserStatus != null">
+        MK_advertiser_status,
+      </if>
+      <if test="mkAdvertiserMediaUsersourceid != null">
+        MK_Advertiser_media_userSourceId,
+      </if>
+      <if test="mkAdvertiserMediaToken != null">
+        MK_Advertiser_media_token,
+      </if>
+      <if test="mkAdvertiserMediaTokencrttm != null">
+        MK_Advertiser_media_tokenCrtTm,
+      </if>
+      <if test="mkAdvertiserMediaTokenendtm != null">
+        MK_Advertiser_media_tokenEndTm,
+      </if>
+      <if test="mkAdvertiserMediaRefreshtoken != null">
+        MK_Advertiser_media_refreshToken,
+      </if>
+      <if test="mkAdvertiserMediaRefreshtokencrttm != null">
+        MK_Advertiser_media_refreshTokenCrtTm,
+      </if>
+      <if test="mkAdvertiserMediaRefreshtokenendtm != null">
+        MK_Advertiser_media_refreshTokenEndTm,
+      </if>
+      <if test="mkMediaAccessUrl != null">
+        MK_media_access_url,
+      </if>
+      <if test="mkMediaOauthTokenurl != null">
+        MK_media_oauth_tokenUrl,
+      </if>
+      <if test="mkMediaAcessTokenurl != null">
+        MK_media_acess_tokenUrl,
+      </if>
+      <if test="mkMediaRefreshTokenurl != null">
+        MK_media_refresh_tokenUrl,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_account_code,
+      </if>
+      <if test="mkAdvertiserAppCreatetm != null">
+        MK_advertiser_app_createTM,
+      </if>
+      <if test="mkAdvertiserAppOperationtm != null">
+        MK_advertiser_app_operationTM,
+      </if>
+      <if test="mkAdvertiserAppModifytm != null">
+        MK_advertiser_app_modifyTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserAppNo != null">
+        #{mkAdvertiserAppNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAppId != null">
+        #{mkAdvertiserAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAppName != null">
+        #{mkAdvertiserAppName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserSecret != null">
+        #{mkAdvertiserSecret,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserStatus != null">
+        #{mkAdvertiserStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="mkAdvertiserMediaUsersourceid != null">
+        #{mkAdvertiserMediaUsersourceid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaToken != null">
+        #{mkAdvertiserMediaToken,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaTokencrttm != null">
+        #{mkAdvertiserMediaTokencrttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMediaTokenendtm != null">
+        #{mkAdvertiserMediaTokenendtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMediaRefreshtoken != null">
+        #{mkAdvertiserMediaRefreshtoken,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaRefreshtokencrttm != null">
+        #{mkAdvertiserMediaRefreshtokencrttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMediaRefreshtokenendtm != null">
+        #{mkAdvertiserMediaRefreshtokenendtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaAccessUrl != null">
+        #{mkMediaAccessUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaOauthTokenurl != null">
+        #{mkMediaOauthTokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAcessTokenurl != null">
+        #{mkMediaAcessTokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaRefreshTokenurl != null">
+        #{mkMediaRefreshTokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAppCreatetm != null">
+        #{mkAdvertiserAppCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserAppOperationtm != null">
+        #{mkAdvertiserAppOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserAppModifytm != null">
+        #{mkAdvertiserAppModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserApp">
+    update mk_advertiser_app
+    <set>
+      <if test="mkMediaInfoCode != null">
+        MK_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAppId != null">
+        MK_advertiser_app_id = #{mkAdvertiserAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAppName != null">
+        MK_advertiser_app_name = #{mkAdvertiserAppName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserSecret != null">
+        MK_advertiser_secret = #{mkAdvertiserSecret,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserStatus != null">
+        MK_advertiser_status = #{mkAdvertiserStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="mkAdvertiserMediaUsersourceid != null">
+        MK_Advertiser_media_userSourceId = #{mkAdvertiserMediaUsersourceid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaToken != null">
+        MK_Advertiser_media_token = #{mkAdvertiserMediaToken,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaTokencrttm != null">
+        MK_Advertiser_media_tokenCrtTm = #{mkAdvertiserMediaTokencrttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMediaTokenendtm != null">
+        MK_Advertiser_media_tokenEndTm = #{mkAdvertiserMediaTokenendtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMediaRefreshtoken != null">
+        MK_Advertiser_media_refreshToken = #{mkAdvertiserMediaRefreshtoken,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaRefreshtokencrttm != null">
+        MK_Advertiser_media_refreshTokenCrtTm = #{mkAdvertiserMediaRefreshtokencrttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMediaRefreshtokenendtm != null">
+        MK_Advertiser_media_refreshTokenEndTm = #{mkAdvertiserMediaRefreshtokenendtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaAccessUrl != null">
+        MK_media_access_url = #{mkMediaAccessUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaOauthTokenurl != null">
+        MK_media_oauth_tokenUrl = #{mkMediaOauthTokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAcessTokenurl != null">
+        MK_media_acess_tokenUrl = #{mkMediaAcessTokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaRefreshTokenurl != null">
+        MK_media_refresh_tokenUrl = #{mkMediaRefreshTokenurl,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAppCreatetm != null">
+        MK_advertiser_app_createTM = #{mkAdvertiserAppCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserAppOperationtm != null">
+        MK_advertiser_app_operationTM = #{mkAdvertiserAppOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserAppModifytm != null">
+        MK_advertiser_app_modifyTM = #{mkAdvertiserAppModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where MK_advertiser_app_no = #{mkAdvertiserAppNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserApp">
+    update mk_advertiser_app
+    set MK_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      MK_advertiser_app_id = #{mkAdvertiserAppId,jdbcType=VARCHAR},
+      MK_advertiser_app_name = #{mkAdvertiserAppName,jdbcType=VARCHAR},
+      MK_advertiser_secret = #{mkAdvertiserSecret,jdbcType=VARCHAR},
+      MK_advertiser_status = #{mkAdvertiserStatus,jdbcType=SMALLINT},
+      MK_Advertiser_media_userSourceId = #{mkAdvertiserMediaUsersourceid,jdbcType=VARCHAR},
+      MK_Advertiser_media_token = #{mkAdvertiserMediaToken,jdbcType=VARCHAR},
+      MK_Advertiser_media_tokenCrtTm = #{mkAdvertiserMediaTokencrttm,jdbcType=TIMESTAMP},
+      MK_Advertiser_media_tokenEndTm = #{mkAdvertiserMediaTokenendtm,jdbcType=TIMESTAMP},
+      MK_Advertiser_media_refreshToken = #{mkAdvertiserMediaRefreshtoken,jdbcType=VARCHAR},
+      MK_Advertiser_media_refreshTokenCrtTm = #{mkAdvertiserMediaRefreshtokencrttm,jdbcType=TIMESTAMP},
+      MK_Advertiser_media_refreshTokenEndTm = #{mkAdvertiserMediaRefreshtokenendtm,jdbcType=TIMESTAMP},
+      MK_media_access_url = #{mkMediaAccessUrl,jdbcType=VARCHAR},
+      MK_media_oauth_tokenUrl = #{mkMediaOauthTokenurl,jdbcType=VARCHAR},
+      MK_media_acess_tokenUrl = #{mkMediaAcessTokenurl,jdbcType=VARCHAR},
+      MK_media_refresh_tokenUrl = #{mkMediaRefreshTokenurl,jdbcType=VARCHAR},
+      OA_company_account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      MK_advertiser_app_createTM = #{mkAdvertiserAppCreatetm,jdbcType=TIMESTAMP},
+      MK_advertiser_app_operationTM = #{mkAdvertiserAppOperationtm,jdbcType=TIMESTAMP},
+      MK_advertiser_app_modifyTM = #{mkAdvertiserAppModifytm,jdbcType=TIMESTAMP}
+    where MK_advertiser_app_no = #{mkAdvertiserAppNo,jdbcType=VARCHAR}
+  </update>
+</mapper>

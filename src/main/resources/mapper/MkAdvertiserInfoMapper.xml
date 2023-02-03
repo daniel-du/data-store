@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkAdvertiserInfoMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserInfo">
+    <id column="MK_Advertiser_Info_Code" jdbcType="VARCHAR" property="mkAdvertiserInfoCode" />
+    <result column="MK_Advertiser_Info_Name" jdbcType="VARCHAR" property="mkAdvertiserInfoName" />
+    <result column="MK_Advertiser_Info_CompanyBody" jdbcType="VARCHAR" property="mkAdvertiserInfoCompanybody" />
+    <result column="Mk_advertiser_info_Insurance" jdbcType="VARCHAR" property="mkAdvertiserInfoInsurance" />
+    <result column="MK_Advertiser_Info_remark" jdbcType="VARCHAR" property="mkAdvertiserInfoRemark" />
+    <result column="MK_Advertiser_Info_State" jdbcType="VARCHAR" property="mkAdvertiserInfoState" />
+    <result column="mk_advertiser_info_contacts" jdbcType="VARCHAR" property="mkAdvertiserInfoContacts" />
+    <result column="MK_Advertiser_Info_TaxNumber" jdbcType="VARCHAR" property="mkAdvertiserInfoTaxnumber" />
+    <result column="MK_Advertiser_Info_Adress" jdbcType="VARCHAR" property="mkAdvertiserInfoAdress" />
+    <result column="MK_Advertiser_Info_phoneNumber" jdbcType="VARCHAR" property="mkAdvertiserInfoPhonenumber" />
+    <result column="MK_Advertiser_Info_bank" jdbcType="VARCHAR" property="mkAdvertiserInfoBank" />
+    <result column="MK_Advertiser_Info_bankAccount" jdbcType="VARCHAR" property="mkAdvertiserInfoBankaccount" />
+    <result column="MK_Advertiser_Info_EpsStltType" jdbcType="VARCHAR" property="mkAdvertiserInfoEpsstlttype" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="MK_Advertiser_Info_CreateTM" jdbcType="TIMESTAMP" property="mkAdvertiserInfoCreatetm" />
+    <result column="MK_Advertiser_Info_OperationTM" jdbcType="TIMESTAMP" property="mkAdvertiserInfoOperationtm" />
+    <result column="MK_Advertiser_Info_MODIFYTM" jdbcType="TIMESTAMP" property="mkAdvertiserInfoModifytm" />
+    <result column="mk_advertiser_info_logo" jdbcType="VARCHAR" property="mkAdvertiserInfoLogo" />
+    <result column="mk_advertiser_info_brief" jdbcType="VARCHAR" property="mkAdvertiserInfoBrief" />
+    <result column="oa_merchant_info_No" jdbcType="VARCHAR" property="oaMerchantInfoNo" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MK_Advertiser_Info_Code, MK_Advertiser_Info_Name, MK_Advertiser_Info_CompanyBody, 
+    Mk_advertiser_info_Insurance, MK_Advertiser_Info_remark, MK_Advertiser_Info_State, 
+    mk_advertiser_info_contacts, MK_Advertiser_Info_TaxNumber, MK_Advertiser_Info_Adress, 
+    MK_Advertiser_Info_phoneNumber, MK_Advertiser_Info_bank, MK_Advertiser_Info_bankAccount, 
+    MK_Advertiser_Info_EpsStltType, OA_company_Account_code, MK_Advertiser_Info_CreateTM, 
+    MK_Advertiser_Info_OperationTM, MK_Advertiser_Info_MODIFYTM, mk_advertiser_info_logo, 
+    mk_advertiser_info_brief, oa_merchant_info_No
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_advertiser_info
+    where MK_Advertiser_Info_Code = #{mkAdvertiserInfoCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_advertiser_info
+    where MK_Advertiser_Info_Code = #{mkAdvertiserInfoCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserInfo">
+    insert into mk_advertiser_info (MK_Advertiser_Info_Code, MK_Advertiser_Info_Name, 
+      MK_Advertiser_Info_CompanyBody, Mk_advertiser_info_Insurance, 
+      MK_Advertiser_Info_remark, MK_Advertiser_Info_State, 
+      mk_advertiser_info_contacts, MK_Advertiser_Info_TaxNumber, 
+      MK_Advertiser_Info_Adress, MK_Advertiser_Info_phoneNumber, 
+      MK_Advertiser_Info_bank, MK_Advertiser_Info_bankAccount, 
+      MK_Advertiser_Info_EpsStltType, OA_company_Account_code, 
+      MK_Advertiser_Info_CreateTM, MK_Advertiser_Info_OperationTM, 
+      MK_Advertiser_Info_MODIFYTM, mk_advertiser_info_logo, 
+      mk_advertiser_info_brief, oa_merchant_info_No
+      )
+    values (#{mkAdvertiserInfoCode,jdbcType=VARCHAR}, #{mkAdvertiserInfoName,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR}, #{mkAdvertiserInfoInsurance,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoRemark,jdbcType=VARCHAR}, #{mkAdvertiserInfoState,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoContacts,jdbcType=VARCHAR}, #{mkAdvertiserInfoTaxnumber,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoAdress,jdbcType=VARCHAR}, #{mkAdvertiserInfoPhonenumber,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoBank,jdbcType=VARCHAR}, #{mkAdvertiserInfoBankaccount,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoEpsstlttype,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoCreatetm,jdbcType=TIMESTAMP}, #{mkAdvertiserInfoOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserInfoModifytm,jdbcType=TIMESTAMP}, #{mkAdvertiserInfoLogo,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoBrief,jdbcType=VARCHAR}, #{oaMerchantInfoNo,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserInfo">
+    insert into mk_advertiser_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserInfoCode != null">
+        MK_Advertiser_Info_Code,
+      </if>
+      <if test="mkAdvertiserInfoName != null">
+        MK_Advertiser_Info_Name,
+      </if>
+      <if test="mkAdvertiserInfoCompanybody != null">
+        MK_Advertiser_Info_CompanyBody,
+      </if>
+      <if test="mkAdvertiserInfoInsurance != null">
+        Mk_advertiser_info_Insurance,
+      </if>
+      <if test="mkAdvertiserInfoRemark != null">
+        MK_Advertiser_Info_remark,
+      </if>
+      <if test="mkAdvertiserInfoState != null">
+        MK_Advertiser_Info_State,
+      </if>
+      <if test="mkAdvertiserInfoContacts != null">
+        mk_advertiser_info_contacts,
+      </if>
+      <if test="mkAdvertiserInfoTaxnumber != null">
+        MK_Advertiser_Info_TaxNumber,
+      </if>
+      <if test="mkAdvertiserInfoAdress != null">
+        MK_Advertiser_Info_Adress,
+      </if>
+      <if test="mkAdvertiserInfoPhonenumber != null">
+        MK_Advertiser_Info_phoneNumber,
+      </if>
+      <if test="mkAdvertiserInfoBank != null">
+        MK_Advertiser_Info_bank,
+      </if>
+      <if test="mkAdvertiserInfoBankaccount != null">
+        MK_Advertiser_Info_bankAccount,
+      </if>
+      <if test="mkAdvertiserInfoEpsstlttype != null">
+        MK_Advertiser_Info_EpsStltType,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="mkAdvertiserInfoCreatetm != null">
+        MK_Advertiser_Info_CreateTM,
+      </if>
+      <if test="mkAdvertiserInfoOperationtm != null">
+        MK_Advertiser_Info_OperationTM,
+      </if>
+      <if test="mkAdvertiserInfoModifytm != null">
+        MK_Advertiser_Info_MODIFYTM,
+      </if>
+      <if test="mkAdvertiserInfoLogo != null">
+        mk_advertiser_info_logo,
+      </if>
+      <if test="mkAdvertiserInfoBrief != null">
+        mk_advertiser_info_brief,
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        oa_merchant_info_No,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserInfoCode != null">
+        #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoName != null">
+        #{mkAdvertiserInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCompanybody != null">
+        #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoInsurance != null">
+        #{mkAdvertiserInfoInsurance,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoRemark != null">
+        #{mkAdvertiserInfoRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoState != null">
+        #{mkAdvertiserInfoState,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoContacts != null">
+        #{mkAdvertiserInfoContacts,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoTaxnumber != null">
+        #{mkAdvertiserInfoTaxnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoAdress != null">
+        #{mkAdvertiserInfoAdress,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoPhonenumber != null">
+        #{mkAdvertiserInfoPhonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoBank != null">
+        #{mkAdvertiserInfoBank,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoBankaccount != null">
+        #{mkAdvertiserInfoBankaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoEpsstlttype != null">
+        #{mkAdvertiserInfoEpsstlttype,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCreatetm != null">
+        #{mkAdvertiserInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserInfoOperationtm != null">
+        #{mkAdvertiserInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserInfoModifytm != null">
+        #{mkAdvertiserInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserInfoLogo != null">
+        #{mkAdvertiserInfoLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoBrief != null">
+        #{mkAdvertiserInfoBrief,jdbcType=VARCHAR},
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserInfo">
+    update mk_advertiser_info
+    <set>
+      <if test="mkAdvertiserInfoName != null">
+        MK_Advertiser_Info_Name = #{mkAdvertiserInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCompanybody != null">
+        MK_Advertiser_Info_CompanyBody = #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoInsurance != null">
+        Mk_advertiser_info_Insurance = #{mkAdvertiserInfoInsurance,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoRemark != null">
+        MK_Advertiser_Info_remark = #{mkAdvertiserInfoRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoState != null">
+        MK_Advertiser_Info_State = #{mkAdvertiserInfoState,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoContacts != null">
+        mk_advertiser_info_contacts = #{mkAdvertiserInfoContacts,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoTaxnumber != null">
+        MK_Advertiser_Info_TaxNumber = #{mkAdvertiserInfoTaxnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoAdress != null">
+        MK_Advertiser_Info_Adress = #{mkAdvertiserInfoAdress,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoPhonenumber != null">
+        MK_Advertiser_Info_phoneNumber = #{mkAdvertiserInfoPhonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoBank != null">
+        MK_Advertiser_Info_bank = #{mkAdvertiserInfoBank,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoBankaccount != null">
+        MK_Advertiser_Info_bankAccount = #{mkAdvertiserInfoBankaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoEpsstlttype != null">
+        MK_Advertiser_Info_EpsStltType = #{mkAdvertiserInfoEpsstlttype,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCreatetm != null">
+        MK_Advertiser_Info_CreateTM = #{mkAdvertiserInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserInfoOperationtm != null">
+        MK_Advertiser_Info_OperationTM = #{mkAdvertiserInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserInfoModifytm != null">
+        MK_Advertiser_Info_MODIFYTM = #{mkAdvertiserInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserInfoLogo != null">
+        mk_advertiser_info_logo = #{mkAdvertiserInfoLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoBrief != null">
+        mk_advertiser_info_brief = #{mkAdvertiserInfoBrief,jdbcType=VARCHAR},
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        oa_merchant_info_No = #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MK_Advertiser_Info_Code = #{mkAdvertiserInfoCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserInfo">
+    update mk_advertiser_info
+    set MK_Advertiser_Info_Name = #{mkAdvertiserInfoName,jdbcType=VARCHAR},
+      MK_Advertiser_Info_CompanyBody = #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR},
+      Mk_advertiser_info_Insurance = #{mkAdvertiserInfoInsurance,jdbcType=VARCHAR},
+      MK_Advertiser_Info_remark = #{mkAdvertiserInfoRemark,jdbcType=VARCHAR},
+      MK_Advertiser_Info_State = #{mkAdvertiserInfoState,jdbcType=VARCHAR},
+      mk_advertiser_info_contacts = #{mkAdvertiserInfoContacts,jdbcType=VARCHAR},
+      MK_Advertiser_Info_TaxNumber = #{mkAdvertiserInfoTaxnumber,jdbcType=VARCHAR},
+      MK_Advertiser_Info_Adress = #{mkAdvertiserInfoAdress,jdbcType=VARCHAR},
+      MK_Advertiser_Info_phoneNumber = #{mkAdvertiserInfoPhonenumber,jdbcType=VARCHAR},
+      MK_Advertiser_Info_bank = #{mkAdvertiserInfoBank,jdbcType=VARCHAR},
+      MK_Advertiser_Info_bankAccount = #{mkAdvertiserInfoBankaccount,jdbcType=VARCHAR},
+      MK_Advertiser_Info_EpsStltType = #{mkAdvertiserInfoEpsstlttype,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      MK_Advertiser_Info_CreateTM = #{mkAdvertiserInfoCreatetm,jdbcType=TIMESTAMP},
+      MK_Advertiser_Info_OperationTM = #{mkAdvertiserInfoOperationtm,jdbcType=TIMESTAMP},
+      MK_Advertiser_Info_MODIFYTM = #{mkAdvertiserInfoModifytm,jdbcType=TIMESTAMP},
+      mk_advertiser_info_logo = #{mkAdvertiserInfoLogo,jdbcType=VARCHAR},
+      mk_advertiser_info_brief = #{mkAdvertiserInfoBrief,jdbcType=VARCHAR},
+      oa_merchant_info_No = #{oaMerchantInfoNo,jdbcType=VARCHAR}
+    where MK_Advertiser_Info_Code = #{mkAdvertiserInfoCode,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserInfo">
+    <result column="mk_advertiser_info_code" jdbcType="VARCHAR" property="mkAdvertiserInfoCode" />
+    <result column="mk_advertiser_info_name" jdbcType="VARCHAR" property="mkAdvertiserInfoName" />
+    <result column="mk_advertiser_info_companybody" jdbcType="VARCHAR" property="mkAdvertiserInfoCompanybody" />
+    <result column="mk_advertiser_info_insurance" jdbcType="VARCHAR" property="mkAdvertiserInfoInsurance" />
+    <result column="mk_advertiser_info_remark" jdbcType="VARCHAR" property="mkAdvertiserInfoRemark" />
+    <result column="mk_advertiser_info_state" jdbcType="VARCHAR" property="mkAdvertiserInfoState" />
+    <result column="mk_advertiser_info_contacts" jdbcType="VARCHAR" property="mkAdvertiserInfoContacts" />
+    <result column="mk_advertiser_info_taxnumber" jdbcType="VARCHAR" property="mkAdvertiserInfoTaxnumber" />
+    <result column="mk_advertiser_info_adress" jdbcType="VARCHAR" property="mkAdvertiserInfoAdress" />
+    <result column="mk_advertiser_info_phonenumber" jdbcType="VARCHAR" property="mkAdvertiserInfoPhonenumber" />
+    <result column="mk_advertiser_info_bank" jdbcType="VARCHAR" property="mkAdvertiserInfoBank" />
+    <result column="mk_advertiser_info_bankaccount" jdbcType="VARCHAR" property="mkAdvertiserInfoBankaccount" />
+    <result column="mk_advertiser_info_epsstlttype" jdbcType="VARCHAR" property="mkAdvertiserInfoEpsstlttype" />
+    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_advertiser_info_createtm" jdbcType="TIMESTAMP" property="mkAdvertiserInfoCreatetm" />
+    <result column="mk_advertiser_info_operationtm" jdbcType="TIMESTAMP" property="mkAdvertiserInfoOperationtm" />
+    <result column="mk_advertiser_info_modifytm" jdbcType="TIMESTAMP" property="mkAdvertiserInfoModifytm" />
+    <result column="mk_advertiser_info_logo" jdbcType="VARCHAR" property="mkAdvertiserInfoLogo" />
+    <result column="mk_advertiser_info_brief" jdbcType="VARCHAR" property="mkAdvertiserInfoBrief" />
+    <result column="oa_merchant_info_no" jdbcType="VARCHAR" property="oaMerchantInfoNo" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserInfo">
+    insert into mk_advertiser_info (mk_advertiser_info_code, mk_advertiser_info_name, 
+      mk_advertiser_info_companybody, mk_advertiser_info_insurance, 
+      mk_advertiser_info_remark, mk_advertiser_info_state, 
+      mk_advertiser_info_contacts, mk_advertiser_info_taxnumber, 
+      mk_advertiser_info_adress, mk_advertiser_info_phonenumber, 
+      mk_advertiser_info_bank, mk_advertiser_info_bankaccount, 
+      mk_advertiser_info_epsstlttype, oa_company_account_code, 
+      mk_advertiser_info_createtm, mk_advertiser_info_operationtm, 
+      mk_advertiser_info_modifytm, mk_advertiser_info_logo, 
+      mk_advertiser_info_brief, oa_merchant_info_no
+      )
+    values (#{mkAdvertiserInfoCode,jdbcType=VARCHAR}, #{mkAdvertiserInfoName,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR}, #{mkAdvertiserInfoInsurance,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoRemark,jdbcType=VARCHAR}, #{mkAdvertiserInfoState,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoContacts,jdbcType=VARCHAR}, #{mkAdvertiserInfoTaxnumber,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoAdress,jdbcType=VARCHAR}, #{mkAdvertiserInfoPhonenumber,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoBank,jdbcType=VARCHAR}, #{mkAdvertiserInfoBankaccount,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoEpsstlttype,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoCreatetm,jdbcType=TIMESTAMP}, #{mkAdvertiserInfoOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserInfoModifytm,jdbcType=TIMESTAMP}, #{mkAdvertiserInfoLogo,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoBrief,jdbcType=VARCHAR}, #{oaMerchantInfoNo,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserInfo">
+    insert into mk_advertiser_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserInfoCode != null">
+        mk_advertiser_info_code,
+      </if>
+      <if test="mkAdvertiserInfoName != null">
+        mk_advertiser_info_name,
+      </if>
+      <if test="mkAdvertiserInfoCompanybody != null">
+        mk_advertiser_info_companybody,
+      </if>
+      <if test="mkAdvertiserInfoInsurance != null">
+        mk_advertiser_info_insurance,
+      </if>
+      <if test="mkAdvertiserInfoRemark != null">
+        mk_advertiser_info_remark,
+      </if>
+      <if test="mkAdvertiserInfoState != null">
+        mk_advertiser_info_state,
+      </if>
+      <if test="mkAdvertiserInfoContacts != null">
+        mk_advertiser_info_contacts,
+      </if>
+      <if test="mkAdvertiserInfoTaxnumber != null">
+        mk_advertiser_info_taxnumber,
+      </if>
+      <if test="mkAdvertiserInfoAdress != null">
+        mk_advertiser_info_adress,
+      </if>
+      <if test="mkAdvertiserInfoPhonenumber != null">
+        mk_advertiser_info_phonenumber,
+      </if>
+      <if test="mkAdvertiserInfoBank != null">
+        mk_advertiser_info_bank,
+      </if>
+      <if test="mkAdvertiserInfoBankaccount != null">
+        mk_advertiser_info_bankaccount,
+      </if>
+      <if test="mkAdvertiserInfoEpsstlttype != null">
+        mk_advertiser_info_epsstlttype,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code,
+      </if>
+      <if test="mkAdvertiserInfoCreatetm != null">
+        mk_advertiser_info_createtm,
+      </if>
+      <if test="mkAdvertiserInfoOperationtm != null">
+        mk_advertiser_info_operationtm,
+      </if>
+      <if test="mkAdvertiserInfoModifytm != null">
+        mk_advertiser_info_modifytm,
+      </if>
+      <if test="mkAdvertiserInfoLogo != null">
+        mk_advertiser_info_logo,
+      </if>
+      <if test="mkAdvertiserInfoBrief != null">
+        mk_advertiser_info_brief,
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        oa_merchant_info_no,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserInfoCode != null">
+        #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoName != null">
+        #{mkAdvertiserInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCompanybody != null">
+        #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoInsurance != null">
+        #{mkAdvertiserInfoInsurance,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoRemark != null">
+        #{mkAdvertiserInfoRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoState != null">
+        #{mkAdvertiserInfoState,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoContacts != null">
+        #{mkAdvertiserInfoContacts,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoTaxnumber != null">
+        #{mkAdvertiserInfoTaxnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoAdress != null">
+        #{mkAdvertiserInfoAdress,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoPhonenumber != null">
+        #{mkAdvertiserInfoPhonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoBank != null">
+        #{mkAdvertiserInfoBank,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoBankaccount != null">
+        #{mkAdvertiserInfoBankaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoEpsstlttype != null">
+        #{mkAdvertiserInfoEpsstlttype,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCreatetm != null">
+        #{mkAdvertiserInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserInfoOperationtm != null">
+        #{mkAdvertiserInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserInfoModifytm != null">
+        #{mkAdvertiserInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserInfoLogo != null">
+        #{mkAdvertiserInfoLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoBrief != null">
+        #{mkAdvertiserInfoBrief,jdbcType=VARCHAR},
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WblPlanConfigMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.WblPlanConfig">
+    <id column="wbl_plan_config_id" jdbcType="VARCHAR" property="wblPlanConfigId" />
+    <result column="wbl_plan_config_name" jdbcType="VARCHAR" property="wblPlanConfigName" />
+    <result column="wbl_indicator_config_id" jdbcType="VARCHAR" property="wblIndicatorConfigId" />
+    <result column="wbl_plan_config_frequency" jdbcType="INTEGER" property="wblPlanConfigFrequency" />
+    <result column="wbl_plan_config_level" jdbcType="INTEGER" property="wblPlanConfigLevel" />
+    <result column="wbl_plan_config_cooling" jdbcType="INTEGER" property="wblPlanConfigCooling" />
+    <result column="wbl_plan_config_coolingUnit" jdbcType="INTEGER" property="wblPlanConfigCoolingunit" />
+    <result column="wbl_plan_config_coolingTime" jdbcType="INTEGER" property="wblPlanConfigCoolingtime" />
+    <result column="wbl_plan_config_status" jdbcType="INTEGER" property="wblPlanConfigStatus" />
+    <result column="wbl_plan_config_sortNum" jdbcType="INTEGER" property="wblPlanConfigSortnum" />
+    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="wbl_plan_config_category" jdbcType="VARCHAR" property="wblPlanConfigCategory" />
+    <result column="INS_product_info_launchType" jdbcType="VARCHAR" property="insProductInfoLaunchtype" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="wbl_plan_config_CreateTM" jdbcType="TIMESTAMP" property="wblPlanConfigCreatetm" />
+    <result column="wbl_plan_config_MODIFYTM" jdbcType="TIMESTAMP" property="wblPlanConfigModifytm" />
+    <result column="wbl_plan_config_robotId" jdbcType="VARCHAR" property="wblPlanConfigRobotid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    wbl_plan_config_id, wbl_plan_config_name, wbl_indicator_config_id, wbl_plan_config_frequency, 
+    wbl_plan_config_level, wbl_plan_config_cooling, wbl_plan_config_coolingUnit, wbl_plan_config_coolingTime, 
+    wbl_plan_config_status, wbl_plan_config_sortNum, mk_media_info_code, wbl_plan_config_category, 
+    INS_product_info_launchType, OA_company_Account_code, wbl_plan_config_CreateTM, wbl_plan_config_MODIFYTM, 
+    wbl_plan_config_robotId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wbl_plan_config
+    where wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from wbl_plan_config
+    where wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.WblPlanConfig">
+    insert into wbl_plan_config (wbl_plan_config_id, wbl_plan_config_name, 
+      wbl_indicator_config_id, wbl_plan_config_frequency, 
+      wbl_plan_config_level, wbl_plan_config_cooling, 
+      wbl_plan_config_coolingUnit, wbl_plan_config_coolingTime, 
+      wbl_plan_config_status, wbl_plan_config_sortNum, 
+      mk_media_info_code, wbl_plan_config_category, 
+      INS_product_info_launchType, OA_company_Account_code, 
+      wbl_plan_config_CreateTM, wbl_plan_config_MODIFYTM, 
+      wbl_plan_config_robotId)
+    values (#{wblPlanConfigId,jdbcType=VARCHAR}, #{wblPlanConfigName,jdbcType=VARCHAR}, 
+      #{wblIndicatorConfigId,jdbcType=VARCHAR}, #{wblPlanConfigFrequency,jdbcType=INTEGER}, 
+      #{wblPlanConfigLevel,jdbcType=INTEGER}, #{wblPlanConfigCooling,jdbcType=INTEGER}, 
+      #{wblPlanConfigCoolingunit,jdbcType=INTEGER}, #{wblPlanConfigCoolingtime,jdbcType=INTEGER}, 
+      #{wblPlanConfigStatus,jdbcType=INTEGER}, #{wblPlanConfigSortnum,jdbcType=INTEGER}, 
+      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{wblPlanConfigCategory,jdbcType=VARCHAR}, 
+      #{insProductInfoLaunchtype,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{wblPlanConfigCreatetm,jdbcType=TIMESTAMP}, #{wblPlanConfigModifytm,jdbcType=TIMESTAMP}, 
+      #{wblPlanConfigRobotid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.WblPlanConfig">
+    insert into wbl_plan_config
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="wblPlanConfigId != null">
+        wbl_plan_config_id,
+      </if>
+      <if test="wblPlanConfigName != null">
+        wbl_plan_config_name,
+      </if>
+      <if test="wblIndicatorConfigId != null">
+        wbl_indicator_config_id,
+      </if>
+      <if test="wblPlanConfigFrequency != null">
+        wbl_plan_config_frequency,
+      </if>
+      <if test="wblPlanConfigLevel != null">
+        wbl_plan_config_level,
+      </if>
+      <if test="wblPlanConfigCooling != null">
+        wbl_plan_config_cooling,
+      </if>
+      <if test="wblPlanConfigCoolingunit != null">
+        wbl_plan_config_coolingUnit,
+      </if>
+      <if test="wblPlanConfigCoolingtime != null">
+        wbl_plan_config_coolingTime,
+      </if>
+      <if test="wblPlanConfigStatus != null">
+        wbl_plan_config_status,
+      </if>
+      <if test="wblPlanConfigSortnum != null">
+        wbl_plan_config_sortNum,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code,
+      </if>
+      <if test="wblPlanConfigCategory != null">
+        wbl_plan_config_category,
+      </if>
+      <if test="insProductInfoLaunchtype != null">
+        INS_product_info_launchType,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="wblPlanConfigCreatetm != null">
+        wbl_plan_config_CreateTM,
+      </if>
+      <if test="wblPlanConfigModifytm != null">
+        wbl_plan_config_MODIFYTM,
+      </if>
+      <if test="wblPlanConfigRobotid != null">
+        wbl_plan_config_robotId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="wblPlanConfigId != null">
+        #{wblPlanConfigId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanConfigName != null">
+        #{wblPlanConfigName,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorConfigId != null">
+        #{wblIndicatorConfigId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanConfigFrequency != null">
+        #{wblPlanConfigFrequency,jdbcType=INTEGER},
+      </if>
+      <if test="wblPlanConfigLevel != null">
+        #{wblPlanConfigLevel,jdbcType=INTEGER},
+      </if>
+      <if test="wblPlanConfigCooling != null">
+        #{wblPlanConfigCooling,jdbcType=INTEGER},
+      </if>
+      <if test="wblPlanConfigCoolingunit != null">
+        #{wblPlanConfigCoolingunit,jdbcType=INTEGER},
+      </if>
+      <if test="wblPlanConfigCoolingtime != null">
+        #{wblPlanConfigCoolingtime,jdbcType=INTEGER},
+      </if>
+      <if test="wblPlanConfigStatus != null">
+        #{wblPlanConfigStatus,jdbcType=INTEGER},
+      </if>
+      <if test="wblPlanConfigSortnum != null">
+        #{wblPlanConfigSortnum,jdbcType=INTEGER},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanConfigCategory != null">
+        #{wblPlanConfigCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoLaunchtype != null">
+        #{insProductInfoLaunchtype,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanConfigCreatetm != null">
+        #{wblPlanConfigCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblPlanConfigModifytm != null">
+        #{wblPlanConfigModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblPlanConfigRobotid != null">
+        #{wblPlanConfigRobotid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.WblPlanConfig">
+    update wbl_plan_config
+    <set>
+      <if test="wblPlanConfigName != null">
+        wbl_plan_config_name = #{wblPlanConfigName,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorConfigId != null">
+        wbl_indicator_config_id = #{wblIndicatorConfigId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanConfigFrequency != null">
+        wbl_plan_config_frequency = #{wblPlanConfigFrequency,jdbcType=INTEGER},
+      </if>
+      <if test="wblPlanConfigLevel != null">
+        wbl_plan_config_level = #{wblPlanConfigLevel,jdbcType=INTEGER},
+      </if>
+      <if test="wblPlanConfigCooling != null">
+        wbl_plan_config_cooling = #{wblPlanConfigCooling,jdbcType=INTEGER},
+      </if>
+      <if test="wblPlanConfigCoolingunit != null">
+        wbl_plan_config_coolingUnit = #{wblPlanConfigCoolingunit,jdbcType=INTEGER},
+      </if>
+      <if test="wblPlanConfigCoolingtime != null">
+        wbl_plan_config_coolingTime = #{wblPlanConfigCoolingtime,jdbcType=INTEGER},
+      </if>
+      <if test="wblPlanConfigStatus != null">
+        wbl_plan_config_status = #{wblPlanConfigStatus,jdbcType=INTEGER},
+      </if>
+      <if test="wblPlanConfigSortnum != null">
+        wbl_plan_config_sortNum = #{wblPlanConfigSortnum,jdbcType=INTEGER},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanConfigCategory != null">
+        wbl_plan_config_category = #{wblPlanConfigCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoLaunchtype != null">
+        INS_product_info_launchType = #{insProductInfoLaunchtype,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanConfigCreatetm != null">
+        wbl_plan_config_CreateTM = #{wblPlanConfigCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblPlanConfigModifytm != null">
+        wbl_plan_config_MODIFYTM = #{wblPlanConfigModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblPlanConfigRobotid != null">
+        wbl_plan_config_robotId = #{wblPlanConfigRobotid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.WblPlanConfig">
+    update wbl_plan_config
+    set wbl_plan_config_name = #{wblPlanConfigName,jdbcType=VARCHAR},
+      wbl_indicator_config_id = #{wblIndicatorConfigId,jdbcType=VARCHAR},
+      wbl_plan_config_frequency = #{wblPlanConfigFrequency,jdbcType=INTEGER},
+      wbl_plan_config_level = #{wblPlanConfigLevel,jdbcType=INTEGER},
+      wbl_plan_config_cooling = #{wblPlanConfigCooling,jdbcType=INTEGER},
+      wbl_plan_config_coolingUnit = #{wblPlanConfigCoolingunit,jdbcType=INTEGER},
+      wbl_plan_config_coolingTime = #{wblPlanConfigCoolingtime,jdbcType=INTEGER},
+      wbl_plan_config_status = #{wblPlanConfigStatus,jdbcType=INTEGER},
+      wbl_plan_config_sortNum = #{wblPlanConfigSortnum,jdbcType=INTEGER},
+      mk_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      wbl_plan_config_category = #{wblPlanConfigCategory,jdbcType=VARCHAR},
+      INS_product_info_launchType = #{insProductInfoLaunchtype,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      wbl_plan_config_CreateTM = #{wblPlanConfigCreatetm,jdbcType=TIMESTAMP},
+      wbl_plan_config_MODIFYTM = #{wblPlanConfigModifytm,jdbcType=TIMESTAMP},
+      wbl_plan_config_robotId = #{wblPlanConfigRobotid,jdbcType=VARCHAR}
+    where wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR}
+  </update>
+</mapper>

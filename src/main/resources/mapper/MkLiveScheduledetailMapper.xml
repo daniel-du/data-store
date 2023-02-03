@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkLiveScheduledetailMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkLiveScheduledetail">
+    <result column="mk_live_scheduledetail_id" jdbcType="VARCHAR" property="mkLiveScheduledetailId" />
+    <result column="mk_live_schedule_date" jdbcType="VARCHAR" property="mkLiveScheduleDate" />
+    <result column="mk_live_schedule_time" jdbcType="VARCHAR" property="mkLiveScheduleTime" />
+    <result column="mk_media_live_code" jdbcType="VARCHAR" property="mkMediaLiveCode" />
+    <result column="mk_live_anchor_code" jdbcType="VARCHAR" property="mkLiveAnchorCode" />
+    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_live_schedule_createtm" jdbcType="TIMESTAMP" property="mkLiveScheduleCreatetm" />
+    <result column="mk_live_schedule_operationtm" jdbcType="TIMESTAMP" property="mkLiveScheduleOperationtm" />
+    <result column="mk_live_schedule_modifytm" jdbcType="TIMESTAMP" property="mkLiveScheduleModifytm" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkLiveScheduledetail">
+    insert into mk_live_scheduledetail (mk_live_scheduledetail_id, mk_live_schedule_date, 
+      mk_live_schedule_time, mk_media_live_code, mk_live_anchor_code, 
+      oa_company_account_code, mk_live_schedule_createtm, 
+      mk_live_schedule_operationtm, mk_live_schedule_modifytm
+      )
+    values (#{mkLiveScheduledetailId,jdbcType=VARCHAR}, #{mkLiveScheduleDate,jdbcType=VARCHAR}, 
+      #{mkLiveScheduleTime,jdbcType=VARCHAR}, #{mkMediaLiveCode,jdbcType=VARCHAR}, #{mkLiveAnchorCode,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkLiveScheduleCreatetm,jdbcType=TIMESTAMP}, 
+      #{mkLiveScheduleOperationtm,jdbcType=TIMESTAMP}, #{mkLiveScheduleModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkLiveScheduledetail">
+    insert into mk_live_scheduledetail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkLiveScheduledetailId != null">
+        mk_live_scheduledetail_id,
+      </if>
+      <if test="mkLiveScheduleDate != null">
+        mk_live_schedule_date,
+      </if>
+      <if test="mkLiveScheduleTime != null">
+        mk_live_schedule_time,
+      </if>
+      <if test="mkMediaLiveCode != null">
+        mk_media_live_code,
+      </if>
+      <if test="mkLiveAnchorCode != null">
+        mk_live_anchor_code,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code,
+      </if>
+      <if test="mkLiveScheduleCreatetm != null">
+        mk_live_schedule_createtm,
+      </if>
+      <if test="mkLiveScheduleOperationtm != null">
+        mk_live_schedule_operationtm,
+      </if>
+      <if test="mkLiveScheduleModifytm != null">
+        mk_live_schedule_modifytm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkLiveScheduledetailId != null">
+        #{mkLiveScheduledetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveScheduleDate != null">
+        #{mkLiveScheduleDate,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveScheduleTime != null">
+        #{mkLiveScheduleTime,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaLiveCode != null">
+        #{mkMediaLiveCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAnchorCode != null">
+        #{mkLiveAnchorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveScheduleCreatetm != null">
+        #{mkLiveScheduleCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveScheduleOperationtm != null">
+        #{mkLiveScheduleOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveScheduleModifytm != null">
+        #{mkLiveScheduleModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkLiveScheduledetail">
+    <id column="mk_live_scheduleDetail_id" jdbcType="VARCHAR" property="mkLiveScheduledetailId" />
+    <result column="mk_live_schedule_date" jdbcType="VARCHAR" property="mkLiveScheduleDate" />
+    <result column="mk_live_schedule_time" jdbcType="VARCHAR" property="mkLiveScheduleTime" />
+    <result column="mk_media_live_code" jdbcType="VARCHAR" property="mkMediaLiveCode" />
+    <result column="mk_live_anchor_code" jdbcType="VARCHAR" property="mkLiveAnchorCode" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_live_schedule_createTM" jdbcType="TIMESTAMP" property="mkLiveScheduleCreatetm" />
+    <result column="mk_live_schedule_operationTM" jdbcType="TIMESTAMP" property="mkLiveScheduleOperationtm" />
+    <result column="mk_live_schedule_modifyTM" jdbcType="TIMESTAMP" property="mkLiveScheduleModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_live_scheduleDetail_id, mk_live_schedule_date, mk_live_schedule_time, mk_media_live_code, 
+    mk_live_anchor_code, OA_company_Account_code, mk_live_schedule_createTM, mk_live_schedule_operationTM, 
+    mk_live_schedule_modifyTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_live_scheduledetail
+    where mk_live_scheduleDetail_id = #{mkLiveScheduledetailId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_live_scheduledetail
+    where mk_live_scheduleDetail_id = #{mkLiveScheduledetailId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkLiveScheduledetail">
+    insert into mk_live_scheduledetail (mk_live_scheduleDetail_id, mk_live_schedule_date, 
+      mk_live_schedule_time, mk_media_live_code, mk_live_anchor_code, 
+      OA_company_Account_code, mk_live_schedule_createTM, 
+      mk_live_schedule_operationTM, mk_live_schedule_modifyTM
+      )
+    values (#{mkLiveScheduledetailId,jdbcType=VARCHAR}, #{mkLiveScheduleDate,jdbcType=VARCHAR}, 
+      #{mkLiveScheduleTime,jdbcType=VARCHAR}, #{mkMediaLiveCode,jdbcType=VARCHAR}, #{mkLiveAnchorCode,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkLiveScheduleCreatetm,jdbcType=TIMESTAMP}, 
+      #{mkLiveScheduleOperationtm,jdbcType=TIMESTAMP}, #{mkLiveScheduleModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkLiveScheduledetail">
+    insert into mk_live_scheduledetail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkLiveScheduledetailId != null">
+        mk_live_scheduleDetail_id,
+      </if>
+      <if test="mkLiveScheduleDate != null">
+        mk_live_schedule_date,
+      </if>
+      <if test="mkLiveScheduleTime != null">
+        mk_live_schedule_time,
+      </if>
+      <if test="mkMediaLiveCode != null">
+        mk_media_live_code,
+      </if>
+      <if test="mkLiveAnchorCode != null">
+        mk_live_anchor_code,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="mkLiveScheduleCreatetm != null">
+        mk_live_schedule_createTM,
+      </if>
+      <if test="mkLiveScheduleOperationtm != null">
+        mk_live_schedule_operationTM,
+      </if>
+      <if test="mkLiveScheduleModifytm != null">
+        mk_live_schedule_modifyTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkLiveScheduledetailId != null">
+        #{mkLiveScheduledetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveScheduleDate != null">
+        #{mkLiveScheduleDate,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveScheduleTime != null">
+        #{mkLiveScheduleTime,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaLiveCode != null">
+        #{mkMediaLiveCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAnchorCode != null">
+        #{mkLiveAnchorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveScheduleCreatetm != null">
+        #{mkLiveScheduleCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveScheduleOperationtm != null">
+        #{mkLiveScheduleOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveScheduleModifytm != null">
+        #{mkLiveScheduleModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkLiveScheduledetail">
+    update mk_live_scheduledetail
+    <set>
+      <if test="mkLiveScheduleDate != null">
+        mk_live_schedule_date = #{mkLiveScheduleDate,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveScheduleTime != null">
+        mk_live_schedule_time = #{mkLiveScheduleTime,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaLiveCode != null">
+        mk_media_live_code = #{mkMediaLiveCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAnchorCode != null">
+        mk_live_anchor_code = #{mkLiveAnchorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveScheduleCreatetm != null">
+        mk_live_schedule_createTM = #{mkLiveScheduleCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveScheduleOperationtm != null">
+        mk_live_schedule_operationTM = #{mkLiveScheduleOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveScheduleModifytm != null">
+        mk_live_schedule_modifyTM = #{mkLiveScheduleModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mk_live_scheduleDetail_id = #{mkLiveScheduledetailId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkLiveScheduledetail">
+    update mk_live_scheduledetail
+    set mk_live_schedule_date = #{mkLiveScheduleDate,jdbcType=VARCHAR},
+      mk_live_schedule_time = #{mkLiveScheduleTime,jdbcType=VARCHAR},
+      mk_media_live_code = #{mkMediaLiveCode,jdbcType=VARCHAR},
+      mk_live_anchor_code = #{mkLiveAnchorCode,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      mk_live_schedule_createTM = #{mkLiveScheduleCreatetm,jdbcType=TIMESTAMP},
+      mk_live_schedule_operationTM = #{mkLiveScheduleOperationtm,jdbcType=TIMESTAMP},
+      mk_live_schedule_modifyTM = #{mkLiveScheduleModifytm,jdbcType=TIMESTAMP}
+    where mk_live_scheduleDetail_id = #{mkLiveScheduledetailId,jdbcType=VARCHAR}
+  </update>
+</mapper>

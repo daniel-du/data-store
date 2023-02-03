@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkLiveAnchorliveroomMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkLiveAnchorliveroom">
+    <id column="mk_live_anchorLiveRoom_id" jdbcType="VARCHAR" property="mkLiveAnchorliveroomId" />
+    <result column="mk_live_anchor_code" jdbcType="VARCHAR" property="mkLiveAnchorCode" />
+    <result column="mk_media_live_code" jdbcType="VARCHAR" property="mkMediaLiveCode" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_live_anchor_createTM" jdbcType="TIMESTAMP" property="mkLiveAnchorCreatetm" />
+    <result column="mk_live_anchor_operationTM" jdbcType="TIMESTAMP" property="mkLiveAnchorOperationtm" />
+    <result column="mk_live_anchor_modifyTM" jdbcType="TIMESTAMP" property="mkLiveAnchorModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_live_anchorLiveRoom_id, mk_live_anchor_code, mk_media_live_code, OA_company_Account_code, 
+    mk_live_anchor_createTM, mk_live_anchor_operationTM, mk_live_anchor_modifyTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_live_anchorliveroom
+    where mk_live_anchorLiveRoom_id = #{mkLiveAnchorliveroomId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_live_anchorliveroom
+    where mk_live_anchorLiveRoom_id = #{mkLiveAnchorliveroomId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkLiveAnchorliveroom">
+    insert into mk_live_anchorliveroom (mk_live_anchorLiveRoom_id, mk_live_anchor_code, 
+      mk_media_live_code, OA_company_Account_code, 
+      mk_live_anchor_createTM, mk_live_anchor_operationTM, 
+      mk_live_anchor_modifyTM)
+    values (#{mkLiveAnchorliveroomId,jdbcType=VARCHAR}, #{mkLiveAnchorCode,jdbcType=VARCHAR}, 
+      #{mkMediaLiveCode,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkLiveAnchorCreatetm,jdbcType=TIMESTAMP}, #{mkLiveAnchorOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkLiveAnchorModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkLiveAnchorliveroom">
+    insert into mk_live_anchorliveroom
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkLiveAnchorliveroomId != null">
+        mk_live_anchorLiveRoom_id,
+      </if>
+      <if test="mkLiveAnchorCode != null">
+        mk_live_anchor_code,
+      </if>
+      <if test="mkMediaLiveCode != null">
+        mk_media_live_code,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="mkLiveAnchorCreatetm != null">
+        mk_live_anchor_createTM,
+      </if>
+      <if test="mkLiveAnchorOperationtm != null">
+        mk_live_anchor_operationTM,
+      </if>
+      <if test="mkLiveAnchorModifytm != null">
+        mk_live_anchor_modifyTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkLiveAnchorliveroomId != null">
+        #{mkLiveAnchorliveroomId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAnchorCode != null">
+        #{mkLiveAnchorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaLiveCode != null">
+        #{mkMediaLiveCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAnchorCreatetm != null">
+        #{mkLiveAnchorCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAnchorOperationtm != null">
+        #{mkLiveAnchorOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAnchorModifytm != null">
+        #{mkLiveAnchorModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkLiveAnchorliveroom">
+    update mk_live_anchorliveroom
+    <set>
+      <if test="mkLiveAnchorCode != null">
+        mk_live_anchor_code = #{mkLiveAnchorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaLiveCode != null">
+        mk_media_live_code = #{mkMediaLiveCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAnchorCreatetm != null">
+        mk_live_anchor_createTM = #{mkLiveAnchorCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAnchorOperationtm != null">
+        mk_live_anchor_operationTM = #{mkLiveAnchorOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAnchorModifytm != null">
+        mk_live_anchor_modifyTM = #{mkLiveAnchorModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mk_live_anchorLiveRoom_id = #{mkLiveAnchorliveroomId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkLiveAnchorliveroom">
+    update mk_live_anchorliveroom
+    set mk_live_anchor_code = #{mkLiveAnchorCode,jdbcType=VARCHAR},
+      mk_media_live_code = #{mkMediaLiveCode,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      mk_live_anchor_createTM = #{mkLiveAnchorCreatetm,jdbcType=TIMESTAMP},
+      mk_live_anchor_operationTM = #{mkLiveAnchorOperationtm,jdbcType=TIMESTAMP},
+      mk_live_anchor_modifyTM = #{mkLiveAnchorModifytm,jdbcType=TIMESTAMP}
+    where mk_live_anchorLiveRoom_id = #{mkLiveAnchorliveroomId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkLiveAnchorliveroom">
+    <result column="mk_live_anchorliveroom_id" jdbcType="VARCHAR" property="mkLiveAnchorliveroomId" />
+    <result column="mk_live_anchor_code" jdbcType="VARCHAR" property="mkLiveAnchorCode" />
+    <result column="mk_media_live_code" jdbcType="VARCHAR" property="mkMediaLiveCode" />
+    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_live_anchor_createtm" jdbcType="TIMESTAMP" property="mkLiveAnchorCreatetm" />
+    <result column="mk_live_anchor_operationtm" jdbcType="TIMESTAMP" property="mkLiveAnchorOperationtm" />
+    <result column="mk_live_anchor_modifytm" jdbcType="TIMESTAMP" property="mkLiveAnchorModifytm" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkLiveAnchorliveroom">
+    insert into mk_live_anchorliveroom (mk_live_anchorliveroom_id, mk_live_anchor_code, 
+      mk_media_live_code, oa_company_account_code, 
+      mk_live_anchor_createtm, mk_live_anchor_operationtm, 
+      mk_live_anchor_modifytm)
+    values (#{mkLiveAnchorliveroomId,jdbcType=VARCHAR}, #{mkLiveAnchorCode,jdbcType=VARCHAR}, 
+      #{mkMediaLiveCode,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkLiveAnchorCreatetm,jdbcType=TIMESTAMP}, #{mkLiveAnchorOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkLiveAnchorModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkLiveAnchorliveroom">
+    insert into mk_live_anchorliveroom
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkLiveAnchorliveroomId != null">
+        mk_live_anchorliveroom_id,
+      </if>
+      <if test="mkLiveAnchorCode != null">
+        mk_live_anchor_code,
+      </if>
+      <if test="mkMediaLiveCode != null">
+        mk_media_live_code,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code,
+      </if>
+      <if test="mkLiveAnchorCreatetm != null">
+        mk_live_anchor_createtm,
+      </if>
+      <if test="mkLiveAnchorOperationtm != null">
+        mk_live_anchor_operationtm,
+      </if>
+      <if test="mkLiveAnchorModifytm != null">
+        mk_live_anchor_modifytm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkLiveAnchorliveroomId != null">
+        #{mkLiveAnchorliveroomId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAnchorCode != null">
+        #{mkLiveAnchorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaLiveCode != null">
+        #{mkMediaLiveCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkLiveAnchorCreatetm != null">
+        #{mkLiveAnchorCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAnchorOperationtm != null">
+        #{mkLiveAnchorOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkLiveAnchorModifytm != null">
+        #{mkLiveAnchorModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

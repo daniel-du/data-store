@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WblBusinessInfoMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.WblBusinessInfo">
+    <id column="wbl_business_info_id" jdbcType="VARCHAR" property="wblBusinessInfoId" />
+    <result column="wbl_plan_config_id" jdbcType="VARCHAR" property="wblPlanConfigId" />
+    <result column="wbl_business_info_notifyInfo" jdbcType="VARCHAR" property="wblBusinessInfoNotifyinfo" />
+    <result column="wbl_business_info_wid" jdbcType="VARCHAR" property="wblBusinessInfoWid" />
+    <result column="wbl_business_info_status" jdbcType="INTEGER" property="wblBusinessInfoStatus" />
+    <result column="wbl_business_info_CreateTM" jdbcType="TIMESTAMP" property="wblBusinessInfoCreatetm" />
+    <result column="wbl_business_info_MODIFYTM" jdbcType="TIMESTAMP" property="wblBusinessInfoModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    wbl_business_info_id, wbl_plan_config_id, wbl_business_info_notifyInfo, wbl_business_info_wid, 
+    wbl_business_info_status, wbl_business_info_CreateTM, wbl_business_info_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wbl_business_info
+    where wbl_business_info_id = #{wblBusinessInfoId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from wbl_business_info
+    where wbl_business_info_id = #{wblBusinessInfoId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.WblBusinessInfo">
+    insert into wbl_business_info (wbl_business_info_id, wbl_plan_config_id, 
+      wbl_business_info_notifyInfo, wbl_business_info_wid, 
+      wbl_business_info_status, wbl_business_info_CreateTM, 
+      wbl_business_info_MODIFYTM)
+    values (#{wblBusinessInfoId,jdbcType=VARCHAR}, #{wblPlanConfigId,jdbcType=VARCHAR}, 
+      #{wblBusinessInfoNotifyinfo,jdbcType=VARCHAR}, #{wblBusinessInfoWid,jdbcType=VARCHAR}, 
+      #{wblBusinessInfoStatus,jdbcType=INTEGER}, #{wblBusinessInfoCreatetm,jdbcType=TIMESTAMP}, 
+      #{wblBusinessInfoModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.WblBusinessInfo">
+    insert into wbl_business_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="wblBusinessInfoId != null">
+        wbl_business_info_id,
+      </if>
+      <if test="wblPlanConfigId != null">
+        wbl_plan_config_id,
+      </if>
+      <if test="wblBusinessInfoNotifyinfo != null">
+        wbl_business_info_notifyInfo,
+      </if>
+      <if test="wblBusinessInfoWid != null">
+        wbl_business_info_wid,
+      </if>
+      <if test="wblBusinessInfoStatus != null">
+        wbl_business_info_status,
+      </if>
+      <if test="wblBusinessInfoCreatetm != null">
+        wbl_business_info_CreateTM,
+      </if>
+      <if test="wblBusinessInfoModifytm != null">
+        wbl_business_info_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="wblBusinessInfoId != null">
+        #{wblBusinessInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanConfigId != null">
+        #{wblPlanConfigId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblBusinessInfoNotifyinfo != null">
+        #{wblBusinessInfoNotifyinfo,jdbcType=VARCHAR},
+      </if>
+      <if test="wblBusinessInfoWid != null">
+        #{wblBusinessInfoWid,jdbcType=VARCHAR},
+      </if>
+      <if test="wblBusinessInfoStatus != null">
+        #{wblBusinessInfoStatus,jdbcType=INTEGER},
+      </if>
+      <if test="wblBusinessInfoCreatetm != null">
+        #{wblBusinessInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblBusinessInfoModifytm != null">
+        #{wblBusinessInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.WblBusinessInfo">
+    update wbl_business_info
+    <set>
+      <if test="wblPlanConfigId != null">
+        wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblBusinessInfoNotifyinfo != null">
+        wbl_business_info_notifyInfo = #{wblBusinessInfoNotifyinfo,jdbcType=VARCHAR},
+      </if>
+      <if test="wblBusinessInfoWid != null">
+        wbl_business_info_wid = #{wblBusinessInfoWid,jdbcType=VARCHAR},
+      </if>
+      <if test="wblBusinessInfoStatus != null">
+        wbl_business_info_status = #{wblBusinessInfoStatus,jdbcType=INTEGER},
+      </if>
+      <if test="wblBusinessInfoCreatetm != null">
+        wbl_business_info_CreateTM = #{wblBusinessInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblBusinessInfoModifytm != null">
+        wbl_business_info_MODIFYTM = #{wblBusinessInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where wbl_business_info_id = #{wblBusinessInfoId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.WblBusinessInfo">
+    update wbl_business_info
+    set wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR},
+      wbl_business_info_notifyInfo = #{wblBusinessInfoNotifyinfo,jdbcType=VARCHAR},
+      wbl_business_info_wid = #{wblBusinessInfoWid,jdbcType=VARCHAR},
+      wbl_business_info_status = #{wblBusinessInfoStatus,jdbcType=INTEGER},
+      wbl_business_info_CreateTM = #{wblBusinessInfoCreatetm,jdbcType=TIMESTAMP},
+      wbl_business_info_MODIFYTM = #{wblBusinessInfoModifytm,jdbcType=TIMESTAMP}
+    where wbl_business_info_id = #{wblBusinessInfoId,jdbcType=VARCHAR}
+  </update>
+</mapper>

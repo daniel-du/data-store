@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkMediaagentContractMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkMediaagentContract">
+    <id column="mk_mediaAgent_contract_no" jdbcType="VARCHAR" property="mkMediaagentContractNo" />
+    <result column="MK_media_agent_Code" jdbcType="VARCHAR" property="mkMediaAgentCode" />
+    <result column="MK_media_Info_Code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="mk_mediaAgent_contract_name" jdbcType="VARCHAR" property="mkMediaagentContractName" />
+    <result column="mk_mediaAgent_contract_relationship" jdbcType="VARCHAR" property="mkMediaagentContractRelationship" />
+    <result column="mk_mediaAgent_contract_adress" jdbcType="VARCHAR" property="mkMediaagentContractAdress" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="MK_media_Info_CreateTM" jdbcType="TIMESTAMP" property="mkMediaInfoCreatetm" />
+    <result column="MK_media_Info_OperationTM" jdbcType="TIMESTAMP" property="mkMediaInfoOperationtm" />
+    <result column="MK_media_Info_MODIFYTM" jdbcType="TIMESTAMP" property="mkMediaInfoModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_mediaAgent_contract_no, MK_media_agent_Code, MK_media_Info_Code, mk_mediaAgent_contract_name, 
+    mk_mediaAgent_contract_relationship, mk_mediaAgent_contract_adress, OA_company_Account_code, 
+    MK_media_Info_CreateTM, MK_media_Info_OperationTM, MK_media_Info_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_mediaagent_contract
+    where mk_mediaAgent_contract_no = #{mkMediaagentContractNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_mediaagent_contract
+    where mk_mediaAgent_contract_no = #{mkMediaagentContractNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkMediaagentContract">
+    insert into mk_mediaagent_contract (mk_mediaAgent_contract_no, MK_media_agent_Code, 
+      MK_media_Info_Code, mk_mediaAgent_contract_name, 
+      mk_mediaAgent_contract_relationship, mk_mediaAgent_contract_adress, 
+      OA_company_Account_code, MK_media_Info_CreateTM, 
+      MK_media_Info_OperationTM, MK_media_Info_MODIFYTM
+      )
+    values (#{mkMediaagentContractNo,jdbcType=VARCHAR}, #{mkMediaAgentCode,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkMediaagentContractName,jdbcType=VARCHAR}, 
+      #{mkMediaagentContractRelationship,jdbcType=VARCHAR}, #{mkMediaagentContractAdress,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP}, 
+      #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP}, #{mkMediaInfoModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkMediaagentContract">
+    insert into mk_mediaagent_contract
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkMediaagentContractNo != null">
+        mk_mediaAgent_contract_no,
+      </if>
+      <if test="mkMediaAgentCode != null">
+        MK_media_agent_Code,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code,
+      </if>
+      <if test="mkMediaagentContractName != null">
+        mk_mediaAgent_contract_name,
+      </if>
+      <if test="mkMediaagentContractRelationship != null">
+        mk_mediaAgent_contract_relationship,
+      </if>
+      <if test="mkMediaagentContractAdress != null">
+        mk_mediaAgent_contract_adress,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        MK_media_Info_CreateTM,
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        MK_media_Info_OperationTM,
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        MK_media_Info_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkMediaagentContractNo != null">
+        #{mkMediaagentContractNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaagentContractName != null">
+        #{mkMediaagentContractName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaagentContractRelationship != null">
+        #{mkMediaagentContractRelationship,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaagentContractAdress != null">
+        #{mkMediaagentContractAdress,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        #{mkMediaInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkMediaagentContract">
+    update mk_mediaagent_contract
+    <set>
+      <if test="mkMediaAgentCode != null">
+        MK_media_agent_Code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaagentContractName != null">
+        mk_mediaAgent_contract_name = #{mkMediaagentContractName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaagentContractRelationship != null">
+        mk_mediaAgent_contract_relationship = #{mkMediaagentContractRelationship,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaagentContractAdress != null">
+        mk_mediaAgent_contract_adress = #{mkMediaagentContractAdress,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        MK_media_Info_CreateTM = #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        MK_media_Info_OperationTM = #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        MK_media_Info_MODIFYTM = #{mkMediaInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mk_mediaAgent_contract_no = #{mkMediaagentContractNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkMediaagentContract">
+    update mk_mediaagent_contract
+    set MK_media_agent_Code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      mk_mediaAgent_contract_name = #{mkMediaagentContractName,jdbcType=VARCHAR},
+      mk_mediaAgent_contract_relationship = #{mkMediaagentContractRelationship,jdbcType=VARCHAR},
+      mk_mediaAgent_contract_adress = #{mkMediaagentContractAdress,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      MK_media_Info_CreateTM = #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      MK_media_Info_OperationTM = #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      MK_media_Info_MODIFYTM = #{mkMediaInfoModifytm,jdbcType=TIMESTAMP}
+    where mk_mediaAgent_contract_no = #{mkMediaagentContractNo,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkMediaagentContract">
+    <result column="mk_mediaagent_contract_no" jdbcType="VARCHAR" property="mkMediaagentContractNo" />
+    <result column="mk_media_agent_code" jdbcType="VARCHAR" property="mkMediaAgentCode" />
+    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="mk_mediaagent_contract_name" jdbcType="VARCHAR" property="mkMediaagentContractName" />
+    <result column="mk_mediaagent_contract_relationship" jdbcType="VARCHAR" property="mkMediaagentContractRelationship" />
+    <result column="mk_mediaagent_contract_adress" jdbcType="VARCHAR" property="mkMediaagentContractAdress" />
+    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_media_info_createtm" jdbcType="TIMESTAMP" property="mkMediaInfoCreatetm" />
+    <result column="mk_media_info_operationtm" jdbcType="TIMESTAMP" property="mkMediaInfoOperationtm" />
+    <result column="mk_media_info_modifytm" jdbcType="TIMESTAMP" property="mkMediaInfoModifytm" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkMediaagentContract">
+    insert into mk_mediaagent_contract (mk_mediaagent_contract_no, mk_media_agent_code, 
+      mk_media_info_code, mk_mediaagent_contract_name, 
+      mk_mediaagent_contract_relationship, mk_mediaagent_contract_adress, 
+      oa_company_account_code, mk_media_info_createtm, 
+      mk_media_info_operationtm, mk_media_info_modifytm
+      )
+    values (#{mkMediaagentContractNo,jdbcType=VARCHAR}, #{mkMediaAgentCode,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkMediaagentContractName,jdbcType=VARCHAR}, 
+      #{mkMediaagentContractRelationship,jdbcType=VARCHAR}, #{mkMediaagentContractAdress,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP}, 
+      #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP}, #{mkMediaInfoModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkMediaagentContract">
+    insert into mk_mediaagent_contract
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkMediaagentContractNo != null">
+        mk_mediaagent_contract_no,
+      </if>
+      <if test="mkMediaAgentCode != null">
+        mk_media_agent_code,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code,
+      </if>
+      <if test="mkMediaagentContractName != null">
+        mk_mediaagent_contract_name,
+      </if>
+      <if test="mkMediaagentContractRelationship != null">
+        mk_mediaagent_contract_relationship,
+      </if>
+      <if test="mkMediaagentContractAdress != null">
+        mk_mediaagent_contract_adress,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code,
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        mk_media_info_createtm,
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        mk_media_info_operationtm,
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        mk_media_info_modifytm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkMediaagentContractNo != null">
+        #{mkMediaagentContractNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaagentContractName != null">
+        #{mkMediaagentContractName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaagentContractRelationship != null">
+        #{mkMediaagentContractRelationship,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaagentContractAdress != null">
+        #{mkMediaagentContractAdress,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        #{mkMediaInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

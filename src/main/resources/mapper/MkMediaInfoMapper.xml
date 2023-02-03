@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkMediaInfoMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkMediaInfo">
+    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="mk_media_info_name" jdbcType="VARCHAR" property="mkMediaInfoName" />
+    <result column="mk_media_info_type" jdbcType="VARCHAR" property="mkMediaInfoType" />
+    <result column="mk_media_info_state" jdbcType="VARCHAR" property="mkMediaInfoState" />
+    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_media_info_createtm" jdbcType="TIMESTAMP" property="mkMediaInfoCreatetm" />
+    <result column="mk_media_info_operationtm" jdbcType="TIMESTAMP" property="mkMediaInfoOperationtm" />
+    <result column="mk_media_info_modifytm" jdbcType="TIMESTAMP" property="mkMediaInfoModifytm" />
+    <result column="mk_media_info_remark" jdbcType="VARCHAR" property="mkMediaInfoRemark" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkMediaInfo">
+    insert into mk_media_info (mk_media_info_code, mk_media_info_name, 
+      mk_media_info_type, mk_media_info_state, oa_company_account_code, 
+      mk_media_info_createtm, mk_media_info_operationtm, 
+      mk_media_info_modifytm, mk_media_info_remark
+      )
+    values (#{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkMediaInfoName,jdbcType=VARCHAR}, 
+      #{mkMediaInfoType,jdbcType=VARCHAR}, #{mkMediaInfoState,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP}, #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkMediaInfoModifytm,jdbcType=TIMESTAMP}, #{mkMediaInfoRemark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkMediaInfo">
+    insert into mk_media_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code,
+      </if>
+      <if test="mkMediaInfoName != null">
+        mk_media_info_name,
+      </if>
+      <if test="mkMediaInfoType != null">
+        mk_media_info_type,
+      </if>
+      <if test="mkMediaInfoState != null">
+        mk_media_info_state,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code,
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        mk_media_info_createtm,
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        mk_media_info_operationtm,
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        mk_media_info_modifytm,
+      </if>
+      <if test="mkMediaInfoRemark != null">
+        mk_media_info_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoName != null">
+        #{mkMediaInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoType != null">
+        #{mkMediaInfoType,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoState != null">
+        #{mkMediaInfoState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        #{mkMediaInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoRemark != null">
+        #{mkMediaInfoRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkMediaInfo">
+    <id column="MK_media_Info_Code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="MK_media_Info_Name" jdbcType="VARCHAR" property="mkMediaInfoName" />
+    <result column="MK_media_Info_type" jdbcType="VARCHAR" property="mkMediaInfoType" />
+    <result column="MK_media_Info_State" jdbcType="VARCHAR" property="mkMediaInfoState" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="MK_media_Info_CreateTM" jdbcType="TIMESTAMP" property="mkMediaInfoCreatetm" />
+    <result column="MK_media_Info_OperationTM" jdbcType="TIMESTAMP" property="mkMediaInfoOperationtm" />
+    <result column="MK_media_Info_MODIFYTM" jdbcType="TIMESTAMP" property="mkMediaInfoModifytm" />
+    <result column="MK_media_Info_remark" jdbcType="VARCHAR" property="mkMediaInfoRemark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MK_media_Info_Code, MK_media_Info_Name, MK_media_Info_type, MK_media_Info_State, 
+    OA_company_Account_code, MK_media_Info_CreateTM, MK_media_Info_OperationTM, MK_media_Info_MODIFYTM, 
+    MK_media_Info_remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_media_info
+    where MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_media_info
+    where MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkMediaInfo">
+    insert into mk_media_info (MK_media_Info_Code, MK_media_Info_Name, 
+      MK_media_Info_type, MK_media_Info_State, OA_company_Account_code, 
+      MK_media_Info_CreateTM, MK_media_Info_OperationTM, 
+      MK_media_Info_MODIFYTM, MK_media_Info_remark
+      )
+    values (#{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkMediaInfoName,jdbcType=VARCHAR}, 
+      #{mkMediaInfoType,jdbcType=VARCHAR}, #{mkMediaInfoState,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP}, #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkMediaInfoModifytm,jdbcType=TIMESTAMP}, #{mkMediaInfoRemark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkMediaInfo">
+    insert into mk_media_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code,
+      </if>
+      <if test="mkMediaInfoName != null">
+        MK_media_Info_Name,
+      </if>
+      <if test="mkMediaInfoType != null">
+        MK_media_Info_type,
+      </if>
+      <if test="mkMediaInfoState != null">
+        MK_media_Info_State,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        MK_media_Info_CreateTM,
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        MK_media_Info_OperationTM,
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        MK_media_Info_MODIFYTM,
+      </if>
+      <if test="mkMediaInfoRemark != null">
+        MK_media_Info_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoName != null">
+        #{mkMediaInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoType != null">
+        #{mkMediaInfoType,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoState != null">
+        #{mkMediaInfoState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        #{mkMediaInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoRemark != null">
+        #{mkMediaInfoRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkMediaInfo">
+    update mk_media_info
+    <set>
+      <if test="mkMediaInfoName != null">
+        MK_media_Info_Name = #{mkMediaInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoType != null">
+        MK_media_Info_type = #{mkMediaInfoType,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoState != null">
+        MK_media_Info_State = #{mkMediaInfoState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        MK_media_Info_CreateTM = #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        MK_media_Info_OperationTM = #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        MK_media_Info_MODIFYTM = #{mkMediaInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoRemark != null">
+        MK_media_Info_remark = #{mkMediaInfoRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkMediaInfo">
+    update mk_media_info
+    set MK_media_Info_Name = #{mkMediaInfoName,jdbcType=VARCHAR},
+      MK_media_Info_type = #{mkMediaInfoType,jdbcType=VARCHAR},
+      MK_media_Info_State = #{mkMediaInfoState,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      MK_media_Info_CreateTM = #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      MK_media_Info_OperationTM = #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      MK_media_Info_MODIFYTM = #{mkMediaInfoModifytm,jdbcType=TIMESTAMP},
+      MK_media_Info_remark = #{mkMediaInfoRemark,jdbcType=VARCHAR}
+    where MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

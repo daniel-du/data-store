@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkMediaAgentDiscountaccountMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkMediaAgentDiscountaccount">
+    <result column="mk_media_agent_discountno" jdbcType="VARCHAR" property="mkMediaAgentDiscountno" />
+    <result column="mk_advertiser_media_id" jdbcType="VARCHAR" property="mkAdvertiserMediaId" />
+    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="mk_media_agent_discountdate" jdbcType="DATE" property="mkMediaAgentDiscountdate" />
+    <result column="mk_media_agent_code" jdbcType="VARCHAR" property="mkMediaAgentCode" />
+    <result column="mk_media_agent_discountfactor" jdbcType="NUMERIC" property="mkMediaAgentDiscountfactor" />
+    <result column="mk_media_agent_discountrebatetype" jdbcType="VARCHAR" property="mkMediaAgentDiscountrebatetype" />
+    <result column="mk_advertiser_agent_firstid" jdbcType="VARCHAR" property="mkAdvertiserAgentFirstid" />
+    <result column="mk_advertiser_agent_firstiddiscountfactor" jdbcType="NUMERIC" property="mkAdvertiserAgentFirstiddiscountfactor" />
+    <result column="mk_advertiser_agent_firstiddiscountrebatetype" jdbcType="VARCHAR" property="mkAdvertiserAgentFirstiddiscountrebatetype" />
+    <result column="mk_advertiser_agent_zeroid" jdbcType="VARCHAR" property="mkAdvertiserAgentZeroid" />
+    <result column="mk_advertiser_agent_zeroiddiscountfactor" jdbcType="NUMERIC" property="mkAdvertiserAgentZeroiddiscountfactor" />
+    <result column="mk_advertiser_agent_zeroiddiscountrebatetype" jdbcType="VARCHAR" property="mkAdvertiserAgentZeroiddiscountrebatetype" />
+    <result column="mk_advertiser_discountfactor" jdbcType="NUMERIC" property="mkAdvertiserDiscountfactor" />
+    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_media_agent_createtm" jdbcType="TIMESTAMP" property="mkMediaAgentCreatetm" />
+    <result column="mk_media_agent_operationtm" jdbcType="TIMESTAMP" property="mkMediaAgentOperationtm" />
+    <result column="mk_media_agent_modifytm" jdbcType="TIMESTAMP" property="mkMediaAgentModifytm" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkMediaAgentDiscountaccount">
+    insert into mk_media_agent_discountaccount (mk_media_agent_discountno, mk_advertiser_media_id, 
+      mk_media_info_code, mk_media_agent_discountdate, 
+      mk_media_agent_code, mk_media_agent_discountfactor, 
+      mk_media_agent_discountrebatetype, mk_advertiser_agent_firstid, 
+      mk_advertiser_agent_firstiddiscountfactor, mk_advertiser_agent_firstiddiscountrebatetype, 
+      mk_advertiser_agent_zeroid, mk_advertiser_agent_zeroiddiscountfactor, 
+      mk_advertiser_agent_zeroiddiscountrebatetype, mk_advertiser_discountfactor, 
+      oa_company_account_code, mk_media_agent_createtm, 
+      mk_media_agent_operationtm, mk_media_agent_modifytm
+      )
+    values (#{mkMediaAgentDiscountno,jdbcType=VARCHAR}, #{mkAdvertiserMediaId,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkMediaAgentDiscountdate,jdbcType=DATE}, 
+      #{mkMediaAgentCode,jdbcType=VARCHAR}, #{mkMediaAgentDiscountfactor,jdbcType=NUMERIC}, 
+      #{mkMediaAgentDiscountrebatetype,jdbcType=VARCHAR}, #{mkAdvertiserAgentFirstid,jdbcType=VARCHAR}, 
+      #{mkAdvertiserAgentFirstiddiscountfactor,jdbcType=NUMERIC}, #{mkAdvertiserAgentFirstiddiscountrebatetype,jdbcType=VARCHAR}, 
+      #{mkAdvertiserAgentZeroid,jdbcType=VARCHAR}, #{mkAdvertiserAgentZeroiddiscountfactor,jdbcType=NUMERIC}, 
+      #{mkAdvertiserAgentZeroiddiscountrebatetype,jdbcType=VARCHAR}, #{mkAdvertiserDiscountfactor,jdbcType=NUMERIC}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkMediaAgentCreatetm,jdbcType=TIMESTAMP}, 
+      #{mkMediaAgentOperationtm,jdbcType=TIMESTAMP}, #{mkMediaAgentModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkMediaAgentDiscountaccount">
+    insert into mk_media_agent_discountaccount
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkMediaAgentDiscountno != null">
+        mk_media_agent_discountno,
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        mk_advertiser_media_id,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code,
+      </if>
+      <if test="mkMediaAgentDiscountdate != null">
+        mk_media_agent_discountdate,
+      </if>
+      <if test="mkMediaAgentCode != null">
+        mk_media_agent_code,
+      </if>
+      <if test="mkMediaAgentDiscountfactor != null">
+        mk_media_agent_discountfactor,
+      </if>
+      <if test="mkMediaAgentDiscountrebatetype != null">
+        mk_media_agent_discountrebatetype,
+      </if>
+      <if test="mkAdvertiserAgentFirstid != null">
+        mk_advertiser_agent_firstid,
+      </if>
+      <if test="mkAdvertiserAgentFirstiddiscountfactor != null">
+        mk_advertiser_agent_firstiddiscountfactor,
+      </if>
+      <if test="mkAdvertiserAgentFirstiddiscountrebatetype != null">
+        mk_advertiser_agent_firstiddiscountrebatetype,
+      </if>
+      <if test="mkAdvertiserAgentZeroid != null">
+        mk_advertiser_agent_zeroid,
+      </if>
+      <if test="mkAdvertiserAgentZeroiddiscountfactor != null">
+        mk_advertiser_agent_zeroiddiscountfactor,
+      </if>
+      <if test="mkAdvertiserAgentZeroiddiscountrebatetype != null">
+        mk_advertiser_agent_zeroiddiscountrebatetype,
+      </if>
+      <if test="mkAdvertiserDiscountfactor != null">
+        mk_advertiser_discountfactor,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code,
+      </if>
+      <if test="mkMediaAgentCreatetm != null">
+        mk_media_agent_createtm,
+      </if>
+      <if test="mkMediaAgentOperationtm != null">
+        mk_media_agent_operationtm,
+      </if>
+      <if test="mkMediaAgentModifytm != null">
+        mk_media_agent_modifytm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkMediaAgentDiscountno != null">
+        #{mkMediaAgentDiscountno,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentDiscountdate != null">
+        #{mkMediaAgentDiscountdate,jdbcType=DATE},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentDiscountfactor != null">
+        #{mkMediaAgentDiscountfactor,jdbcType=NUMERIC},
+      </if>
+      <if test="mkMediaAgentDiscountrebatetype != null">
+        #{mkMediaAgentDiscountrebatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAgentFirstid != null">
+        #{mkAdvertiserAgentFirstid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAgentFirstiddiscountfactor != null">
+        #{mkAdvertiserAgentFirstiddiscountfactor,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserAgentFirstiddiscountrebatetype != null">
+        #{mkAdvertiserAgentFirstiddiscountrebatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAgentZeroid != null">
+        #{mkAdvertiserAgentZeroid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAgentZeroiddiscountfactor != null">
+        #{mkAdvertiserAgentZeroiddiscountfactor,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserAgentZeroiddiscountrebatetype != null">
+        #{mkAdvertiserAgentZeroiddiscountrebatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserDiscountfactor != null">
+        #{mkAdvertiserDiscountfactor,jdbcType=NUMERIC},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCreatetm != null">
+        #{mkMediaAgentCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaAgentOperationtm != null">
+        #{mkMediaAgentOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaAgentModifytm != null">
+        #{mkMediaAgentModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkMediaAgentDiscountaccount">
+    <id column="mk_media_agent_discountNo" jdbcType="VARCHAR" property="mkMediaAgentDiscountno" />
+    <result column="MK_advertiser_media_id" jdbcType="VARCHAR" property="mkAdvertiserMediaId" />
+    <result column="MK_media_Info_Code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="mk_media_agent_discountDate" jdbcType="DATE" property="mkMediaAgentDiscountdate" />
+    <result column="MK_media_agent_Code" jdbcType="VARCHAR" property="mkMediaAgentCode" />
+    <result column="mk_media_agent_discountFactor" jdbcType="NUMERIC" property="mkMediaAgentDiscountfactor" />
+    <result column="mk_media_agent_discountRebateType" jdbcType="VARCHAR" property="mkMediaAgentDiscountrebatetype" />
+    <result column="MK_advertiser_agent_firstId" jdbcType="VARCHAR" property="mkAdvertiserAgentFirstid" />
+    <result column="MK_advertiser_agent_firstIdDiscountFactor" jdbcType="NUMERIC" property="mkAdvertiserAgentFirstiddiscountfactor" />
+    <result column="MK_advertiser_agent_firstIdDiscountRebateType" jdbcType="VARCHAR" property="mkAdvertiserAgentFirstiddiscountrebatetype" />
+    <result column="MK_advertiser_agent_zeroId" jdbcType="VARCHAR" property="mkAdvertiserAgentZeroid" />
+    <result column="MK_advertiser_agent_zeroIdDiscountFactor" jdbcType="NUMERIC" property="mkAdvertiserAgentZeroiddiscountfactor" />
+    <result column="MK_advertiser_agent_zeroIdDiscountRebateType" jdbcType="VARCHAR" property="mkAdvertiserAgentZeroiddiscountrebatetype" />
+    <result column="MK_advertiser_discountFactor" jdbcType="NUMERIC" property="mkAdvertiserDiscountfactor" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_media_agent_CreateTM" jdbcType="TIMESTAMP" property="mkMediaAgentCreatetm" />
+    <result column="mk_media_agent_OperationTM" jdbcType="TIMESTAMP" property="mkMediaAgentOperationtm" />
+    <result column="mk_media_agent_MODIFYTM" jdbcType="TIMESTAMP" property="mkMediaAgentModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_media_agent_discountNo, MK_advertiser_media_id, MK_media_Info_Code, mk_media_agent_discountDate, 
+    MK_media_agent_Code, mk_media_agent_discountFactor, mk_media_agent_discountRebateType, 
+    MK_advertiser_agent_firstId, MK_advertiser_agent_firstIdDiscountFactor, MK_advertiser_agent_firstIdDiscountRebateType, 
+    MK_advertiser_agent_zeroId, MK_advertiser_agent_zeroIdDiscountFactor, MK_advertiser_agent_zeroIdDiscountRebateType, 
+    MK_advertiser_discountFactor, OA_company_Account_code, mk_media_agent_CreateTM, mk_media_agent_OperationTM, 
+    mk_media_agent_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_media_agent_discountaccount
+    where mk_media_agent_discountNo = #{mkMediaAgentDiscountno,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_media_agent_discountaccount
+    where mk_media_agent_discountNo = #{mkMediaAgentDiscountno,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkMediaAgentDiscountaccount">
+    insert into mk_media_agent_discountaccount (mk_media_agent_discountNo, MK_advertiser_media_id, 
+      MK_media_Info_Code, mk_media_agent_discountDate, 
+      MK_media_agent_Code, mk_media_agent_discountFactor, 
+      mk_media_agent_discountRebateType, MK_advertiser_agent_firstId, 
+      MK_advertiser_agent_firstIdDiscountFactor, MK_advertiser_agent_firstIdDiscountRebateType, 
+      MK_advertiser_agent_zeroId, MK_advertiser_agent_zeroIdDiscountFactor, 
+      MK_advertiser_agent_zeroIdDiscountRebateType, MK_advertiser_discountFactor, 
+      OA_company_Account_code, mk_media_agent_CreateTM, 
+      mk_media_agent_OperationTM, mk_media_agent_MODIFYTM
+      )
+    values (#{mkMediaAgentDiscountno,jdbcType=VARCHAR}, #{mkAdvertiserMediaId,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkMediaAgentDiscountdate,jdbcType=DATE}, 
+      #{mkMediaAgentCode,jdbcType=VARCHAR}, #{mkMediaAgentDiscountfactor,jdbcType=NUMERIC}, 
+      #{mkMediaAgentDiscountrebatetype,jdbcType=VARCHAR}, #{mkAdvertiserAgentFirstid,jdbcType=VARCHAR}, 
+      #{mkAdvertiserAgentFirstiddiscountfactor,jdbcType=NUMERIC}, #{mkAdvertiserAgentFirstiddiscountrebatetype,jdbcType=VARCHAR}, 
+      #{mkAdvertiserAgentZeroid,jdbcType=VARCHAR}, #{mkAdvertiserAgentZeroiddiscountfactor,jdbcType=NUMERIC}, 
+      #{mkAdvertiserAgentZeroiddiscountrebatetype,jdbcType=VARCHAR}, #{mkAdvertiserDiscountfactor,jdbcType=NUMERIC}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkMediaAgentCreatetm,jdbcType=TIMESTAMP}, 
+      #{mkMediaAgentOperationtm,jdbcType=TIMESTAMP}, #{mkMediaAgentModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkMediaAgentDiscountaccount">
+    insert into mk_media_agent_discountaccount
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkMediaAgentDiscountno != null">
+        mk_media_agent_discountNo,
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        MK_advertiser_media_id,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code,
+      </if>
+      <if test="mkMediaAgentDiscountdate != null">
+        mk_media_agent_discountDate,
+      </if>
+      <if test="mkMediaAgentCode != null">
+        MK_media_agent_Code,
+      </if>
+      <if test="mkMediaAgentDiscountfactor != null">
+        mk_media_agent_discountFactor,
+      </if>
+      <if test="mkMediaAgentDiscountrebatetype != null">
+        mk_media_agent_discountRebateType,
+      </if>
+      <if test="mkAdvertiserAgentFirstid != null">
+        MK_advertiser_agent_firstId,
+      </if>
+      <if test="mkAdvertiserAgentFirstiddiscountfactor != null">
+        MK_advertiser_agent_firstIdDiscountFactor,
+      </if>
+      <if test="mkAdvertiserAgentFirstiddiscountrebatetype != null">
+        MK_advertiser_agent_firstIdDiscountRebateType,
+      </if>
+      <if test="mkAdvertiserAgentZeroid != null">
+        MK_advertiser_agent_zeroId,
+      </if>
+      <if test="mkAdvertiserAgentZeroiddiscountfactor != null">
+        MK_advertiser_agent_zeroIdDiscountFactor,
+      </if>
+      <if test="mkAdvertiserAgentZeroiddiscountrebatetype != null">
+        MK_advertiser_agent_zeroIdDiscountRebateType,
+      </if>
+      <if test="mkAdvertiserDiscountfactor != null">
+        MK_advertiser_discountFactor,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="mkMediaAgentCreatetm != null">
+        mk_media_agent_CreateTM,
+      </if>
+      <if test="mkMediaAgentOperationtm != null">
+        mk_media_agent_OperationTM,
+      </if>
+      <if test="mkMediaAgentModifytm != null">
+        mk_media_agent_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkMediaAgentDiscountno != null">
+        #{mkMediaAgentDiscountno,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentDiscountdate != null">
+        #{mkMediaAgentDiscountdate,jdbcType=DATE},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentDiscountfactor != null">
+        #{mkMediaAgentDiscountfactor,jdbcType=NUMERIC},
+      </if>
+      <if test="mkMediaAgentDiscountrebatetype != null">
+        #{mkMediaAgentDiscountrebatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAgentFirstid != null">
+        #{mkAdvertiserAgentFirstid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAgentFirstiddiscountfactor != null">
+        #{mkAdvertiserAgentFirstiddiscountfactor,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserAgentFirstiddiscountrebatetype != null">
+        #{mkAdvertiserAgentFirstiddiscountrebatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAgentZeroid != null">
+        #{mkAdvertiserAgentZeroid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAgentZeroiddiscountfactor != null">
+        #{mkAdvertiserAgentZeroiddiscountfactor,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserAgentZeroiddiscountrebatetype != null">
+        #{mkAdvertiserAgentZeroiddiscountrebatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserDiscountfactor != null">
+        #{mkAdvertiserDiscountfactor,jdbcType=NUMERIC},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCreatetm != null">
+        #{mkMediaAgentCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaAgentOperationtm != null">
+        #{mkMediaAgentOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaAgentModifytm != null">
+        #{mkMediaAgentModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkMediaAgentDiscountaccount">
+    update mk_media_agent_discountaccount
+    <set>
+      <if test="mkAdvertiserMediaId != null">
+        MK_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentDiscountdate != null">
+        mk_media_agent_discountDate = #{mkMediaAgentDiscountdate,jdbcType=DATE},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        MK_media_agent_Code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentDiscountfactor != null">
+        mk_media_agent_discountFactor = #{mkMediaAgentDiscountfactor,jdbcType=NUMERIC},
+      </if>
+      <if test="mkMediaAgentDiscountrebatetype != null">
+        mk_media_agent_discountRebateType = #{mkMediaAgentDiscountrebatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAgentFirstid != null">
+        MK_advertiser_agent_firstId = #{mkAdvertiserAgentFirstid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAgentFirstiddiscountfactor != null">
+        MK_advertiser_agent_firstIdDiscountFactor = #{mkAdvertiserAgentFirstiddiscountfactor,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserAgentFirstiddiscountrebatetype != null">
+        MK_advertiser_agent_firstIdDiscountRebateType = #{mkAdvertiserAgentFirstiddiscountrebatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAgentZeroid != null">
+        MK_advertiser_agent_zeroId = #{mkAdvertiserAgentZeroid,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserAgentZeroiddiscountfactor != null">
+        MK_advertiser_agent_zeroIdDiscountFactor = #{mkAdvertiserAgentZeroiddiscountfactor,jdbcType=NUMERIC},
+      </if>
+      <if test="mkAdvertiserAgentZeroiddiscountrebatetype != null">
+        MK_advertiser_agent_zeroIdDiscountRebateType = #{mkAdvertiserAgentZeroiddiscountrebatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserDiscountfactor != null">
+        MK_advertiser_discountFactor = #{mkAdvertiserDiscountfactor,jdbcType=NUMERIC},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCreatetm != null">
+        mk_media_agent_CreateTM = #{mkMediaAgentCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaAgentOperationtm != null">
+        mk_media_agent_OperationTM = #{mkMediaAgentOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaAgentModifytm != null">
+        mk_media_agent_MODIFYTM = #{mkMediaAgentModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mk_media_agent_discountNo = #{mkMediaAgentDiscountno,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkMediaAgentDiscountaccount">
+    update mk_media_agent_discountaccount
+    set MK_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      mk_media_agent_discountDate = #{mkMediaAgentDiscountdate,jdbcType=DATE},
+      MK_media_agent_Code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      mk_media_agent_discountFactor = #{mkMediaAgentDiscountfactor,jdbcType=NUMERIC},
+      mk_media_agent_discountRebateType = #{mkMediaAgentDiscountrebatetype,jdbcType=VARCHAR},
+      MK_advertiser_agent_firstId = #{mkAdvertiserAgentFirstid,jdbcType=VARCHAR},
+      MK_advertiser_agent_firstIdDiscountFactor = #{mkAdvertiserAgentFirstiddiscountfactor,jdbcType=NUMERIC},
+      MK_advertiser_agent_firstIdDiscountRebateType = #{mkAdvertiserAgentFirstiddiscountrebatetype,jdbcType=VARCHAR},
+      MK_advertiser_agent_zeroId = #{mkAdvertiserAgentZeroid,jdbcType=VARCHAR},
+      MK_advertiser_agent_zeroIdDiscountFactor = #{mkAdvertiserAgentZeroiddiscountfactor,jdbcType=NUMERIC},
+      MK_advertiser_agent_zeroIdDiscountRebateType = #{mkAdvertiserAgentZeroiddiscountrebatetype,jdbcType=VARCHAR},
+      MK_advertiser_discountFactor = #{mkAdvertiserDiscountfactor,jdbcType=NUMERIC},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      mk_media_agent_CreateTM = #{mkMediaAgentCreatetm,jdbcType=TIMESTAMP},
+      mk_media_agent_OperationTM = #{mkMediaAgentOperationtm,jdbcType=TIMESTAMP},
+      mk_media_agent_MODIFYTM = #{mkMediaAgentModifytm,jdbcType=TIMESTAMP}
+    where mk_media_agent_discountNo = #{mkMediaAgentDiscountno,jdbcType=VARCHAR}
+  </update>
+</mapper>

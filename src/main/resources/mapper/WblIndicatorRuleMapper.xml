@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WblIndicatorRuleMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.WblIndicatorRule">
+    <id column="wbl_indicator_rule_id" jdbcType="VARCHAR" property="wblIndicatorRuleId" />
+    <result column="wbl_indicator_config_id" jdbcType="VARCHAR" property="wblIndicatorConfigId" />
+    <result column="wbl_plan_rule_use" jdbcType="VARCHAR" property="wblPlanRuleUse" />
+    <result column="wbl_plan_rule_useMust" jdbcType="VARCHAR" property="wblPlanRuleUsemust" />
+    <result column="wbl_plan_rule_useDes" jdbcType="VARCHAR" property="wblPlanRuleUsedes" />
+    <result column="wbl_indicator_rule_Repeat" jdbcType="VARCHAR" property="wblIndicatorRuleRepeat" />
+    <result column="wbl_indicator_rule_CreateTM" jdbcType="TIMESTAMP" property="wblIndicatorRuleCreatetm" />
+    <result column="wbl_indicator_rule_MODIFYTM" jdbcType="TIMESTAMP" property="wblIndicatorRuleModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    wbl_indicator_rule_id, wbl_indicator_config_id, wbl_plan_rule_use, wbl_plan_rule_useMust, 
+    wbl_plan_rule_useDes, wbl_indicator_rule_Repeat, wbl_indicator_rule_CreateTM, wbl_indicator_rule_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wbl_indicator_rule
+    where wbl_indicator_rule_id = #{wblIndicatorRuleId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from wbl_indicator_rule
+    where wbl_indicator_rule_id = #{wblIndicatorRuleId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.WblIndicatorRule">
+    insert into wbl_indicator_rule (wbl_indicator_rule_id, wbl_indicator_config_id, 
+      wbl_plan_rule_use, wbl_plan_rule_useMust, wbl_plan_rule_useDes, 
+      wbl_indicator_rule_Repeat, wbl_indicator_rule_CreateTM, 
+      wbl_indicator_rule_MODIFYTM)
+    values (#{wblIndicatorRuleId,jdbcType=VARCHAR}, #{wblIndicatorConfigId,jdbcType=VARCHAR}, 
+      #{wblPlanRuleUse,jdbcType=VARCHAR}, #{wblPlanRuleUsemust,jdbcType=VARCHAR}, #{wblPlanRuleUsedes,jdbcType=VARCHAR}, 
+      #{wblIndicatorRuleRepeat,jdbcType=VARCHAR}, #{wblIndicatorRuleCreatetm,jdbcType=TIMESTAMP}, 
+      #{wblIndicatorRuleModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.WblIndicatorRule">
+    insert into wbl_indicator_rule
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="wblIndicatorRuleId != null">
+        wbl_indicator_rule_id,
+      </if>
+      <if test="wblIndicatorConfigId != null">
+        wbl_indicator_config_id,
+      </if>
+      <if test="wblPlanRuleUse != null">
+        wbl_plan_rule_use,
+      </if>
+      <if test="wblPlanRuleUsemust != null">
+        wbl_plan_rule_useMust,
+      </if>
+      <if test="wblPlanRuleUsedes != null">
+        wbl_plan_rule_useDes,
+      </if>
+      <if test="wblIndicatorRuleRepeat != null">
+        wbl_indicator_rule_Repeat,
+      </if>
+      <if test="wblIndicatorRuleCreatetm != null">
+        wbl_indicator_rule_CreateTM,
+      </if>
+      <if test="wblIndicatorRuleModifytm != null">
+        wbl_indicator_rule_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="wblIndicatorRuleId != null">
+        #{wblIndicatorRuleId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorConfigId != null">
+        #{wblIndicatorConfigId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanRuleUse != null">
+        #{wblPlanRuleUse,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanRuleUsemust != null">
+        #{wblPlanRuleUsemust,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanRuleUsedes != null">
+        #{wblPlanRuleUsedes,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorRuleRepeat != null">
+        #{wblIndicatorRuleRepeat,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorRuleCreatetm != null">
+        #{wblIndicatorRuleCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblIndicatorRuleModifytm != null">
+        #{wblIndicatorRuleModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.WblIndicatorRule">
+    update wbl_indicator_rule
+    <set>
+      <if test="wblIndicatorConfigId != null">
+        wbl_indicator_config_id = #{wblIndicatorConfigId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanRuleUse != null">
+        wbl_plan_rule_use = #{wblPlanRuleUse,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanRuleUsemust != null">
+        wbl_plan_rule_useMust = #{wblPlanRuleUsemust,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanRuleUsedes != null">
+        wbl_plan_rule_useDes = #{wblPlanRuleUsedes,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorRuleRepeat != null">
+        wbl_indicator_rule_Repeat = #{wblIndicatorRuleRepeat,jdbcType=VARCHAR},
+      </if>
+      <if test="wblIndicatorRuleCreatetm != null">
+        wbl_indicator_rule_CreateTM = #{wblIndicatorRuleCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblIndicatorRuleModifytm != null">
+        wbl_indicator_rule_MODIFYTM = #{wblIndicatorRuleModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where wbl_indicator_rule_id = #{wblIndicatorRuleId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.WblIndicatorRule">
+    update wbl_indicator_rule
+    set wbl_indicator_config_id = #{wblIndicatorConfigId,jdbcType=VARCHAR},
+      wbl_plan_rule_use = #{wblPlanRuleUse,jdbcType=VARCHAR},
+      wbl_plan_rule_useMust = #{wblPlanRuleUsemust,jdbcType=VARCHAR},
+      wbl_plan_rule_useDes = #{wblPlanRuleUsedes,jdbcType=VARCHAR},
+      wbl_indicator_rule_Repeat = #{wblIndicatorRuleRepeat,jdbcType=VARCHAR},
+      wbl_indicator_rule_CreateTM = #{wblIndicatorRuleCreatetm,jdbcType=TIMESTAMP},
+      wbl_indicator_rule_MODIFYTM = #{wblIndicatorRuleModifytm,jdbcType=TIMESTAMP}
+    where wbl_indicator_rule_id = #{wblIndicatorRuleId,jdbcType=VARCHAR}
+  </update>
+</mapper>

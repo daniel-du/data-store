@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkMarketurlReporttimesMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkMarketurlReporttimes">
+    <id column="mk_Marketurl_ReportTimes_id" jdbcType="VARCHAR" property="mkMarketurlReporttimesId" />
+    <result column="MK_Advertiser_marketURl_Code" jdbcType="VARCHAR" property="mkAdvertiserMarketurlCode" />
+    <result column="mk_Marketurl_ReportTimes_time" jdbcType="VARCHAR" property="mkMarketurlReporttimesTime" />
+    <result column="mk_Marketurl_ReportTimes_state" jdbcType="VARCHAR" property="mkMarketurlReporttimesState" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_Marketurl_ReportTimes_CreateTM" jdbcType="TIMESTAMP" property="mkMarketurlReporttimesCreatetm" />
+    <result column="mk_Marketurl_ReportTimes_OperationTM" jdbcType="TIMESTAMP" property="mkMarketurlReporttimesOperationtm" />
+    <result column="mk_Marketurl_ReportTimes_MODIFYTM" jdbcType="TIMESTAMP" property="mkMarketurlReporttimesModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_Marketurl_ReportTimes_id, MK_Advertiser_marketURl_Code, mk_Marketurl_ReportTimes_time, 
+    mk_Marketurl_ReportTimes_state, OA_company_Account_code, mk_Marketurl_ReportTimes_CreateTM, 
+    mk_Marketurl_ReportTimes_OperationTM, mk_Marketurl_ReportTimes_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_marketurl_reporttimes
+    where mk_Marketurl_ReportTimes_id = #{mkMarketurlReporttimesId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_marketurl_reporttimes
+    where mk_Marketurl_ReportTimes_id = #{mkMarketurlReporttimesId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkMarketurlReporttimes">
+    insert into mk_marketurl_reporttimes (mk_Marketurl_ReportTimes_id, MK_Advertiser_marketURl_Code, 
+      mk_Marketurl_ReportTimes_time, mk_Marketurl_ReportTimes_state, 
+      OA_company_Account_code, mk_Marketurl_ReportTimes_CreateTM, 
+      mk_Marketurl_ReportTimes_OperationTM, mk_Marketurl_ReportTimes_MODIFYTM
+      )
+    values (#{mkMarketurlReporttimesId,jdbcType=VARCHAR}, #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR}, 
+      #{mkMarketurlReporttimesTime,jdbcType=VARCHAR}, #{mkMarketurlReporttimesState,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkMarketurlReporttimesCreatetm,jdbcType=TIMESTAMP}, 
+      #{mkMarketurlReporttimesOperationtm,jdbcType=TIMESTAMP}, #{mkMarketurlReporttimesModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkMarketurlReporttimes">
+    insert into mk_marketurl_reporttimes
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkMarketurlReporttimesId != null">
+        mk_Marketurl_ReportTimes_id,
+      </if>
+      <if test="mkAdvertiserMarketurlCode != null">
+        MK_Advertiser_marketURl_Code,
+      </if>
+      <if test="mkMarketurlReporttimesTime != null">
+        mk_Marketurl_ReportTimes_time,
+      </if>
+      <if test="mkMarketurlReporttimesState != null">
+        mk_Marketurl_ReportTimes_state,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="mkMarketurlReporttimesCreatetm != null">
+        mk_Marketurl_ReportTimes_CreateTM,
+      </if>
+      <if test="mkMarketurlReporttimesOperationtm != null">
+        mk_Marketurl_ReportTimes_OperationTM,
+      </if>
+      <if test="mkMarketurlReporttimesModifytm != null">
+        mk_Marketurl_ReportTimes_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkMarketurlReporttimesId != null">
+        #{mkMarketurlReporttimesId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMarketurlCode != null">
+        #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMarketurlReporttimesTime != null">
+        #{mkMarketurlReporttimesTime,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMarketurlReporttimesState != null">
+        #{mkMarketurlReporttimesState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMarketurlReporttimesCreatetm != null">
+        #{mkMarketurlReporttimesCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMarketurlReporttimesOperationtm != null">
+        #{mkMarketurlReporttimesOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMarketurlReporttimesModifytm != null">
+        #{mkMarketurlReporttimesModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkMarketurlReporttimes">
+    update mk_marketurl_reporttimes
+    <set>
+      <if test="mkAdvertiserMarketurlCode != null">
+        MK_Advertiser_marketURl_Code = #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMarketurlReporttimesTime != null">
+        mk_Marketurl_ReportTimes_time = #{mkMarketurlReporttimesTime,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMarketurlReporttimesState != null">
+        mk_Marketurl_ReportTimes_state = #{mkMarketurlReporttimesState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMarketurlReporttimesCreatetm != null">
+        mk_Marketurl_ReportTimes_CreateTM = #{mkMarketurlReporttimesCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMarketurlReporttimesOperationtm != null">
+        mk_Marketurl_ReportTimes_OperationTM = #{mkMarketurlReporttimesOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMarketurlReporttimesModifytm != null">
+        mk_Marketurl_ReportTimes_MODIFYTM = #{mkMarketurlReporttimesModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mk_Marketurl_ReportTimes_id = #{mkMarketurlReporttimesId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkMarketurlReporttimes">
+    update mk_marketurl_reporttimes
+    set MK_Advertiser_marketURl_Code = #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR},
+      mk_Marketurl_ReportTimes_time = #{mkMarketurlReporttimesTime,jdbcType=VARCHAR},
+      mk_Marketurl_ReportTimes_state = #{mkMarketurlReporttimesState,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      mk_Marketurl_ReportTimes_CreateTM = #{mkMarketurlReporttimesCreatetm,jdbcType=TIMESTAMP},
+      mk_Marketurl_ReportTimes_OperationTM = #{mkMarketurlReporttimesOperationtm,jdbcType=TIMESTAMP},
+      mk_Marketurl_ReportTimes_MODIFYTM = #{mkMarketurlReporttimesModifytm,jdbcType=TIMESTAMP}
+    where mk_Marketurl_ReportTimes_id = #{mkMarketurlReporttimesId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkMarketurlReporttimes">
+    <result column="mk_marketurl_reporttimes_id" jdbcType="VARCHAR" property="mkMarketurlReporttimesId" />
+    <result column="mk_advertiser_marketurl_code" jdbcType="VARCHAR" property="mkAdvertiserMarketurlCode" />
+    <result column="mk_marketurl_reporttimes_time" jdbcType="VARCHAR" property="mkMarketurlReporttimesTime" />
+    <result column="mk_marketurl_reporttimes_state" jdbcType="VARCHAR" property="mkMarketurlReporttimesState" />
+    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_marketurl_reporttimes_createtm" jdbcType="TIMESTAMP" property="mkMarketurlReporttimesCreatetm" />
+    <result column="mk_marketurl_reporttimes_operationtm" jdbcType="TIMESTAMP" property="mkMarketurlReporttimesOperationtm" />
+    <result column="mk_marketurl_reporttimes_modifytm" jdbcType="TIMESTAMP" property="mkMarketurlReporttimesModifytm" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkMarketurlReporttimes">
+    insert into mk_marketurl_reporttimes (mk_marketurl_reporttimes_id, mk_advertiser_marketurl_code, 
+      mk_marketurl_reporttimes_time, mk_marketurl_reporttimes_state, 
+      oa_company_account_code, mk_marketurl_reporttimes_createtm, 
+      mk_marketurl_reporttimes_operationtm, mk_marketurl_reporttimes_modifytm
+      )
+    values (#{mkMarketurlReporttimesId,jdbcType=VARCHAR}, #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR}, 
+      #{mkMarketurlReporttimesTime,jdbcType=VARCHAR}, #{mkMarketurlReporttimesState,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkMarketurlReporttimesCreatetm,jdbcType=TIMESTAMP}, 
+      #{mkMarketurlReporttimesOperationtm,jdbcType=TIMESTAMP}, #{mkMarketurlReporttimesModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkMarketurlReporttimes">
+    insert into mk_marketurl_reporttimes
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkMarketurlReporttimesId != null">
+        mk_marketurl_reporttimes_id,
+      </if>
+      <if test="mkAdvertiserMarketurlCode != null">
+        mk_advertiser_marketurl_code,
+      </if>
+      <if test="mkMarketurlReporttimesTime != null">
+        mk_marketurl_reporttimes_time,
+      </if>
+      <if test="mkMarketurlReporttimesState != null">
+        mk_marketurl_reporttimes_state,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code,
+      </if>
+      <if test="mkMarketurlReporttimesCreatetm != null">
+        mk_marketurl_reporttimes_createtm,
+      </if>
+      <if test="mkMarketurlReporttimesOperationtm != null">
+        mk_marketurl_reporttimes_operationtm,
+      </if>
+      <if test="mkMarketurlReporttimesModifytm != null">
+        mk_marketurl_reporttimes_modifytm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkMarketurlReporttimesId != null">
+        #{mkMarketurlReporttimesId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMarketurlCode != null">
+        #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMarketurlReporttimesTime != null">
+        #{mkMarketurlReporttimesTime,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMarketurlReporttimesState != null">
+        #{mkMarketurlReporttimesState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMarketurlReporttimesCreatetm != null">
+        #{mkMarketurlReporttimesCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMarketurlReporttimesOperationtm != null">
+        #{mkMarketurlReporttimesOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMarketurlReporttimesModifytm != null">
+        #{mkMarketurlReporttimesModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

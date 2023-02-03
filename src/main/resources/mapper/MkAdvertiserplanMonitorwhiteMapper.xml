@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkAdvertiserplanMonitorwhiteMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserplanMonitorwhite">
+    <result column="mk_advertiserplan_monitorwhite_id" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorwhiteId" />
+    <result column="mk_advertiserplan_monitorrule_code" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorruleCode" />
+    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="mk_media_agent_code" jdbcType="VARCHAR" property="mkMediaAgentCode" />
+    <result column="mk_advertiser_media_id" jdbcType="VARCHAR" property="mkAdvertiserMediaId" />
+    <result column="mk_advertiser_plan_code" jdbcType="VARCHAR" property="mkAdvertiserPlanCode" />
+    <result column="mk_advertiserplan_monitorwhite_range" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorwhiteRange" />
+    <result column="mk_advertiserplan_monitorwhite_state" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorwhiteState" />
+    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_advertiser_plan_createtm" jdbcType="TIMESTAMP" property="mkAdvertiserPlanCreatetm" />
+    <result column="mk_advertiser_plan_operationtm" jdbcType="TIMESTAMP" property="mkAdvertiserPlanOperationtm" />
+    <result column="mk_advertiser_plan_modifytm" jdbcType="TIMESTAMP" property="mkAdvertiserPlanModifytm" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserplanMonitorwhite">
+    insert into mk_advertiserplan_monitorwhite (mk_advertiserplan_monitorwhite_id, mk_advertiserplan_monitorrule_code, 
+      mk_media_info_code, mk_media_agent_code, mk_advertiser_media_id, 
+      mk_advertiser_plan_code, mk_advertiserplan_monitorwhite_range, 
+      mk_advertiserplan_monitorwhite_state, oa_company_account_code, 
+      mk_advertiser_plan_createtm, mk_advertiser_plan_operationtm, 
+      mk_advertiser_plan_modifytm)
+    values (#{mkAdvertiserplanMonitorwhiteId,jdbcType=VARCHAR}, #{mkAdvertiserplanMonitorruleCode,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkMediaAgentCode,jdbcType=VARCHAR}, #{mkAdvertiserMediaId,jdbcType=VARCHAR}, 
+      #{mkAdvertiserPlanCode,jdbcType=VARCHAR}, #{mkAdvertiserplanMonitorwhiteRange,jdbcType=VARCHAR}, 
+      #{mkAdvertiserplanMonitorwhiteState,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserPlanCreatetm,jdbcType=TIMESTAMP}, #{mkAdvertiserPlanOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserPlanModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserplanMonitorwhite">
+    insert into mk_advertiserplan_monitorwhite
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserplanMonitorwhiteId != null">
+        mk_advertiserplan_monitorwhite_id,
+      </if>
+      <if test="mkAdvertiserplanMonitorruleCode != null">
+        mk_advertiserplan_monitorrule_code,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code,
+      </if>
+      <if test="mkMediaAgentCode != null">
+        mk_media_agent_code,
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        mk_advertiser_media_id,
+      </if>
+      <if test="mkAdvertiserPlanCode != null">
+        mk_advertiser_plan_code,
+      </if>
+      <if test="mkAdvertiserplanMonitorwhiteRange != null">
+        mk_advertiserplan_monitorwhite_range,
+      </if>
+      <if test="mkAdvertiserplanMonitorwhiteState != null">
+        mk_advertiserplan_monitorwhite_state,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code,
+      </if>
+      <if test="mkAdvertiserPlanCreatetm != null">
+        mk_advertiser_plan_createtm,
+      </if>
+      <if test="mkAdvertiserPlanOperationtm != null">
+        mk_advertiser_plan_operationtm,
+      </if>
+      <if test="mkAdvertiserPlanModifytm != null">
+        mk_advertiser_plan_modifytm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserplanMonitorwhiteId != null">
+        #{mkAdvertiserplanMonitorwhiteId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleCode != null">
+        #{mkAdvertiserplanMonitorruleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlanCode != null">
+        #{mkAdvertiserPlanCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorwhiteRange != null">
+        #{mkAdvertiserplanMonitorwhiteRange,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorwhiteState != null">
+        #{mkAdvertiserplanMonitorwhiteState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlanCreatetm != null">
+        #{mkAdvertiserPlanCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserPlanOperationtm != null">
+        #{mkAdvertiserPlanOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserPlanModifytm != null">
+        #{mkAdvertiserPlanModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserplanMonitorwhite">
+    <id column="mk_advertiserPlan_monitorWhite_id" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorwhiteId" />
+    <result column="mk_advertiserPlan_monitorRule_Code" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorruleCode" />
+    <result column="MK_media_Info_Code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="MK_Media_Agent_code" jdbcType="VARCHAR" property="mkMediaAgentCode" />
+    <result column="MK_advertiser_media_id" jdbcType="VARCHAR" property="mkAdvertiserMediaId" />
+    <result column="MK_Advertiser_Plan_Code" jdbcType="VARCHAR" property="mkAdvertiserPlanCode" />
+    <result column="mk_advertiserPlan_monitorWhite_Range" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorwhiteRange" />
+    <result column="mk_advertiserPlan_monitorWhite_state" jdbcType="VARCHAR" property="mkAdvertiserplanMonitorwhiteState" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="MK_Advertiser_Plan_createTM" jdbcType="TIMESTAMP" property="mkAdvertiserPlanCreatetm" />
+    <result column="MK_Advertiser_Plan_OperationTM" jdbcType="TIMESTAMP" property="mkAdvertiserPlanOperationtm" />
+    <result column="MK_Advertiser_Plan_MODIFYTM" jdbcType="TIMESTAMP" property="mkAdvertiserPlanModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_advertiserPlan_monitorWhite_id, mk_advertiserPlan_monitorRule_Code, MK_media_Info_Code, 
+    MK_Media_Agent_code, MK_advertiser_media_id, MK_Advertiser_Plan_Code, mk_advertiserPlan_monitorWhite_Range, 
+    mk_advertiserPlan_monitorWhite_state, OA_company_Account_code, MK_Advertiser_Plan_createTM, 
+    MK_Advertiser_Plan_OperationTM, MK_Advertiser_Plan_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_advertiserplan_monitorwhite
+    where mk_advertiserPlan_monitorWhite_id = #{mkAdvertiserplanMonitorwhiteId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_advertiserplan_monitorwhite
+    where mk_advertiserPlan_monitorWhite_id = #{mkAdvertiserplanMonitorwhiteId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserplanMonitorwhite">
+    insert into mk_advertiserplan_monitorwhite (mk_advertiserPlan_monitorWhite_id, mk_advertiserPlan_monitorRule_Code, 
+      MK_media_Info_Code, MK_Media_Agent_code, MK_advertiser_media_id, 
+      MK_Advertiser_Plan_Code, mk_advertiserPlan_monitorWhite_Range, 
+      mk_advertiserPlan_monitorWhite_state, OA_company_Account_code, 
+      MK_Advertiser_Plan_createTM, MK_Advertiser_Plan_OperationTM, 
+      MK_Advertiser_Plan_MODIFYTM)
+    values (#{mkAdvertiserplanMonitorwhiteId,jdbcType=VARCHAR}, #{mkAdvertiserplanMonitorruleCode,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkMediaAgentCode,jdbcType=VARCHAR}, #{mkAdvertiserMediaId,jdbcType=VARCHAR}, 
+      #{mkAdvertiserPlanCode,jdbcType=VARCHAR}, #{mkAdvertiserplanMonitorwhiteRange,jdbcType=VARCHAR}, 
+      #{mkAdvertiserplanMonitorwhiteState,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserPlanCreatetm,jdbcType=TIMESTAMP}, #{mkAdvertiserPlanOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkAdvertiserPlanModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserplanMonitorwhite">
+    insert into mk_advertiserplan_monitorwhite
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserplanMonitorwhiteId != null">
+        mk_advertiserPlan_monitorWhite_id,
+      </if>
+      <if test="mkAdvertiserplanMonitorruleCode != null">
+        mk_advertiserPlan_monitorRule_Code,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code,
+      </if>
+      <if test="mkMediaAgentCode != null">
+        MK_Media_Agent_code,
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        MK_advertiser_media_id,
+      </if>
+      <if test="mkAdvertiserPlanCode != null">
+        MK_Advertiser_Plan_Code,
+      </if>
+      <if test="mkAdvertiserplanMonitorwhiteRange != null">
+        mk_advertiserPlan_monitorWhite_Range,
+      </if>
+      <if test="mkAdvertiserplanMonitorwhiteState != null">
+        mk_advertiserPlan_monitorWhite_state,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="mkAdvertiserPlanCreatetm != null">
+        MK_Advertiser_Plan_createTM,
+      </if>
+      <if test="mkAdvertiserPlanOperationtm != null">
+        MK_Advertiser_Plan_OperationTM,
+      </if>
+      <if test="mkAdvertiserPlanModifytm != null">
+        MK_Advertiser_Plan_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserplanMonitorwhiteId != null">
+        #{mkAdvertiserplanMonitorwhiteId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorruleCode != null">
+        #{mkAdvertiserplanMonitorruleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlanCode != null">
+        #{mkAdvertiserPlanCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorwhiteRange != null">
+        #{mkAdvertiserplanMonitorwhiteRange,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorwhiteState != null">
+        #{mkAdvertiserplanMonitorwhiteState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlanCreatetm != null">
+        #{mkAdvertiserPlanCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserPlanOperationtm != null">
+        #{mkAdvertiserPlanOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserPlanModifytm != null">
+        #{mkAdvertiserPlanModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserplanMonitorwhite">
+    update mk_advertiserplan_monitorwhite
+    <set>
+      <if test="mkAdvertiserplanMonitorruleCode != null">
+        mk_advertiserPlan_monitorRule_Code = #{mkAdvertiserplanMonitorruleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        MK_Media_Agent_code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        MK_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlanCode != null">
+        MK_Advertiser_Plan_Code = #{mkAdvertiserPlanCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorwhiteRange != null">
+        mk_advertiserPlan_monitorWhite_Range = #{mkAdvertiserplanMonitorwhiteRange,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserplanMonitorwhiteState != null">
+        mk_advertiserPlan_monitorWhite_state = #{mkAdvertiserplanMonitorwhiteState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserPlanCreatetm != null">
+        MK_Advertiser_Plan_createTM = #{mkAdvertiserPlanCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserPlanOperationtm != null">
+        MK_Advertiser_Plan_OperationTM = #{mkAdvertiserPlanOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserPlanModifytm != null">
+        MK_Advertiser_Plan_MODIFYTM = #{mkAdvertiserPlanModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mk_advertiserPlan_monitorWhite_id = #{mkAdvertiserplanMonitorwhiteId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserplanMonitorwhite">
+    update mk_advertiserplan_monitorwhite
+    set mk_advertiserPlan_monitorRule_Code = #{mkAdvertiserplanMonitorruleCode,jdbcType=VARCHAR},
+      MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      MK_Media_Agent_code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      MK_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      MK_Advertiser_Plan_Code = #{mkAdvertiserPlanCode,jdbcType=VARCHAR},
+      mk_advertiserPlan_monitorWhite_Range = #{mkAdvertiserplanMonitorwhiteRange,jdbcType=VARCHAR},
+      mk_advertiserPlan_monitorWhite_state = #{mkAdvertiserplanMonitorwhiteState,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      MK_Advertiser_Plan_createTM = #{mkAdvertiserPlanCreatetm,jdbcType=TIMESTAMP},
+      MK_Advertiser_Plan_OperationTM = #{mkAdvertiserPlanOperationtm,jdbcType=TIMESTAMP},
+      MK_Advertiser_Plan_MODIFYTM = #{mkAdvertiserPlanModifytm,jdbcType=TIMESTAMP}
+    where mk_advertiserPlan_monitorWhite_id = #{mkAdvertiserplanMonitorwhiteId,jdbcType=VARCHAR}
+  </update>
+</mapper>

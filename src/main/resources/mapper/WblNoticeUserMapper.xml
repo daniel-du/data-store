@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WblNoticeUserMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.WblNoticeUser">
+    <id column="wbl_notice_user_id" jdbcType="VARCHAR" property="wblNoticeUserId" />
+    <result column="wbl_notice_user_name" jdbcType="VARCHAR" property="wblNoticeUserName" />
+    <result column="wbl_notice_user_mobile" jdbcType="VARCHAR" property="wblNoticeUserMobile" />
+    <result column="wbl_notice_user_wx" jdbcType="VARCHAR" property="wblNoticeUserWx" />
+    <result column="wbl_notice_user_flyBook" jdbcType="VARCHAR" property="wblNoticeUserFlybook" />
+    <result column="wbl_notice_user_email" jdbcType="VARCHAR" property="wblNoticeUserEmail" />
+    <result column="wbl_notice_user_status" jdbcType="INTEGER" property="wblNoticeUserStatus" />
+    <result column="wbl_indicator_config_departmen" jdbcType="VARCHAR" property="wblIndicatorConfigDepartmen" />
+    <result column="wbl_notice_user_CreateTM" jdbcType="TIMESTAMP" property="wblNoticeUserCreatetm" />
+    <result column="wbl_notice_user_MODIFYTM" jdbcType="TIMESTAMP" property="wblNoticeUserModifytm" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    wbl_notice_user_id, wbl_notice_user_name, wbl_notice_user_mobile, wbl_notice_user_wx, 
+    wbl_notice_user_flyBook, wbl_notice_user_email, wbl_notice_user_status, wbl_indicator_config_departmen, 
+    wbl_notice_user_CreateTM, wbl_notice_user_MODIFYTM, OA_company_Account_code
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wbl_notice_user
+    where wbl_notice_user_id = #{wblNoticeUserId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from wbl_notice_user
+    where wbl_notice_user_id = #{wblNoticeUserId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.WblNoticeUser">
+    insert into wbl_notice_user (wbl_notice_user_id, wbl_notice_user_name, 
+      wbl_notice_user_mobile, wbl_notice_user_wx, wbl_notice_user_flyBook, 
+      wbl_notice_user_email, wbl_notice_user_status, 
+      wbl_indicator_config_departmen, wbl_notice_user_CreateTM, 
+      wbl_notice_user_MODIFYTM, OA_company_Account_code
+      )
+    values (#{wblNoticeUserId,jdbcType=VARCHAR}, #{wblNoticeUserName,jdbcType=VARCHAR}, 
+      #{wblNoticeUserMobile,jdbcType=VARCHAR}, #{wblNoticeUserWx,jdbcType=VARCHAR}, #{wblNoticeUserFlybook,jdbcType=VARCHAR}, 
+      #{wblNoticeUserEmail,jdbcType=VARCHAR}, #{wblNoticeUserStatus,jdbcType=INTEGER}, 
+      #{wblIndicatorConfigDepartmen,jdbcType=VARCHAR}, #{wblNoticeUserCreatetm,jdbcType=TIMESTAMP}, 
+      #{wblNoticeUserModifytm,jdbcType=TIMESTAMP}, #{oaCompanyAccountCode,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.WblNoticeUser">
+    insert into wbl_notice_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="wblNoticeUserId != null">
+        wbl_notice_user_id,
+      </if>
+      <if test="wblNoticeUserName != null">
+        wbl_notice_user_name,
+      </if>
+      <if test="wblNoticeUserMobile != null">
+        wbl_notice_user_mobile,
+      </if>
+      <if test="wblNoticeUserWx != null">
+        wbl_notice_user_wx,
+      </if>
+      <if test="wblNoticeUserFlybook != null">
+        wbl_notice_user_flyBook,
+      </if>
+      <if test="wblNoticeUserEmail != null">
+        wbl_notice_user_email,
+      </if>
+      <if test="wblNoticeUserStatus != null">
+        wbl_notice_user_status,
+      </if>
+      <if test="wblIndicatorConfigDepartmen != null">
+        wbl_indicator_config_departmen,
+      </if>
+      <if test="wblNoticeUserCreatetm != null">
+        wbl_notice_user_CreateTM,
+      </if>
+      <if test="wblNoticeUserModifytm != null">
+        wbl_notice_user_MODIFYTM,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="wblNoticeUserId != null">
+        #{wblNoticeUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeUserName != null">
+        #{wblNoticeUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeUserMobile != null">
+        #{wblNoticeUserMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeUserWx != null">
+        #{wblNoticeUserWx,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeUserFlybook != null">
+        #{wblNoticeUserFlybook,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeUserEmail != null">
+        #{wblNoticeUserEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeUserStatus != null">
+        #{wblNoticeUserStatus,jdbcType=INTEGER},
+      </if>
+      <if test="wblIndicatorConfigDepartmen != null">
+        #{wblIndicatorConfigDepartmen,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeUserCreatetm != null">
+        #{wblNoticeUserCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblNoticeUserModifytm != null">
+        #{wblNoticeUserModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.WblNoticeUser">
+    update wbl_notice_user
+    <set>
+      <if test="wblNoticeUserName != null">
+        wbl_notice_user_name = #{wblNoticeUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeUserMobile != null">
+        wbl_notice_user_mobile = #{wblNoticeUserMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeUserWx != null">
+        wbl_notice_user_wx = #{wblNoticeUserWx,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeUserFlybook != null">
+        wbl_notice_user_flyBook = #{wblNoticeUserFlybook,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeUserEmail != null">
+        wbl_notice_user_email = #{wblNoticeUserEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeUserStatus != null">
+        wbl_notice_user_status = #{wblNoticeUserStatus,jdbcType=INTEGER},
+      </if>
+      <if test="wblIndicatorConfigDepartmen != null">
+        wbl_indicator_config_departmen = #{wblIndicatorConfigDepartmen,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeUserCreatetm != null">
+        wbl_notice_user_CreateTM = #{wblNoticeUserCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblNoticeUserModifytm != null">
+        wbl_notice_user_MODIFYTM = #{wblNoticeUserModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where wbl_notice_user_id = #{wblNoticeUserId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.WblNoticeUser">
+    update wbl_notice_user
+    set wbl_notice_user_name = #{wblNoticeUserName,jdbcType=VARCHAR},
+      wbl_notice_user_mobile = #{wblNoticeUserMobile,jdbcType=VARCHAR},
+      wbl_notice_user_wx = #{wblNoticeUserWx,jdbcType=VARCHAR},
+      wbl_notice_user_flyBook = #{wblNoticeUserFlybook,jdbcType=VARCHAR},
+      wbl_notice_user_email = #{wblNoticeUserEmail,jdbcType=VARCHAR},
+      wbl_notice_user_status = #{wblNoticeUserStatus,jdbcType=INTEGER},
+      wbl_indicator_config_departmen = #{wblIndicatorConfigDepartmen,jdbcType=VARCHAR},
+      wbl_notice_user_CreateTM = #{wblNoticeUserCreatetm,jdbcType=TIMESTAMP},
+      wbl_notice_user_MODIFYTM = #{wblNoticeUserModifytm,jdbcType=TIMESTAMP},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR}
+    where wbl_notice_user_id = #{wblNoticeUserId,jdbcType=VARCHAR}
+  </update>
+</mapper>

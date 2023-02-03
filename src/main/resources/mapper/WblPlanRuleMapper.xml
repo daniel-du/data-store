@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WblPlanRuleMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.WblPlanRule">
+    <id column="wbl_plan_rule_id" jdbcType="VARCHAR" property="wblPlanRuleId" />
+    <result column="wbl_plan_config_id" jdbcType="VARCHAR" property="wblPlanConfigId" />
+    <result column="wbl_plan_rule_params" jdbcType="VARCHAR" property="wblPlanRuleParams" />
+    <result column="wbl_plan_rule_sort" jdbcType="INTEGER" property="wblPlanRuleSort" />
+    <result column="wbl_plan_rule_use" jdbcType="VARCHAR" property="wblPlanRuleUse" />
+    <result column="wbl_plan_rule_remark" jdbcType="VARCHAR" property="wblPlanRuleRemark" />
+    <result column="wbl_plan_rule_CreateTM" jdbcType="TIMESTAMP" property="wblPlanRuleCreatetm" />
+    <result column="wbl_plan_rule_MODIFYTM" jdbcType="TIMESTAMP" property="wblPlanRuleModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    wbl_plan_rule_id, wbl_plan_config_id, wbl_plan_rule_params, wbl_plan_rule_sort, wbl_plan_rule_use, 
+    wbl_plan_rule_remark, wbl_plan_rule_CreateTM, wbl_plan_rule_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wbl_plan_rule
+    where wbl_plan_rule_id = #{wblPlanRuleId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from wbl_plan_rule
+    where wbl_plan_rule_id = #{wblPlanRuleId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.WblPlanRule">
+    insert into wbl_plan_rule (wbl_plan_rule_id, wbl_plan_config_id, wbl_plan_rule_params, 
+      wbl_plan_rule_sort, wbl_plan_rule_use, wbl_plan_rule_remark, 
+      wbl_plan_rule_CreateTM, wbl_plan_rule_MODIFYTM
+      )
+    values (#{wblPlanRuleId,jdbcType=VARCHAR}, #{wblPlanConfigId,jdbcType=VARCHAR}, #{wblPlanRuleParams,jdbcType=VARCHAR}, 
+      #{wblPlanRuleSort,jdbcType=INTEGER}, #{wblPlanRuleUse,jdbcType=VARCHAR}, #{wblPlanRuleRemark,jdbcType=VARCHAR}, 
+      #{wblPlanRuleCreatetm,jdbcType=TIMESTAMP}, #{wblPlanRuleModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.WblPlanRule">
+    insert into wbl_plan_rule
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="wblPlanRuleId != null">
+        wbl_plan_rule_id,
+      </if>
+      <if test="wblPlanConfigId != null">
+        wbl_plan_config_id,
+      </if>
+      <if test="wblPlanRuleParams != null">
+        wbl_plan_rule_params,
+      </if>
+      <if test="wblPlanRuleSort != null">
+        wbl_plan_rule_sort,
+      </if>
+      <if test="wblPlanRuleUse != null">
+        wbl_plan_rule_use,
+      </if>
+      <if test="wblPlanRuleRemark != null">
+        wbl_plan_rule_remark,
+      </if>
+      <if test="wblPlanRuleCreatetm != null">
+        wbl_plan_rule_CreateTM,
+      </if>
+      <if test="wblPlanRuleModifytm != null">
+        wbl_plan_rule_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="wblPlanRuleId != null">
+        #{wblPlanRuleId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanConfigId != null">
+        #{wblPlanConfigId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanRuleParams != null">
+        #{wblPlanRuleParams,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanRuleSort != null">
+        #{wblPlanRuleSort,jdbcType=INTEGER},
+      </if>
+      <if test="wblPlanRuleUse != null">
+        #{wblPlanRuleUse,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanRuleRemark != null">
+        #{wblPlanRuleRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanRuleCreatetm != null">
+        #{wblPlanRuleCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblPlanRuleModifytm != null">
+        #{wblPlanRuleModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.WblPlanRule">
+    update wbl_plan_rule
+    <set>
+      <if test="wblPlanConfigId != null">
+        wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanRuleParams != null">
+        wbl_plan_rule_params = #{wblPlanRuleParams,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanRuleSort != null">
+        wbl_plan_rule_sort = #{wblPlanRuleSort,jdbcType=INTEGER},
+      </if>
+      <if test="wblPlanRuleUse != null">
+        wbl_plan_rule_use = #{wblPlanRuleUse,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanRuleRemark != null">
+        wbl_plan_rule_remark = #{wblPlanRuleRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanRuleCreatetm != null">
+        wbl_plan_rule_CreateTM = #{wblPlanRuleCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblPlanRuleModifytm != null">
+        wbl_plan_rule_MODIFYTM = #{wblPlanRuleModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where wbl_plan_rule_id = #{wblPlanRuleId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.WblPlanRule">
+    update wbl_plan_rule
+    set wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR},
+      wbl_plan_rule_params = #{wblPlanRuleParams,jdbcType=VARCHAR},
+      wbl_plan_rule_sort = #{wblPlanRuleSort,jdbcType=INTEGER},
+      wbl_plan_rule_use = #{wblPlanRuleUse,jdbcType=VARCHAR},
+      wbl_plan_rule_remark = #{wblPlanRuleRemark,jdbcType=VARCHAR},
+      wbl_plan_rule_CreateTM = #{wblPlanRuleCreatetm,jdbcType=TIMESTAMP},
+      wbl_plan_rule_MODIFYTM = #{wblPlanRuleModifytm,jdbcType=TIMESTAMP}
+    where wbl_plan_rule_id = #{wblPlanRuleId,jdbcType=VARCHAR}
+  </update>
+</mapper>

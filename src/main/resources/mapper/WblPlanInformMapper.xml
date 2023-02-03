@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WblPlanInformMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.WblPlanInform">
+    <id column="wbl_plan_inform_id" jdbcType="VARCHAR" property="wblPlanInformId" />
+    <result column="wbl_plan_config_id" jdbcType="VARCHAR" property="wblPlanConfigId" />
+    <result column="wbl_notice_user_id" jdbcType="VARCHAR" property="wblNoticeUserId" />
+    <result column="wbl_notice_channel_id" jdbcType="VARCHAR" property="wblNoticeChannelId" />
+    <result column="wbl_plan_inform_status" jdbcType="VARCHAR" property="wblPlanInformStatus" />
+    <result column="wbl_plan_inform_CreateTM" jdbcType="TIMESTAMP" property="wblPlanInformCreatetm" />
+    <result column="wbl_plan_inform_MODIFYTM" jdbcType="TIMESTAMP" property="wblPlanInformModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    wbl_plan_inform_id, wbl_plan_config_id, wbl_notice_user_id, wbl_notice_channel_id, 
+    wbl_plan_inform_status, wbl_plan_inform_CreateTM, wbl_plan_inform_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wbl_plan_inform
+    where wbl_plan_inform_id = #{wblPlanInformId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from wbl_plan_inform
+    where wbl_plan_inform_id = #{wblPlanInformId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.WblPlanInform">
+    insert into wbl_plan_inform (wbl_plan_inform_id, wbl_plan_config_id, 
+      wbl_notice_user_id, wbl_notice_channel_id, wbl_plan_inform_status, 
+      wbl_plan_inform_CreateTM, wbl_plan_inform_MODIFYTM
+      )
+    values (#{wblPlanInformId,jdbcType=VARCHAR}, #{wblPlanConfigId,jdbcType=VARCHAR}, 
+      #{wblNoticeUserId,jdbcType=VARCHAR}, #{wblNoticeChannelId,jdbcType=VARCHAR}, #{wblPlanInformStatus,jdbcType=VARCHAR}, 
+      #{wblPlanInformCreatetm,jdbcType=TIMESTAMP}, #{wblPlanInformModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.WblPlanInform">
+    insert into wbl_plan_inform
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="wblPlanInformId != null">
+        wbl_plan_inform_id,
+      </if>
+      <if test="wblPlanConfigId != null">
+        wbl_plan_config_id,
+      </if>
+      <if test="wblNoticeUserId != null">
+        wbl_notice_user_id,
+      </if>
+      <if test="wblNoticeChannelId != null">
+        wbl_notice_channel_id,
+      </if>
+      <if test="wblPlanInformStatus != null">
+        wbl_plan_inform_status,
+      </if>
+      <if test="wblPlanInformCreatetm != null">
+        wbl_plan_inform_CreateTM,
+      </if>
+      <if test="wblPlanInformModifytm != null">
+        wbl_plan_inform_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="wblPlanInformId != null">
+        #{wblPlanInformId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanConfigId != null">
+        #{wblPlanConfigId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeUserId != null">
+        #{wblNoticeUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeChannelId != null">
+        #{wblNoticeChannelId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanInformStatus != null">
+        #{wblPlanInformStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanInformCreatetm != null">
+        #{wblPlanInformCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblPlanInformModifytm != null">
+        #{wblPlanInformModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.WblPlanInform">
+    update wbl_plan_inform
+    <set>
+      <if test="wblPlanConfigId != null">
+        wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeUserId != null">
+        wbl_notice_user_id = #{wblNoticeUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeChannelId != null">
+        wbl_notice_channel_id = #{wblNoticeChannelId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanInformStatus != null">
+        wbl_plan_inform_status = #{wblPlanInformStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanInformCreatetm != null">
+        wbl_plan_inform_CreateTM = #{wblPlanInformCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblPlanInformModifytm != null">
+        wbl_plan_inform_MODIFYTM = #{wblPlanInformModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where wbl_plan_inform_id = #{wblPlanInformId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.WblPlanInform">
+    update wbl_plan_inform
+    set wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR},
+      wbl_notice_user_id = #{wblNoticeUserId,jdbcType=VARCHAR},
+      wbl_notice_channel_id = #{wblNoticeChannelId,jdbcType=VARCHAR},
+      wbl_plan_inform_status = #{wblPlanInformStatus,jdbcType=VARCHAR},
+      wbl_plan_inform_CreateTM = #{wblPlanInformCreatetm,jdbcType=TIMESTAMP},
+      wbl_plan_inform_MODIFYTM = #{wblPlanInformModifytm,jdbcType=TIMESTAMP}
+    where wbl_plan_inform_id = #{wblPlanInformId,jdbcType=VARCHAR}
+  </update>
+</mapper>

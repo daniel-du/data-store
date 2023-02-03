@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WblPlanCycleMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.WblPlanCycle">
+    <id column="wbl_plan_config_id" jdbcType="VARCHAR" property="wblPlanConfigId" />
+    <result column="wbl_notice_info_id" jdbcType="VARCHAR" property="wblNoticeInfoId" />
+    <result column="wbl_plan_cycle_CreateTM" jdbcType="TIMESTAMP" property="wblPlanCycleCreatetm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    wbl_plan_config_id, wbl_notice_info_id, wbl_plan_cycle_CreateTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wbl_plan_cycle
+    where wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from wbl_plan_cycle
+    where wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.WblPlanCycle">
+    insert into wbl_plan_cycle (wbl_plan_config_id, wbl_notice_info_id, 
+      wbl_plan_cycle_CreateTM)
+    values (#{wblPlanConfigId,jdbcType=VARCHAR}, #{wblNoticeInfoId,jdbcType=VARCHAR}, 
+      #{wblPlanCycleCreatetm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.WblPlanCycle">
+    insert into wbl_plan_cycle
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="wblPlanConfigId != null">
+        wbl_plan_config_id,
+      </if>
+      <if test="wblNoticeInfoId != null">
+        wbl_notice_info_id,
+      </if>
+      <if test="wblPlanCycleCreatetm != null">
+        wbl_plan_cycle_CreateTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="wblPlanConfigId != null">
+        #{wblPlanConfigId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeInfoId != null">
+        #{wblNoticeInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanCycleCreatetm != null">
+        #{wblPlanCycleCreatetm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.WblPlanCycle">
+    update wbl_plan_cycle
+    <set>
+      <if test="wblNoticeInfoId != null">
+        wbl_notice_info_id = #{wblNoticeInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanCycleCreatetm != null">
+        wbl_plan_cycle_CreateTM = #{wblPlanCycleCreatetm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.WblPlanCycle">
+    update wbl_plan_cycle
+    set wbl_notice_info_id = #{wblNoticeInfoId,jdbcType=VARCHAR},
+      wbl_plan_cycle_CreateTM = #{wblPlanCycleCreatetm,jdbcType=TIMESTAMP}
+    where wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WblNoticeChannelMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.WblNoticeChannel">
+    <id column="wbl_notice_channel_id" jdbcType="VARCHAR" property="wblNoticeChannelId" />
+    <result column="wbl_notice_channel_name" jdbcType="VARCHAR" property="wblNoticeChannelName" />
+    <result column="wbl_notice_channel_remark" jdbcType="VARCHAR" property="wblNoticeChannelRemark" />
+    <result column="wbl_notice_channel_attribute1" jdbcType="VARCHAR" property="wblNoticeChannelAttribute1" />
+    <result column="wbl_notice_channel_attribute2" jdbcType="VARCHAR" property="wblNoticeChannelAttribute2" />
+    <result column="wbl_notice_channel_attribute3" jdbcType="VARCHAR" property="wblNoticeChannelAttribute3" />
+    <result column="wbl_notice_channel_status" jdbcType="INTEGER" property="wblNoticeChannelStatus" />
+    <result column="wbl_notice_channel_CreateTM" jdbcType="TIMESTAMP" property="wblNoticeChannelCreatetm" />
+    <result column="wbl_notice_channel_MODIFYTM" jdbcType="TIMESTAMP" property="wblNoticeChannelModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    wbl_notice_channel_id, wbl_notice_channel_name, wbl_notice_channel_remark, wbl_notice_channel_attribute1, 
+    wbl_notice_channel_attribute2, wbl_notice_channel_attribute3, wbl_notice_channel_status, 
+    wbl_notice_channel_CreateTM, wbl_notice_channel_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wbl_notice_channel
+    where wbl_notice_channel_id = #{wblNoticeChannelId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from wbl_notice_channel
+    where wbl_notice_channel_id = #{wblNoticeChannelId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.WblNoticeChannel">
+    insert into wbl_notice_channel (wbl_notice_channel_id, wbl_notice_channel_name, 
+      wbl_notice_channel_remark, wbl_notice_channel_attribute1, 
+      wbl_notice_channel_attribute2, wbl_notice_channel_attribute3, 
+      wbl_notice_channel_status, wbl_notice_channel_CreateTM, 
+      wbl_notice_channel_MODIFYTM)
+    values (#{wblNoticeChannelId,jdbcType=VARCHAR}, #{wblNoticeChannelName,jdbcType=VARCHAR}, 
+      #{wblNoticeChannelRemark,jdbcType=VARCHAR}, #{wblNoticeChannelAttribute1,jdbcType=VARCHAR}, 
+      #{wblNoticeChannelAttribute2,jdbcType=VARCHAR}, #{wblNoticeChannelAttribute3,jdbcType=VARCHAR}, 
+      #{wblNoticeChannelStatus,jdbcType=INTEGER}, #{wblNoticeChannelCreatetm,jdbcType=TIMESTAMP}, 
+      #{wblNoticeChannelModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.WblNoticeChannel">
+    insert into wbl_notice_channel
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="wblNoticeChannelId != null">
+        wbl_notice_channel_id,
+      </if>
+      <if test="wblNoticeChannelName != null">
+        wbl_notice_channel_name,
+      </if>
+      <if test="wblNoticeChannelRemark != null">
+        wbl_notice_channel_remark,
+      </if>
+      <if test="wblNoticeChannelAttribute1 != null">
+        wbl_notice_channel_attribute1,
+      </if>
+      <if test="wblNoticeChannelAttribute2 != null">
+        wbl_notice_channel_attribute2,
+      </if>
+      <if test="wblNoticeChannelAttribute3 != null">
+        wbl_notice_channel_attribute3,
+      </if>
+      <if test="wblNoticeChannelStatus != null">
+        wbl_notice_channel_status,
+      </if>
+      <if test="wblNoticeChannelCreatetm != null">
+        wbl_notice_channel_CreateTM,
+      </if>
+      <if test="wblNoticeChannelModifytm != null">
+        wbl_notice_channel_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="wblNoticeChannelId != null">
+        #{wblNoticeChannelId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeChannelName != null">
+        #{wblNoticeChannelName,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeChannelRemark != null">
+        #{wblNoticeChannelRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeChannelAttribute1 != null">
+        #{wblNoticeChannelAttribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeChannelAttribute2 != null">
+        #{wblNoticeChannelAttribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeChannelAttribute3 != null">
+        #{wblNoticeChannelAttribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeChannelStatus != null">
+        #{wblNoticeChannelStatus,jdbcType=INTEGER},
+      </if>
+      <if test="wblNoticeChannelCreatetm != null">
+        #{wblNoticeChannelCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblNoticeChannelModifytm != null">
+        #{wblNoticeChannelModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.WblNoticeChannel">
+    update wbl_notice_channel
+    <set>
+      <if test="wblNoticeChannelName != null">
+        wbl_notice_channel_name = #{wblNoticeChannelName,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeChannelRemark != null">
+        wbl_notice_channel_remark = #{wblNoticeChannelRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeChannelAttribute1 != null">
+        wbl_notice_channel_attribute1 = #{wblNoticeChannelAttribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeChannelAttribute2 != null">
+        wbl_notice_channel_attribute2 = #{wblNoticeChannelAttribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeChannelAttribute3 != null">
+        wbl_notice_channel_attribute3 = #{wblNoticeChannelAttribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="wblNoticeChannelStatus != null">
+        wbl_notice_channel_status = #{wblNoticeChannelStatus,jdbcType=INTEGER},
+      </if>
+      <if test="wblNoticeChannelCreatetm != null">
+        wbl_notice_channel_CreateTM = #{wblNoticeChannelCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wblNoticeChannelModifytm != null">
+        wbl_notice_channel_MODIFYTM = #{wblNoticeChannelModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where wbl_notice_channel_id = #{wblNoticeChannelId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.WblNoticeChannel">
+    update wbl_notice_channel
+    set wbl_notice_channel_name = #{wblNoticeChannelName,jdbcType=VARCHAR},
+      wbl_notice_channel_remark = #{wblNoticeChannelRemark,jdbcType=VARCHAR},
+      wbl_notice_channel_attribute1 = #{wblNoticeChannelAttribute1,jdbcType=VARCHAR},
+      wbl_notice_channel_attribute2 = #{wblNoticeChannelAttribute2,jdbcType=VARCHAR},
+      wbl_notice_channel_attribute3 = #{wblNoticeChannelAttribute3,jdbcType=VARCHAR},
+      wbl_notice_channel_status = #{wblNoticeChannelStatus,jdbcType=INTEGER},
+      wbl_notice_channel_CreateTM = #{wblNoticeChannelCreatetm,jdbcType=TIMESTAMP},
+      wbl_notice_channel_MODIFYTM = #{wblNoticeChannelModifytm,jdbcType=TIMESTAMP}
+    where wbl_notice_channel_id = #{wblNoticeChannelId,jdbcType=VARCHAR}
+  </update>
+</mapper>

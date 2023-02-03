@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkAdvertiserUrlconversionMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserUrlconversion">
+    <id column="MK_Advertiser_urlConversion_NO" jdbcType="VARCHAR" property="mkAdvertiserUrlconversionNo" />
+    <result column="MK_Advertiser_marketURl_Code" jdbcType="VARCHAR" property="mkAdvertiserMarketurlCode" />
+    <result column="MK_Advertiser_ReportingNode_Tyep" jdbcType="VARCHAR" property="mkAdvertiserReportingnodeTyep" />
+    <result column="MK_Advertiser_ReportingNode_Code" jdbcType="VARCHAR" property="mkAdvertiserReportingnodeCode" />
+    <result column="MK_Advertiser_ReportingNode_Name" jdbcType="VARCHAR" property="mkAdvertiserReportingnodeName" />
+    <result column="MK_Advertiser_redefineTarget_Code" jdbcType="VARCHAR" property="mkAdvertiserRedefinetargetCode" />
+    <result column="MK_Advertiser_redefineTarget_Name" jdbcType="VARCHAR" property="mkAdvertiserRedefinetargetName" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="MK_media_Info_CreateTM" jdbcType="TIMESTAMP" property="mkMediaInfoCreatetm" />
+    <result column="MK_media_Info_OperationTM" jdbcType="TIMESTAMP" property="mkMediaInfoOperationtm" />
+    <result column="MK_media_Info_MODIFYTM" jdbcType="TIMESTAMP" property="mkMediaInfoModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MK_Advertiser_urlConversion_NO, MK_Advertiser_marketURl_Code, MK_Advertiser_ReportingNode_Tyep, 
+    MK_Advertiser_ReportingNode_Code, MK_Advertiser_ReportingNode_Name, MK_Advertiser_redefineTarget_Code, 
+    MK_Advertiser_redefineTarget_Name, OA_company_Account_code, MK_media_Info_CreateTM, 
+    MK_media_Info_OperationTM, MK_media_Info_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_advertiser_urlconversion
+    where MK_Advertiser_urlConversion_NO = #{mkAdvertiserUrlconversionNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_advertiser_urlconversion
+    where MK_Advertiser_urlConversion_NO = #{mkAdvertiserUrlconversionNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserUrlconversion">
+    insert into mk_advertiser_urlconversion (MK_Advertiser_urlConversion_NO, MK_Advertiser_marketURl_Code, 
+      MK_Advertiser_ReportingNode_Tyep, MK_Advertiser_ReportingNode_Code, 
+      MK_Advertiser_ReportingNode_Name, MK_Advertiser_redefineTarget_Code, 
+      MK_Advertiser_redefineTarget_Name, OA_company_Account_code, 
+      MK_media_Info_CreateTM, MK_media_Info_OperationTM, 
+      MK_media_Info_MODIFYTM)
+    values (#{mkAdvertiserUrlconversionNo,jdbcType=VARCHAR}, #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserReportingnodeTyep,jdbcType=VARCHAR}, #{mkAdvertiserReportingnodeCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserReportingnodeName,jdbcType=VARCHAR}, #{mkAdvertiserRedefinetargetCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserRedefinetargetName,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP}, #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkMediaInfoModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserUrlconversion">
+    insert into mk_advertiser_urlconversion
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserUrlconversionNo != null">
+        MK_Advertiser_urlConversion_NO,
+      </if>
+      <if test="mkAdvertiserMarketurlCode != null">
+        MK_Advertiser_marketURl_Code,
+      </if>
+      <if test="mkAdvertiserReportingnodeTyep != null">
+        MK_Advertiser_ReportingNode_Tyep,
+      </if>
+      <if test="mkAdvertiserReportingnodeCode != null">
+        MK_Advertiser_ReportingNode_Code,
+      </if>
+      <if test="mkAdvertiserReportingnodeName != null">
+        MK_Advertiser_ReportingNode_Name,
+      </if>
+      <if test="mkAdvertiserRedefinetargetCode != null">
+        MK_Advertiser_redefineTarget_Code,
+      </if>
+      <if test="mkAdvertiserRedefinetargetName != null">
+        MK_Advertiser_redefineTarget_Name,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        MK_media_Info_CreateTM,
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        MK_media_Info_OperationTM,
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        MK_media_Info_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserUrlconversionNo != null">
+        #{mkAdvertiserUrlconversionNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMarketurlCode != null">
+        #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportingnodeTyep != null">
+        #{mkAdvertiserReportingnodeTyep,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportingnodeCode != null">
+        #{mkAdvertiserReportingnodeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportingnodeName != null">
+        #{mkAdvertiserReportingnodeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserRedefinetargetCode != null">
+        #{mkAdvertiserRedefinetargetCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserRedefinetargetName != null">
+        #{mkAdvertiserRedefinetargetName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        #{mkMediaInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserUrlconversion">
+    update mk_advertiser_urlconversion
+    <set>
+      <if test="mkAdvertiserMarketurlCode != null">
+        MK_Advertiser_marketURl_Code = #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportingnodeTyep != null">
+        MK_Advertiser_ReportingNode_Tyep = #{mkAdvertiserReportingnodeTyep,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportingnodeCode != null">
+        MK_Advertiser_ReportingNode_Code = #{mkAdvertiserReportingnodeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportingnodeName != null">
+        MK_Advertiser_ReportingNode_Name = #{mkAdvertiserReportingnodeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserRedefinetargetCode != null">
+        MK_Advertiser_redefineTarget_Code = #{mkAdvertiserRedefinetargetCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserRedefinetargetName != null">
+        MK_Advertiser_redefineTarget_Name = #{mkAdvertiserRedefinetargetName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        MK_media_Info_CreateTM = #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        MK_media_Info_OperationTM = #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        MK_media_Info_MODIFYTM = #{mkMediaInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where MK_Advertiser_urlConversion_NO = #{mkAdvertiserUrlconversionNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserUrlconversion">
+    update mk_advertiser_urlconversion
+    set MK_Advertiser_marketURl_Code = #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR},
+      MK_Advertiser_ReportingNode_Tyep = #{mkAdvertiserReportingnodeTyep,jdbcType=VARCHAR},
+      MK_Advertiser_ReportingNode_Code = #{mkAdvertiserReportingnodeCode,jdbcType=VARCHAR},
+      MK_Advertiser_ReportingNode_Name = #{mkAdvertiserReportingnodeName,jdbcType=VARCHAR},
+      MK_Advertiser_redefineTarget_Code = #{mkAdvertiserRedefinetargetCode,jdbcType=VARCHAR},
+      MK_Advertiser_redefineTarget_Name = #{mkAdvertiserRedefinetargetName,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      MK_media_Info_CreateTM = #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      MK_media_Info_OperationTM = #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      MK_media_Info_MODIFYTM = #{mkMediaInfoModifytm,jdbcType=TIMESTAMP}
+    where MK_Advertiser_urlConversion_NO = #{mkAdvertiserUrlconversionNo,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserUrlconversion">
+    <result column="mk_advertiser_urlconversion_no" jdbcType="VARCHAR" property="mkAdvertiserUrlconversionNo" />
+    <result column="mk_advertiser_marketurl_code" jdbcType="VARCHAR" property="mkAdvertiserMarketurlCode" />
+    <result column="mk_advertiser_reportingnode_tyep" jdbcType="VARCHAR" property="mkAdvertiserReportingnodeTyep" />
+    <result column="mk_advertiser_reportingnode_code" jdbcType="VARCHAR" property="mkAdvertiserReportingnodeCode" />
+    <result column="mk_advertiser_reportingnode_name" jdbcType="VARCHAR" property="mkAdvertiserReportingnodeName" />
+    <result column="mk_advertiser_redefinetarget_code" jdbcType="VARCHAR" property="mkAdvertiserRedefinetargetCode" />
+    <result column="mk_advertiser_redefinetarget_name" jdbcType="VARCHAR" property="mkAdvertiserRedefinetargetName" />
+    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_media_info_createtm" jdbcType="TIMESTAMP" property="mkMediaInfoCreatetm" />
+    <result column="mk_media_info_operationtm" jdbcType="TIMESTAMP" property="mkMediaInfoOperationtm" />
+    <result column="mk_media_info_modifytm" jdbcType="TIMESTAMP" property="mkMediaInfoModifytm" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserUrlconversion">
+    insert into mk_advertiser_urlconversion (mk_advertiser_urlconversion_no, mk_advertiser_marketurl_code, 
+      mk_advertiser_reportingnode_tyep, mk_advertiser_reportingnode_code, 
+      mk_advertiser_reportingnode_name, mk_advertiser_redefinetarget_code, 
+      mk_advertiser_redefinetarget_name, oa_company_account_code, 
+      mk_media_info_createtm, mk_media_info_operationtm, 
+      mk_media_info_modifytm)
+    values (#{mkAdvertiserUrlconversionNo,jdbcType=VARCHAR}, #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserReportingnodeTyep,jdbcType=VARCHAR}, #{mkAdvertiserReportingnodeCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserReportingnodeName,jdbcType=VARCHAR}, #{mkAdvertiserRedefinetargetCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserRedefinetargetName,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP}, #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkMediaInfoModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserUrlconversion">
+    insert into mk_advertiser_urlconversion
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserUrlconversionNo != null">
+        mk_advertiser_urlconversion_no,
+      </if>
+      <if test="mkAdvertiserMarketurlCode != null">
+        mk_advertiser_marketurl_code,
+      </if>
+      <if test="mkAdvertiserReportingnodeTyep != null">
+        mk_advertiser_reportingnode_tyep,
+      </if>
+      <if test="mkAdvertiserReportingnodeCode != null">
+        mk_advertiser_reportingnode_code,
+      </if>
+      <if test="mkAdvertiserReportingnodeName != null">
+        mk_advertiser_reportingnode_name,
+      </if>
+      <if test="mkAdvertiserRedefinetargetCode != null">
+        mk_advertiser_redefinetarget_code,
+      </if>
+      <if test="mkAdvertiserRedefinetargetName != null">
+        mk_advertiser_redefinetarget_name,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code,
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        mk_media_info_createtm,
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        mk_media_info_operationtm,
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        mk_media_info_modifytm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserUrlconversionNo != null">
+        #{mkAdvertiserUrlconversionNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMarketurlCode != null">
+        #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportingnodeTyep != null">
+        #{mkAdvertiserReportingnodeTyep,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportingnodeCode != null">
+        #{mkAdvertiserReportingnodeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportingnodeName != null">
+        #{mkAdvertiserReportingnodeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserRedefinetargetCode != null">
+        #{mkAdvertiserRedefinetargetCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserRedefinetargetName != null">
+        #{mkAdvertiserRedefinetargetName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        #{mkMediaInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

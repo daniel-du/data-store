@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkAdvertiserMarketurlMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserMarketurl">
+    <id column="MK_Advertiser_marketURl_Code" jdbcType="VARCHAR" property="mkAdvertiserMarketurlCode" />
+    <result column="MK_Advertiser_marketURl_name" jdbcType="VARCHAR" property="mkAdvertiserMarketurlName" />
+    <result column="MK_Advertiser_marketURl_state" jdbcType="VARCHAR" property="mkAdvertiserMarketurlState" />
+    <result column="MK_Advertiser_Info_Code" jdbcType="VARCHAR" property="mkAdvertiserInfoCode" />
+    <result column="MK_Advertiser_Info_Name" jdbcType="VARCHAR" property="mkAdvertiserInfoName" />
+    <result column="MK_product_code" jdbcType="VARCHAR" property="mkProductCode" />
+    <result column="MK_product_Name" jdbcType="VARCHAR" property="mkProductName" />
+    <result column="MK_GiftTransfer_productCode" jdbcType="VARCHAR" property="mkGifttransferProductcode" />
+    <result column="MK_GiftTransfer_productName" jdbcType="VARCHAR" property="mkGifttransferProductname" />
+    <result column="MK_media_agent_Code" jdbcType="VARCHAR" property="mkMediaAgentCode" />
+    <result column="MK_media_agent_Name" jdbcType="VARCHAR" property="mkMediaAgentName" />
+    <result column="MK_media_Info_Code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="MK_media_Info_Name" jdbcType="VARCHAR" property="mkMediaInfoName" />
+    <result column="MK_Advertiser_link_Code" jdbcType="VARCHAR" property="mkAdvertiserLinkCode" />
+    <result column="MK_Advertiser_linkCode_name" jdbcType="VARCHAR" property="mkAdvertiserLinkcodeName" />
+    <result column="MK_Advertiser_marketURl_address" jdbcType="VARCHAR" property="mkAdvertiserMarketurlAddress" />
+    <result column="MK_advertiser_GiftTransfer_MarketURL" jdbcType="VARCHAR" property="mkAdvertiserGifttransferMarketurl" />
+    <result column="MK_Advertiser_Launch_address" jdbcType="VARCHAR" property="mkAdvertiserLaunchAddress" />
+    <result column="Mk_Advertiser_report_source" jdbcType="VARCHAR" property="mkAdvertiserReportSource" />
+    <result column="Mk_medium_Code" jdbcType="VARCHAR" property="mkMediumCode" />
+    <result column="Mk_medium_Name" jdbcType="VARCHAR" property="mkMediumName" />
+    <result column="MK_product_versionNo" jdbcType="VARCHAR" property="mkProductVersionno" />
+    <result column="MK_GiftTransfer_productVersionNo" jdbcType="VARCHAR" property="mkGifttransferProductversionno" />
+    <result column="MK_Advertiser_product_url" jdbcType="VARCHAR" property="mkAdvertiserProductUrl" />
+    <result column="MK_advertiser_media_id" jdbcType="VARCHAR" property="mkAdvertiserMediaId" />
+    <result column="MK_Advertiser_marketURl_Remarks" jdbcType="VARCHAR" property="mkAdvertiserMarketurlRemarks" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="MK_media_Info_CreateTM" jdbcType="TIMESTAMP" property="mkMediaInfoCreatetm" />
+    <result column="MK_media_Info_OperationTM" jdbcType="TIMESTAMP" property="mkMediaInfoOperationtm" />
+    <result column="MK_media_Info_MODIFYTM" jdbcType="TIMESTAMP" property="mkMediaInfoModifytm" />
+    <result column="MK_Advertiser_marketURl_idetectflag" jdbcType="VARCHAR" property="mkAdvertiserMarketurlIdetectflag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MK_Advertiser_marketURl_Code, MK_Advertiser_marketURl_name, MK_Advertiser_marketURl_state, 
+    MK_Advertiser_Info_Code, MK_Advertiser_Info_Name, MK_product_code, MK_product_Name, 
+    MK_GiftTransfer_productCode, MK_GiftTransfer_productName, MK_media_agent_Code, MK_media_agent_Name, 
+    MK_media_Info_Code, MK_media_Info_Name, MK_Advertiser_link_Code, MK_Advertiser_linkCode_name, 
+    MK_Advertiser_marketURl_address, MK_advertiser_GiftTransfer_MarketURL, MK_Advertiser_Launch_address, 
+    Mk_Advertiser_report_source, Mk_medium_Code, Mk_medium_Name, MK_product_versionNo, 
+    MK_GiftTransfer_productVersionNo, MK_Advertiser_product_url, MK_advertiser_media_id, 
+    MK_Advertiser_marketURl_Remarks, OA_company_Account_code, MK_media_Info_CreateTM, 
+    MK_media_Info_OperationTM, MK_media_Info_MODIFYTM, MK_Advertiser_marketURl_idetectflag
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_advertiser_marketurl
+    where MK_Advertiser_marketURl_Code = #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_advertiser_marketurl
+    where MK_Advertiser_marketURl_Code = #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMarketurl">
+    insert into mk_advertiser_marketurl (MK_Advertiser_marketURl_Code, MK_Advertiser_marketURl_name, 
+      MK_Advertiser_marketURl_state, MK_Advertiser_Info_Code, 
+      MK_Advertiser_Info_Name, MK_product_code, MK_product_Name, 
+      MK_GiftTransfer_productCode, MK_GiftTransfer_productName, 
+      MK_media_agent_Code, MK_media_agent_Name, MK_media_Info_Code, 
+      MK_media_Info_Name, MK_Advertiser_link_Code, 
+      MK_Advertiser_linkCode_name, MK_Advertiser_marketURl_address, 
+      MK_advertiser_GiftTransfer_MarketURL, MK_Advertiser_Launch_address, 
+      Mk_Advertiser_report_source, Mk_medium_Code, 
+      Mk_medium_Name, MK_product_versionNo, MK_GiftTransfer_productVersionNo, 
+      MK_Advertiser_product_url, MK_advertiser_media_id, 
+      MK_Advertiser_marketURl_Remarks, OA_company_Account_code, 
+      MK_media_Info_CreateTM, MK_media_Info_OperationTM, 
+      MK_media_Info_MODIFYTM, MK_Advertiser_marketURl_idetectflag
+      )
+    values (#{mkAdvertiserMarketurlCode,jdbcType=VARCHAR}, #{mkAdvertiserMarketurlName,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMarketurlState,jdbcType=VARCHAR}, #{mkAdvertiserInfoCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoName,jdbcType=VARCHAR}, #{mkProductCode,jdbcType=VARCHAR}, #{mkProductName,jdbcType=VARCHAR}, 
+      #{mkGifttransferProductcode,jdbcType=VARCHAR}, #{mkGifttransferProductname,jdbcType=VARCHAR}, 
+      #{mkMediaAgentCode,jdbcType=VARCHAR}, #{mkMediaAgentName,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR}, 
+      #{mkMediaInfoName,jdbcType=VARCHAR}, #{mkAdvertiserLinkCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserLinkcodeName,jdbcType=VARCHAR}, #{mkAdvertiserMarketurlAddress,jdbcType=VARCHAR}, 
+      #{mkAdvertiserGifttransferMarketurl,jdbcType=VARCHAR}, #{mkAdvertiserLaunchAddress,jdbcType=VARCHAR}, 
+      #{mkAdvertiserReportSource,jdbcType=VARCHAR}, #{mkMediumCode,jdbcType=VARCHAR}, 
+      #{mkMediumName,jdbcType=VARCHAR}, #{mkProductVersionno,jdbcType=VARCHAR}, #{mkGifttransferProductversionno,jdbcType=VARCHAR}, 
+      #{mkAdvertiserProductUrl,jdbcType=VARCHAR}, #{mkAdvertiserMediaId,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMarketurlRemarks,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP}, #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkMediaInfoModifytm,jdbcType=TIMESTAMP}, #{mkAdvertiserMarketurlIdetectflag,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMarketurl">
+    insert into mk_advertiser_marketurl
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserMarketurlCode != null">
+        MK_Advertiser_marketURl_Code,
+      </if>
+      <if test="mkAdvertiserMarketurlName != null">
+        MK_Advertiser_marketURl_name,
+      </if>
+      <if test="mkAdvertiserMarketurlState != null">
+        MK_Advertiser_marketURl_state,
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        MK_Advertiser_Info_Code,
+      </if>
+      <if test="mkAdvertiserInfoName != null">
+        MK_Advertiser_Info_Name,
+      </if>
+      <if test="mkProductCode != null">
+        MK_product_code,
+      </if>
+      <if test="mkProductName != null">
+        MK_product_Name,
+      </if>
+      <if test="mkGifttransferProductcode != null">
+        MK_GiftTransfer_productCode,
+      </if>
+      <if test="mkGifttransferProductname != null">
+        MK_GiftTransfer_productName,
+      </if>
+      <if test="mkMediaAgentCode != null">
+        MK_media_agent_Code,
+      </if>
+      <if test="mkMediaAgentName != null">
+        MK_media_agent_Name,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code,
+      </if>
+      <if test="mkMediaInfoName != null">
+        MK_media_Info_Name,
+      </if>
+      <if test="mkAdvertiserLinkCode != null">
+        MK_Advertiser_link_Code,
+      </if>
+      <if test="mkAdvertiserLinkcodeName != null">
+        MK_Advertiser_linkCode_name,
+      </if>
+      <if test="mkAdvertiserMarketurlAddress != null">
+        MK_Advertiser_marketURl_address,
+      </if>
+      <if test="mkAdvertiserGifttransferMarketurl != null">
+        MK_advertiser_GiftTransfer_MarketURL,
+      </if>
+      <if test="mkAdvertiserLaunchAddress != null">
+        MK_Advertiser_Launch_address,
+      </if>
+      <if test="mkAdvertiserReportSource != null">
+        Mk_Advertiser_report_source,
+      </if>
+      <if test="mkMediumCode != null">
+        Mk_medium_Code,
+      </if>
+      <if test="mkMediumName != null">
+        Mk_medium_Name,
+      </if>
+      <if test="mkProductVersionno != null">
+        MK_product_versionNo,
+      </if>
+      <if test="mkGifttransferProductversionno != null">
+        MK_GiftTransfer_productVersionNo,
+      </if>
+      <if test="mkAdvertiserProductUrl != null">
+        MK_Advertiser_product_url,
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        MK_advertiser_media_id,
+      </if>
+      <if test="mkAdvertiserMarketurlRemarks != null">
+        MK_Advertiser_marketURl_Remarks,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        MK_media_Info_CreateTM,
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        MK_media_Info_OperationTM,
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        MK_media_Info_MODIFYTM,
+      </if>
+      <if test="mkAdvertiserMarketurlIdetectflag != null">
+        MK_Advertiser_marketURl_idetectflag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserMarketurlCode != null">
+        #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMarketurlName != null">
+        #{mkAdvertiserMarketurlName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMarketurlState != null">
+        #{mkAdvertiserMarketurlState,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoName != null">
+        #{mkAdvertiserInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkProductCode != null">
+        #{mkProductCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkProductName != null">
+        #{mkProductName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkGifttransferProductcode != null">
+        #{mkGifttransferProductcode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkGifttransferProductname != null">
+        #{mkGifttransferProductname,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentName != null">
+        #{mkMediaAgentName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoName != null">
+        #{mkMediaInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserLinkCode != null">
+        #{mkAdvertiserLinkCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserLinkcodeName != null">
+        #{mkAdvertiserLinkcodeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMarketurlAddress != null">
+        #{mkAdvertiserMarketurlAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserGifttransferMarketurl != null">
+        #{mkAdvertiserGifttransferMarketurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserLaunchAddress != null">
+        #{mkAdvertiserLaunchAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportSource != null">
+        #{mkAdvertiserReportSource,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediumCode != null">
+        #{mkMediumCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediumName != null">
+        #{mkMediumName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkProductVersionno != null">
+        #{mkProductVersionno,jdbcType=VARCHAR},
+      </if>
+      <if test="mkGifttransferProductversionno != null">
+        #{mkGifttransferProductversionno,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserProductUrl != null">
+        #{mkAdvertiserProductUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMarketurlRemarks != null">
+        #{mkAdvertiserMarketurlRemarks,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        #{mkMediaInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMarketurlIdetectflag != null">
+        #{mkAdvertiserMarketurlIdetectflag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMarketurl">
+    update mk_advertiser_marketurl
+    <set>
+      <if test="mkAdvertiserMarketurlName != null">
+        MK_Advertiser_marketURl_name = #{mkAdvertiserMarketurlName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMarketurlState != null">
+        MK_Advertiser_marketURl_state = #{mkAdvertiserMarketurlState,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        MK_Advertiser_Info_Code = #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoName != null">
+        MK_Advertiser_Info_Name = #{mkAdvertiserInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkProductCode != null">
+        MK_product_code = #{mkProductCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkProductName != null">
+        MK_product_Name = #{mkProductName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkGifttransferProductcode != null">
+        MK_GiftTransfer_productCode = #{mkGifttransferProductcode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkGifttransferProductname != null">
+        MK_GiftTransfer_productName = #{mkGifttransferProductname,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        MK_media_agent_Code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentName != null">
+        MK_media_agent_Name = #{mkMediaAgentName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoName != null">
+        MK_media_Info_Name = #{mkMediaInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserLinkCode != null">
+        MK_Advertiser_link_Code = #{mkAdvertiserLinkCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserLinkcodeName != null">
+        MK_Advertiser_linkCode_name = #{mkAdvertiserLinkcodeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMarketurlAddress != null">
+        MK_Advertiser_marketURl_address = #{mkAdvertiserMarketurlAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserGifttransferMarketurl != null">
+        MK_advertiser_GiftTransfer_MarketURL = #{mkAdvertiserGifttransferMarketurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserLaunchAddress != null">
+        MK_Advertiser_Launch_address = #{mkAdvertiserLaunchAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportSource != null">
+        Mk_Advertiser_report_source = #{mkAdvertiserReportSource,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediumCode != null">
+        Mk_medium_Code = #{mkMediumCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediumName != null">
+        Mk_medium_Name = #{mkMediumName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkProductVersionno != null">
+        MK_product_versionNo = #{mkProductVersionno,jdbcType=VARCHAR},
+      </if>
+      <if test="mkGifttransferProductversionno != null">
+        MK_GiftTransfer_productVersionNo = #{mkGifttransferProductversionno,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserProductUrl != null">
+        MK_Advertiser_product_url = #{mkAdvertiserProductUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        MK_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMarketurlRemarks != null">
+        MK_Advertiser_marketURl_Remarks = #{mkAdvertiserMarketurlRemarks,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        MK_media_Info_CreateTM = #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        MK_media_Info_OperationTM = #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        MK_media_Info_MODIFYTM = #{mkMediaInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMarketurlIdetectflag != null">
+        MK_Advertiser_marketURl_idetectflag = #{mkAdvertiserMarketurlIdetectflag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MK_Advertiser_marketURl_Code = #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMarketurl">
+    update mk_advertiser_marketurl
+    set MK_Advertiser_marketURl_name = #{mkAdvertiserMarketurlName,jdbcType=VARCHAR},
+      MK_Advertiser_marketURl_state = #{mkAdvertiserMarketurlState,jdbcType=VARCHAR},
+      MK_Advertiser_Info_Code = #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      MK_Advertiser_Info_Name = #{mkAdvertiserInfoName,jdbcType=VARCHAR},
+      MK_product_code = #{mkProductCode,jdbcType=VARCHAR},
+      MK_product_Name = #{mkProductName,jdbcType=VARCHAR},
+      MK_GiftTransfer_productCode = #{mkGifttransferProductcode,jdbcType=VARCHAR},
+      MK_GiftTransfer_productName = #{mkGifttransferProductname,jdbcType=VARCHAR},
+      MK_media_agent_Code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      MK_media_agent_Name = #{mkMediaAgentName,jdbcType=VARCHAR},
+      MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      MK_media_Info_Name = #{mkMediaInfoName,jdbcType=VARCHAR},
+      MK_Advertiser_link_Code = #{mkAdvertiserLinkCode,jdbcType=VARCHAR},
+      MK_Advertiser_linkCode_name = #{mkAdvertiserLinkcodeName,jdbcType=VARCHAR},
+      MK_Advertiser_marketURl_address = #{mkAdvertiserMarketurlAddress,jdbcType=VARCHAR},
+      MK_advertiser_GiftTransfer_MarketURL = #{mkAdvertiserGifttransferMarketurl,jdbcType=VARCHAR},
+      MK_Advertiser_Launch_address = #{mkAdvertiserLaunchAddress,jdbcType=VARCHAR},
+      Mk_Advertiser_report_source = #{mkAdvertiserReportSource,jdbcType=VARCHAR},
+      Mk_medium_Code = #{mkMediumCode,jdbcType=VARCHAR},
+      Mk_medium_Name = #{mkMediumName,jdbcType=VARCHAR},
+      MK_product_versionNo = #{mkProductVersionno,jdbcType=VARCHAR},
+      MK_GiftTransfer_productVersionNo = #{mkGifttransferProductversionno,jdbcType=VARCHAR},
+      MK_Advertiser_product_url = #{mkAdvertiserProductUrl,jdbcType=VARCHAR},
+      MK_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      MK_Advertiser_marketURl_Remarks = #{mkAdvertiserMarketurlRemarks,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      MK_media_Info_CreateTM = #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      MK_media_Info_OperationTM = #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      MK_media_Info_MODIFYTM = #{mkMediaInfoModifytm,jdbcType=TIMESTAMP},
+      MK_Advertiser_marketURl_idetectflag = #{mkAdvertiserMarketurlIdetectflag,jdbcType=VARCHAR}
+    where MK_Advertiser_marketURl_Code = #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserMarketurl">
+    <result column="mk_advertiser_marketurl_code" jdbcType="VARCHAR" property="mkAdvertiserMarketurlCode" />
+    <result column="mk_advertiser_marketurl_name" jdbcType="VARCHAR" property="mkAdvertiserMarketurlName" />
+    <result column="mk_advertiser_marketurl_state" jdbcType="VARCHAR" property="mkAdvertiserMarketurlState" />
+    <result column="mk_advertiser_info_code" jdbcType="VARCHAR" property="mkAdvertiserInfoCode" />
+    <result column="mk_advertiser_info_name" jdbcType="VARCHAR" property="mkAdvertiserInfoName" />
+    <result column="mk_product_code" jdbcType="VARCHAR" property="mkProductCode" />
+    <result column="mk_product_name" jdbcType="VARCHAR" property="mkProductName" />
+    <result column="mk_gifttransfer_productcode" jdbcType="VARCHAR" property="mkGifttransferProductcode" />
+    <result column="mk_gifttransfer_productname" jdbcType="VARCHAR" property="mkGifttransferProductname" />
+    <result column="mk_media_agent_code" jdbcType="VARCHAR" property="mkMediaAgentCode" />
+    <result column="mk_media_agent_name" jdbcType="VARCHAR" property="mkMediaAgentName" />
+    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="mk_media_info_name" jdbcType="VARCHAR" property="mkMediaInfoName" />
+    <result column="mk_advertiser_link_code" jdbcType="VARCHAR" property="mkAdvertiserLinkCode" />
+    <result column="mk_advertiser_linkcode_name" jdbcType="VARCHAR" property="mkAdvertiserLinkcodeName" />
+    <result column="mk_advertiser_marketurl_address" jdbcType="VARCHAR" property="mkAdvertiserMarketurlAddress" />
+    <result column="mk_advertiser_gifttransfer_marketurl" jdbcType="VARCHAR" property="mkAdvertiserGifttransferMarketurl" />
+    <result column="mk_advertiser_launch_address" jdbcType="VARCHAR" property="mkAdvertiserLaunchAddress" />
+    <result column="mk_advertiser_report_source" jdbcType="VARCHAR" property="mkAdvertiserReportSource" />
+    <result column="mk_medium_code" jdbcType="VARCHAR" property="mkMediumCode" />
+    <result column="mk_medium_name" jdbcType="VARCHAR" property="mkMediumName" />
+    <result column="mk_product_versionno" jdbcType="VARCHAR" property="mkProductVersionno" />
+    <result column="mk_gifttransfer_productversionno" jdbcType="VARCHAR" property="mkGifttransferProductversionno" />
+    <result column="mk_advertiser_product_url" jdbcType="VARCHAR" property="mkAdvertiserProductUrl" />
+    <result column="mk_advertiser_media_id" jdbcType="VARCHAR" property="mkAdvertiserMediaId" />
+    <result column="mk_advertiser_marketurl_remarks" jdbcType="VARCHAR" property="mkAdvertiserMarketurlRemarks" />
+    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_media_info_createtm" jdbcType="TIMESTAMP" property="mkMediaInfoCreatetm" />
+    <result column="mk_media_info_operationtm" jdbcType="TIMESTAMP" property="mkMediaInfoOperationtm" />
+    <result column="mk_media_info_modifytm" jdbcType="TIMESTAMP" property="mkMediaInfoModifytm" />
+    <result column="mk_advertiser_marketurl_idetectflag" jdbcType="VARCHAR" property="mkAdvertiserMarketurlIdetectflag" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMarketurl">
+    insert into mk_advertiser_marketurl (mk_advertiser_marketurl_code, mk_advertiser_marketurl_name, 
+      mk_advertiser_marketurl_state, mk_advertiser_info_code, 
+      mk_advertiser_info_name, mk_product_code, mk_product_name, 
+      mk_gifttransfer_productcode, mk_gifttransfer_productname, 
+      mk_media_agent_code, mk_media_agent_name, mk_media_info_code, 
+      mk_media_info_name, mk_advertiser_link_code, 
+      mk_advertiser_linkcode_name, mk_advertiser_marketurl_address, 
+      mk_advertiser_gifttransfer_marketurl, mk_advertiser_launch_address, 
+      mk_advertiser_report_source, mk_medium_code, 
+      mk_medium_name, mk_product_versionno, mk_gifttransfer_productversionno, 
+      mk_advertiser_product_url, mk_advertiser_media_id, 
+      mk_advertiser_marketurl_remarks, oa_company_account_code, 
+      mk_media_info_createtm, mk_media_info_operationtm, 
+      mk_media_info_modifytm, mk_advertiser_marketurl_idetectflag
+      )
+    values (#{mkAdvertiserMarketurlCode,jdbcType=VARCHAR}, #{mkAdvertiserMarketurlName,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMarketurlState,jdbcType=VARCHAR}, #{mkAdvertiserInfoCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoName,jdbcType=VARCHAR}, #{mkProductCode,jdbcType=VARCHAR}, #{mkProductName,jdbcType=VARCHAR}, 
+      #{mkGifttransferProductcode,jdbcType=VARCHAR}, #{mkGifttransferProductname,jdbcType=VARCHAR}, 
+      #{mkMediaAgentCode,jdbcType=VARCHAR}, #{mkMediaAgentName,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR}, 
+      #{mkMediaInfoName,jdbcType=VARCHAR}, #{mkAdvertiserLinkCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserLinkcodeName,jdbcType=VARCHAR}, #{mkAdvertiserMarketurlAddress,jdbcType=VARCHAR}, 
+      #{mkAdvertiserGifttransferMarketurl,jdbcType=VARCHAR}, #{mkAdvertiserLaunchAddress,jdbcType=VARCHAR}, 
+      #{mkAdvertiserReportSource,jdbcType=VARCHAR}, #{mkMediumCode,jdbcType=VARCHAR}, 
+      #{mkMediumName,jdbcType=VARCHAR}, #{mkProductVersionno,jdbcType=VARCHAR}, #{mkGifttransferProductversionno,jdbcType=VARCHAR}, 
+      #{mkAdvertiserProductUrl,jdbcType=VARCHAR}, #{mkAdvertiserMediaId,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMarketurlRemarks,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP}, #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP}, 
+      #{mkMediaInfoModifytm,jdbcType=TIMESTAMP}, #{mkAdvertiserMarketurlIdetectflag,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMarketurl">
+    insert into mk_advertiser_marketurl
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserMarketurlCode != null">
+        mk_advertiser_marketurl_code,
+      </if>
+      <if test="mkAdvertiserMarketurlName != null">
+        mk_advertiser_marketurl_name,
+      </if>
+      <if test="mkAdvertiserMarketurlState != null">
+        mk_advertiser_marketurl_state,
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        mk_advertiser_info_code,
+      </if>
+      <if test="mkAdvertiserInfoName != null">
+        mk_advertiser_info_name,
+      </if>
+      <if test="mkProductCode != null">
+        mk_product_code,
+      </if>
+      <if test="mkProductName != null">
+        mk_product_name,
+      </if>
+      <if test="mkGifttransferProductcode != null">
+        mk_gifttransfer_productcode,
+      </if>
+      <if test="mkGifttransferProductname != null">
+        mk_gifttransfer_productname,
+      </if>
+      <if test="mkMediaAgentCode != null">
+        mk_media_agent_code,
+      </if>
+      <if test="mkMediaAgentName != null">
+        mk_media_agent_name,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code,
+      </if>
+      <if test="mkMediaInfoName != null">
+        mk_media_info_name,
+      </if>
+      <if test="mkAdvertiserLinkCode != null">
+        mk_advertiser_link_code,
+      </if>
+      <if test="mkAdvertiserLinkcodeName != null">
+        mk_advertiser_linkcode_name,
+      </if>
+      <if test="mkAdvertiserMarketurlAddress != null">
+        mk_advertiser_marketurl_address,
+      </if>
+      <if test="mkAdvertiserGifttransferMarketurl != null">
+        mk_advertiser_gifttransfer_marketurl,
+      </if>
+      <if test="mkAdvertiserLaunchAddress != null">
+        mk_advertiser_launch_address,
+      </if>
+      <if test="mkAdvertiserReportSource != null">
+        mk_advertiser_report_source,
+      </if>
+      <if test="mkMediumCode != null">
+        mk_medium_code,
+      </if>
+      <if test="mkMediumName != null">
+        mk_medium_name,
+      </if>
+      <if test="mkProductVersionno != null">
+        mk_product_versionno,
+      </if>
+      <if test="mkGifttransferProductversionno != null">
+        mk_gifttransfer_productversionno,
+      </if>
+      <if test="mkAdvertiserProductUrl != null">
+        mk_advertiser_product_url,
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        mk_advertiser_media_id,
+      </if>
+      <if test="mkAdvertiserMarketurlRemarks != null">
+        mk_advertiser_marketurl_remarks,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code,
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        mk_media_info_createtm,
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        mk_media_info_operationtm,
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        mk_media_info_modifytm,
+      </if>
+      <if test="mkAdvertiserMarketurlIdetectflag != null">
+        mk_advertiser_marketurl_idetectflag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAdvertiserMarketurlCode != null">
+        #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMarketurlName != null">
+        #{mkAdvertiserMarketurlName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMarketurlState != null">
+        #{mkAdvertiserMarketurlState,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoName != null">
+        #{mkAdvertiserInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkProductCode != null">
+        #{mkProductCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkProductName != null">
+        #{mkProductName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkGifttransferProductcode != null">
+        #{mkGifttransferProductcode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkGifttransferProductname != null">
+        #{mkGifttransferProductname,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentName != null">
+        #{mkMediaAgentName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoName != null">
+        #{mkMediaInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserLinkCode != null">
+        #{mkAdvertiserLinkCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserLinkcodeName != null">
+        #{mkAdvertiserLinkcodeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMarketurlAddress != null">
+        #{mkAdvertiserMarketurlAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserGifttransferMarketurl != null">
+        #{mkAdvertiserGifttransferMarketurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserLaunchAddress != null">
+        #{mkAdvertiserLaunchAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportSource != null">
+        #{mkAdvertiserReportSource,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediumCode != null">
+        #{mkMediumCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediumName != null">
+        #{mkMediumName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkProductVersionno != null">
+        #{mkProductVersionno,jdbcType=VARCHAR},
+      </if>
+      <if test="mkGifttransferProductversionno != null">
+        #{mkGifttransferProductversionno,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserProductUrl != null">
+        #{mkAdvertiserProductUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMarketurlRemarks != null">
+        #{mkAdvertiserMarketurlRemarks,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCreatetm != null">
+        #{mkMediaInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoOperationtm != null">
+        #{mkMediaInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoModifytm != null">
+        #{mkMediaInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMarketurlIdetectflag != null">
+        #{mkAdvertiserMarketurlIdetectflag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

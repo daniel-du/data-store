@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WblPlanCoolrecordMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.WblPlanCoolrecord">
+    <id column="wbl_plan_coolRecord_id" jdbcType="VARCHAR" property="wblPlanCoolrecordId" />
+    <result column="wbl_plan_config_id" jdbcType="VARCHAR" property="wblPlanConfigId" />
+    <result column="wbl_business_info_id" jdbcType="VARCHAR" property="wblBusinessInfoId" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="wbl_plan_coolRecord_CreateTM" jdbcType="TIMESTAMP" property="wblPlanCoolrecordCreatetm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    wbl_plan_coolRecord_id, wbl_plan_config_id, wbl_business_info_id, OA_company_Account_code, 
+    wbl_plan_coolRecord_CreateTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wbl_plan_coolrecord
+    where wbl_plan_coolRecord_id = #{wblPlanCoolrecordId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from wbl_plan_coolrecord
+    where wbl_plan_coolRecord_id = #{wblPlanCoolrecordId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.WblPlanCoolrecord">
+    insert into wbl_plan_coolrecord (wbl_plan_coolRecord_id, wbl_plan_config_id, 
+      wbl_business_info_id, OA_company_Account_code, 
+      wbl_plan_coolRecord_CreateTM)
+    values (#{wblPlanCoolrecordId,jdbcType=VARCHAR}, #{wblPlanConfigId,jdbcType=VARCHAR}, 
+      #{wblBusinessInfoId,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{wblPlanCoolrecordCreatetm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.WblPlanCoolrecord">
+    insert into wbl_plan_coolrecord
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="wblPlanCoolrecordId != null">
+        wbl_plan_coolRecord_id,
+      </if>
+      <if test="wblPlanConfigId != null">
+        wbl_plan_config_id,
+      </if>
+      <if test="wblBusinessInfoId != null">
+        wbl_business_info_id,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="wblPlanCoolrecordCreatetm != null">
+        wbl_plan_coolRecord_CreateTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="wblPlanCoolrecordId != null">
+        #{wblPlanCoolrecordId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanConfigId != null">
+        #{wblPlanConfigId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblBusinessInfoId != null">
+        #{wblBusinessInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanCoolrecordCreatetm != null">
+        #{wblPlanCoolrecordCreatetm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.WblPlanCoolrecord">
+    update wbl_plan_coolrecord
+    <set>
+      <if test="wblPlanConfigId != null">
+        wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR},
+      </if>
+      <if test="wblBusinessInfoId != null">
+        wbl_business_info_id = #{wblBusinessInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="wblPlanCoolrecordCreatetm != null">
+        wbl_plan_coolRecord_CreateTM = #{wblPlanCoolrecordCreatetm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where wbl_plan_coolRecord_id = #{wblPlanCoolrecordId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.WblPlanCoolrecord">
+    update wbl_plan_coolrecord
+    set wbl_plan_config_id = #{wblPlanConfigId,jdbcType=VARCHAR},
+      wbl_business_info_id = #{wblBusinessInfoId,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      wbl_plan_coolRecord_CreateTM = #{wblPlanCoolrecordCreatetm,jdbcType=TIMESTAMP}
+    where wbl_plan_coolRecord_id = #{wblPlanCoolrecordId,jdbcType=VARCHAR}
+  </update>
+</mapper>
