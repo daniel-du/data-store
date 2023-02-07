@@ -2,99 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="MkAdvertiserMaterialauditMapper">
   <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserMaterialaudit">
-    <result column="mk_advertiser_material_signature" jdbcType="VARCHAR" property="mkAdvertiserMaterialSignature" />
-    <result column="mk_material_info_radicalness" jdbcType="VARCHAR" property="mkMaterialInfoRadicalness" />
-    <result column="mk_material_lablebase_code" jdbcType="VARCHAR" property="mkMaterialLablebaseCode" />
-    <result column="mk_material_lablebase_name" jdbcType="VARCHAR" property="mkMaterialLablebaseName" />
-    <result column="mk_advertiser_material_id" jdbcType="VARCHAR" property="mkAdvertiserMaterialId" />
-    <result column="mk_advertiser_materialaudit_usercode" jdbcType="VARCHAR" property="mkAdvertiserMaterialauditUsercode" />
-    <result column="mk_advertiser_materialaudit_crttime" jdbcType="TIMESTAMP" property="mkAdvertiserMaterialauditCrttime" />
-    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
-    <result column="mk_advertiser_media_id" jdbcType="VARCHAR" property="mkAdvertiserMediaId" />
-    <result column="mk_advertiser_materialaudit_state" jdbcType="VARCHAR" property="mkAdvertiserMaterialauditState" />
-  </resultMap>
-  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMaterialaudit">
-    insert into mk_advertiser_materialaudit (mk_advertiser_material_signature, mk_material_info_radicalness, 
-      mk_material_lablebase_code, mk_material_lablebase_name, 
-      mk_advertiser_material_id, mk_advertiser_materialaudit_usercode, 
-      mk_advertiser_materialaudit_crttime, mk_media_info_code, 
-      mk_advertiser_media_id, mk_advertiser_materialaudit_state
-      )
-    values (#{mkAdvertiserMaterialSignature,jdbcType=VARCHAR}, #{mkMaterialInfoRadicalness,jdbcType=VARCHAR}, 
-      #{mkMaterialLablebaseCode,jdbcType=VARCHAR}, #{mkMaterialLablebaseName,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialId,jdbcType=VARCHAR}, #{mkAdvertiserMaterialauditUsercode,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialauditCrttime,jdbcType=TIMESTAMP}, #{mkMediaInfoCode,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMediaId,jdbcType=VARCHAR}, #{mkAdvertiserMaterialauditState,jdbcType=VARCHAR}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMaterialaudit">
-    insert into mk_advertiser_materialaudit
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="mkAdvertiserMaterialSignature != null">
-        mk_advertiser_material_signature,
-      </if>
-      <if test="mkMaterialInfoRadicalness != null">
-        mk_material_info_radicalness,
-      </if>
-      <if test="mkMaterialLablebaseCode != null">
-        mk_material_lablebase_code,
-      </if>
-      <if test="mkMaterialLablebaseName != null">
-        mk_material_lablebase_name,
-      </if>
-      <if test="mkAdvertiserMaterialId != null">
-        mk_advertiser_material_id,
-      </if>
-      <if test="mkAdvertiserMaterialauditUsercode != null">
-        mk_advertiser_materialaudit_usercode,
-      </if>
-      <if test="mkAdvertiserMaterialauditCrttime != null">
-        mk_advertiser_materialaudit_crttime,
-      </if>
-      <if test="mkMediaInfoCode != null">
-        mk_media_info_code,
-      </if>
-      <if test="mkAdvertiserMediaId != null">
-        mk_advertiser_media_id,
-      </if>
-      <if test="mkAdvertiserMaterialauditState != null">
-        mk_advertiser_materialaudit_state,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="mkAdvertiserMaterialSignature != null">
-        #{mkAdvertiserMaterialSignature,jdbcType=VARCHAR},
-      </if>
-      <if test="mkMaterialInfoRadicalness != null">
-        #{mkMaterialInfoRadicalness,jdbcType=VARCHAR},
-      </if>
-      <if test="mkMaterialLablebaseCode != null">
-        #{mkMaterialLablebaseCode,jdbcType=VARCHAR},
-      </if>
-      <if test="mkMaterialLablebaseName != null">
-        #{mkMaterialLablebaseName,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialId != null">
-        #{mkAdvertiserMaterialId,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialauditUsercode != null">
-        #{mkAdvertiserMaterialauditUsercode,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialauditCrttime != null">
-        #{mkAdvertiserMaterialauditCrttime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkMediaInfoCode != null">
-        #{mkMediaInfoCode,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMediaId != null">
-        #{mkAdvertiserMediaId,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialauditState != null">
-        #{mkAdvertiserMaterialauditState,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserMaterialaudit">
     <id column="mk_Advertiser_material_signature" jdbcType="VARCHAR" property="mkAdvertiserMaterialSignature" />
     <result column="mk_material_info_radicalness" jdbcType="VARCHAR" property="mkMaterialInfoRadicalness" />
     <result column="mk_material_lablebase_code" jdbcType="VARCHAR" property="mkMaterialLablebaseCode" />
@@ -107,13 +14,13 @@
     <result column="mk_Advertiser_materialaudit_state" jdbcType="VARCHAR" property="mkAdvertiserMaterialauditState" />
   </resultMap>
   <sql id="Base_Column_List">
-    mk_Advertiser_material_signature, mk_material_info_radicalness, mk_material_lablebase_code, 
-    mk_material_lablebase_name, mk_advertiser_material_id, mk_Advertiser_materialaudit_userCode, 
-    mk_Advertiser_materialaudit_crtTime, mk_media_info_code, mk_advertiser_media_id, 
+    mk_Advertiser_material_signature, mk_material_info_radicalness, mk_material_lablebase_code,
+    mk_material_lablebase_name, mk_advertiser_material_id, mk_Advertiser_materialaudit_userCode,
+    mk_Advertiser_materialaudit_crtTime, mk_media_info_code, mk_advertiser_media_id,
     mk_Advertiser_materialaudit_state
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from mk_advertiser_materialaudit
     where mk_Advertiser_material_signature = #{mkAdvertiserMaterialSignature,jdbcType=VARCHAR}
@@ -123,16 +30,16 @@
     where mk_Advertiser_material_signature = #{mkAdvertiserMaterialSignature,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMaterialaudit">
-    insert into mk_advertiser_materialaudit (mk_Advertiser_material_signature, mk_material_info_radicalness, 
-      mk_material_lablebase_code, mk_material_lablebase_name, 
-      mk_advertiser_material_id, mk_Advertiser_materialaudit_userCode, 
-      mk_Advertiser_materialaudit_crtTime, mk_media_info_code, 
+    insert into mk_advertiser_materialaudit (mk_Advertiser_material_signature, mk_material_info_radicalness,
+      mk_material_lablebase_code, mk_material_lablebase_name,
+      mk_advertiser_material_id, mk_Advertiser_materialaudit_userCode,
+      mk_Advertiser_materialaudit_crtTime, mk_media_info_code,
       mk_advertiser_media_id, mk_Advertiser_materialaudit_state
       )
-    values (#{mkAdvertiserMaterialSignature,jdbcType=VARCHAR}, #{mkMaterialInfoRadicalness,jdbcType=VARCHAR}, 
-      #{mkMaterialLablebaseCode,jdbcType=VARCHAR}, #{mkMaterialLablebaseName,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialId,jdbcType=VARCHAR}, #{mkAdvertiserMaterialauditUsercode,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialauditCrttime,jdbcType=TIMESTAMP}, #{mkMediaInfoCode,jdbcType=VARCHAR}, 
+    values (#{mkAdvertiserMaterialSignature,jdbcType=VARCHAR}, #{mkMaterialInfoRadicalness,jdbcType=VARCHAR},
+      #{mkMaterialLablebaseCode,jdbcType=VARCHAR}, #{mkMaterialLablebaseName,jdbcType=VARCHAR},
+      #{mkAdvertiserMaterialId,jdbcType=VARCHAR}, #{mkAdvertiserMaterialauditUsercode,jdbcType=VARCHAR},
+      #{mkAdvertiserMaterialauditCrttime,jdbcType=TIMESTAMP}, #{mkMediaInfoCode,jdbcType=VARCHAR},
       #{mkAdvertiserMediaId,jdbcType=VARCHAR}, #{mkAdvertiserMaterialauditState,jdbcType=VARCHAR}
       )
   </insert>

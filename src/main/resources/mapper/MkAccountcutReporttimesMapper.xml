@@ -2,83 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="MkAccountcutReporttimesMapper">
   <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAccountcutReporttimes">
-    <result column="mk_accountcut_reporttimes_code" jdbcType="VARCHAR" property="mkAccountcutReporttimesCode" />
-    <result column="mk_account_cut_code" jdbcType="VARCHAR" property="mkAccountCutCode" />
-    <result column="mk_marketurl_reporttimes_time" jdbcType="VARCHAR" property="mkMarketurlReporttimesTime" />
-    <result column="mk_marketurl_reporttimes_state" jdbcType="VARCHAR" property="mkMarketurlReporttimesState" />
-    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
-    <result column="mk_accountcut_reporttimes_createtm" jdbcType="TIMESTAMP" property="mkAccountcutReporttimesCreatetm" />
-    <result column="mk_accountcut_reporttimes_modifytm" jdbcType="TIMESTAMP" property="mkAccountcutReporttimesModifytm" />
-    <result column="mk_marketurl_reporttimes_operationtm" jdbcType="TIMESTAMP" property="mkMarketurlReporttimesOperationtm" />
-  </resultMap>
-  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAccountcutReporttimes">
-    insert into mk_accountcut_reporttimes (mk_accountcut_reporttimes_code, mk_account_cut_code, 
-      mk_marketurl_reporttimes_time, mk_marketurl_reporttimes_state, 
-      oa_company_account_code, mk_accountcut_reporttimes_createtm, 
-      mk_accountcut_reporttimes_modifytm, mk_marketurl_reporttimes_operationtm
-      )
-    values (#{mkAccountcutReporttimesCode,jdbcType=VARCHAR}, #{mkAccountCutCode,jdbcType=VARCHAR}, 
-      #{mkMarketurlReporttimesTime,jdbcType=VARCHAR}, #{mkMarketurlReporttimesState,jdbcType=VARCHAR}, 
-      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkAccountcutReporttimesCreatetm,jdbcType=TIMESTAMP}, 
-      #{mkAccountcutReporttimesModifytm,jdbcType=TIMESTAMP}, #{mkMarketurlReporttimesOperationtm,jdbcType=TIMESTAMP}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAccountcutReporttimes">
-    insert into mk_accountcut_reporttimes
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="mkAccountcutReporttimesCode != null">
-        mk_accountcut_reporttimes_code,
-      </if>
-      <if test="mkAccountCutCode != null">
-        mk_account_cut_code,
-      </if>
-      <if test="mkMarketurlReporttimesTime != null">
-        mk_marketurl_reporttimes_time,
-      </if>
-      <if test="mkMarketurlReporttimesState != null">
-        mk_marketurl_reporttimes_state,
-      </if>
-      <if test="oaCompanyAccountCode != null">
-        oa_company_account_code,
-      </if>
-      <if test="mkAccountcutReporttimesCreatetm != null">
-        mk_accountcut_reporttimes_createtm,
-      </if>
-      <if test="mkAccountcutReporttimesModifytm != null">
-        mk_accountcut_reporttimes_modifytm,
-      </if>
-      <if test="mkMarketurlReporttimesOperationtm != null">
-        mk_marketurl_reporttimes_operationtm,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="mkAccountcutReporttimesCode != null">
-        #{mkAccountcutReporttimesCode,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAccountCutCode != null">
-        #{mkAccountCutCode,jdbcType=VARCHAR},
-      </if>
-      <if test="mkMarketurlReporttimesTime != null">
-        #{mkMarketurlReporttimesTime,jdbcType=VARCHAR},
-      </if>
-      <if test="mkMarketurlReporttimesState != null">
-        #{mkMarketurlReporttimesState,jdbcType=VARCHAR},
-      </if>
-      <if test="oaCompanyAccountCode != null">
-        #{oaCompanyAccountCode,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAccountcutReporttimesCreatetm != null">
-        #{mkAccountcutReporttimesCreatetm,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkAccountcutReporttimesModifytm != null">
-        #{mkAccountcutReporttimesModifytm,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkMarketurlReporttimesOperationtm != null">
-        #{mkMarketurlReporttimesOperationtm,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAccountcutReporttimes">
     <id column="mk_accountCut_reporttimes_code" jdbcType="VARCHAR" property="mkAccountcutReporttimesCode" />
     <result column="mk_account_cut_code" jdbcType="VARCHAR" property="mkAccountCutCode" />
     <result column="mk_Marketurl_ReportTimes_time" jdbcType="VARCHAR" property="mkMarketurlReporttimesTime" />
@@ -89,12 +12,12 @@
     <result column="mk_Marketurl_ReportTimes_OperationTM" jdbcType="TIMESTAMP" property="mkMarketurlReporttimesOperationtm" />
   </resultMap>
   <sql id="Base_Column_List">
-    mk_accountCut_reporttimes_code, mk_account_cut_code, mk_Marketurl_ReportTimes_time, 
-    mk_Marketurl_ReportTimes_state, OA_company_Account_code, mk_accountCut_reporttimes_CreateTM, 
+    mk_accountCut_reporttimes_code, mk_account_cut_code, mk_Marketurl_ReportTimes_time,
+    mk_Marketurl_ReportTimes_state, OA_company_Account_code, mk_accountCut_reporttimes_CreateTM,
     mk_accountCut_reporttimes_MODIFYTM, mk_Marketurl_ReportTimes_OperationTM
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from mk_accountcut_reporttimes
     where mk_accountCut_reporttimes_code = #{mkAccountcutReporttimesCode,jdbcType=VARCHAR}
@@ -104,14 +27,14 @@
     where mk_accountCut_reporttimes_code = #{mkAccountcutReporttimesCode,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAccountcutReporttimes">
-    insert into mk_accountcut_reporttimes (mk_accountCut_reporttimes_code, mk_account_cut_code, 
-      mk_Marketurl_ReportTimes_time, mk_Marketurl_ReportTimes_state, 
-      OA_company_Account_code, mk_accountCut_reporttimes_CreateTM, 
+    insert into mk_accountcut_reporttimes (mk_accountCut_reporttimes_code, mk_account_cut_code,
+      mk_Marketurl_ReportTimes_time, mk_Marketurl_ReportTimes_state,
+      OA_company_Account_code, mk_accountCut_reporttimes_CreateTM,
       mk_accountCut_reporttimes_MODIFYTM, mk_Marketurl_ReportTimes_OperationTM
       )
-    values (#{mkAccountcutReporttimesCode,jdbcType=VARCHAR}, #{mkAccountCutCode,jdbcType=VARCHAR}, 
-      #{mkMarketurlReporttimesTime,jdbcType=VARCHAR}, #{mkMarketurlReporttimesState,jdbcType=VARCHAR}, 
-      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkAccountcutReporttimesCreatetm,jdbcType=TIMESTAMP}, 
+    values (#{mkAccountcutReporttimesCode,jdbcType=VARCHAR}, #{mkAccountCutCode,jdbcType=VARCHAR},
+      #{mkMarketurlReporttimesTime,jdbcType=VARCHAR}, #{mkMarketurlReporttimesState,jdbcType=VARCHAR},
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkAccountcutReporttimesCreatetm,jdbcType=TIMESTAMP},
       #{mkAccountcutReporttimesModifytm,jdbcType=TIMESTAMP}, #{mkMarketurlReporttimesOperationtm,jdbcType=TIMESTAMP}
       )
   </insert>

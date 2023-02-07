@@ -2,250 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="MkAdvertiserMaterialMapper">
   <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserMaterial">
-    <result column="mk_advertiser_material_no" jdbcType="VARCHAR" property="mkAdvertiserMaterialNo" />
-    <result column="mk_advertiser_material_advertiserid" jdbcType="VARCHAR" property="mkAdvertiserMaterialAdvertiserid" />
-    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
-    <result column="mk_advertiser_info_code" jdbcType="VARCHAR" property="mkAdvertiserInfoCode" />
-    <result column="mk_advertiser_material_id" jdbcType="VARCHAR" property="mkAdvertiserMaterialId" />
-    <result column="mk_advertiser_material_mediaid" jdbcType="VARCHAR" property="mkAdvertiserMaterialMediaid" />
-    <result column="mk_advertiser_material_name" jdbcType="VARCHAR" property="mkAdvertiserMaterialName" />
-    <result column="mk_advertiser_material_type" jdbcType="VARCHAR" property="mkAdvertiserMaterialType" />
-    <result column="mk_advertiser_material_address" jdbcType="VARCHAR" property="mkAdvertiserMaterialAddress" />
-    <result column="mk_advertiser_material_posteraddress" jdbcType="VARCHAR" property="mkAdvertiserMaterialPosteraddress" />
-    <result column="mk_advertiser_material_size" jdbcType="VARCHAR" property="mkAdvertiserMaterialSize" />
-    <result column="mk_advertiser_material_width" jdbcType="VARCHAR" property="mkAdvertiserMaterialWidth" />
-    <result column="mk_advertiser_material_height" jdbcType="VARCHAR" property="mkAdvertiserMaterialHeight" />
-    <result column="mk_advertiser_material_signature" jdbcType="VARCHAR" property="mkAdvertiserMaterialSignature" />
-    <result column="mk_advertiser_material_bitrate" jdbcType="VARCHAR" property="mkAdvertiserMaterialBitrate" />
-    <result column="mk_advertiser_material_duration" jdbcType="VARCHAR" property="mkAdvertiserMaterialDuration" />
-    <result column="mk_advertiser_material_materialid" jdbcType="VARCHAR" property="mkAdvertiserMaterialMaterialid" />
-    <result column="mk_advertiser_material_source" jdbcType="VARCHAR" property="mkAdvertiserMaterialSource" />
-    <result column="mk_advertiser_material_labels" jdbcType="VARCHAR" property="mkAdvertiserMaterialLabels" />
-    <result column="mk_advertiser_material_deletestate" jdbcType="VARCHAR" property="mkAdvertiserMaterialDeletestate" />
-    <result column="mk_advertiser_material_uploadstate" jdbcType="VARCHAR" property="mkAdvertiserMaterialUploadstate" />
-    <result column="mk_advertiser_material_uploadurl" jdbcType="VARCHAR" property="mkAdvertiserMaterialUploadurl" />
-    <result column="mk_advertiser_material_dnatype" jdbcType="VARCHAR" property="mkAdvertiserMaterialDnatype" />
-    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
-    <result column="mk_advertiser_material_createtm" jdbcType="TIMESTAMP" property="mkAdvertiserMaterialCreatetm" />
-    <result column="mk_advertiser_material_operationtm" jdbcType="TIMESTAMP" property="mkAdvertiserMaterialOperationtm" />
-    <result column="mk_advertiser_material_modifytm" jdbcType="TIMESTAMP" property="mkAdvertiserMaterialModifytm" />
-    <result column="mk_advertiser_material_imagevideoid" jdbcType="VARCHAR" property="mkAdvertiserMaterialImagevideoid" />
-    <result column="oa_merchant_info_no" jdbcType="VARCHAR" property="oaMerchantInfoNo" />
-  </resultMap>
-  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMaterial">
-    insert into mk_advertiser_material (mk_advertiser_material_no, mk_advertiser_material_advertiserid, 
-      mk_media_info_code, mk_advertiser_info_code, 
-      mk_advertiser_material_id, mk_advertiser_material_mediaid, 
-      mk_advertiser_material_name, mk_advertiser_material_type, 
-      mk_advertiser_material_address, mk_advertiser_material_posteraddress, 
-      mk_advertiser_material_size, mk_advertiser_material_width, 
-      mk_advertiser_material_height, mk_advertiser_material_signature, 
-      mk_advertiser_material_bitrate, mk_advertiser_material_duration, 
-      mk_advertiser_material_materialid, mk_advertiser_material_source, 
-      mk_advertiser_material_labels, mk_advertiser_material_deletestate, 
-      mk_advertiser_material_uploadstate, mk_advertiser_material_uploadurl, 
-      mk_advertiser_material_dnatype, oa_company_account_code, 
-      mk_advertiser_material_createtm, mk_advertiser_material_operationtm, 
-      mk_advertiser_material_modifytm, mk_advertiser_material_imagevideoid, 
-      oa_merchant_info_no)
-    values (#{mkAdvertiserMaterialNo,jdbcType=VARCHAR}, #{mkAdvertiserMaterialAdvertiserid,jdbcType=VARCHAR}, 
-      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkAdvertiserInfoCode,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialId,jdbcType=VARCHAR}, #{mkAdvertiserMaterialMediaid,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialName,jdbcType=VARCHAR}, #{mkAdvertiserMaterialType,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialAddress,jdbcType=VARCHAR}, #{mkAdvertiserMaterialPosteraddress,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialSize,jdbcType=VARCHAR}, #{mkAdvertiserMaterialWidth,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialHeight,jdbcType=VARCHAR}, #{mkAdvertiserMaterialSignature,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialBitrate,jdbcType=VARCHAR}, #{mkAdvertiserMaterialDuration,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialMaterialid,jdbcType=VARCHAR}, #{mkAdvertiserMaterialSource,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialLabels,jdbcType=VARCHAR}, #{mkAdvertiserMaterialDeletestate,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialUploadstate,jdbcType=VARCHAR}, #{mkAdvertiserMaterialUploadurl,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialDnatype,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialCreatetm,jdbcType=TIMESTAMP}, #{mkAdvertiserMaterialOperationtm,jdbcType=TIMESTAMP}, 
-      #{mkAdvertiserMaterialModifytm,jdbcType=TIMESTAMP}, #{mkAdvertiserMaterialImagevideoid,jdbcType=VARCHAR}, 
-      #{oaMerchantInfoNo,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMaterial">
-    insert into mk_advertiser_material
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="mkAdvertiserMaterialNo != null">
-        mk_advertiser_material_no,
-      </if>
-      <if test="mkAdvertiserMaterialAdvertiserid != null">
-        mk_advertiser_material_advertiserid,
-      </if>
-      <if test="mkMediaInfoCode != null">
-        mk_media_info_code,
-      </if>
-      <if test="mkAdvertiserInfoCode != null">
-        mk_advertiser_info_code,
-      </if>
-      <if test="mkAdvertiserMaterialId != null">
-        mk_advertiser_material_id,
-      </if>
-      <if test="mkAdvertiserMaterialMediaid != null">
-        mk_advertiser_material_mediaid,
-      </if>
-      <if test="mkAdvertiserMaterialName != null">
-        mk_advertiser_material_name,
-      </if>
-      <if test="mkAdvertiserMaterialType != null">
-        mk_advertiser_material_type,
-      </if>
-      <if test="mkAdvertiserMaterialAddress != null">
-        mk_advertiser_material_address,
-      </if>
-      <if test="mkAdvertiserMaterialPosteraddress != null">
-        mk_advertiser_material_posteraddress,
-      </if>
-      <if test="mkAdvertiserMaterialSize != null">
-        mk_advertiser_material_size,
-      </if>
-      <if test="mkAdvertiserMaterialWidth != null">
-        mk_advertiser_material_width,
-      </if>
-      <if test="mkAdvertiserMaterialHeight != null">
-        mk_advertiser_material_height,
-      </if>
-      <if test="mkAdvertiserMaterialSignature != null">
-        mk_advertiser_material_signature,
-      </if>
-      <if test="mkAdvertiserMaterialBitrate != null">
-        mk_advertiser_material_bitrate,
-      </if>
-      <if test="mkAdvertiserMaterialDuration != null">
-        mk_advertiser_material_duration,
-      </if>
-      <if test="mkAdvertiserMaterialMaterialid != null">
-        mk_advertiser_material_materialid,
-      </if>
-      <if test="mkAdvertiserMaterialSource != null">
-        mk_advertiser_material_source,
-      </if>
-      <if test="mkAdvertiserMaterialLabels != null">
-        mk_advertiser_material_labels,
-      </if>
-      <if test="mkAdvertiserMaterialDeletestate != null">
-        mk_advertiser_material_deletestate,
-      </if>
-      <if test="mkAdvertiserMaterialUploadstate != null">
-        mk_advertiser_material_uploadstate,
-      </if>
-      <if test="mkAdvertiserMaterialUploadurl != null">
-        mk_advertiser_material_uploadurl,
-      </if>
-      <if test="mkAdvertiserMaterialDnatype != null">
-        mk_advertiser_material_dnatype,
-      </if>
-      <if test="oaCompanyAccountCode != null">
-        oa_company_account_code,
-      </if>
-      <if test="mkAdvertiserMaterialCreatetm != null">
-        mk_advertiser_material_createtm,
-      </if>
-      <if test="mkAdvertiserMaterialOperationtm != null">
-        mk_advertiser_material_operationtm,
-      </if>
-      <if test="mkAdvertiserMaterialModifytm != null">
-        mk_advertiser_material_modifytm,
-      </if>
-      <if test="mkAdvertiserMaterialImagevideoid != null">
-        mk_advertiser_material_imagevideoid,
-      </if>
-      <if test="oaMerchantInfoNo != null">
-        oa_merchant_info_no,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="mkAdvertiserMaterialNo != null">
-        #{mkAdvertiserMaterialNo,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialAdvertiserid != null">
-        #{mkAdvertiserMaterialAdvertiserid,jdbcType=VARCHAR},
-      </if>
-      <if test="mkMediaInfoCode != null">
-        #{mkMediaInfoCode,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserInfoCode != null">
-        #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialId != null">
-        #{mkAdvertiserMaterialId,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialMediaid != null">
-        #{mkAdvertiserMaterialMediaid,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialName != null">
-        #{mkAdvertiserMaterialName,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialType != null">
-        #{mkAdvertiserMaterialType,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialAddress != null">
-        #{mkAdvertiserMaterialAddress,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialPosteraddress != null">
-        #{mkAdvertiserMaterialPosteraddress,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialSize != null">
-        #{mkAdvertiserMaterialSize,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialWidth != null">
-        #{mkAdvertiserMaterialWidth,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialHeight != null">
-        #{mkAdvertiserMaterialHeight,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialSignature != null">
-        #{mkAdvertiserMaterialSignature,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialBitrate != null">
-        #{mkAdvertiserMaterialBitrate,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialDuration != null">
-        #{mkAdvertiserMaterialDuration,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialMaterialid != null">
-        #{mkAdvertiserMaterialMaterialid,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialSource != null">
-        #{mkAdvertiserMaterialSource,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialLabels != null">
-        #{mkAdvertiserMaterialLabels,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialDeletestate != null">
-        #{mkAdvertiserMaterialDeletestate,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialUploadstate != null">
-        #{mkAdvertiserMaterialUploadstate,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialUploadurl != null">
-        #{mkAdvertiserMaterialUploadurl,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialDnatype != null">
-        #{mkAdvertiserMaterialDnatype,jdbcType=VARCHAR},
-      </if>
-      <if test="oaCompanyAccountCode != null">
-        #{oaCompanyAccountCode,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMaterialCreatetm != null">
-        #{mkAdvertiserMaterialCreatetm,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkAdvertiserMaterialOperationtm != null">
-        #{mkAdvertiserMaterialOperationtm,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkAdvertiserMaterialModifytm != null">
-        #{mkAdvertiserMaterialModifytm,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkAdvertiserMaterialImagevideoid != null">
-        #{mkAdvertiserMaterialImagevideoid,jdbcType=VARCHAR},
-      </if>
-      <if test="oaMerchantInfoNo != null">
-        #{oaMerchantInfoNo,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserMaterial">
     <id column="Mk_Advertiser_material_no" jdbcType="VARCHAR" property="mkAdvertiserMaterialNo" />
     <result column="Mk_Advertiser_material_advertiserid" jdbcType="VARCHAR" property="mkAdvertiserMaterialAdvertiserid" />
     <result column="MK_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
@@ -277,19 +33,19 @@
     <result column="oa_merchant_info_No" jdbcType="VARCHAR" property="oaMerchantInfoNo" />
   </resultMap>
   <sql id="Base_Column_List">
-    Mk_Advertiser_material_no, Mk_Advertiser_material_advertiserid, MK_media_info_code, 
-    MK_advertiser_info_code, Mk_Advertiser_material_id, mk_Advertiser_material_mediaId, 
-    Mk_Advertiser_material_name, Mk_Advertiser_material_type, Mk_Advertiser_material_address, 
-    Mk_Advertiser_material_posterAddress, mk_Advertiser_material_size, mk_Advertiser_material_width, 
-    mk_Advertiser_material_height, mk_Advertiser_material_signature, mk_Advertiser_material_bitRate, 
-    mk_Advertiser_material_duration, mk_Advertiser_material_materialId, mk_Advertiser_material_source, 
-    mk_Advertiser_material_labels, Mk_Advertiser_material_deleteState, Mk_Advertiser_material_uploadState, 
-    Mk_Advertiser_material_uploadUrl, Mk_Advertiser_material_DnaType, OA_company_Account_code, 
-    Mk_Advertiser_material_createTM, Mk_Advertiser_material_operationTM, Mk_Advertiser_material_modifyTM, 
+    Mk_Advertiser_material_no, Mk_Advertiser_material_advertiserid, MK_media_info_code,
+    MK_advertiser_info_code, Mk_Advertiser_material_id, mk_Advertiser_material_mediaId,
+    Mk_Advertiser_material_name, Mk_Advertiser_material_type, Mk_Advertiser_material_address,
+    Mk_Advertiser_material_posterAddress, mk_Advertiser_material_size, mk_Advertiser_material_width,
+    mk_Advertiser_material_height, mk_Advertiser_material_signature, mk_Advertiser_material_bitRate,
+    mk_Advertiser_material_duration, mk_Advertiser_material_materialId, mk_Advertiser_material_source,
+    mk_Advertiser_material_labels, Mk_Advertiser_material_deleteState, Mk_Advertiser_material_uploadState,
+    Mk_Advertiser_material_uploadUrl, Mk_Advertiser_material_DnaType, OA_company_Account_code,
+    Mk_Advertiser_material_createTM, Mk_Advertiser_material_operationTM, Mk_Advertiser_material_modifyTM,
     Mk_Advertiser_material_ImageVideoid, oa_merchant_info_No
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from mk_advertiser_material
     where Mk_Advertiser_material_no = #{mkAdvertiserMaterialNo,jdbcType=VARCHAR}
@@ -299,35 +55,35 @@
     where Mk_Advertiser_material_no = #{mkAdvertiserMaterialNo,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMaterial">
-    insert into mk_advertiser_material (Mk_Advertiser_material_no, Mk_Advertiser_material_advertiserid, 
-      MK_media_info_code, MK_advertiser_info_code, 
-      Mk_Advertiser_material_id, mk_Advertiser_material_mediaId, 
-      Mk_Advertiser_material_name, Mk_Advertiser_material_type, 
-      Mk_Advertiser_material_address, Mk_Advertiser_material_posterAddress, 
-      mk_Advertiser_material_size, mk_Advertiser_material_width, 
-      mk_Advertiser_material_height, mk_Advertiser_material_signature, 
-      mk_Advertiser_material_bitRate, mk_Advertiser_material_duration, 
-      mk_Advertiser_material_materialId, mk_Advertiser_material_source, 
-      mk_Advertiser_material_labels, Mk_Advertiser_material_deleteState, 
-      Mk_Advertiser_material_uploadState, Mk_Advertiser_material_uploadUrl, 
-      Mk_Advertiser_material_DnaType, OA_company_Account_code, 
-      Mk_Advertiser_material_createTM, Mk_Advertiser_material_operationTM, 
-      Mk_Advertiser_material_modifyTM, Mk_Advertiser_material_ImageVideoid, 
+    insert into mk_advertiser_material (Mk_Advertiser_material_no, Mk_Advertiser_material_advertiserid,
+      MK_media_info_code, MK_advertiser_info_code,
+      Mk_Advertiser_material_id, mk_Advertiser_material_mediaId,
+      Mk_Advertiser_material_name, Mk_Advertiser_material_type,
+      Mk_Advertiser_material_address, Mk_Advertiser_material_posterAddress,
+      mk_Advertiser_material_size, mk_Advertiser_material_width,
+      mk_Advertiser_material_height, mk_Advertiser_material_signature,
+      mk_Advertiser_material_bitRate, mk_Advertiser_material_duration,
+      mk_Advertiser_material_materialId, mk_Advertiser_material_source,
+      mk_Advertiser_material_labels, Mk_Advertiser_material_deleteState,
+      Mk_Advertiser_material_uploadState, Mk_Advertiser_material_uploadUrl,
+      Mk_Advertiser_material_DnaType, OA_company_Account_code,
+      Mk_Advertiser_material_createTM, Mk_Advertiser_material_operationTM,
+      Mk_Advertiser_material_modifyTM, Mk_Advertiser_material_ImageVideoid,
       oa_merchant_info_No)
-    values (#{mkAdvertiserMaterialNo,jdbcType=VARCHAR}, #{mkAdvertiserMaterialAdvertiserid,jdbcType=VARCHAR}, 
-      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkAdvertiserInfoCode,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialId,jdbcType=VARCHAR}, #{mkAdvertiserMaterialMediaid,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialName,jdbcType=VARCHAR}, #{mkAdvertiserMaterialType,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialAddress,jdbcType=VARCHAR}, #{mkAdvertiserMaterialPosteraddress,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialSize,jdbcType=VARCHAR}, #{mkAdvertiserMaterialWidth,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialHeight,jdbcType=VARCHAR}, #{mkAdvertiserMaterialSignature,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialBitrate,jdbcType=VARCHAR}, #{mkAdvertiserMaterialDuration,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialMaterialid,jdbcType=VARCHAR}, #{mkAdvertiserMaterialSource,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialLabels,jdbcType=VARCHAR}, #{mkAdvertiserMaterialDeletestate,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialUploadstate,jdbcType=VARCHAR}, #{mkAdvertiserMaterialUploadurl,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialDnatype,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMaterialCreatetm,jdbcType=TIMESTAMP}, #{mkAdvertiserMaterialOperationtm,jdbcType=TIMESTAMP}, 
-      #{mkAdvertiserMaterialModifytm,jdbcType=TIMESTAMP}, #{mkAdvertiserMaterialImagevideoid,jdbcType=VARCHAR}, 
+    values (#{mkAdvertiserMaterialNo,jdbcType=VARCHAR}, #{mkAdvertiserMaterialAdvertiserid,jdbcType=VARCHAR},
+      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      #{mkAdvertiserMaterialId,jdbcType=VARCHAR}, #{mkAdvertiserMaterialMediaid,jdbcType=VARCHAR},
+      #{mkAdvertiserMaterialName,jdbcType=VARCHAR}, #{mkAdvertiserMaterialType,jdbcType=VARCHAR},
+      #{mkAdvertiserMaterialAddress,jdbcType=VARCHAR}, #{mkAdvertiserMaterialPosteraddress,jdbcType=VARCHAR},
+      #{mkAdvertiserMaterialSize,jdbcType=VARCHAR}, #{mkAdvertiserMaterialWidth,jdbcType=VARCHAR},
+      #{mkAdvertiserMaterialHeight,jdbcType=VARCHAR}, #{mkAdvertiserMaterialSignature,jdbcType=VARCHAR},
+      #{mkAdvertiserMaterialBitrate,jdbcType=VARCHAR}, #{mkAdvertiserMaterialDuration,jdbcType=VARCHAR},
+      #{mkAdvertiserMaterialMaterialid,jdbcType=VARCHAR}, #{mkAdvertiserMaterialSource,jdbcType=VARCHAR},
+      #{mkAdvertiserMaterialLabels,jdbcType=VARCHAR}, #{mkAdvertiserMaterialDeletestate,jdbcType=VARCHAR},
+      #{mkAdvertiserMaterialUploadstate,jdbcType=VARCHAR}, #{mkAdvertiserMaterialUploadurl,jdbcType=VARCHAR},
+      #{mkAdvertiserMaterialDnatype,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      #{mkAdvertiserMaterialCreatetm,jdbcType=TIMESTAMP}, #{mkAdvertiserMaterialOperationtm,jdbcType=TIMESTAMP},
+      #{mkAdvertiserMaterialModifytm,jdbcType=TIMESTAMP}, #{mkAdvertiserMaterialImagevideoid,jdbcType=VARCHAR},
       #{oaMerchantInfoNo,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserMaterial">

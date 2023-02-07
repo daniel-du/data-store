@@ -27,7 +27,7 @@ spring:
     filters: stat,wall,slf4j
 
   gaussdatasource:
-    url: jdbc:opengauss://10.57.2.104:8000/new_mediadb?currentSchema=marke&ssl=false
+    url: jdbc:opengauss://10.57.2.104:8000/new_mediadb?currentSchema=ods&ssl=false
     username: new_mediauser
     password: nmtest@123
     driver-class-name: org.opengauss.Driver

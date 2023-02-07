@@ -2,298 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="MkAdvertiserAgentacountMapper">
   <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserAgentacount">
-    <result column="mk_advertiser_agentacount_no" jdbcType="VARCHAR" property="mkAdvertiserAgentacountNo" />
-    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
-    <result column="mk_advertiser_info_code" jdbcType="VARCHAR" property="mkAdvertiserInfoCode" />
-    <result column="mk_advertiser_media_parentid" jdbcType="VARCHAR" property="mkAdvertiserMediaParentid" />
-    <result column="mk_advertiser_media_id" jdbcType="VARCHAR" property="mkAdvertiserMediaId" />
-    <result column="mk_advertiser_agentacount_attributes" jdbcType="VARCHAR" property="mkAdvertiserAgentacountAttributes" />
-    <result column="mk_advertiser_media_spid" jdbcType="VARCHAR" property="mkAdvertiserMediaSpid" />
-    <result column="mk_advertiser_mediaid_name" jdbcType="VARCHAR" property="mkAdvertiserMediaidName" />
-    <result column="mk_advertiser_agentacount_weixinopenname" jdbcType="VARCHAR" property="mkAdvertiserAgentacountWeixinopenname" />
-    <result column="mk_advertiser_agent_media_id" jdbcType="VARCHAR" property="mkAdvertiserAgentMediaId" />
-    <result column="mk_advertiser_mediaid_state" jdbcType="VARCHAR" property="mkAdvertiserMediaidState" />
-    <result column="mk_advertiser_agentacount_guangdiantongtype" jdbcType="VARCHAR" property="mkAdvertiserAgentacountGuangdiantongtype" />
-    <result column="mk_advertiser_app_id" jdbcType="VARCHAR" property="mkAdvertiserAppId" />
-    <result column="mk_advertiser_media_usersourceid" jdbcType="VARCHAR" property="mkAdvertiserMediaUsersourceid" />
-    <result column="mk_advertiser_media_auth_status" jdbcType="SMALLINT" property="mkAdvertiserMediaAuthStatus" />
-    <result column="mk_advertiser_media_token" jdbcType="VARCHAR" property="mkAdvertiserMediaToken" />
-    <result column="mk_advertiser_media_refreshtoken" jdbcType="VARCHAR" property="mkAdvertiserMediaRefreshtoken" />
-    <result column="mk_advertiser_media_tokencrttm" jdbcType="TIMESTAMP" property="mkAdvertiserMediaTokencrttm" />
-    <result column="mk_advertiser_media_tokenendtm" jdbcType="TIMESTAMP" property="mkAdvertiserMediaTokenendtm" />
-    <result column="mk_advertiser_media_refreshtokencrttm" jdbcType="TIMESTAMP" property="mkAdvertiserMediaRefreshtokencrttm" />
-    <result column="mk_advertiser_media_refreshtokenendtm" jdbcType="TIMESTAMP" property="mkAdvertiserMediaRefreshtokenendtm" />
-    <result column="mk_advertiser_agentacount_administrators" jdbcType="VARCHAR" property="mkAdvertiserAgentacountAdministrators" />
-    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
-    <result column="mk_advertiser_agentacount_createtm" jdbcType="TIMESTAMP" property="mkAdvertiserAgentacountCreatetm" />
-    <result column="mk_advertiser_agentacount_operationtm" jdbcType="TIMESTAMP" property="mkAdvertiserAgentacountOperationtm" />
-    <result column="mk_advertiser_agentacount_modifytm" jdbcType="TIMESTAMP" property="mkAdvertiserAgentacountModifytm" />
-    <result column="mk_advertiser_agentacount_inventorytype" jdbcType="VARCHAR" property="mkAdvertiserAgentacountInventorytype" />
-    <result column="mk_advertiser_agent_firstid" jdbcType="VARCHAR" property="mkAdvertiserAgentFirstid" />
-    <result column="mk_advertiser_media_ocpctoken" jdbcType="VARCHAR" property="mkAdvertiserMediaOcpctoken" />
-    <result column="mk_advertiser_agent_firstidbegintime" jdbcType="TIMESTAMP" property="mkAdvertiserAgentFirstidbegintime" />
-    <result column="mk_advertiser_agent_firstidendtime" jdbcType="TIMESTAMP" property="mkAdvertiserAgentFirstidendtime" />
-    <result column="mk_exchange_lock_type" jdbcType="VARCHAR" property="mkExchangeLockType" />
-    <result column="mk_exchange_lock_begintime" jdbcType="TIMESTAMP" property="mkExchangeLockBegintime" />
-    <result column="mk_exchange_lock_endtime" jdbcType="TIMESTAMP" property="mkExchangeLockEndtime" />
-    <result column="mk_advertiseragentacount_strategy_id" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyId" />
-  </resultMap>
-  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserAgentacount">
-    insert into mk_advertiser_agentacount (mk_advertiser_agentacount_no, mk_media_info_code, 
-      mk_advertiser_info_code, mk_advertiser_media_parentid, 
-      mk_advertiser_media_id, mk_advertiser_agentacount_attributes, 
-      mk_advertiser_media_spid, mk_advertiser_mediaid_name, 
-      mk_advertiser_agentacount_weixinopenname, mk_advertiser_agent_media_id, 
-      mk_advertiser_mediaid_state, mk_advertiser_agentacount_guangdiantongtype, 
-      mk_advertiser_app_id, mk_advertiser_media_usersourceid, 
-      mk_advertiser_media_auth_status, mk_advertiser_media_token, 
-      mk_advertiser_media_refreshtoken, mk_advertiser_media_tokencrttm, 
-      mk_advertiser_media_tokenendtm, mk_advertiser_media_refreshtokencrttm, 
-      mk_advertiser_media_refreshtokenendtm, mk_advertiser_agentacount_administrators, 
-      oa_company_account_code, mk_advertiser_agentacount_createtm, 
-      mk_advertiser_agentacount_operationtm, mk_advertiser_agentacount_modifytm, 
-      mk_advertiser_agentacount_inventorytype, mk_advertiser_agent_firstid, 
-      mk_advertiser_media_ocpctoken, mk_advertiser_agent_firstidbegintime, 
-      mk_advertiser_agent_firstidendtime, mk_exchange_lock_type, 
-      mk_exchange_lock_begintime, mk_exchange_lock_endtime, 
-      mk_advertiseragentacount_strategy_id)
-    values (#{mkAdvertiserAgentacountNo,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR}, 
-      #{mkAdvertiserInfoCode,jdbcType=VARCHAR}, #{mkAdvertiserMediaParentid,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMediaId,jdbcType=VARCHAR}, #{mkAdvertiserAgentacountAttributes,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMediaSpid,jdbcType=VARCHAR}, #{mkAdvertiserMediaidName,jdbcType=VARCHAR}, 
-      #{mkAdvertiserAgentacountWeixinopenname,jdbcType=VARCHAR}, #{mkAdvertiserAgentMediaId,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMediaidState,jdbcType=VARCHAR}, #{mkAdvertiserAgentacountGuangdiantongtype,jdbcType=VARCHAR}, 
-      #{mkAdvertiserAppId,jdbcType=VARCHAR}, #{mkAdvertiserMediaUsersourceid,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMediaAuthStatus,jdbcType=SMALLINT}, #{mkAdvertiserMediaToken,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMediaRefreshtoken,jdbcType=VARCHAR}, #{mkAdvertiserMediaTokencrttm,jdbcType=TIMESTAMP}, 
-      #{mkAdvertiserMediaTokenendtm,jdbcType=TIMESTAMP}, #{mkAdvertiserMediaRefreshtokencrttm,jdbcType=TIMESTAMP}, 
-      #{mkAdvertiserMediaRefreshtokenendtm,jdbcType=TIMESTAMP}, #{mkAdvertiserAgentacountAdministrators,jdbcType=VARCHAR}, 
-      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkAdvertiserAgentacountCreatetm,jdbcType=TIMESTAMP}, 
-      #{mkAdvertiserAgentacountOperationtm,jdbcType=TIMESTAMP}, #{mkAdvertiserAgentacountModifytm,jdbcType=TIMESTAMP}, 
-      #{mkAdvertiserAgentacountInventorytype,jdbcType=VARCHAR}, #{mkAdvertiserAgentFirstid,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMediaOcpctoken,jdbcType=VARCHAR}, #{mkAdvertiserAgentFirstidbegintime,jdbcType=TIMESTAMP}, 
-      #{mkAdvertiserAgentFirstidendtime,jdbcType=TIMESTAMP}, #{mkExchangeLockType,jdbcType=VARCHAR}, 
-      #{mkExchangeLockBegintime,jdbcType=TIMESTAMP}, #{mkExchangeLockEndtime,jdbcType=TIMESTAMP}, 
-      #{mkAdvertiseragentacountStrategyId,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserAgentacount">
-    insert into mk_advertiser_agentacount
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="mkAdvertiserAgentacountNo != null">
-        mk_advertiser_agentacount_no,
-      </if>
-      <if test="mkMediaInfoCode != null">
-        mk_media_info_code,
-      </if>
-      <if test="mkAdvertiserInfoCode != null">
-        mk_advertiser_info_code,
-      </if>
-      <if test="mkAdvertiserMediaParentid != null">
-        mk_advertiser_media_parentid,
-      </if>
-      <if test="mkAdvertiserMediaId != null">
-        mk_advertiser_media_id,
-      </if>
-      <if test="mkAdvertiserAgentacountAttributes != null">
-        mk_advertiser_agentacount_attributes,
-      </if>
-      <if test="mkAdvertiserMediaSpid != null">
-        mk_advertiser_media_spid,
-      </if>
-      <if test="mkAdvertiserMediaidName != null">
-        mk_advertiser_mediaid_name,
-      </if>
-      <if test="mkAdvertiserAgentacountWeixinopenname != null">
-        mk_advertiser_agentacount_weixinopenname,
-      </if>
-      <if test="mkAdvertiserAgentMediaId != null">
-        mk_advertiser_agent_media_id,
-      </if>
-      <if test="mkAdvertiserMediaidState != null">
-        mk_advertiser_mediaid_state,
-      </if>
-      <if test="mkAdvertiserAgentacountGuangdiantongtype != null">
-        mk_advertiser_agentacount_guangdiantongtype,
-      </if>
-      <if test="mkAdvertiserAppId != null">
-        mk_advertiser_app_id,
-      </if>
-      <if test="mkAdvertiserMediaUsersourceid != null">
-        mk_advertiser_media_usersourceid,
-      </if>
-      <if test="mkAdvertiserMediaAuthStatus != null">
-        mk_advertiser_media_auth_status,
-      </if>
-      <if test="mkAdvertiserMediaToken != null">
-        mk_advertiser_media_token,
-      </if>
-      <if test="mkAdvertiserMediaRefreshtoken != null">
-        mk_advertiser_media_refreshtoken,
-      </if>
-      <if test="mkAdvertiserMediaTokencrttm != null">
-        mk_advertiser_media_tokencrttm,
-      </if>
-      <if test="mkAdvertiserMediaTokenendtm != null">
-        mk_advertiser_media_tokenendtm,
-      </if>
-      <if test="mkAdvertiserMediaRefreshtokencrttm != null">
-        mk_advertiser_media_refreshtokencrttm,
-      </if>
-      <if test="mkAdvertiserMediaRefreshtokenendtm != null">
-        mk_advertiser_media_refreshtokenendtm,
-      </if>
-      <if test="mkAdvertiserAgentacountAdministrators != null">
-        mk_advertiser_agentacount_administrators,
-      </if>
-      <if test="oaCompanyAccountCode != null">
-        oa_company_account_code,
-      </if>
-      <if test="mkAdvertiserAgentacountCreatetm != null">
-        mk_advertiser_agentacount_createtm,
-      </if>
-      <if test="mkAdvertiserAgentacountOperationtm != null">
-        mk_advertiser_agentacount_operationtm,
-      </if>
-      <if test="mkAdvertiserAgentacountModifytm != null">
-        mk_advertiser_agentacount_modifytm,
-      </if>
-      <if test="mkAdvertiserAgentacountInventorytype != null">
-        mk_advertiser_agentacount_inventorytype,
-      </if>
-      <if test="mkAdvertiserAgentFirstid != null">
-        mk_advertiser_agent_firstid,
-      </if>
-      <if test="mkAdvertiserMediaOcpctoken != null">
-        mk_advertiser_media_ocpctoken,
-      </if>
-      <if test="mkAdvertiserAgentFirstidbegintime != null">
-        mk_advertiser_agent_firstidbegintime,
-      </if>
-      <if test="mkAdvertiserAgentFirstidendtime != null">
-        mk_advertiser_agent_firstidendtime,
-      </if>
-      <if test="mkExchangeLockType != null">
-        mk_exchange_lock_type,
-      </if>
-      <if test="mkExchangeLockBegintime != null">
-        mk_exchange_lock_begintime,
-      </if>
-      <if test="mkExchangeLockEndtime != null">
-        mk_exchange_lock_endtime,
-      </if>
-      <if test="mkAdvertiseragentacountStrategyId != null">
-        mk_advertiseragentacount_strategy_id,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="mkAdvertiserAgentacountNo != null">
-        #{mkAdvertiserAgentacountNo,jdbcType=VARCHAR},
-      </if>
-      <if test="mkMediaInfoCode != null">
-        #{mkMediaInfoCode,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserInfoCode != null">
-        #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMediaParentid != null">
-        #{mkAdvertiserMediaParentid,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMediaId != null">
-        #{mkAdvertiserMediaId,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserAgentacountAttributes != null">
-        #{mkAdvertiserAgentacountAttributes,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMediaSpid != null">
-        #{mkAdvertiserMediaSpid,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMediaidName != null">
-        #{mkAdvertiserMediaidName,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserAgentacountWeixinopenname != null">
-        #{mkAdvertiserAgentacountWeixinopenname,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserAgentMediaId != null">
-        #{mkAdvertiserAgentMediaId,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMediaidState != null">
-        #{mkAdvertiserMediaidState,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserAgentacountGuangdiantongtype != null">
-        #{mkAdvertiserAgentacountGuangdiantongtype,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserAppId != null">
-        #{mkAdvertiserAppId,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMediaUsersourceid != null">
-        #{mkAdvertiserMediaUsersourceid,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMediaAuthStatus != null">
-        #{mkAdvertiserMediaAuthStatus,jdbcType=SMALLINT},
-      </if>
-      <if test="mkAdvertiserMediaToken != null">
-        #{mkAdvertiserMediaToken,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMediaRefreshtoken != null">
-        #{mkAdvertiserMediaRefreshtoken,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMediaTokencrttm != null">
-        #{mkAdvertiserMediaTokencrttm,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkAdvertiserMediaTokenendtm != null">
-        #{mkAdvertiserMediaTokenendtm,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkAdvertiserMediaRefreshtokencrttm != null">
-        #{mkAdvertiserMediaRefreshtokencrttm,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkAdvertiserMediaRefreshtokenendtm != null">
-        #{mkAdvertiserMediaRefreshtokenendtm,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkAdvertiserAgentacountAdministrators != null">
-        #{mkAdvertiserAgentacountAdministrators,jdbcType=VARCHAR},
-      </if>
-      <if test="oaCompanyAccountCode != null">
-        #{oaCompanyAccountCode,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserAgentacountCreatetm != null">
-        #{mkAdvertiserAgentacountCreatetm,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkAdvertiserAgentacountOperationtm != null">
-        #{mkAdvertiserAgentacountOperationtm,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkAdvertiserAgentacountModifytm != null">
-        #{mkAdvertiserAgentacountModifytm,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkAdvertiserAgentacountInventorytype != null">
-        #{mkAdvertiserAgentacountInventorytype,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserAgentFirstid != null">
-        #{mkAdvertiserAgentFirstid,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserMediaOcpctoken != null">
-        #{mkAdvertiserMediaOcpctoken,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiserAgentFirstidbegintime != null">
-        #{mkAdvertiserAgentFirstidbegintime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkAdvertiserAgentFirstidendtime != null">
-        #{mkAdvertiserAgentFirstidendtime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkExchangeLockType != null">
-        #{mkExchangeLockType,jdbcType=VARCHAR},
-      </if>
-      <if test="mkExchangeLockBegintime != null">
-        #{mkExchangeLockBegintime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkExchangeLockEndtime != null">
-        #{mkExchangeLockEndtime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkAdvertiseragentacountStrategyId != null">
-        #{mkAdvertiseragentacountStrategyId,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiserAgentacount">
     <id column="MK_advertiser_agentAcount_no" jdbcType="VARCHAR" property="mkAdvertiserAgentacountNo" />
     <result column="MK_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
     <result column="MK_advertiser_info_code" jdbcType="VARCHAR" property="mkAdvertiserInfoCode" />
@@ -331,20 +39,20 @@
     <result column="mk_advertiserAgentacount_strategy_id" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyId" />
   </resultMap>
   <sql id="Base_Column_List">
-    MK_advertiser_agentAcount_no, MK_media_info_code, MK_advertiser_info_code, MK_advertiser_media_parentId, 
-    MK_advertiser_media_id, MK_advertiser_agentAcount_attributes, MK_Advertiser_media_Spid, 
-    mk_Advertiser_MediaId_name, MK_advertiser_agentAcount_WeixinOpenName, MK_advertiser_agent_media_id, 
-    MK_advertiser_mediaId_state, MK_advertiser_agentAcount_GuangdiantongType, MK_advertiser_app_id, 
-    MK_Advertiser_media_userSourceId, MK_Advertiser_media_auth_status, MK_Advertiser_media_token, 
-    MK_Advertiser_media_refreshToken, MK_Advertiser_media_tokenCrtTm, MK_Advertiser_media_tokenEndTm, 
-    MK_Advertiser_media_refreshTokenCrtTm, MK_Advertiser_media_refreshTokenEndTm, MK_advertiser_agentAcount_administrators, 
-    OA_company_account_code, MK_advertiser_agentAcount_createTM, MK_advertiser_agentAcount_operationTM, 
-    MK_advertiser_agentAcount_modifyTM, MK_advertiser_agentAcount_inventoryType, MK_advertiser_agent_firstId, 
-    MK_Advertiser_media_ocpcToken, MK_advertiser_agent_firstIdBeginTime, MK_advertiser_agent_firstIdEndTime, 
+    MK_advertiser_agentAcount_no, MK_media_info_code, MK_advertiser_info_code, MK_advertiser_media_parentId,
+    MK_advertiser_media_id, MK_advertiser_agentAcount_attributes, MK_Advertiser_media_Spid,
+    mk_Advertiser_MediaId_name, MK_advertiser_agentAcount_WeixinOpenName, MK_advertiser_agent_media_id,
+    MK_advertiser_mediaId_state, MK_advertiser_agentAcount_GuangdiantongType, MK_advertiser_app_id,
+    MK_Advertiser_media_userSourceId, MK_Advertiser_media_auth_status, MK_Advertiser_media_token,
+    MK_Advertiser_media_refreshToken, MK_Advertiser_media_tokenCrtTm, MK_Advertiser_media_tokenEndTm,
+    MK_Advertiser_media_refreshTokenCrtTm, MK_Advertiser_media_refreshTokenEndTm, MK_advertiser_agentAcount_administrators,
+    OA_company_account_code, MK_advertiser_agentAcount_createTM, MK_advertiser_agentAcount_operationTM,
+    MK_advertiser_agentAcount_modifyTM, MK_advertiser_agentAcount_inventoryType, MK_advertiser_agent_firstId,
+    MK_Advertiser_media_ocpcToken, MK_advertiser_agent_firstIdBeginTime, MK_advertiser_agent_firstIdEndTime,
     mk_exchange_lock_type, mk_exchange_lock_beginTime, mk_exchange_lock_endTime, mk_advertiserAgentacount_strategy_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from mk_advertiser_agentacount
     where MK_advertiser_agentAcount_no = #{mkAdvertiserAgentacountNo,jdbcType=VARCHAR}
@@ -354,41 +62,41 @@
     where MK_advertiser_agentAcount_no = #{mkAdvertiserAgentacountNo,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserAgentacount">
-    insert into mk_advertiser_agentacount (MK_advertiser_agentAcount_no, MK_media_info_code, 
-      MK_advertiser_info_code, MK_advertiser_media_parentId, 
-      MK_advertiser_media_id, MK_advertiser_agentAcount_attributes, 
-      MK_Advertiser_media_Spid, mk_Advertiser_MediaId_name, 
-      MK_advertiser_agentAcount_WeixinOpenName, MK_advertiser_agent_media_id, 
-      MK_advertiser_mediaId_state, MK_advertiser_agentAcount_GuangdiantongType, 
-      MK_advertiser_app_id, MK_Advertiser_media_userSourceId, 
-      MK_Advertiser_media_auth_status, MK_Advertiser_media_token, 
-      MK_Advertiser_media_refreshToken, MK_Advertiser_media_tokenCrtTm, 
-      MK_Advertiser_media_tokenEndTm, MK_Advertiser_media_refreshTokenCrtTm, 
-      MK_Advertiser_media_refreshTokenEndTm, MK_advertiser_agentAcount_administrators, 
-      OA_company_account_code, MK_advertiser_agentAcount_createTM, 
-      MK_advertiser_agentAcount_operationTM, MK_advertiser_agentAcount_modifyTM, 
-      MK_advertiser_agentAcount_inventoryType, MK_advertiser_agent_firstId, 
-      MK_Advertiser_media_ocpcToken, MK_advertiser_agent_firstIdBeginTime, 
-      MK_advertiser_agent_firstIdEndTime, mk_exchange_lock_type, 
-      mk_exchange_lock_beginTime, mk_exchange_lock_endTime, 
+    insert into mk_advertiser_agentacount (MK_advertiser_agentAcount_no, MK_media_info_code,
+      MK_advertiser_info_code, MK_advertiser_media_parentId,
+      MK_advertiser_media_id, MK_advertiser_agentAcount_attributes,
+      MK_Advertiser_media_Spid, mk_Advertiser_MediaId_name,
+      MK_advertiser_agentAcount_WeixinOpenName, MK_advertiser_agent_media_id,
+      MK_advertiser_mediaId_state, MK_advertiser_agentAcount_GuangdiantongType,
+      MK_advertiser_app_id, MK_Advertiser_media_userSourceId,
+      MK_Advertiser_media_auth_status, MK_Advertiser_media_token,
+      MK_Advertiser_media_refreshToken, MK_Advertiser_media_tokenCrtTm,
+      MK_Advertiser_media_tokenEndTm, MK_Advertiser_media_refreshTokenCrtTm,
+      MK_Advertiser_media_refreshTokenEndTm, MK_advertiser_agentAcount_administrators,
+      OA_company_account_code, MK_advertiser_agentAcount_createTM,
+      MK_advertiser_agentAcount_operationTM, MK_advertiser_agentAcount_modifyTM,
+      MK_advertiser_agentAcount_inventoryType, MK_advertiser_agent_firstId,
+      MK_Advertiser_media_ocpcToken, MK_advertiser_agent_firstIdBeginTime,
+      MK_advertiser_agent_firstIdEndTime, mk_exchange_lock_type,
+      mk_exchange_lock_beginTime, mk_exchange_lock_endTime,
       mk_advertiserAgentacount_strategy_id)
-    values (#{mkAdvertiserAgentacountNo,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR}, 
-      #{mkAdvertiserInfoCode,jdbcType=VARCHAR}, #{mkAdvertiserMediaParentid,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMediaId,jdbcType=VARCHAR}, #{mkAdvertiserAgentacountAttributes,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMediaSpid,jdbcType=VARCHAR}, #{mkAdvertiserMediaidName,jdbcType=VARCHAR}, 
-      #{mkAdvertiserAgentacountWeixinopenname,jdbcType=VARCHAR}, #{mkAdvertiserAgentMediaId,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMediaidState,jdbcType=VARCHAR}, #{mkAdvertiserAgentacountGuangdiantongtype,jdbcType=VARCHAR}, 
-      #{mkAdvertiserAppId,jdbcType=VARCHAR}, #{mkAdvertiserMediaUsersourceid,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMediaAuthStatus,jdbcType=SMALLINT}, #{mkAdvertiserMediaToken,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMediaRefreshtoken,jdbcType=VARCHAR}, #{mkAdvertiserMediaTokencrttm,jdbcType=TIMESTAMP}, 
-      #{mkAdvertiserMediaTokenendtm,jdbcType=TIMESTAMP}, #{mkAdvertiserMediaRefreshtokencrttm,jdbcType=TIMESTAMP}, 
-      #{mkAdvertiserMediaRefreshtokenendtm,jdbcType=TIMESTAMP}, #{mkAdvertiserAgentacountAdministrators,jdbcType=VARCHAR}, 
-      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkAdvertiserAgentacountCreatetm,jdbcType=TIMESTAMP}, 
-      #{mkAdvertiserAgentacountOperationtm,jdbcType=TIMESTAMP}, #{mkAdvertiserAgentacountModifytm,jdbcType=TIMESTAMP}, 
-      #{mkAdvertiserAgentacountInventorytype,jdbcType=VARCHAR}, #{mkAdvertiserAgentFirstid,jdbcType=VARCHAR}, 
-      #{mkAdvertiserMediaOcpctoken,jdbcType=VARCHAR}, #{mkAdvertiserAgentFirstidbegintime,jdbcType=TIMESTAMP}, 
-      #{mkAdvertiserAgentFirstidendtime,jdbcType=TIMESTAMP}, #{mkExchangeLockType,jdbcType=VARCHAR}, 
-      #{mkExchangeLockBegintime,jdbcType=TIMESTAMP}, #{mkExchangeLockEndtime,jdbcType=TIMESTAMP}, 
+    values (#{mkAdvertiserAgentacountNo,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR},
+      #{mkAdvertiserInfoCode,jdbcType=VARCHAR}, #{mkAdvertiserMediaParentid,jdbcType=VARCHAR},
+      #{mkAdvertiserMediaId,jdbcType=VARCHAR}, #{mkAdvertiserAgentacountAttributes,jdbcType=VARCHAR},
+      #{mkAdvertiserMediaSpid,jdbcType=VARCHAR}, #{mkAdvertiserMediaidName,jdbcType=VARCHAR},
+      #{mkAdvertiserAgentacountWeixinopenname,jdbcType=VARCHAR}, #{mkAdvertiserAgentMediaId,jdbcType=VARCHAR},
+      #{mkAdvertiserMediaidState,jdbcType=VARCHAR}, #{mkAdvertiserAgentacountGuangdiantongtype,jdbcType=VARCHAR},
+      #{mkAdvertiserAppId,jdbcType=VARCHAR}, #{mkAdvertiserMediaUsersourceid,jdbcType=VARCHAR},
+      #{mkAdvertiserMediaAuthStatus,jdbcType=SMALLINT}, #{mkAdvertiserMediaToken,jdbcType=VARCHAR},
+      #{mkAdvertiserMediaRefreshtoken,jdbcType=VARCHAR}, #{mkAdvertiserMediaTokencrttm,jdbcType=TIMESTAMP},
+      #{mkAdvertiserMediaTokenendtm,jdbcType=TIMESTAMP}, #{mkAdvertiserMediaRefreshtokencrttm,jdbcType=TIMESTAMP},
+      #{mkAdvertiserMediaRefreshtokenendtm,jdbcType=TIMESTAMP}, #{mkAdvertiserAgentacountAdministrators,jdbcType=VARCHAR},
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkAdvertiserAgentacountCreatetm,jdbcType=TIMESTAMP},
+      #{mkAdvertiserAgentacountOperationtm,jdbcType=TIMESTAMP}, #{mkAdvertiserAgentacountModifytm,jdbcType=TIMESTAMP},
+      #{mkAdvertiserAgentacountInventorytype,jdbcType=VARCHAR}, #{mkAdvertiserAgentFirstid,jdbcType=VARCHAR},
+      #{mkAdvertiserMediaOcpctoken,jdbcType=VARCHAR}, #{mkAdvertiserAgentFirstidbegintime,jdbcType=TIMESTAMP},
+      #{mkAdvertiserAgentFirstidendtime,jdbcType=TIMESTAMP}, #{mkExchangeLockType,jdbcType=VARCHAR},
+      #{mkExchangeLockBegintime,jdbcType=TIMESTAMP}, #{mkExchangeLockEndtime,jdbcType=TIMESTAMP},
       #{mkAdvertiseragentacountStrategyId,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiserAgentacount">

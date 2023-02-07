@@ -2,122 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="MkAdvertiseragentacountStrategyMapper">
   <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiseragentacountStrategy">
-    <result column="mk_advertiseragentacount_strategy_id" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyId" />
-    <result column="mk_advertiseragentacount_strategy_code" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyCode" />
-    <result column="mk_advertiseragentacount_strategy_name" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyName" />
-    <result column="mk_advertiseragentacount_strategy_startdate" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyStartdate" />
-    <result column="mk_advertiseragentacount_strategy_enddate" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyEnddate" />
-    <result column="mk_advertiseragentacount_strategy_state" jdbcType="CHAR" property="mkAdvertiseragentacountStrategyState" />
-    <result column="mk_advertiseragentacount_strategy_crtdate" jdbcType="TIMESTAMP" property="mkAdvertiseragentacountStrategyCrtdate" />
-    <result column="mk_advertiseragentacount_strategy_crtuser" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyCrtuser" />
-    <result column="mk_advertiseragentacount_strategy_upduser" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyUpduser" />
-    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
-    <result column="mk_advertiseragentacount_strategy_describe" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyDescribe" />
-    <result column="mk_advertiseragentacount_strategy_accounttype" jdbcType="CHAR" property="mkAdvertiseragentacountStrategyAccounttype" />
-    <result column="mk_advertiseragentacount_strategy_actdefault" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyActdefault" />
-  </resultMap>
-  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiseragentacountStrategy">
-    insert into mk_advertiseragentacount_strategy (mk_advertiseragentacount_strategy_id, mk_advertiseragentacount_strategy_code, 
-      mk_advertiseragentacount_strategy_name, mk_advertiseragentacount_strategy_startdate, 
-      mk_advertiseragentacount_strategy_enddate, mk_advertiseragentacount_strategy_state, 
-      mk_advertiseragentacount_strategy_crtdate, mk_advertiseragentacount_strategy_crtuser, 
-      mk_advertiseragentacount_strategy_upduser, mk_media_info_code, 
-      mk_advertiseragentacount_strategy_describe, mk_advertiseragentacount_strategy_accounttype, 
-      mk_advertiseragentacount_strategy_actdefault)
-    values (#{mkAdvertiseragentacountStrategyId,jdbcType=VARCHAR}, #{mkAdvertiseragentacountStrategyCode,jdbcType=VARCHAR}, 
-      #{mkAdvertiseragentacountStrategyName,jdbcType=VARCHAR}, #{mkAdvertiseragentacountStrategyStartdate,jdbcType=VARCHAR}, 
-      #{mkAdvertiseragentacountStrategyEnddate,jdbcType=VARCHAR}, #{mkAdvertiseragentacountStrategyState,jdbcType=CHAR}, 
-      #{mkAdvertiseragentacountStrategyCrtdate,jdbcType=TIMESTAMP}, #{mkAdvertiseragentacountStrategyCrtuser,jdbcType=VARCHAR}, 
-      #{mkAdvertiseragentacountStrategyUpduser,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR}, 
-      #{mkAdvertiseragentacountStrategyDescribe,jdbcType=VARCHAR}, #{mkAdvertiseragentacountStrategyAccounttype,jdbcType=CHAR}, 
-      #{mkAdvertiseragentacountStrategyActdefault,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiseragentacountStrategy">
-    insert into mk_advertiseragentacount_strategy
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="mkAdvertiseragentacountStrategyId != null">
-        mk_advertiseragentacount_strategy_id,
-      </if>
-      <if test="mkAdvertiseragentacountStrategyCode != null">
-        mk_advertiseragentacount_strategy_code,
-      </if>
-      <if test="mkAdvertiseragentacountStrategyName != null">
-        mk_advertiseragentacount_strategy_name,
-      </if>
-      <if test="mkAdvertiseragentacountStrategyStartdate != null">
-        mk_advertiseragentacount_strategy_startdate,
-      </if>
-      <if test="mkAdvertiseragentacountStrategyEnddate != null">
-        mk_advertiseragentacount_strategy_enddate,
-      </if>
-      <if test="mkAdvertiseragentacountStrategyState != null">
-        mk_advertiseragentacount_strategy_state,
-      </if>
-      <if test="mkAdvertiseragentacountStrategyCrtdate != null">
-        mk_advertiseragentacount_strategy_crtdate,
-      </if>
-      <if test="mkAdvertiseragentacountStrategyCrtuser != null">
-        mk_advertiseragentacount_strategy_crtuser,
-      </if>
-      <if test="mkAdvertiseragentacountStrategyUpduser != null">
-        mk_advertiseragentacount_strategy_upduser,
-      </if>
-      <if test="mkMediaInfoCode != null">
-        mk_media_info_code,
-      </if>
-      <if test="mkAdvertiseragentacountStrategyDescribe != null">
-        mk_advertiseragentacount_strategy_describe,
-      </if>
-      <if test="mkAdvertiseragentacountStrategyAccounttype != null">
-        mk_advertiseragentacount_strategy_accounttype,
-      </if>
-      <if test="mkAdvertiseragentacountStrategyActdefault != null">
-        mk_advertiseragentacount_strategy_actdefault,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="mkAdvertiseragentacountStrategyId != null">
-        #{mkAdvertiseragentacountStrategyId,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiseragentacountStrategyCode != null">
-        #{mkAdvertiseragentacountStrategyCode,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiseragentacountStrategyName != null">
-        #{mkAdvertiseragentacountStrategyName,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiseragentacountStrategyStartdate != null">
-        #{mkAdvertiseragentacountStrategyStartdate,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiseragentacountStrategyEnddate != null">
-        #{mkAdvertiseragentacountStrategyEnddate,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiseragentacountStrategyState != null">
-        #{mkAdvertiseragentacountStrategyState,jdbcType=CHAR},
-      </if>
-      <if test="mkAdvertiseragentacountStrategyCrtdate != null">
-        #{mkAdvertiseragentacountStrategyCrtdate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="mkAdvertiseragentacountStrategyCrtuser != null">
-        #{mkAdvertiseragentacountStrategyCrtuser,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiseragentacountStrategyUpduser != null">
-        #{mkAdvertiseragentacountStrategyUpduser,jdbcType=VARCHAR},
-      </if>
-      <if test="mkMediaInfoCode != null">
-        #{mkMediaInfoCode,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiseragentacountStrategyDescribe != null">
-        #{mkAdvertiseragentacountStrategyDescribe,jdbcType=VARCHAR},
-      </if>
-      <if test="mkAdvertiseragentacountStrategyAccounttype != null">
-        #{mkAdvertiseragentacountStrategyAccounttype,jdbcType=CHAR},
-      </if>
-      <if test="mkAdvertiseragentacountStrategyActdefault != null">
-        #{mkAdvertiseragentacountStrategyActdefault,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAdvertiseragentacountStrategy">
     <id column="mk_advertiserAgentacount_strategy_id" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyId" />
     <result column="mk_advertiserAgentacount_strategy_code" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyCode" />
     <result column="mk_advertiserAgentacount_strategy_name" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyName" />
@@ -133,15 +17,15 @@
     <result column="mk_advertiserAgentacount_strategy_actDefault" jdbcType="VARCHAR" property="mkAdvertiseragentacountStrategyActdefault" />
   </resultMap>
   <sql id="Base_Column_List">
-    mk_advertiserAgentacount_strategy_id, mk_advertiserAgentacount_strategy_code, mk_advertiserAgentacount_strategy_name, 
-    mk_advertiserAgentacount_strategy_startDate, mk_advertiserAgentacount_strategy_endDate, 
-    mk_advertiserAgentacount_strategy_state, mk_advertiserAgentacount_strategy_crtDate, 
-    mk_advertiserAgentacount_strategy_crtUser, mk_advertiserAgentacount_strategy_updUser, 
-    mk_media_info_code, mk_advertiserAgentacount_strategy_describe, mk_advertiserAgentacount_strategy_accountType, 
+    mk_advertiserAgentacount_strategy_id, mk_advertiserAgentacount_strategy_code, mk_advertiserAgentacount_strategy_name,
+    mk_advertiserAgentacount_strategy_startDate, mk_advertiserAgentacount_strategy_endDate,
+    mk_advertiserAgentacount_strategy_state, mk_advertiserAgentacount_strategy_crtDate,
+    mk_advertiserAgentacount_strategy_crtUser, mk_advertiserAgentacount_strategy_updUser,
+    mk_media_info_code, mk_advertiserAgentacount_strategy_describe, mk_advertiserAgentacount_strategy_accountType,
     mk_advertiserAgentacount_strategy_actDefault
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from mk_advertiseragentacount_strategy
     where mk_advertiserAgentacount_strategy_id = #{mkAdvertiseragentacountStrategyId,jdbcType=VARCHAR}
@@ -151,19 +35,19 @@
     where mk_advertiserAgentacount_strategy_id = #{mkAdvertiseragentacountStrategyId,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAdvertiseragentacountStrategy">
-    insert into mk_advertiseragentacount_strategy (mk_advertiserAgentacount_strategy_id, mk_advertiserAgentacount_strategy_code, 
-      mk_advertiserAgentacount_strategy_name, mk_advertiserAgentacount_strategy_startDate, 
-      mk_advertiserAgentacount_strategy_endDate, mk_advertiserAgentacount_strategy_state, 
-      mk_advertiserAgentacount_strategy_crtDate, mk_advertiserAgentacount_strategy_crtUser, 
-      mk_advertiserAgentacount_strategy_updUser, mk_media_info_code, 
-      mk_advertiserAgentacount_strategy_describe, mk_advertiserAgentacount_strategy_accountType, 
+    insert into mk_advertiseragentacount_strategy (mk_advertiserAgentacount_strategy_id, mk_advertiserAgentacount_strategy_code,
+      mk_advertiserAgentacount_strategy_name, mk_advertiserAgentacount_strategy_startDate,
+      mk_advertiserAgentacount_strategy_endDate, mk_advertiserAgentacount_strategy_state,
+      mk_advertiserAgentacount_strategy_crtDate, mk_advertiserAgentacount_strategy_crtUser,
+      mk_advertiserAgentacount_strategy_updUser, mk_media_info_code,
+      mk_advertiserAgentacount_strategy_describe, mk_advertiserAgentacount_strategy_accountType,
       mk_advertiserAgentacount_strategy_actDefault)
-    values (#{mkAdvertiseragentacountStrategyId,jdbcType=VARCHAR}, #{mkAdvertiseragentacountStrategyCode,jdbcType=VARCHAR}, 
-      #{mkAdvertiseragentacountStrategyName,jdbcType=VARCHAR}, #{mkAdvertiseragentacountStrategyStartdate,jdbcType=VARCHAR}, 
-      #{mkAdvertiseragentacountStrategyEnddate,jdbcType=VARCHAR}, #{mkAdvertiseragentacountStrategyState,jdbcType=CHAR}, 
-      #{mkAdvertiseragentacountStrategyCrtdate,jdbcType=TIMESTAMP}, #{mkAdvertiseragentacountStrategyCrtuser,jdbcType=VARCHAR}, 
-      #{mkAdvertiseragentacountStrategyUpduser,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR}, 
-      #{mkAdvertiseragentacountStrategyDescribe,jdbcType=VARCHAR}, #{mkAdvertiseragentacountStrategyAccounttype,jdbcType=CHAR}, 
+    values (#{mkAdvertiseragentacountStrategyId,jdbcType=VARCHAR}, #{mkAdvertiseragentacountStrategyCode,jdbcType=VARCHAR},
+      #{mkAdvertiseragentacountStrategyName,jdbcType=VARCHAR}, #{mkAdvertiseragentacountStrategyStartdate,jdbcType=VARCHAR},
+      #{mkAdvertiseragentacountStrategyEnddate,jdbcType=VARCHAR}, #{mkAdvertiseragentacountStrategyState,jdbcType=CHAR},
+      #{mkAdvertiseragentacountStrategyCrtdate,jdbcType=TIMESTAMP}, #{mkAdvertiseragentacountStrategyCrtuser,jdbcType=VARCHAR},
+      #{mkAdvertiseragentacountStrategyUpduser,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR},
+      #{mkAdvertiseragentacountStrategyDescribe,jdbcType=VARCHAR}, #{mkAdvertiseragentacountStrategyAccounttype,jdbcType=CHAR},
       #{mkAdvertiseragentacountStrategyActdefault,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAdvertiseragentacountStrategy">
