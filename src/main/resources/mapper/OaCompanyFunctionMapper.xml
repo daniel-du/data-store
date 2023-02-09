@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OaCompanyFunctionMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.OaCompanyFunction">
+    <id column="OA_company_function_code" jdbcType="VARCHAR" property="oaCompanyFunctionCode" />
+    <result column="OA_company_function_parentcode" jdbcType="VARCHAR" property="oaCompanyFunctionParentcode" />
+    <result column="OA_company_function_name" jdbcType="VARCHAR" property="oaCompanyFunctionName" />
+    <result column="OA_company_function_remark" jdbcType="VARCHAR" property="oaCompanyFunctionRemark" />
+    <result column="OA_company_function_sequence" jdbcType="INTEGER" property="oaCompanyFunctionSequence" />
+    <result column="OA_company_function_Icon" jdbcType="VARCHAR" property="oaCompanyFunctionIcon" />
+    <result column="OA_company_function_type" jdbcType="VARCHAR" property="oaCompanyFunctionType" />
+    <result column="OA_company_Function_state" jdbcType="VARCHAR" property="oaCompanyFunctionState" />
+    <result column="OA_company_Function_path" jdbcType="VARCHAR" property="oaCompanyFunctionPath" />
+    <result column="OA_company_Function_Createcode" jdbcType="VARCHAR" property="oaCompanyFunctionCreatecode" />
+    <result column="OA_company_Function_OperationTM" jdbcType="TIMESTAMP" property="oaCompanyFunctionOperationtm" />
+    <result column="OA_company_Function_MODIFYTM" jdbcType="TIMESTAMP" property="oaCompanyFunctionModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OA_company_function_code, OA_company_function_parentcode, OA_company_function_name, 
+    OA_company_function_remark, OA_company_function_sequence, OA_company_function_Icon, 
+    OA_company_function_type, OA_company_Function_state, OA_company_Function_path, OA_company_Function_Createcode, 
+    OA_company_Function_OperationTM, OA_company_Function_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oa_company_function
+    where OA_company_function_code = #{oaCompanyFunctionCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oa_company_function
+    where OA_company_function_code = #{oaCompanyFunctionCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.OaCompanyFunction">
+    insert into oa_company_function (OA_company_function_code, OA_company_function_parentcode, 
+      OA_company_function_name, OA_company_function_remark, 
+      OA_company_function_sequence, OA_company_function_Icon, 
+      OA_company_function_type, OA_company_Function_state, 
+      OA_company_Function_path, OA_company_Function_Createcode, 
+      OA_company_Function_OperationTM, OA_company_Function_MODIFYTM
+      )
+    values (#{oaCompanyFunctionCode,jdbcType=VARCHAR}, #{oaCompanyFunctionParentcode,jdbcType=VARCHAR}, 
+      #{oaCompanyFunctionName,jdbcType=VARCHAR}, #{oaCompanyFunctionRemark,jdbcType=VARCHAR}, 
+      #{oaCompanyFunctionSequence,jdbcType=INTEGER}, #{oaCompanyFunctionIcon,jdbcType=VARCHAR}, 
+      #{oaCompanyFunctionType,jdbcType=VARCHAR}, #{oaCompanyFunctionState,jdbcType=VARCHAR}, 
+      #{oaCompanyFunctionPath,jdbcType=VARCHAR}, #{oaCompanyFunctionCreatecode,jdbcType=VARCHAR}, 
+      #{oaCompanyFunctionOperationtm,jdbcType=TIMESTAMP}, #{oaCompanyFunctionModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.OaCompanyFunction">
+    insert into oa_company_function
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oaCompanyFunctionCode != null">
+        OA_company_function_code,
+      </if>
+      <if test="oaCompanyFunctionParentcode != null">
+        OA_company_function_parentcode,
+      </if>
+      <if test="oaCompanyFunctionName != null">
+        OA_company_function_name,
+      </if>
+      <if test="oaCompanyFunctionRemark != null">
+        OA_company_function_remark,
+      </if>
+      <if test="oaCompanyFunctionSequence != null">
+        OA_company_function_sequence,
+      </if>
+      <if test="oaCompanyFunctionIcon != null">
+        OA_company_function_Icon,
+      </if>
+      <if test="oaCompanyFunctionType != null">
+        OA_company_function_type,
+      </if>
+      <if test="oaCompanyFunctionState != null">
+        OA_company_Function_state,
+      </if>
+      <if test="oaCompanyFunctionPath != null">
+        OA_company_Function_path,
+      </if>
+      <if test="oaCompanyFunctionCreatecode != null">
+        OA_company_Function_Createcode,
+      </if>
+      <if test="oaCompanyFunctionOperationtm != null">
+        OA_company_Function_OperationTM,
+      </if>
+      <if test="oaCompanyFunctionModifytm != null">
+        OA_company_Function_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oaCompanyFunctionCode != null">
+        #{oaCompanyFunctionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionParentcode != null">
+        #{oaCompanyFunctionParentcode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionName != null">
+        #{oaCompanyFunctionName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionRemark != null">
+        #{oaCompanyFunctionRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionSequence != null">
+        #{oaCompanyFunctionSequence,jdbcType=INTEGER},
+      </if>
+      <if test="oaCompanyFunctionIcon != null">
+        #{oaCompanyFunctionIcon,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionType != null">
+        #{oaCompanyFunctionType,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionState != null">
+        #{oaCompanyFunctionState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionPath != null">
+        #{oaCompanyFunctionPath,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionCreatecode != null">
+        #{oaCompanyFunctionCreatecode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionOperationtm != null">
+        #{oaCompanyFunctionOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyFunctionModifytm != null">
+        #{oaCompanyFunctionModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.OaCompanyFunction">
+    update oa_company_function
+    <set>
+      <if test="oaCompanyFunctionParentcode != null">
+        OA_company_function_parentcode = #{oaCompanyFunctionParentcode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionName != null">
+        OA_company_function_name = #{oaCompanyFunctionName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionRemark != null">
+        OA_company_function_remark = #{oaCompanyFunctionRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionSequence != null">
+        OA_company_function_sequence = #{oaCompanyFunctionSequence,jdbcType=INTEGER},
+      </if>
+      <if test="oaCompanyFunctionIcon != null">
+        OA_company_function_Icon = #{oaCompanyFunctionIcon,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionType != null">
+        OA_company_function_type = #{oaCompanyFunctionType,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionState != null">
+        OA_company_Function_state = #{oaCompanyFunctionState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionPath != null">
+        OA_company_Function_path = #{oaCompanyFunctionPath,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionCreatecode != null">
+        OA_company_Function_Createcode = #{oaCompanyFunctionCreatecode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionOperationtm != null">
+        OA_company_Function_OperationTM = #{oaCompanyFunctionOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyFunctionModifytm != null">
+        OA_company_Function_MODIFYTM = #{oaCompanyFunctionModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where OA_company_function_code = #{oaCompanyFunctionCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.OaCompanyFunction">
+    update oa_company_function
+    set OA_company_function_parentcode = #{oaCompanyFunctionParentcode,jdbcType=VARCHAR},
+      OA_company_function_name = #{oaCompanyFunctionName,jdbcType=VARCHAR},
+      OA_company_function_remark = #{oaCompanyFunctionRemark,jdbcType=VARCHAR},
+      OA_company_function_sequence = #{oaCompanyFunctionSequence,jdbcType=INTEGER},
+      OA_company_function_Icon = #{oaCompanyFunctionIcon,jdbcType=VARCHAR},
+      OA_company_function_type = #{oaCompanyFunctionType,jdbcType=VARCHAR},
+      OA_company_Function_state = #{oaCompanyFunctionState,jdbcType=VARCHAR},
+      OA_company_Function_path = #{oaCompanyFunctionPath,jdbcType=VARCHAR},
+      OA_company_Function_Createcode = #{oaCompanyFunctionCreatecode,jdbcType=VARCHAR},
+      OA_company_Function_OperationTM = #{oaCompanyFunctionOperationtm,jdbcType=TIMESTAMP},
+      OA_company_Function_MODIFYTM = #{oaCompanyFunctionModifytm,jdbcType=TIMESTAMP}
+    where OA_company_function_code = #{oaCompanyFunctionCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

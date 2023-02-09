@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OaMerchantAccountMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.OaMerchantAccount">
+    <id column="oa_merchant_account_No" jdbcType="VARCHAR" property="oaMerchantAccountNo" />
+    <result column="oa_merchant_info_No" jdbcType="VARCHAR" property="oaMerchantInfoNo" />
+    <result column="oa_company_Account_No" jdbcType="VARCHAR" property="oaCompanyAccountNo" />
+    <result column="oa_merchant_account_CreateTM" jdbcType="TIMESTAMP" property="oaMerchantAccountCreatetm" />
+    <result column="oa_merchant_account_OperationTM" jdbcType="TIMESTAMP" property="oaMerchantAccountOperationtm" />
+    <result column="oa_merchant_account_MODIFYTM" jdbcType="TIMESTAMP" property="oaMerchantAccountModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    oa_merchant_account_No, oa_merchant_info_No, oa_company_Account_No, oa_merchant_account_CreateTM, 
+    oa_merchant_account_OperationTM, oa_merchant_account_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oa_merchant_account
+    where oa_merchant_account_No = #{oaMerchantAccountNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oa_merchant_account
+    where oa_merchant_account_No = #{oaMerchantAccountNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.OaMerchantAccount">
+    insert into oa_merchant_account (oa_merchant_account_No, oa_merchant_info_No, 
+      oa_company_Account_No, oa_merchant_account_CreateTM, 
+      oa_merchant_account_OperationTM, oa_merchant_account_MODIFYTM
+      )
+    values (#{oaMerchantAccountNo,jdbcType=VARCHAR}, #{oaMerchantInfoNo,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountNo,jdbcType=VARCHAR}, #{oaMerchantAccountCreatetm,jdbcType=TIMESTAMP}, 
+      #{oaMerchantAccountOperationtm,jdbcType=TIMESTAMP}, #{oaMerchantAccountModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.OaMerchantAccount">
+    insert into oa_merchant_account
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oaMerchantAccountNo != null">
+        oa_merchant_account_No,
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        oa_merchant_info_No,
+      </if>
+      <if test="oaCompanyAccountNo != null">
+        oa_company_Account_No,
+      </if>
+      <if test="oaMerchantAccountCreatetm != null">
+        oa_merchant_account_CreateTM,
+      </if>
+      <if test="oaMerchantAccountOperationtm != null">
+        oa_merchant_account_OperationTM,
+      </if>
+      <if test="oaMerchantAccountModifytm != null">
+        oa_merchant_account_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oaMerchantAccountNo != null">
+        #{oaMerchantAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountNo != null">
+        #{oaCompanyAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="oaMerchantAccountCreatetm != null">
+        #{oaMerchantAccountCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaMerchantAccountOperationtm != null">
+        #{oaMerchantAccountOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaMerchantAccountModifytm != null">
+        #{oaMerchantAccountModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.OaMerchantAccount">
+    update oa_merchant_account
+    <set>
+      <if test="oaMerchantInfoNo != null">
+        oa_merchant_info_No = #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountNo != null">
+        oa_company_Account_No = #{oaCompanyAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="oaMerchantAccountCreatetm != null">
+        oa_merchant_account_CreateTM = #{oaMerchantAccountCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaMerchantAccountOperationtm != null">
+        oa_merchant_account_OperationTM = #{oaMerchantAccountOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaMerchantAccountModifytm != null">
+        oa_merchant_account_MODIFYTM = #{oaMerchantAccountModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where oa_merchant_account_No = #{oaMerchantAccountNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.OaMerchantAccount">
+    update oa_merchant_account
+    set oa_merchant_info_No = #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      oa_company_Account_No = #{oaCompanyAccountNo,jdbcType=VARCHAR},
+      oa_merchant_account_CreateTM = #{oaMerchantAccountCreatetm,jdbcType=TIMESTAMP},
+      oa_merchant_account_OperationTM = #{oaMerchantAccountOperationtm,jdbcType=TIMESTAMP},
+      oa_merchant_account_MODIFYTM = #{oaMerchantAccountModifytm,jdbcType=TIMESTAMP}
+    where oa_merchant_account_No = #{oaMerchantAccountNo,jdbcType=VARCHAR}
+  </update>
+</mapper>

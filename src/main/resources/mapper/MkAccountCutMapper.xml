@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkAccountCutMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAccountCut">
+    <id column="mk_account_cut_code" jdbcType="VARCHAR" property="mkAccountCutCode" />
+    <result column="mk_account_cut_startTm" jdbcType="TIMESTAMP" property="mkAccountCutStarttm" />
+    <result column="mk_account_cut_endTm" jdbcType="TIMESTAMP" property="mkAccountCutEndtm" />
+    <result column="MK_Advertiser_marketURl_Code" jdbcType="VARCHAR" property="mkAdvertiserMarketurlCode" />
+    <result column="MK_Advertiser_Info_Code" jdbcType="VARCHAR" property="mkAdvertiserInfoCode" />
+    <result column="MK_product_code" jdbcType="VARCHAR" property="mkProductCode" />
+    <result column="MK_GiftTransfer_productCode" jdbcType="VARCHAR" property="mkGifttransferProductcode" />
+    <result column="MK_media_agent_Code" jdbcType="VARCHAR" property="mkMediaAgentCode" />
+    <result column="MK_media_Info_Code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="MK_Advertiser_link_Code" jdbcType="VARCHAR" property="mkAdvertiserLinkCode" />
+    <result column="MK_product_versionNo" jdbcType="VARCHAR" property="mkProductVersionno" />
+    <result column="MK_GiftTransfer_productVersionNo" jdbcType="VARCHAR" property="mkGifttransferProductversionno" />
+    <result column="MK_advertiser_media_id" jdbcType="VARCHAR" property="mkAdvertiserMediaId" />
+    <result column="mk_account_cut_desc" jdbcType="VARCHAR" property="mkAccountCutDesc" />
+    <result column="mk_account_cut_state" jdbcType="VARCHAR" property="mkAccountCutState" />
+    <result column="mk_account_cut_taskId" jdbcType="VARCHAR" property="mkAccountCutTaskid" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_account_cut_CreateTM" jdbcType="TIMESTAMP" property="mkAccountCutCreatetm" />
+    <result column="mk_account_cut_MODIFYTM" jdbcType="TIMESTAMP" property="mkAccountCutModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_account_cut_code, mk_account_cut_startTm, mk_account_cut_endTm, MK_Advertiser_marketURl_Code, 
+    MK_Advertiser_Info_Code, MK_product_code, MK_GiftTransfer_productCode, MK_media_agent_Code, 
+    MK_media_Info_Code, MK_Advertiser_link_Code, MK_product_versionNo, MK_GiftTransfer_productVersionNo, 
+    MK_advertiser_media_id, mk_account_cut_desc, mk_account_cut_state, mk_account_cut_taskId, 
+    OA_company_Account_code, mk_account_cut_CreateTM, mk_account_cut_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_account_cut
+    where mk_account_cut_code = #{mkAccountCutCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_account_cut
+    where mk_account_cut_code = #{mkAccountCutCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAccountCut">
+    insert into mk_account_cut (mk_account_cut_code, mk_account_cut_startTm, 
+      mk_account_cut_endTm, MK_Advertiser_marketURl_Code, 
+      MK_Advertiser_Info_Code, MK_product_code, MK_GiftTransfer_productCode, 
+      MK_media_agent_Code, MK_media_Info_Code, MK_Advertiser_link_Code, 
+      MK_product_versionNo, MK_GiftTransfer_productVersionNo, 
+      MK_advertiser_media_id, mk_account_cut_desc, 
+      mk_account_cut_state, mk_account_cut_taskId, 
+      OA_company_Account_code, mk_account_cut_CreateTM, 
+      mk_account_cut_MODIFYTM)
+    values (#{mkAccountCutCode,jdbcType=VARCHAR}, #{mkAccountCutStarttm,jdbcType=TIMESTAMP}, 
+      #{mkAccountCutEndtm,jdbcType=TIMESTAMP}, #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoCode,jdbcType=VARCHAR}, #{mkProductCode,jdbcType=VARCHAR}, #{mkGifttransferProductcode,jdbcType=VARCHAR}, 
+      #{mkMediaAgentCode,jdbcType=VARCHAR}, #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkAdvertiserLinkCode,jdbcType=VARCHAR}, 
+      #{mkProductVersionno,jdbcType=VARCHAR}, #{mkGifttransferProductversionno,jdbcType=VARCHAR}, 
+      #{mkAdvertiserMediaId,jdbcType=VARCHAR}, #{mkAccountCutDesc,jdbcType=VARCHAR}, 
+      #{mkAccountCutState,jdbcType=VARCHAR}, #{mkAccountCutTaskid,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkAccountCutCreatetm,jdbcType=TIMESTAMP}, 
+      #{mkAccountCutModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAccountCut">
+    insert into mk_account_cut
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAccountCutCode != null">
+        mk_account_cut_code,
+      </if>
+      <if test="mkAccountCutStarttm != null">
+        mk_account_cut_startTm,
+      </if>
+      <if test="mkAccountCutEndtm != null">
+        mk_account_cut_endTm,
+      </if>
+      <if test="mkAdvertiserMarketurlCode != null">
+        MK_Advertiser_marketURl_Code,
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        MK_Advertiser_Info_Code,
+      </if>
+      <if test="mkProductCode != null">
+        MK_product_code,
+      </if>
+      <if test="mkGifttransferProductcode != null">
+        MK_GiftTransfer_productCode,
+      </if>
+      <if test="mkMediaAgentCode != null">
+        MK_media_agent_Code,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code,
+      </if>
+      <if test="mkAdvertiserLinkCode != null">
+        MK_Advertiser_link_Code,
+      </if>
+      <if test="mkProductVersionno != null">
+        MK_product_versionNo,
+      </if>
+      <if test="mkGifttransferProductversionno != null">
+        MK_GiftTransfer_productVersionNo,
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        MK_advertiser_media_id,
+      </if>
+      <if test="mkAccountCutDesc != null">
+        mk_account_cut_desc,
+      </if>
+      <if test="mkAccountCutState != null">
+        mk_account_cut_state,
+      </if>
+      <if test="mkAccountCutTaskid != null">
+        mk_account_cut_taskId,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="mkAccountCutCreatetm != null">
+        mk_account_cut_CreateTM,
+      </if>
+      <if test="mkAccountCutModifytm != null">
+        mk_account_cut_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAccountCutCode != null">
+        #{mkAccountCutCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAccountCutStarttm != null">
+        #{mkAccountCutStarttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAccountCutEndtm != null">
+        #{mkAccountCutEndtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMarketurlCode != null">
+        #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkProductCode != null">
+        #{mkProductCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkGifttransferProductcode != null">
+        #{mkGifttransferProductcode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserLinkCode != null">
+        #{mkAdvertiserLinkCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkProductVersionno != null">
+        #{mkProductVersionno,jdbcType=VARCHAR},
+      </if>
+      <if test="mkGifttransferProductversionno != null">
+        #{mkGifttransferProductversionno,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAccountCutDesc != null">
+        #{mkAccountCutDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAccountCutState != null">
+        #{mkAccountCutState,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAccountCutTaskid != null">
+        #{mkAccountCutTaskid,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAccountCutCreatetm != null">
+        #{mkAccountCutCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAccountCutModifytm != null">
+        #{mkAccountCutModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkAccountCut">
+    update mk_account_cut
+    <set>
+      <if test="mkAccountCutStarttm != null">
+        mk_account_cut_startTm = #{mkAccountCutStarttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAccountCutEndtm != null">
+        mk_account_cut_endTm = #{mkAccountCutEndtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAdvertiserMarketurlCode != null">
+        MK_Advertiser_marketURl_Code = #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        MK_Advertiser_Info_Code = #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkProductCode != null">
+        MK_product_code = #{mkProductCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkGifttransferProductcode != null">
+        MK_GiftTransfer_productCode = #{mkGifttransferProductcode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        MK_media_agent_Code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserLinkCode != null">
+        MK_Advertiser_link_Code = #{mkAdvertiserLinkCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkProductVersionno != null">
+        MK_product_versionNo = #{mkProductVersionno,jdbcType=VARCHAR},
+      </if>
+      <if test="mkGifttransferProductversionno != null">
+        MK_GiftTransfer_productVersionNo = #{mkGifttransferProductversionno,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserMediaId != null">
+        MK_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAccountCutDesc != null">
+        mk_account_cut_desc = #{mkAccountCutDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAccountCutState != null">
+        mk_account_cut_state = #{mkAccountCutState,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAccountCutTaskid != null">
+        mk_account_cut_taskId = #{mkAccountCutTaskid,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAccountCutCreatetm != null">
+        mk_account_cut_CreateTM = #{mkAccountCutCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAccountCutModifytm != null">
+        mk_account_cut_MODIFYTM = #{mkAccountCutModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mk_account_cut_code = #{mkAccountCutCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkAccountCut">
+    update mk_account_cut
+    set mk_account_cut_startTm = #{mkAccountCutStarttm,jdbcType=TIMESTAMP},
+      mk_account_cut_endTm = #{mkAccountCutEndtm,jdbcType=TIMESTAMP},
+      MK_Advertiser_marketURl_Code = #{mkAdvertiserMarketurlCode,jdbcType=VARCHAR},
+      MK_Advertiser_Info_Code = #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      MK_product_code = #{mkProductCode,jdbcType=VARCHAR},
+      MK_GiftTransfer_productCode = #{mkGifttransferProductcode,jdbcType=VARCHAR},
+      MK_media_agent_Code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      MK_media_Info_Code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      MK_Advertiser_link_Code = #{mkAdvertiserLinkCode,jdbcType=VARCHAR},
+      MK_product_versionNo = #{mkProductVersionno,jdbcType=VARCHAR},
+      MK_GiftTransfer_productVersionNo = #{mkGifttransferProductversionno,jdbcType=VARCHAR},
+      MK_advertiser_media_id = #{mkAdvertiserMediaId,jdbcType=VARCHAR},
+      mk_account_cut_desc = #{mkAccountCutDesc,jdbcType=VARCHAR},
+      mk_account_cut_state = #{mkAccountCutState,jdbcType=VARCHAR},
+      mk_account_cut_taskId = #{mkAccountCutTaskid,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      mk_account_cut_CreateTM = #{mkAccountCutCreatetm,jdbcType=TIMESTAMP},
+      mk_account_cut_MODIFYTM = #{mkAccountCutModifytm,jdbcType=TIMESTAMP}
+    where mk_account_cut_code = #{mkAccountCutCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

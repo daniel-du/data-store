@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MkAccountcutUrlconversionMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.MkAccountcutUrlconversion">
+    <id column="mk_accountCut_urlconversion_code" jdbcType="VARCHAR" property="mkAccountcutUrlconversionCode" />
+    <result column="mk_account_cut_code" jdbcType="VARCHAR" property="mkAccountCutCode" />
+    <result column="MK_Advertiser_ReportingNode_Code" jdbcType="VARCHAR" property="mkAdvertiserReportingnodeCode" />
+    <result column="MK_Advertiser_ReportingNode_Name" jdbcType="VARCHAR" property="mkAdvertiserReportingnodeName" />
+    <result column="MK_Advertiser_redefineTarget_Code" jdbcType="VARCHAR" property="mkAdvertiserRedefinetargetCode" />
+    <result column="MK_Advertiser_redefineTarget_Name" jdbcType="VARCHAR" property="mkAdvertiserRedefinetargetName" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="mk_accountCut_urlconversion_CreateTM" jdbcType="TIMESTAMP" property="mkAccountcutUrlconversionCreatetm" />
+    <result column="mk_accountCut_urlconversion_MODIFYTM" jdbcType="TIMESTAMP" property="mkAccountcutUrlconversionModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    mk_accountCut_urlconversion_code, mk_account_cut_code, MK_Advertiser_ReportingNode_Code, 
+    MK_Advertiser_ReportingNode_Name, MK_Advertiser_redefineTarget_Code, MK_Advertiser_redefineTarget_Name, 
+    OA_company_Account_code, mk_accountCut_urlconversion_CreateTM, mk_accountCut_urlconversion_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mk_accountcut_urlconversion
+    where mk_accountCut_urlconversion_code = #{mkAccountcutUrlconversionCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mk_accountcut_urlconversion
+    where mk_accountCut_urlconversion_code = #{mkAccountcutUrlconversionCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.MkAccountcutUrlconversion">
+    insert into mk_accountcut_urlconversion (mk_accountCut_urlconversion_code, mk_account_cut_code, 
+      MK_Advertiser_ReportingNode_Code, MK_Advertiser_ReportingNode_Name, 
+      MK_Advertiser_redefineTarget_Code, MK_Advertiser_redefineTarget_Name, 
+      OA_company_Account_code, mk_accountCut_urlconversion_CreateTM, 
+      mk_accountCut_urlconversion_MODIFYTM)
+    values (#{mkAccountcutUrlconversionCode,jdbcType=VARCHAR}, #{mkAccountCutCode,jdbcType=VARCHAR}, 
+      #{mkAdvertiserReportingnodeCode,jdbcType=VARCHAR}, #{mkAdvertiserReportingnodeName,jdbcType=VARCHAR}, 
+      #{mkAdvertiserRedefinetargetCode,jdbcType=VARCHAR}, #{mkAdvertiserRedefinetargetName,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{mkAccountcutUrlconversionCreatetm,jdbcType=TIMESTAMP}, 
+      #{mkAccountcutUrlconversionModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.MkAccountcutUrlconversion">
+    insert into mk_accountcut_urlconversion
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mkAccountcutUrlconversionCode != null">
+        mk_accountCut_urlconversion_code,
+      </if>
+      <if test="mkAccountCutCode != null">
+        mk_account_cut_code,
+      </if>
+      <if test="mkAdvertiserReportingnodeCode != null">
+        MK_Advertiser_ReportingNode_Code,
+      </if>
+      <if test="mkAdvertiserReportingnodeName != null">
+        MK_Advertiser_ReportingNode_Name,
+      </if>
+      <if test="mkAdvertiserRedefinetargetCode != null">
+        MK_Advertiser_redefineTarget_Code,
+      </if>
+      <if test="mkAdvertiserRedefinetargetName != null">
+        MK_Advertiser_redefineTarget_Name,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="mkAccountcutUrlconversionCreatetm != null">
+        mk_accountCut_urlconversion_CreateTM,
+      </if>
+      <if test="mkAccountcutUrlconversionModifytm != null">
+        mk_accountCut_urlconversion_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mkAccountcutUrlconversionCode != null">
+        #{mkAccountcutUrlconversionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAccountCutCode != null">
+        #{mkAccountCutCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportingnodeCode != null">
+        #{mkAdvertiserReportingnodeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportingnodeName != null">
+        #{mkAdvertiserReportingnodeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserRedefinetargetCode != null">
+        #{mkAdvertiserRedefinetargetCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserRedefinetargetName != null">
+        #{mkAdvertiserRedefinetargetName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAccountcutUrlconversionCreatetm != null">
+        #{mkAccountcutUrlconversionCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAccountcutUrlconversionModifytm != null">
+        #{mkAccountcutUrlconversionModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.MkAccountcutUrlconversion">
+    update mk_accountcut_urlconversion
+    <set>
+      <if test="mkAccountCutCode != null">
+        mk_account_cut_code = #{mkAccountCutCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportingnodeCode != null">
+        MK_Advertiser_ReportingNode_Code = #{mkAdvertiserReportingnodeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserReportingnodeName != null">
+        MK_Advertiser_ReportingNode_Name = #{mkAdvertiserReportingnodeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserRedefinetargetCode != null">
+        MK_Advertiser_redefineTarget_Code = #{mkAdvertiserRedefinetargetCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserRedefinetargetName != null">
+        MK_Advertiser_redefineTarget_Name = #{mkAdvertiserRedefinetargetName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAccountcutUrlconversionCreatetm != null">
+        mk_accountCut_urlconversion_CreateTM = #{mkAccountcutUrlconversionCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkAccountcutUrlconversionModifytm != null">
+        mk_accountCut_urlconversion_MODIFYTM = #{mkAccountcutUrlconversionModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where mk_accountCut_urlconversion_code = #{mkAccountcutUrlconversionCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.MkAccountcutUrlconversion">
+    update mk_accountcut_urlconversion
+    set mk_account_cut_code = #{mkAccountCutCode,jdbcType=VARCHAR},
+      MK_Advertiser_ReportingNode_Code = #{mkAdvertiserReportingnodeCode,jdbcType=VARCHAR},
+      MK_Advertiser_ReportingNode_Name = #{mkAdvertiserReportingnodeName,jdbcType=VARCHAR},
+      MK_Advertiser_redefineTarget_Code = #{mkAdvertiserRedefinetargetCode,jdbcType=VARCHAR},
+      MK_Advertiser_redefineTarget_Name = #{mkAdvertiserRedefinetargetName,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      mk_accountCut_urlconversion_CreateTM = #{mkAccountcutUrlconversionCreatetm,jdbcType=TIMESTAMP},
+      mk_accountCut_urlconversion_MODIFYTM = #{mkAccountcutUrlconversionModifytm,jdbcType=TIMESTAMP}
+    where mk_accountCut_urlconversion_code = #{mkAccountcutUrlconversionCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

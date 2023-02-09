@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OaCompanyAccountskillMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.OaCompanyAccountskill">
+    <id column="oa_company_accountskill_no" jdbcType="VARCHAR" property="oaCompanyAccountskillNo" />
+    <result column="oa_company_skill_code" jdbcType="VARCHAR" property="oaCompanySkillCode" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="OA_company_Account_createCode" jdbcType="VARCHAR" property="oaCompanyAccountCreatecode" />
+    <result column="oa_company_accountskill_createTM" jdbcType="TIMESTAMP" property="oaCompanyAccountskillCreatetm" />
+    <result column="oa_company_accountskill_operationTM" jdbcType="TIMESTAMP" property="oaCompanyAccountskillOperationtm" />
+    <result column="oa_company_accountskill_modifyTM" jdbcType="TIMESTAMP" property="oaCompanyAccountskillModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    oa_company_accountskill_no, oa_company_skill_code, OA_company_Account_code, OA_company_Account_createCode, 
+    oa_company_accountskill_createTM, oa_company_accountskill_operationTM, oa_company_accountskill_modifyTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oa_company_accountskill
+    where oa_company_accountskill_no = #{oaCompanyAccountskillNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oa_company_accountskill
+    where oa_company_accountskill_no = #{oaCompanyAccountskillNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.OaCompanyAccountskill">
+    insert into oa_company_accountskill (oa_company_accountskill_no, oa_company_skill_code, 
+      OA_company_Account_code, OA_company_Account_createCode, 
+      oa_company_accountskill_createTM, oa_company_accountskill_operationTM, 
+      oa_company_accountskill_modifyTM)
+    values (#{oaCompanyAccountskillNo,jdbcType=VARCHAR}, #{oaCompanySkillCode,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{oaCompanyAccountCreatecode,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountskillCreatetm,jdbcType=TIMESTAMP}, #{oaCompanyAccountskillOperationtm,jdbcType=TIMESTAMP}, 
+      #{oaCompanyAccountskillModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.OaCompanyAccountskill">
+    insert into oa_company_accountskill
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oaCompanyAccountskillNo != null">
+        oa_company_accountskill_no,
+      </if>
+      <if test="oaCompanySkillCode != null">
+        oa_company_skill_code,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="oaCompanyAccountCreatecode != null">
+        OA_company_Account_createCode,
+      </if>
+      <if test="oaCompanyAccountskillCreatetm != null">
+        oa_company_accountskill_createTM,
+      </if>
+      <if test="oaCompanyAccountskillOperationtm != null">
+        oa_company_accountskill_operationTM,
+      </if>
+      <if test="oaCompanyAccountskillModifytm != null">
+        oa_company_accountskill_modifyTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oaCompanyAccountskillNo != null">
+        #{oaCompanyAccountskillNo,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanySkillCode != null">
+        #{oaCompanySkillCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCreatecode != null">
+        #{oaCompanyAccountCreatecode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountskillCreatetm != null">
+        #{oaCompanyAccountskillCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyAccountskillOperationtm != null">
+        #{oaCompanyAccountskillOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyAccountskillModifytm != null">
+        #{oaCompanyAccountskillModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.OaCompanyAccountskill">
+    update oa_company_accountskill
+    <set>
+      <if test="oaCompanySkillCode != null">
+        oa_company_skill_code = #{oaCompanySkillCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCreatecode != null">
+        OA_company_Account_createCode = #{oaCompanyAccountCreatecode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountskillCreatetm != null">
+        oa_company_accountskill_createTM = #{oaCompanyAccountskillCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyAccountskillOperationtm != null">
+        oa_company_accountskill_operationTM = #{oaCompanyAccountskillOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyAccountskillModifytm != null">
+        oa_company_accountskill_modifyTM = #{oaCompanyAccountskillModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where oa_company_accountskill_no = #{oaCompanyAccountskillNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.OaCompanyAccountskill">
+    update oa_company_accountskill
+    set oa_company_skill_code = #{oaCompanySkillCode,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      OA_company_Account_createCode = #{oaCompanyAccountCreatecode,jdbcType=VARCHAR},
+      oa_company_accountskill_createTM = #{oaCompanyAccountskillCreatetm,jdbcType=TIMESTAMP},
+      oa_company_accountskill_operationTM = #{oaCompanyAccountskillOperationtm,jdbcType=TIMESTAMP},
+      oa_company_accountskill_modifyTM = #{oaCompanyAccountskillModifytm,jdbcType=TIMESTAMP}
+    where oa_company_accountskill_no = #{oaCompanyAccountskillNo,jdbcType=VARCHAR}
+  </update>
+</mapper>

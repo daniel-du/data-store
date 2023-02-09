@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OaEmployeeTrainMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.OaEmployeeTrain">
+    <id column="OA_employee_train_id" jdbcType="VARCHAR" property="oaEmployeeTrainId" />
+    <result column="OA_employee_info_code" jdbcType="VARCHAR" property="oaEmployeeInfoCode" />
+    <result column="OA_employee_train_name" jdbcType="VARCHAR" property="oaEmployeeTrainName" />
+    <result column="OA_employee_train_date" jdbcType="VARCHAR" property="oaEmployeeTrainDate" />
+    <result column="OA_employee_train_createTm" jdbcType="TIMESTAMP" property="oaEmployeeTrainCreatetm" />
+    <result column="OA_employee_train_OperationTm" jdbcType="TIMESTAMP" property="oaEmployeeTrainOperationtm" />
+    <result column="OA_employee_train_modifyTm" jdbcType="TIMESTAMP" property="oaEmployeeTrainModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OA_employee_train_id, OA_employee_info_code, OA_employee_train_name, OA_employee_train_date, 
+    OA_employee_train_createTm, OA_employee_train_OperationTm, OA_employee_train_modifyTm
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oa_employee_train
+    where OA_employee_train_id = #{oaEmployeeTrainId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oa_employee_train
+    where OA_employee_train_id = #{oaEmployeeTrainId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.OaEmployeeTrain">
+    insert into oa_employee_train (OA_employee_train_id, OA_employee_info_code, 
+      OA_employee_train_name, OA_employee_train_date, 
+      OA_employee_train_createTm, OA_employee_train_OperationTm, 
+      OA_employee_train_modifyTm)
+    values (#{oaEmployeeTrainId,jdbcType=VARCHAR}, #{oaEmployeeInfoCode,jdbcType=VARCHAR}, 
+      #{oaEmployeeTrainName,jdbcType=VARCHAR}, #{oaEmployeeTrainDate,jdbcType=VARCHAR}, 
+      #{oaEmployeeTrainCreatetm,jdbcType=TIMESTAMP}, #{oaEmployeeTrainOperationtm,jdbcType=TIMESTAMP}, 
+      #{oaEmployeeTrainModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.OaEmployeeTrain">
+    insert into oa_employee_train
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oaEmployeeTrainId != null">
+        OA_employee_train_id,
+      </if>
+      <if test="oaEmployeeInfoCode != null">
+        OA_employee_info_code,
+      </if>
+      <if test="oaEmployeeTrainName != null">
+        OA_employee_train_name,
+      </if>
+      <if test="oaEmployeeTrainDate != null">
+        OA_employee_train_date,
+      </if>
+      <if test="oaEmployeeTrainCreatetm != null">
+        OA_employee_train_createTm,
+      </if>
+      <if test="oaEmployeeTrainOperationtm != null">
+        OA_employee_train_OperationTm,
+      </if>
+      <if test="oaEmployeeTrainModifytm != null">
+        OA_employee_train_modifyTm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oaEmployeeTrainId != null">
+        #{oaEmployeeTrainId,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoCode != null">
+        #{oaEmployeeInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeTrainName != null">
+        #{oaEmployeeTrainName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeTrainDate != null">
+        #{oaEmployeeTrainDate,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeTrainCreatetm != null">
+        #{oaEmployeeTrainCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeTrainOperationtm != null">
+        #{oaEmployeeTrainOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeTrainModifytm != null">
+        #{oaEmployeeTrainModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.OaEmployeeTrain">
+    update oa_employee_train
+    <set>
+      <if test="oaEmployeeInfoCode != null">
+        OA_employee_info_code = #{oaEmployeeInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeTrainName != null">
+        OA_employee_train_name = #{oaEmployeeTrainName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeTrainDate != null">
+        OA_employee_train_date = #{oaEmployeeTrainDate,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeTrainCreatetm != null">
+        OA_employee_train_createTm = #{oaEmployeeTrainCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeTrainOperationtm != null">
+        OA_employee_train_OperationTm = #{oaEmployeeTrainOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeTrainModifytm != null">
+        OA_employee_train_modifyTm = #{oaEmployeeTrainModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where OA_employee_train_id = #{oaEmployeeTrainId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.OaEmployeeTrain">
+    update oa_employee_train
+    set OA_employee_info_code = #{oaEmployeeInfoCode,jdbcType=VARCHAR},
+      OA_employee_train_name = #{oaEmployeeTrainName,jdbcType=VARCHAR},
+      OA_employee_train_date = #{oaEmployeeTrainDate,jdbcType=VARCHAR},
+      OA_employee_train_createTm = #{oaEmployeeTrainCreatetm,jdbcType=TIMESTAMP},
+      OA_employee_train_OperationTm = #{oaEmployeeTrainOperationtm,jdbcType=TIMESTAMP},
+      OA_employee_train_modifyTm = #{oaEmployeeTrainModifytm,jdbcType=TIMESTAMP}
+    where OA_employee_train_id = #{oaEmployeeTrainId,jdbcType=VARCHAR}
+  </update>
+</mapper>

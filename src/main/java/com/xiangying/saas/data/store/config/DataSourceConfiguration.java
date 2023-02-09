@@ -40,7 +40,7 @@ public class DataSourceConfiguration {
      * @throws PropertyVetoException
      */
     @Bean(name = "dataSource")
-    @ConfigurationProperties(prefix = "spring.datasource")
+    @ConfigurationProperties(prefix = "spring.gaussdatasource")
     public DataSource dataSource() {
         return new DruidDataSource();
     }

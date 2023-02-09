@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OaEmployeeContractMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.OaEmployeeContract">
+    <id column="OA_employee_contract_id" jdbcType="VARCHAR" property="oaEmployeeContractId" />
+    <result column="OA_employee_info_code" jdbcType="VARCHAR" property="oaEmployeeInfoCode" />
+    <result column="OA_employee_contract_code" jdbcType="VARCHAR" property="oaEmployeeContractCode" />
+    <result column="OA_employee_contract_startDate" jdbcType="VARCHAR" property="oaEmployeeContractStartdate" />
+    <result column="OA_employee_contract_endDate" jdbcType="VARCHAR" property="oaEmployeeContractEnddate" />
+    <result column="OA_employee_contract_salary" jdbcType="NUMERIC" property="oaEmployeeContractSalary" />
+    <result column="OA_employee_contract_url" jdbcType="VARCHAR" property="oaEmployeeContractUrl" />
+    <result column="OA_employee_contract_createTm" jdbcType="TIMESTAMP" property="oaEmployeeContractCreatetm" />
+    <result column="OA_employee_contract_OperationTm" jdbcType="TIMESTAMP" property="oaEmployeeContractOperationtm" />
+    <result column="OA_employee_contract_modifyTm" jdbcType="TIMESTAMP" property="oaEmployeeContractModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OA_employee_contract_id, OA_employee_info_code, OA_employee_contract_code, OA_employee_contract_startDate, 
+    OA_employee_contract_endDate, OA_employee_contract_salary, OA_employee_contract_url, 
+    OA_employee_contract_createTm, OA_employee_contract_OperationTm, OA_employee_contract_modifyTm
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oa_employee_contract
+    where OA_employee_contract_id = #{oaEmployeeContractId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oa_employee_contract
+    where OA_employee_contract_id = #{oaEmployeeContractId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.OaEmployeeContract">
+    insert into oa_employee_contract (OA_employee_contract_id, OA_employee_info_code, 
+      OA_employee_contract_code, OA_employee_contract_startDate, 
+      OA_employee_contract_endDate, OA_employee_contract_salary, 
+      OA_employee_contract_url, OA_employee_contract_createTm, 
+      OA_employee_contract_OperationTm, OA_employee_contract_modifyTm
+      )
+    values (#{oaEmployeeContractId,jdbcType=VARCHAR}, #{oaEmployeeInfoCode,jdbcType=VARCHAR}, 
+      #{oaEmployeeContractCode,jdbcType=VARCHAR}, #{oaEmployeeContractStartdate,jdbcType=VARCHAR}, 
+      #{oaEmployeeContractEnddate,jdbcType=VARCHAR}, #{oaEmployeeContractSalary,jdbcType=NUMERIC}, 
+      #{oaEmployeeContractUrl,jdbcType=VARCHAR}, #{oaEmployeeContractCreatetm,jdbcType=TIMESTAMP}, 
+      #{oaEmployeeContractOperationtm,jdbcType=TIMESTAMP}, #{oaEmployeeContractModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.OaEmployeeContract">
+    insert into oa_employee_contract
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oaEmployeeContractId != null">
+        OA_employee_contract_id,
+      </if>
+      <if test="oaEmployeeInfoCode != null">
+        OA_employee_info_code,
+      </if>
+      <if test="oaEmployeeContractCode != null">
+        OA_employee_contract_code,
+      </if>
+      <if test="oaEmployeeContractStartdate != null">
+        OA_employee_contract_startDate,
+      </if>
+      <if test="oaEmployeeContractEnddate != null">
+        OA_employee_contract_endDate,
+      </if>
+      <if test="oaEmployeeContractSalary != null">
+        OA_employee_contract_salary,
+      </if>
+      <if test="oaEmployeeContractUrl != null">
+        OA_employee_contract_url,
+      </if>
+      <if test="oaEmployeeContractCreatetm != null">
+        OA_employee_contract_createTm,
+      </if>
+      <if test="oaEmployeeContractOperationtm != null">
+        OA_employee_contract_OperationTm,
+      </if>
+      <if test="oaEmployeeContractModifytm != null">
+        OA_employee_contract_modifyTm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oaEmployeeContractId != null">
+        #{oaEmployeeContractId,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoCode != null">
+        #{oaEmployeeInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeContractCode != null">
+        #{oaEmployeeContractCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeContractStartdate != null">
+        #{oaEmployeeContractStartdate,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeContractEnddate != null">
+        #{oaEmployeeContractEnddate,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeContractSalary != null">
+        #{oaEmployeeContractSalary,jdbcType=NUMERIC},
+      </if>
+      <if test="oaEmployeeContractUrl != null">
+        #{oaEmployeeContractUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeContractCreatetm != null">
+        #{oaEmployeeContractCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeContractOperationtm != null">
+        #{oaEmployeeContractOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeContractModifytm != null">
+        #{oaEmployeeContractModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.OaEmployeeContract">
+    update oa_employee_contract
+    <set>
+      <if test="oaEmployeeInfoCode != null">
+        OA_employee_info_code = #{oaEmployeeInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeContractCode != null">
+        OA_employee_contract_code = #{oaEmployeeContractCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeContractStartdate != null">
+        OA_employee_contract_startDate = #{oaEmployeeContractStartdate,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeContractEnddate != null">
+        OA_employee_contract_endDate = #{oaEmployeeContractEnddate,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeContractSalary != null">
+        OA_employee_contract_salary = #{oaEmployeeContractSalary,jdbcType=NUMERIC},
+      </if>
+      <if test="oaEmployeeContractUrl != null">
+        OA_employee_contract_url = #{oaEmployeeContractUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeContractCreatetm != null">
+        OA_employee_contract_createTm = #{oaEmployeeContractCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeContractOperationtm != null">
+        OA_employee_contract_OperationTm = #{oaEmployeeContractOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeContractModifytm != null">
+        OA_employee_contract_modifyTm = #{oaEmployeeContractModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where OA_employee_contract_id = #{oaEmployeeContractId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.OaEmployeeContract">
+    update oa_employee_contract
+    set OA_employee_info_code = #{oaEmployeeInfoCode,jdbcType=VARCHAR},
+      OA_employee_contract_code = #{oaEmployeeContractCode,jdbcType=VARCHAR},
+      OA_employee_contract_startDate = #{oaEmployeeContractStartdate,jdbcType=VARCHAR},
+      OA_employee_contract_endDate = #{oaEmployeeContractEnddate,jdbcType=VARCHAR},
+      OA_employee_contract_salary = #{oaEmployeeContractSalary,jdbcType=NUMERIC},
+      OA_employee_contract_url = #{oaEmployeeContractUrl,jdbcType=VARCHAR},
+      OA_employee_contract_createTm = #{oaEmployeeContractCreatetm,jdbcType=TIMESTAMP},
+      OA_employee_contract_OperationTm = #{oaEmployeeContractOperationtm,jdbcType=TIMESTAMP},
+      OA_employee_contract_modifyTm = #{oaEmployeeContractModifytm,jdbcType=TIMESTAMP}
+    where OA_employee_contract_id = #{oaEmployeeContractId,jdbcType=VARCHAR}
+  </update>
+</mapper>

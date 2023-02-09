@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="InsProductInfoMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.InsProductInfo">
+    <id column="INS_product_info_Code" jdbcType="VARCHAR" property="insProductInfoCode" />
+    <result column="INS_product_info_interiorName" jdbcType="VARCHAR" property="insProductInfoInteriorname" />
+    <result column="INS_product_info_Name" jdbcType="VARCHAR" property="insProductInfoName" />
+    <result column="INS_product_info_KindCode" jdbcType="VARCHAR" property="insProductInfoKindcode" />
+    <result column="INS_product_info_ProdCode" jdbcType="VARCHAR" property="insProductInfoProdcode" />
+    <result column="INS_product_info_ProdName" jdbcType="VARCHAR" property="insProductInfoProdname" />
+    <result column="INS_product_info_ProdVersion" jdbcType="VARCHAR" property="insProductInfoProdversion" />
+    <result column="INS_product_info_Decs" jdbcType="VARCHAR" property="insProductInfoDecs" />
+    <result column="INS_product_info_FileUrl" jdbcType="VARCHAR" property="insProductInfoFileurl" />
+    <result column="INS_product_info_ValidFlag" jdbcType="VARCHAR" property="insProductInfoValidflag" />
+    <result column="INS_product_info_LaunchFlag" jdbcType="VARCHAR" property="insProductInfoLaunchflag" />
+    <result column="INS_product_info_PayType" jdbcType="VARCHAR" property="insProductInfoPaytype" />
+    <result column="INS_product_info_WaitPeriod" jdbcType="INTEGER" property="insProductInfoWaitperiod" />
+    <result column="INS_product_info_WaitPeriodDesc" jdbcType="VARCHAR" property="insProductInfoWaitperioddesc" />
+    <result column="INS_product_info_BusGracePeriod" jdbcType="INTEGER" property="insProductInfoBusgraceperiod" />
+    <result column="INS_product_info_SysGracePeriod" jdbcType="INTEGER" property="insProductInfoSysgraceperiod" />
+    <result column="INS_product_info_hesitatePeriod" jdbcType="INTEGER" property="insProductInfoHesitateperiod" />
+    <result column="INS_product_info_PaymentRatioDesc" jdbcType="VARCHAR" property="insProductInfoPaymentratiodesc" />
+    <result column="INS_product_info_HealthNotice" jdbcType="VARCHAR" property="insProductInfoHealthnotice" />
+    <result column="INS_product_info_InsureNotice" jdbcType="VARCHAR" property="insProductInfoInsurenotice" />
+    <result column="INS_product_info_PecialApppint" jdbcType="VARCHAR" property="insProductInfoPecialapppint" />
+    <result column="INS_product_info_Excess" jdbcType="NUMERIC" property="insProductInfoExcess" />
+    <result column="INS_product_info_FranchiseThat" jdbcType="VARCHAR" property="insProductInfoFranchisethat" />
+    <result column="INS_product_info_DeductibleExcess" jdbcType="NUMERIC" property="insProductInfoDeductibleexcess" />
+    <result column="INS_product_info_TotalAmount" jdbcType="NUMERIC" property="insProductInfoTotalamount" />
+    <result column="INS_product_info_renewableAge" jdbcType="INTEGER" property="insProductInfoRenewableage" />
+    <result column="INS_product_info_insureAge" jdbcType="VARCHAR" property="insProductInfoInsureage" />
+    <result column="INS_product_info_occupationRequire" jdbcType="VARCHAR" property="insProductInfoOccupationrequire" />
+    <result column="INS_product_info_occupationLimit" jdbcType="VARCHAR" property="insProductInfoOccupationlimit" />
+    <result column="INS_product_info_Copywriting1" jdbcType="VARCHAR" property="insProductInfoCopywriting1" />
+    <result column="INS_product_info_Copywriting2" jdbcType="VARCHAR" property="insProductInfoCopywriting2" />
+    <result column="INS_product_info_Copywriting3" jdbcType="VARCHAR" property="insProductInfoCopywriting3" />
+    <result column="INS_product_info_Copywriting4" jdbcType="VARCHAR" property="insProductInfoCopywriting4" />
+    <result column="INS_PRODUCT_INFO_LongTerm" jdbcType="VARCHAR" property="insProductInfoLongterm" />
+    <result column="INS_product_info_Ifcollectpremium" jdbcType="VARCHAR" property="insProductInfoIfcollectpremium" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="INS_PRODUCT_INFO_OperationTM" jdbcType="TIMESTAMP" property="insProductInfoOperationtm" />
+    <result column="INS_PRODUCT_INFO_MODIFYTM" jdbcType="TIMESTAMP" property="insProductInfoModifytm" />
+    <result column="ins_product_repeat_Code" jdbcType="VARCHAR" property="insProductRepeatCode" />
+    <result column="INS_PRODUCT_INFO_FreeInsurance" jdbcType="VARCHAR" property="insProductInfoFreeinsurance" />
+    <result column="INS_Insurance_Info_Code" jdbcType="VARCHAR" property="insInsuranceInfoCode" />
+    <result column="INS_product_info_securityUrl" jdbcType="VARCHAR" property="insProductInfoSecurityurl" />
+    <result column="INS_product_info_refundPageUrl" jdbcType="VARCHAR" property="insProductInfoRefundpageurl" />
+    <result column="INS_product_info_remarkName" jdbcType="VARCHAR" property="insProductInfoRemarkname" />
+    <result column="INS_product_info_withHold" jdbcType="VARCHAR" property="insProductInfoWithhold" />
+    <result column="INS_product_info_launchType" jdbcType="VARCHAR" property="insProductInfoLaunchtype" />
+    <result column="ins_product_type_Code" jdbcType="VARCHAR" property="insProductTypeCode" />
+    <result column="INS_product_info_raterank" jdbcType="VARCHAR" property="insProductInfoRaterank" />
+    <result column="INS_product_info_onlineSale" jdbcType="VARCHAR" property="insProductInfoOnlinesale" />
+    <result column="INS_product_info_ifReport" jdbcType="VARCHAR" property="insProductInfoIfreport" />
+    <result column="oa_merchant_info_No" jdbcType="VARCHAR" property="oaMerchantInfoNo" />
+    <result column="INS_product_info_StartDateConfig" jdbcType="INTEGER" property="insProductInfoStartdateconfig" />
+    <result column="INS_product_info_source" jdbcType="VARCHAR" property="insProductInfoSource" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    INS_product_info_Code, INS_product_info_interiorName, INS_product_info_Name, INS_product_info_KindCode, 
+    INS_product_info_ProdCode, INS_product_info_ProdName, INS_product_info_ProdVersion, 
+    INS_product_info_Decs, INS_product_info_FileUrl, INS_product_info_ValidFlag, INS_product_info_LaunchFlag, 
+    INS_product_info_PayType, INS_product_info_WaitPeriod, INS_product_info_WaitPeriodDesc, 
+    INS_product_info_BusGracePeriod, INS_product_info_SysGracePeriod, INS_product_info_hesitatePeriod, 
+    INS_product_info_PaymentRatioDesc, INS_product_info_HealthNotice, INS_product_info_InsureNotice, 
+    INS_product_info_PecialApppint, INS_product_info_Excess, INS_product_info_FranchiseThat, 
+    INS_product_info_DeductibleExcess, INS_product_info_TotalAmount, INS_product_info_renewableAge, 
+    INS_product_info_insureAge, INS_product_info_occupationRequire, INS_product_info_occupationLimit, 
+    INS_product_info_Copywriting1, INS_product_info_Copywriting2, INS_product_info_Copywriting3, 
+    INS_product_info_Copywriting4, INS_PRODUCT_INFO_LongTerm, INS_product_info_Ifcollectpremium, 
+    OA_company_Account_code, INS_PRODUCT_INFO_OperationTM, INS_PRODUCT_INFO_MODIFYTM, 
+    ins_product_repeat_Code, INS_PRODUCT_INFO_FreeInsurance, INS_Insurance_Info_Code, 
+    INS_product_info_securityUrl, INS_product_info_refundPageUrl, INS_product_info_remarkName, 
+    INS_product_info_withHold, INS_product_info_launchType, ins_product_type_Code, INS_product_info_raterank, 
+    INS_product_info_onlineSale, INS_product_info_ifReport, oa_merchant_info_No, INS_product_info_StartDateConfig, 
+    INS_product_info_source
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ins_product_info
+    where INS_product_info_Code = #{insProductInfoCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from ins_product_info
+    where INS_product_info_Code = #{insProductInfoCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.InsProductInfo">
+    insert into ins_product_info (INS_product_info_Code, INS_product_info_interiorName, 
+      INS_product_info_Name, INS_product_info_KindCode, 
+      INS_product_info_ProdCode, INS_product_info_ProdName, 
+      INS_product_info_ProdVersion, INS_product_info_Decs, 
+      INS_product_info_FileUrl, INS_product_info_ValidFlag, 
+      INS_product_info_LaunchFlag, INS_product_info_PayType, 
+      INS_product_info_WaitPeriod, INS_product_info_WaitPeriodDesc, 
+      INS_product_info_BusGracePeriod, INS_product_info_SysGracePeriod, 
+      INS_product_info_hesitatePeriod, INS_product_info_PaymentRatioDesc, 
+      INS_product_info_HealthNotice, INS_product_info_InsureNotice, 
+      INS_product_info_PecialApppint, INS_product_info_Excess, 
+      INS_product_info_FranchiseThat, INS_product_info_DeductibleExcess, 
+      INS_product_info_TotalAmount, INS_product_info_renewableAge, 
+      INS_product_info_insureAge, INS_product_info_occupationRequire, 
+      INS_product_info_occupationLimit, INS_product_info_Copywriting1, 
+      INS_product_info_Copywriting2, INS_product_info_Copywriting3, 
+      INS_product_info_Copywriting4, INS_PRODUCT_INFO_LongTerm, 
+      INS_product_info_Ifcollectpremium, OA_company_Account_code, 
+      INS_PRODUCT_INFO_OperationTM, INS_PRODUCT_INFO_MODIFYTM, 
+      ins_product_repeat_Code, INS_PRODUCT_INFO_FreeInsurance, 
+      INS_Insurance_Info_Code, INS_product_info_securityUrl, 
+      INS_product_info_refundPageUrl, INS_product_info_remarkName, 
+      INS_product_info_withHold, INS_product_info_launchType, 
+      ins_product_type_Code, INS_product_info_raterank, 
+      INS_product_info_onlineSale, INS_product_info_ifReport, 
+      oa_merchant_info_No, INS_product_info_StartDateConfig, 
+      INS_product_info_source)
+    values (#{insProductInfoCode,jdbcType=VARCHAR}, #{insProductInfoInteriorname,jdbcType=VARCHAR}, 
+      #{insProductInfoName,jdbcType=VARCHAR}, #{insProductInfoKindcode,jdbcType=VARCHAR}, 
+      #{insProductInfoProdcode,jdbcType=VARCHAR}, #{insProductInfoProdname,jdbcType=VARCHAR}, 
+      #{insProductInfoProdversion,jdbcType=VARCHAR}, #{insProductInfoDecs,jdbcType=VARCHAR}, 
+      #{insProductInfoFileurl,jdbcType=VARCHAR}, #{insProductInfoValidflag,jdbcType=VARCHAR}, 
+      #{insProductInfoLaunchflag,jdbcType=VARCHAR}, #{insProductInfoPaytype,jdbcType=VARCHAR}, 
+      #{insProductInfoWaitperiod,jdbcType=INTEGER}, #{insProductInfoWaitperioddesc,jdbcType=VARCHAR}, 
+      #{insProductInfoBusgraceperiod,jdbcType=INTEGER}, #{insProductInfoSysgraceperiod,jdbcType=INTEGER}, 
+      #{insProductInfoHesitateperiod,jdbcType=INTEGER}, #{insProductInfoPaymentratiodesc,jdbcType=VARCHAR}, 
+      #{insProductInfoHealthnotice,jdbcType=VARCHAR}, #{insProductInfoInsurenotice,jdbcType=VARCHAR}, 
+      #{insProductInfoPecialapppint,jdbcType=VARCHAR}, #{insProductInfoExcess,jdbcType=NUMERIC}, 
+      #{insProductInfoFranchisethat,jdbcType=VARCHAR}, #{insProductInfoDeductibleexcess,jdbcType=NUMERIC}, 
+      #{insProductInfoTotalamount,jdbcType=NUMERIC}, #{insProductInfoRenewableage,jdbcType=INTEGER}, 
+      #{insProductInfoInsureage,jdbcType=VARCHAR}, #{insProductInfoOccupationrequire,jdbcType=VARCHAR}, 
+      #{insProductInfoOccupationlimit,jdbcType=VARCHAR}, #{insProductInfoCopywriting1,jdbcType=VARCHAR}, 
+      #{insProductInfoCopywriting2,jdbcType=VARCHAR}, #{insProductInfoCopywriting3,jdbcType=VARCHAR}, 
+      #{insProductInfoCopywriting4,jdbcType=VARCHAR}, #{insProductInfoLongterm,jdbcType=VARCHAR}, 
+      #{insProductInfoIfcollectpremium,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{insProductInfoOperationtm,jdbcType=TIMESTAMP}, #{insProductInfoModifytm,jdbcType=TIMESTAMP}, 
+      #{insProductRepeatCode,jdbcType=VARCHAR}, #{insProductInfoFreeinsurance,jdbcType=VARCHAR}, 
+      #{insInsuranceInfoCode,jdbcType=VARCHAR}, #{insProductInfoSecurityurl,jdbcType=VARCHAR}, 
+      #{insProductInfoRefundpageurl,jdbcType=VARCHAR}, #{insProductInfoRemarkname,jdbcType=VARCHAR}, 
+      #{insProductInfoWithhold,jdbcType=VARCHAR}, #{insProductInfoLaunchtype,jdbcType=VARCHAR}, 
+      #{insProductTypeCode,jdbcType=VARCHAR}, #{insProductInfoRaterank,jdbcType=VARCHAR}, 
+      #{insProductInfoOnlinesale,jdbcType=VARCHAR}, #{insProductInfoIfreport,jdbcType=VARCHAR}, 
+      #{oaMerchantInfoNo,jdbcType=VARCHAR}, #{insProductInfoStartdateconfig,jdbcType=INTEGER}, 
+      #{insProductInfoSource,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.InsProductInfo">
+    insert into ins_product_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="insProductInfoCode != null">
+        INS_product_info_Code,
+      </if>
+      <if test="insProductInfoInteriorname != null">
+        INS_product_info_interiorName,
+      </if>
+      <if test="insProductInfoName != null">
+        INS_product_info_Name,
+      </if>
+      <if test="insProductInfoKindcode != null">
+        INS_product_info_KindCode,
+      </if>
+      <if test="insProductInfoProdcode != null">
+        INS_product_info_ProdCode,
+      </if>
+      <if test="insProductInfoProdname != null">
+        INS_product_info_ProdName,
+      </if>
+      <if test="insProductInfoProdversion != null">
+        INS_product_info_ProdVersion,
+      </if>
+      <if test="insProductInfoDecs != null">
+        INS_product_info_Decs,
+      </if>
+      <if test="insProductInfoFileurl != null">
+        INS_product_info_FileUrl,
+      </if>
+      <if test="insProductInfoValidflag != null">
+        INS_product_info_ValidFlag,
+      </if>
+      <if test="insProductInfoLaunchflag != null">
+        INS_product_info_LaunchFlag,
+      </if>
+      <if test="insProductInfoPaytype != null">
+        INS_product_info_PayType,
+      </if>
+      <if test="insProductInfoWaitperiod != null">
+        INS_product_info_WaitPeriod,
+      </if>
+      <if test="insProductInfoWaitperioddesc != null">
+        INS_product_info_WaitPeriodDesc,
+      </if>
+      <if test="insProductInfoBusgraceperiod != null">
+        INS_product_info_BusGracePeriod,
+      </if>
+      <if test="insProductInfoSysgraceperiod != null">
+        INS_product_info_SysGracePeriod,
+      </if>
+      <if test="insProductInfoHesitateperiod != null">
+        INS_product_info_hesitatePeriod,
+      </if>
+      <if test="insProductInfoPaymentratiodesc != null">
+        INS_product_info_PaymentRatioDesc,
+      </if>
+      <if test="insProductInfoHealthnotice != null">
+        INS_product_info_HealthNotice,
+      </if>
+      <if test="insProductInfoInsurenotice != null">
+        INS_product_info_InsureNotice,
+      </if>
+      <if test="insProductInfoPecialapppint != null">
+        INS_product_info_PecialApppint,
+      </if>
+      <if test="insProductInfoExcess != null">
+        INS_product_info_Excess,
+      </if>
+      <if test="insProductInfoFranchisethat != null">
+        INS_product_info_FranchiseThat,
+      </if>
+      <if test="insProductInfoDeductibleexcess != null">
+        INS_product_info_DeductibleExcess,
+      </if>
+      <if test="insProductInfoTotalamount != null">
+        INS_product_info_TotalAmount,
+      </if>
+      <if test="insProductInfoRenewableage != null">
+        INS_product_info_renewableAge,
+      </if>
+      <if test="insProductInfoInsureage != null">
+        INS_product_info_insureAge,
+      </if>
+      <if test="insProductInfoOccupationrequire != null">
+        INS_product_info_occupationRequire,
+      </if>
+      <if test="insProductInfoOccupationlimit != null">
+        INS_product_info_occupationLimit,
+      </if>
+      <if test="insProductInfoCopywriting1 != null">
+        INS_product_info_Copywriting1,
+      </if>
+      <if test="insProductInfoCopywriting2 != null">
+        INS_product_info_Copywriting2,
+      </if>
+      <if test="insProductInfoCopywriting3 != null">
+        INS_product_info_Copywriting3,
+      </if>
+      <if test="insProductInfoCopywriting4 != null">
+        INS_product_info_Copywriting4,
+      </if>
+      <if test="insProductInfoLongterm != null">
+        INS_PRODUCT_INFO_LongTerm,
+      </if>
+      <if test="insProductInfoIfcollectpremium != null">
+        INS_product_info_Ifcollectpremium,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="insProductInfoOperationtm != null">
+        INS_PRODUCT_INFO_OperationTM,
+      </if>
+      <if test="insProductInfoModifytm != null">
+        INS_PRODUCT_INFO_MODIFYTM,
+      </if>
+      <if test="insProductRepeatCode != null">
+        ins_product_repeat_Code,
+      </if>
+      <if test="insProductInfoFreeinsurance != null">
+        INS_PRODUCT_INFO_FreeInsurance,
+      </if>
+      <if test="insInsuranceInfoCode != null">
+        INS_Insurance_Info_Code,
+      </if>
+      <if test="insProductInfoSecurityurl != null">
+        INS_product_info_securityUrl,
+      </if>
+      <if test="insProductInfoRefundpageurl != null">
+        INS_product_info_refundPageUrl,
+      </if>
+      <if test="insProductInfoRemarkname != null">
+        INS_product_info_remarkName,
+      </if>
+      <if test="insProductInfoWithhold != null">
+        INS_product_info_withHold,
+      </if>
+      <if test="insProductInfoLaunchtype != null">
+        INS_product_info_launchType,
+      </if>
+      <if test="insProductTypeCode != null">
+        ins_product_type_Code,
+      </if>
+      <if test="insProductInfoRaterank != null">
+        INS_product_info_raterank,
+      </if>
+      <if test="insProductInfoOnlinesale != null">
+        INS_product_info_onlineSale,
+      </if>
+      <if test="insProductInfoIfreport != null">
+        INS_product_info_ifReport,
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        oa_merchant_info_No,
+      </if>
+      <if test="insProductInfoStartdateconfig != null">
+        INS_product_info_StartDateConfig,
+      </if>
+      <if test="insProductInfoSource != null">
+        INS_product_info_source,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="insProductInfoCode != null">
+        #{insProductInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoInteriorname != null">
+        #{insProductInfoInteriorname,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoName != null">
+        #{insProductInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoKindcode != null">
+        #{insProductInfoKindcode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoProdcode != null">
+        #{insProductInfoProdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoProdname != null">
+        #{insProductInfoProdname,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoProdversion != null">
+        #{insProductInfoProdversion,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoDecs != null">
+        #{insProductInfoDecs,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoFileurl != null">
+        #{insProductInfoFileurl,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoValidflag != null">
+        #{insProductInfoValidflag,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoLaunchflag != null">
+        #{insProductInfoLaunchflag,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoPaytype != null">
+        #{insProductInfoPaytype,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoWaitperiod != null">
+        #{insProductInfoWaitperiod,jdbcType=INTEGER},
+      </if>
+      <if test="insProductInfoWaitperioddesc != null">
+        #{insProductInfoWaitperioddesc,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoBusgraceperiod != null">
+        #{insProductInfoBusgraceperiod,jdbcType=INTEGER},
+      </if>
+      <if test="insProductInfoSysgraceperiod != null">
+        #{insProductInfoSysgraceperiod,jdbcType=INTEGER},
+      </if>
+      <if test="insProductInfoHesitateperiod != null">
+        #{insProductInfoHesitateperiod,jdbcType=INTEGER},
+      </if>
+      <if test="insProductInfoPaymentratiodesc != null">
+        #{insProductInfoPaymentratiodesc,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoHealthnotice != null">
+        #{insProductInfoHealthnotice,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoInsurenotice != null">
+        #{insProductInfoInsurenotice,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoPecialapppint != null">
+        #{insProductInfoPecialapppint,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoExcess != null">
+        #{insProductInfoExcess,jdbcType=NUMERIC},
+      </if>
+      <if test="insProductInfoFranchisethat != null">
+        #{insProductInfoFranchisethat,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoDeductibleexcess != null">
+        #{insProductInfoDeductibleexcess,jdbcType=NUMERIC},
+      </if>
+      <if test="insProductInfoTotalamount != null">
+        #{insProductInfoTotalamount,jdbcType=NUMERIC},
+      </if>
+      <if test="insProductInfoRenewableage != null">
+        #{insProductInfoRenewableage,jdbcType=INTEGER},
+      </if>
+      <if test="insProductInfoInsureage != null">
+        #{insProductInfoInsureage,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoOccupationrequire != null">
+        #{insProductInfoOccupationrequire,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoOccupationlimit != null">
+        #{insProductInfoOccupationlimit,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoCopywriting1 != null">
+        #{insProductInfoCopywriting1,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoCopywriting2 != null">
+        #{insProductInfoCopywriting2,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoCopywriting3 != null">
+        #{insProductInfoCopywriting3,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoCopywriting4 != null">
+        #{insProductInfoCopywriting4,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoLongterm != null">
+        #{insProductInfoLongterm,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoIfcollectpremium != null">
+        #{insProductInfoIfcollectpremium,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoOperationtm != null">
+        #{insProductInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insProductInfoModifytm != null">
+        #{insProductInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insProductRepeatCode != null">
+        #{insProductRepeatCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoFreeinsurance != null">
+        #{insProductInfoFreeinsurance,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceInfoCode != null">
+        #{insInsuranceInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoSecurityurl != null">
+        #{insProductInfoSecurityurl,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoRefundpageurl != null">
+        #{insProductInfoRefundpageurl,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoRemarkname != null">
+        #{insProductInfoRemarkname,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoWithhold != null">
+        #{insProductInfoWithhold,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoLaunchtype != null">
+        #{insProductInfoLaunchtype,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductTypeCode != null">
+        #{insProductTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoRaterank != null">
+        #{insProductInfoRaterank,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoOnlinesale != null">
+        #{insProductInfoOnlinesale,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoIfreport != null">
+        #{insProductInfoIfreport,jdbcType=VARCHAR},
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoStartdateconfig != null">
+        #{insProductInfoStartdateconfig,jdbcType=INTEGER},
+      </if>
+      <if test="insProductInfoSource != null">
+        #{insProductInfoSource,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.InsProductInfo">
+    update ins_product_info
+    <set>
+      <if test="insProductInfoInteriorname != null">
+        INS_product_info_interiorName = #{insProductInfoInteriorname,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoName != null">
+        INS_product_info_Name = #{insProductInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoKindcode != null">
+        INS_product_info_KindCode = #{insProductInfoKindcode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoProdcode != null">
+        INS_product_info_ProdCode = #{insProductInfoProdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoProdname != null">
+        INS_product_info_ProdName = #{insProductInfoProdname,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoProdversion != null">
+        INS_product_info_ProdVersion = #{insProductInfoProdversion,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoDecs != null">
+        INS_product_info_Decs = #{insProductInfoDecs,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoFileurl != null">
+        INS_product_info_FileUrl = #{insProductInfoFileurl,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoValidflag != null">
+        INS_product_info_ValidFlag = #{insProductInfoValidflag,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoLaunchflag != null">
+        INS_product_info_LaunchFlag = #{insProductInfoLaunchflag,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoPaytype != null">
+        INS_product_info_PayType = #{insProductInfoPaytype,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoWaitperiod != null">
+        INS_product_info_WaitPeriod = #{insProductInfoWaitperiod,jdbcType=INTEGER},
+      </if>
+      <if test="insProductInfoWaitperioddesc != null">
+        INS_product_info_WaitPeriodDesc = #{insProductInfoWaitperioddesc,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoBusgraceperiod != null">
+        INS_product_info_BusGracePeriod = #{insProductInfoBusgraceperiod,jdbcType=INTEGER},
+      </if>
+      <if test="insProductInfoSysgraceperiod != null">
+        INS_product_info_SysGracePeriod = #{insProductInfoSysgraceperiod,jdbcType=INTEGER},
+      </if>
+      <if test="insProductInfoHesitateperiod != null">
+        INS_product_info_hesitatePeriod = #{insProductInfoHesitateperiod,jdbcType=INTEGER},
+      </if>
+      <if test="insProductInfoPaymentratiodesc != null">
+        INS_product_info_PaymentRatioDesc = #{insProductInfoPaymentratiodesc,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoHealthnotice != null">
+        INS_product_info_HealthNotice = #{insProductInfoHealthnotice,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoInsurenotice != null">
+        INS_product_info_InsureNotice = #{insProductInfoInsurenotice,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoPecialapppint != null">
+        INS_product_info_PecialApppint = #{insProductInfoPecialapppint,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoExcess != null">
+        INS_product_info_Excess = #{insProductInfoExcess,jdbcType=NUMERIC},
+      </if>
+      <if test="insProductInfoFranchisethat != null">
+        INS_product_info_FranchiseThat = #{insProductInfoFranchisethat,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoDeductibleexcess != null">
+        INS_product_info_DeductibleExcess = #{insProductInfoDeductibleexcess,jdbcType=NUMERIC},
+      </if>
+      <if test="insProductInfoTotalamount != null">
+        INS_product_info_TotalAmount = #{insProductInfoTotalamount,jdbcType=NUMERIC},
+      </if>
+      <if test="insProductInfoRenewableage != null">
+        INS_product_info_renewableAge = #{insProductInfoRenewableage,jdbcType=INTEGER},
+      </if>
+      <if test="insProductInfoInsureage != null">
+        INS_product_info_insureAge = #{insProductInfoInsureage,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoOccupationrequire != null">
+        INS_product_info_occupationRequire = #{insProductInfoOccupationrequire,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoOccupationlimit != null">
+        INS_product_info_occupationLimit = #{insProductInfoOccupationlimit,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoCopywriting1 != null">
+        INS_product_info_Copywriting1 = #{insProductInfoCopywriting1,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoCopywriting2 != null">
+        INS_product_info_Copywriting2 = #{insProductInfoCopywriting2,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoCopywriting3 != null">
+        INS_product_info_Copywriting3 = #{insProductInfoCopywriting3,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoCopywriting4 != null">
+        INS_product_info_Copywriting4 = #{insProductInfoCopywriting4,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoLongterm != null">
+        INS_PRODUCT_INFO_LongTerm = #{insProductInfoLongterm,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoIfcollectpremium != null">
+        INS_product_info_Ifcollectpremium = #{insProductInfoIfcollectpremium,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoOperationtm != null">
+        INS_PRODUCT_INFO_OperationTM = #{insProductInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insProductInfoModifytm != null">
+        INS_PRODUCT_INFO_MODIFYTM = #{insProductInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insProductRepeatCode != null">
+        ins_product_repeat_Code = #{insProductRepeatCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoFreeinsurance != null">
+        INS_PRODUCT_INFO_FreeInsurance = #{insProductInfoFreeinsurance,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceInfoCode != null">
+        INS_Insurance_Info_Code = #{insInsuranceInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoSecurityurl != null">
+        INS_product_info_securityUrl = #{insProductInfoSecurityurl,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoRefundpageurl != null">
+        INS_product_info_refundPageUrl = #{insProductInfoRefundpageurl,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoRemarkname != null">
+        INS_product_info_remarkName = #{insProductInfoRemarkname,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoWithhold != null">
+        INS_product_info_withHold = #{insProductInfoWithhold,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoLaunchtype != null">
+        INS_product_info_launchType = #{insProductInfoLaunchtype,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductTypeCode != null">
+        ins_product_type_Code = #{insProductTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoRaterank != null">
+        INS_product_info_raterank = #{insProductInfoRaterank,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoOnlinesale != null">
+        INS_product_info_onlineSale = #{insProductInfoOnlinesale,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoIfreport != null">
+        INS_product_info_ifReport = #{insProductInfoIfreport,jdbcType=VARCHAR},
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        oa_merchant_info_No = #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoStartdateconfig != null">
+        INS_product_info_StartDateConfig = #{insProductInfoStartdateconfig,jdbcType=INTEGER},
+      </if>
+      <if test="insProductInfoSource != null">
+        INS_product_info_source = #{insProductInfoSource,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where INS_product_info_Code = #{insProductInfoCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.InsProductInfo">
+    update ins_product_info
+    set INS_product_info_interiorName = #{insProductInfoInteriorname,jdbcType=VARCHAR},
+      INS_product_info_Name = #{insProductInfoName,jdbcType=VARCHAR},
+      INS_product_info_KindCode = #{insProductInfoKindcode,jdbcType=VARCHAR},
+      INS_product_info_ProdCode = #{insProductInfoProdcode,jdbcType=VARCHAR},
+      INS_product_info_ProdName = #{insProductInfoProdname,jdbcType=VARCHAR},
+      INS_product_info_ProdVersion = #{insProductInfoProdversion,jdbcType=VARCHAR},
+      INS_product_info_Decs = #{insProductInfoDecs,jdbcType=VARCHAR},
+      INS_product_info_FileUrl = #{insProductInfoFileurl,jdbcType=VARCHAR},
+      INS_product_info_ValidFlag = #{insProductInfoValidflag,jdbcType=VARCHAR},
+      INS_product_info_LaunchFlag = #{insProductInfoLaunchflag,jdbcType=VARCHAR},
+      INS_product_info_PayType = #{insProductInfoPaytype,jdbcType=VARCHAR},
+      INS_product_info_WaitPeriod = #{insProductInfoWaitperiod,jdbcType=INTEGER},
+      INS_product_info_WaitPeriodDesc = #{insProductInfoWaitperioddesc,jdbcType=VARCHAR},
+      INS_product_info_BusGracePeriod = #{insProductInfoBusgraceperiod,jdbcType=INTEGER},
+      INS_product_info_SysGracePeriod = #{insProductInfoSysgraceperiod,jdbcType=INTEGER},
+      INS_product_info_hesitatePeriod = #{insProductInfoHesitateperiod,jdbcType=INTEGER},
+      INS_product_info_PaymentRatioDesc = #{insProductInfoPaymentratiodesc,jdbcType=VARCHAR},
+      INS_product_info_HealthNotice = #{insProductInfoHealthnotice,jdbcType=VARCHAR},
+      INS_product_info_InsureNotice = #{insProductInfoInsurenotice,jdbcType=VARCHAR},
+      INS_product_info_PecialApppint = #{insProductInfoPecialapppint,jdbcType=VARCHAR},
+      INS_product_info_Excess = #{insProductInfoExcess,jdbcType=NUMERIC},
+      INS_product_info_FranchiseThat = #{insProductInfoFranchisethat,jdbcType=VARCHAR},
+      INS_product_info_DeductibleExcess = #{insProductInfoDeductibleexcess,jdbcType=NUMERIC},
+      INS_product_info_TotalAmount = #{insProductInfoTotalamount,jdbcType=NUMERIC},
+      INS_product_info_renewableAge = #{insProductInfoRenewableage,jdbcType=INTEGER},
+      INS_product_info_insureAge = #{insProductInfoInsureage,jdbcType=VARCHAR},
+      INS_product_info_occupationRequire = #{insProductInfoOccupationrequire,jdbcType=VARCHAR},
+      INS_product_info_occupationLimit = #{insProductInfoOccupationlimit,jdbcType=VARCHAR},
+      INS_product_info_Copywriting1 = #{insProductInfoCopywriting1,jdbcType=VARCHAR},
+      INS_product_info_Copywriting2 = #{insProductInfoCopywriting2,jdbcType=VARCHAR},
+      INS_product_info_Copywriting3 = #{insProductInfoCopywriting3,jdbcType=VARCHAR},
+      INS_product_info_Copywriting4 = #{insProductInfoCopywriting4,jdbcType=VARCHAR},
+      INS_PRODUCT_INFO_LongTerm = #{insProductInfoLongterm,jdbcType=VARCHAR},
+      INS_product_info_Ifcollectpremium = #{insProductInfoIfcollectpremium,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      INS_PRODUCT_INFO_OperationTM = #{insProductInfoOperationtm,jdbcType=TIMESTAMP},
+      INS_PRODUCT_INFO_MODIFYTM = #{insProductInfoModifytm,jdbcType=TIMESTAMP},
+      ins_product_repeat_Code = #{insProductRepeatCode,jdbcType=VARCHAR},
+      INS_PRODUCT_INFO_FreeInsurance = #{insProductInfoFreeinsurance,jdbcType=VARCHAR},
+      INS_Insurance_Info_Code = #{insInsuranceInfoCode,jdbcType=VARCHAR},
+      INS_product_info_securityUrl = #{insProductInfoSecurityurl,jdbcType=VARCHAR},
+      INS_product_info_refundPageUrl = #{insProductInfoRefundpageurl,jdbcType=VARCHAR},
+      INS_product_info_remarkName = #{insProductInfoRemarkname,jdbcType=VARCHAR},
+      INS_product_info_withHold = #{insProductInfoWithhold,jdbcType=VARCHAR},
+      INS_product_info_launchType = #{insProductInfoLaunchtype,jdbcType=VARCHAR},
+      ins_product_type_Code = #{insProductTypeCode,jdbcType=VARCHAR},
+      INS_product_info_raterank = #{insProductInfoRaterank,jdbcType=VARCHAR},
+      INS_product_info_onlineSale = #{insProductInfoOnlinesale,jdbcType=VARCHAR},
+      INS_product_info_ifReport = #{insProductInfoIfreport,jdbcType=VARCHAR},
+      oa_merchant_info_No = #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      INS_product_info_StartDateConfig = #{insProductInfoStartdateconfig,jdbcType=INTEGER},
+      INS_product_info_source = #{insProductInfoSource,jdbcType=VARCHAR}
+    where INS_product_info_Code = #{insProductInfoCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

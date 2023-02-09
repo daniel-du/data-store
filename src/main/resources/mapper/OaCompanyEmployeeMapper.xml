@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OaCompanyEmployeeMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.OaCompanyEmployee">
+    <id column="OA_company_Employee_code" jdbcType="VARCHAR" property="oaCompanyEmployeeCode" />
+    <result column="OA_company_Employee_name" jdbcType="VARCHAR" property="oaCompanyEmployeeName" />
+    <result column="OA_company_department_Code" jdbcType="VARCHAR" property="oaCompanyDepartmentCode" />
+    <result column="OA_company_Employee_BIRTHDAY" jdbcType="TIMESTAMP" property="oaCompanyEmployeeBirthday" />
+    <result column="OA_company_Employee_SEX" jdbcType="VARCHAR" property="oaCompanyEmployeeSex" />
+    <result column="OA_company_Employee_nation" jdbcType="VARCHAR" property="oaCompanyEmployeeNation" />
+    <result column="OA_company_Employee_CertificateType" jdbcType="VARCHAR" property="oaCompanyEmployeeCertificatetype" />
+    <result column="OA_company_Employee_CertificateNo" jdbcType="VARCHAR" property="oaCompanyEmployeeCertificateno" />
+    <result column="OA_company_Employee_address" jdbcType="VARCHAR" property="oaCompanyEmployeeAddress" />
+    <result column="OA_company_Employee_Zipcode" jdbcType="VARCHAR" property="oaCompanyEmployeeZipcode" />
+    <result column="OA_company_Employee_MOBILE" jdbcType="VARCHAR" property="oaCompanyEmployeeMobile" />
+    <result column="OA_company_Employee_email" jdbcType="VARCHAR" property="oaCompanyEmployeeEmail" />
+    <result column="OA_company_Employee_Rank" jdbcType="VARCHAR" property="oaCompanyEmployeeRank" />
+    <result column="OA_company_Employee_DOC" jdbcType="VARCHAR" property="oaCompanyEmployeeDoc" />
+    <result column="OA_company_Employee_REMARK" jdbcType="VARCHAR" property="oaCompanyEmployeeRemark" />
+    <result column="OA_company_Employee_STATUS" jdbcType="VARCHAR" property="oaCompanyEmployeeStatus" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="OA_company_Employee_OperationTM" jdbcType="TIMESTAMP" property="oaCompanyEmployeeOperationtm" />
+    <result column="OA_company_Employee_MODIFYTM" jdbcType="TIMESTAMP" property="oaCompanyEmployeeModifytm" />
+    <result column="OA_company_Employee_type" jdbcType="VARCHAR" property="oaCompanyEmployeeType" />
+    <result column="OA_company_Employee_permit" jdbcType="VARCHAR" property="oaCompanyEmployeePermit" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OA_company_Employee_code, OA_company_Employee_name, OA_company_department_Code, OA_company_Employee_BIRTHDAY, 
+    OA_company_Employee_SEX, OA_company_Employee_nation, OA_company_Employee_CertificateType, 
+    OA_company_Employee_CertificateNo, OA_company_Employee_address, OA_company_Employee_Zipcode, 
+    OA_company_Employee_MOBILE, OA_company_Employee_email, OA_company_Employee_Rank, 
+    OA_company_Employee_DOC, OA_company_Employee_REMARK, OA_company_Employee_STATUS, 
+    OA_company_Account_code, OA_company_Employee_OperationTM, OA_company_Employee_MODIFYTM, 
+    OA_company_Employee_type, OA_company_Employee_permit
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oa_company_employee
+    where OA_company_Employee_code = #{oaCompanyEmployeeCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oa_company_employee
+    where OA_company_Employee_code = #{oaCompanyEmployeeCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.OaCompanyEmployee">
+    insert into oa_company_employee (OA_company_Employee_code, OA_company_Employee_name, 
+      OA_company_department_Code, OA_company_Employee_BIRTHDAY, 
+      OA_company_Employee_SEX, OA_company_Employee_nation, 
+      OA_company_Employee_CertificateType, OA_company_Employee_CertificateNo, 
+      OA_company_Employee_address, OA_company_Employee_Zipcode, 
+      OA_company_Employee_MOBILE, OA_company_Employee_email, 
+      OA_company_Employee_Rank, OA_company_Employee_DOC, 
+      OA_company_Employee_REMARK, OA_company_Employee_STATUS, 
+      OA_company_Account_code, OA_company_Employee_OperationTM, 
+      OA_company_Employee_MODIFYTM, OA_company_Employee_type, 
+      OA_company_Employee_permit)
+    values (#{oaCompanyEmployeeCode,jdbcType=VARCHAR}, #{oaCompanyEmployeeName,jdbcType=VARCHAR}, 
+      #{oaCompanyDepartmentCode,jdbcType=VARCHAR}, #{oaCompanyEmployeeBirthday,jdbcType=TIMESTAMP}, 
+      #{oaCompanyEmployeeSex,jdbcType=VARCHAR}, #{oaCompanyEmployeeNation,jdbcType=VARCHAR}, 
+      #{oaCompanyEmployeeCertificatetype,jdbcType=VARCHAR}, #{oaCompanyEmployeeCertificateno,jdbcType=VARCHAR}, 
+      #{oaCompanyEmployeeAddress,jdbcType=VARCHAR}, #{oaCompanyEmployeeZipcode,jdbcType=VARCHAR}, 
+      #{oaCompanyEmployeeMobile,jdbcType=VARCHAR}, #{oaCompanyEmployeeEmail,jdbcType=VARCHAR}, 
+      #{oaCompanyEmployeeRank,jdbcType=VARCHAR}, #{oaCompanyEmployeeDoc,jdbcType=VARCHAR}, 
+      #{oaCompanyEmployeeRemark,jdbcType=VARCHAR}, #{oaCompanyEmployeeStatus,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{oaCompanyEmployeeOperationtm,jdbcType=TIMESTAMP}, 
+      #{oaCompanyEmployeeModifytm,jdbcType=TIMESTAMP}, #{oaCompanyEmployeeType,jdbcType=VARCHAR}, 
+      #{oaCompanyEmployeePermit,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.OaCompanyEmployee">
+    insert into oa_company_employee
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oaCompanyEmployeeCode != null">
+        OA_company_Employee_code,
+      </if>
+      <if test="oaCompanyEmployeeName != null">
+        OA_company_Employee_name,
+      </if>
+      <if test="oaCompanyDepartmentCode != null">
+        OA_company_department_Code,
+      </if>
+      <if test="oaCompanyEmployeeBirthday != null">
+        OA_company_Employee_BIRTHDAY,
+      </if>
+      <if test="oaCompanyEmployeeSex != null">
+        OA_company_Employee_SEX,
+      </if>
+      <if test="oaCompanyEmployeeNation != null">
+        OA_company_Employee_nation,
+      </if>
+      <if test="oaCompanyEmployeeCertificatetype != null">
+        OA_company_Employee_CertificateType,
+      </if>
+      <if test="oaCompanyEmployeeCertificateno != null">
+        OA_company_Employee_CertificateNo,
+      </if>
+      <if test="oaCompanyEmployeeAddress != null">
+        OA_company_Employee_address,
+      </if>
+      <if test="oaCompanyEmployeeZipcode != null">
+        OA_company_Employee_Zipcode,
+      </if>
+      <if test="oaCompanyEmployeeMobile != null">
+        OA_company_Employee_MOBILE,
+      </if>
+      <if test="oaCompanyEmployeeEmail != null">
+        OA_company_Employee_email,
+      </if>
+      <if test="oaCompanyEmployeeRank != null">
+        OA_company_Employee_Rank,
+      </if>
+      <if test="oaCompanyEmployeeDoc != null">
+        OA_company_Employee_DOC,
+      </if>
+      <if test="oaCompanyEmployeeRemark != null">
+        OA_company_Employee_REMARK,
+      </if>
+      <if test="oaCompanyEmployeeStatus != null">
+        OA_company_Employee_STATUS,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="oaCompanyEmployeeOperationtm != null">
+        OA_company_Employee_OperationTM,
+      </if>
+      <if test="oaCompanyEmployeeModifytm != null">
+        OA_company_Employee_MODIFYTM,
+      </if>
+      <if test="oaCompanyEmployeeType != null">
+        OA_company_Employee_type,
+      </if>
+      <if test="oaCompanyEmployeePermit != null">
+        OA_company_Employee_permit,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oaCompanyEmployeeCode != null">
+        #{oaCompanyEmployeeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeName != null">
+        #{oaCompanyEmployeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyDepartmentCode != null">
+        #{oaCompanyDepartmentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeBirthday != null">
+        #{oaCompanyEmployeeBirthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyEmployeeSex != null">
+        #{oaCompanyEmployeeSex,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeNation != null">
+        #{oaCompanyEmployeeNation,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeCertificatetype != null">
+        #{oaCompanyEmployeeCertificatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeCertificateno != null">
+        #{oaCompanyEmployeeCertificateno,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeAddress != null">
+        #{oaCompanyEmployeeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeZipcode != null">
+        #{oaCompanyEmployeeZipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeMobile != null">
+        #{oaCompanyEmployeeMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeEmail != null">
+        #{oaCompanyEmployeeEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeRank != null">
+        #{oaCompanyEmployeeRank,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeDoc != null">
+        #{oaCompanyEmployeeDoc,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeRemark != null">
+        #{oaCompanyEmployeeRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeStatus != null">
+        #{oaCompanyEmployeeStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeOperationtm != null">
+        #{oaCompanyEmployeeOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyEmployeeModifytm != null">
+        #{oaCompanyEmployeeModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyEmployeeType != null">
+        #{oaCompanyEmployeeType,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeePermit != null">
+        #{oaCompanyEmployeePermit,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.OaCompanyEmployee">
+    update oa_company_employee
+    <set>
+      <if test="oaCompanyEmployeeName != null">
+        OA_company_Employee_name = #{oaCompanyEmployeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyDepartmentCode != null">
+        OA_company_department_Code = #{oaCompanyDepartmentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeBirthday != null">
+        OA_company_Employee_BIRTHDAY = #{oaCompanyEmployeeBirthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyEmployeeSex != null">
+        OA_company_Employee_SEX = #{oaCompanyEmployeeSex,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeNation != null">
+        OA_company_Employee_nation = #{oaCompanyEmployeeNation,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeCertificatetype != null">
+        OA_company_Employee_CertificateType = #{oaCompanyEmployeeCertificatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeCertificateno != null">
+        OA_company_Employee_CertificateNo = #{oaCompanyEmployeeCertificateno,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeAddress != null">
+        OA_company_Employee_address = #{oaCompanyEmployeeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeZipcode != null">
+        OA_company_Employee_Zipcode = #{oaCompanyEmployeeZipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeMobile != null">
+        OA_company_Employee_MOBILE = #{oaCompanyEmployeeMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeEmail != null">
+        OA_company_Employee_email = #{oaCompanyEmployeeEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeRank != null">
+        OA_company_Employee_Rank = #{oaCompanyEmployeeRank,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeDoc != null">
+        OA_company_Employee_DOC = #{oaCompanyEmployeeDoc,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeRemark != null">
+        OA_company_Employee_REMARK = #{oaCompanyEmployeeRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeStatus != null">
+        OA_company_Employee_STATUS = #{oaCompanyEmployeeStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeOperationtm != null">
+        OA_company_Employee_OperationTM = #{oaCompanyEmployeeOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyEmployeeModifytm != null">
+        OA_company_Employee_MODIFYTM = #{oaCompanyEmployeeModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyEmployeeType != null">
+        OA_company_Employee_type = #{oaCompanyEmployeeType,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeePermit != null">
+        OA_company_Employee_permit = #{oaCompanyEmployeePermit,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OA_company_Employee_code = #{oaCompanyEmployeeCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.OaCompanyEmployee">
+    update oa_company_employee
+    set OA_company_Employee_name = #{oaCompanyEmployeeName,jdbcType=VARCHAR},
+      OA_company_department_Code = #{oaCompanyDepartmentCode,jdbcType=VARCHAR},
+      OA_company_Employee_BIRTHDAY = #{oaCompanyEmployeeBirthday,jdbcType=TIMESTAMP},
+      OA_company_Employee_SEX = #{oaCompanyEmployeeSex,jdbcType=VARCHAR},
+      OA_company_Employee_nation = #{oaCompanyEmployeeNation,jdbcType=VARCHAR},
+      OA_company_Employee_CertificateType = #{oaCompanyEmployeeCertificatetype,jdbcType=VARCHAR},
+      OA_company_Employee_CertificateNo = #{oaCompanyEmployeeCertificateno,jdbcType=VARCHAR},
+      OA_company_Employee_address = #{oaCompanyEmployeeAddress,jdbcType=VARCHAR},
+      OA_company_Employee_Zipcode = #{oaCompanyEmployeeZipcode,jdbcType=VARCHAR},
+      OA_company_Employee_MOBILE = #{oaCompanyEmployeeMobile,jdbcType=VARCHAR},
+      OA_company_Employee_email = #{oaCompanyEmployeeEmail,jdbcType=VARCHAR},
+      OA_company_Employee_Rank = #{oaCompanyEmployeeRank,jdbcType=VARCHAR},
+      OA_company_Employee_DOC = #{oaCompanyEmployeeDoc,jdbcType=VARCHAR},
+      OA_company_Employee_REMARK = #{oaCompanyEmployeeRemark,jdbcType=VARCHAR},
+      OA_company_Employee_STATUS = #{oaCompanyEmployeeStatus,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      OA_company_Employee_OperationTM = #{oaCompanyEmployeeOperationtm,jdbcType=TIMESTAMP},
+      OA_company_Employee_MODIFYTM = #{oaCompanyEmployeeModifytm,jdbcType=TIMESTAMP},
+      OA_company_Employee_type = #{oaCompanyEmployeeType,jdbcType=VARCHAR},
+      OA_company_Employee_permit = #{oaCompanyEmployeePermit,jdbcType=VARCHAR}
+    where OA_company_Employee_code = #{oaCompanyEmployeeCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

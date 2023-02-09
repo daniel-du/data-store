@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OaCompanyAccountLogMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.OaCompanyAccountLog">
+    <id column="log_id" jdbcType="VARCHAR" property="logId" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="OA_company_Employee_code" jdbcType="VARCHAR" property="oaCompanyEmployeeCode" />
+    <result column="OA_company_Employee_name" jdbcType="VARCHAR" property="oaCompanyEmployeeName" />
+    <result column="OA_company_user_type" jdbcType="VARCHAR" property="oaCompanyUserType" />
+    <result column="OA_company_Account_PhoneNumber" jdbcType="VARCHAR" property="oaCompanyAccountPhonenumber" />
+    <result column="OA_company_status" jdbcType="VARCHAR" property="oaCompanyStatus" />
+    <result column="OA_company_err_des" jdbcType="VARCHAR" property="oaCompanyErrDes" />
+    <result column="OA_company_login_type" jdbcType="VARCHAR" property="oaCompanyLoginType" />
+    <result column="OA_company_txt_1" jdbcType="VARCHAR" property="oaCompanyTxt1" />
+    <result column="OA_company_txt_2" jdbcType="VARCHAR" property="oaCompanyTxt2" />
+    <result column="OA_company_txt_3" jdbcType="VARCHAR" property="oaCompanyTxt3" />
+    <result column="OA_company_create_time" jdbcType="TIMESTAMP" property="oaCompanyCreateTime" />
+    <result column="OA_company_update_time" jdbcType="TIMESTAMP" property="oaCompanyUpdateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    log_id, OA_company_Account_code, OA_company_Employee_code, OA_company_Employee_name, 
+    OA_company_user_type, OA_company_Account_PhoneNumber, OA_company_status, OA_company_err_des, 
+    OA_company_login_type, OA_company_txt_1, OA_company_txt_2, OA_company_txt_3, OA_company_create_time, 
+    OA_company_update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oa_company_account_log
+    where log_id = #{logId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oa_company_account_log
+    where log_id = #{logId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.OaCompanyAccountLog">
+    insert into oa_company_account_log (log_id, OA_company_Account_code, OA_company_Employee_code, 
+      OA_company_Employee_name, OA_company_user_type, 
+      OA_company_Account_PhoneNumber, OA_company_status, 
+      OA_company_err_des, OA_company_login_type, OA_company_txt_1, 
+      OA_company_txt_2, OA_company_txt_3, OA_company_create_time, 
+      OA_company_update_time)
+    values (#{logId,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{oaCompanyEmployeeCode,jdbcType=VARCHAR}, 
+      #{oaCompanyEmployeeName,jdbcType=VARCHAR}, #{oaCompanyUserType,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountPhonenumber,jdbcType=VARCHAR}, #{oaCompanyStatus,jdbcType=VARCHAR}, 
+      #{oaCompanyErrDes,jdbcType=VARCHAR}, #{oaCompanyLoginType,jdbcType=VARCHAR}, #{oaCompanyTxt1,jdbcType=VARCHAR}, 
+      #{oaCompanyTxt2,jdbcType=VARCHAR}, #{oaCompanyTxt3,jdbcType=VARCHAR}, #{oaCompanyCreateTime,jdbcType=TIMESTAMP}, 
+      #{oaCompanyUpdateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.OaCompanyAccountLog">
+    insert into oa_company_account_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        log_id,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="oaCompanyEmployeeCode != null">
+        OA_company_Employee_code,
+      </if>
+      <if test="oaCompanyEmployeeName != null">
+        OA_company_Employee_name,
+      </if>
+      <if test="oaCompanyUserType != null">
+        OA_company_user_type,
+      </if>
+      <if test="oaCompanyAccountPhonenumber != null">
+        OA_company_Account_PhoneNumber,
+      </if>
+      <if test="oaCompanyStatus != null">
+        OA_company_status,
+      </if>
+      <if test="oaCompanyErrDes != null">
+        OA_company_err_des,
+      </if>
+      <if test="oaCompanyLoginType != null">
+        OA_company_login_type,
+      </if>
+      <if test="oaCompanyTxt1 != null">
+        OA_company_txt_1,
+      </if>
+      <if test="oaCompanyTxt2 != null">
+        OA_company_txt_2,
+      </if>
+      <if test="oaCompanyTxt3 != null">
+        OA_company_txt_3,
+      </if>
+      <if test="oaCompanyCreateTime != null">
+        OA_company_create_time,
+      </if>
+      <if test="oaCompanyUpdateTime != null">
+        OA_company_update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        #{logId,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeCode != null">
+        #{oaCompanyEmployeeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeName != null">
+        #{oaCompanyEmployeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyUserType != null">
+        #{oaCompanyUserType,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountPhonenumber != null">
+        #{oaCompanyAccountPhonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyStatus != null">
+        #{oaCompanyStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyErrDes != null">
+        #{oaCompanyErrDes,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyLoginType != null">
+        #{oaCompanyLoginType,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyTxt1 != null">
+        #{oaCompanyTxt1,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyTxt2 != null">
+        #{oaCompanyTxt2,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyTxt3 != null">
+        #{oaCompanyTxt3,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyCreateTime != null">
+        #{oaCompanyCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyUpdateTime != null">
+        #{oaCompanyUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.OaCompanyAccountLog">
+    update oa_company_account_log
+    <set>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeCode != null">
+        OA_company_Employee_code = #{oaCompanyEmployeeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeName != null">
+        OA_company_Employee_name = #{oaCompanyEmployeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyUserType != null">
+        OA_company_user_type = #{oaCompanyUserType,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountPhonenumber != null">
+        OA_company_Account_PhoneNumber = #{oaCompanyAccountPhonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyStatus != null">
+        OA_company_status = #{oaCompanyStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyErrDes != null">
+        OA_company_err_des = #{oaCompanyErrDes,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyLoginType != null">
+        OA_company_login_type = #{oaCompanyLoginType,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyTxt1 != null">
+        OA_company_txt_1 = #{oaCompanyTxt1,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyTxt2 != null">
+        OA_company_txt_2 = #{oaCompanyTxt2,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyTxt3 != null">
+        OA_company_txt_3 = #{oaCompanyTxt3,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyCreateTime != null">
+        OA_company_create_time = #{oaCompanyCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyUpdateTime != null">
+        OA_company_update_time = #{oaCompanyUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where log_id = #{logId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.OaCompanyAccountLog">
+    update oa_company_account_log
+    set OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      OA_company_Employee_code = #{oaCompanyEmployeeCode,jdbcType=VARCHAR},
+      OA_company_Employee_name = #{oaCompanyEmployeeName,jdbcType=VARCHAR},
+      OA_company_user_type = #{oaCompanyUserType,jdbcType=VARCHAR},
+      OA_company_Account_PhoneNumber = #{oaCompanyAccountPhonenumber,jdbcType=VARCHAR},
+      OA_company_status = #{oaCompanyStatus,jdbcType=VARCHAR},
+      OA_company_err_des = #{oaCompanyErrDes,jdbcType=VARCHAR},
+      OA_company_login_type = #{oaCompanyLoginType,jdbcType=VARCHAR},
+      OA_company_txt_1 = #{oaCompanyTxt1,jdbcType=VARCHAR},
+      OA_company_txt_2 = #{oaCompanyTxt2,jdbcType=VARCHAR},
+      OA_company_txt_3 = #{oaCompanyTxt3,jdbcType=VARCHAR},
+      OA_company_create_time = #{oaCompanyCreateTime,jdbcType=TIMESTAMP},
+      OA_company_update_time = #{oaCompanyUpdateTime,jdbcType=TIMESTAMP}
+    where log_id = #{logId,jdbcType=VARCHAR}
+  </update>
+</mapper>

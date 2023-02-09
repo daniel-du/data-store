@@ -4,7 +4,7 @@ spring:
   application:
     name: saasDataStore
 server:
-  port: 8080
+  port: 8088
   servlet:
     context-path: /saasDataStore
 

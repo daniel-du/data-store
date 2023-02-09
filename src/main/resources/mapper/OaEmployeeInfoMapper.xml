@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OaEmployeeInfoMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.OaEmployeeInfo">
+    <id column="OA_employee_info_code" jdbcType="VARCHAR" property="oaEmployeeInfoCode" />
+    <result column="OA_employee_info_name" jdbcType="VARCHAR" property="oaEmployeeInfoName" />
+    <result column="OA_employee_info_English" jdbcType="VARCHAR" property="oaEmployeeInfoEnglish" />
+    <result column="OA_employee_info_nation" jdbcType="VARCHAR" property="oaEmployeeInfoNation" />
+    <result column="OA_employee_info_idType" jdbcType="VARCHAR" property="oaEmployeeInfoIdtype" />
+    <result column="OA_employee_info_idCOde" jdbcType="VARCHAR" property="oaEmployeeInfoIdcode" />
+    <result column="OA_employee_info_birth" jdbcType="VARCHAR" property="oaEmployeeInfoBirth" />
+    <result column="OA_employee_info_sex" jdbcType="VARCHAR" property="oaEmployeeInfoSex" />
+    <result column="OA_employee_info_age" jdbcType="INTEGER" property="oaEmployeeInfoAge" />
+    <result column="OA_employee_info_mobile" jdbcType="VARCHAR" property="oaEmployeeInfoMobile" />
+    <result column="OA_employee_info_mail" jdbcType="VARCHAR" property="oaEmployeeInfoMail" />
+    <result column="OA_employee_info_married" jdbcType="VARCHAR" property="oaEmployeeInfoMarried" />
+    <result column="OA_employee_info_address" jdbcType="VARCHAR" property="oaEmployeeInfoAddress" />
+    <result column="OA_employee_info_currentAddress" jdbcType="VARCHAR" property="oaEmployeeInfoCurrentaddress" />
+    <result column="OA_employee_info_entryTime" jdbcType="VARCHAR" property="oaEmployeeInfoEntrytime" />
+    <result column="OA_employee_info_regularTime" jdbcType="VARCHAR" property="oaEmployeeInfoRegulartime" />
+    <result column="OA_employee_info_DepartureTime" jdbcType="VARCHAR" property="oaEmployeeInfoDeparturetime" />
+    <result column="OA_employee_info_Department" jdbcType="VARCHAR" property="oaEmployeeInfoDepartment" />
+    <result column="OA_employee_info_organization" jdbcType="VARCHAR" property="oaEmployeeInfoOrganization" />
+    <result column="OA_employee_info_ifAgent" jdbcType="VARCHAR" property="oaEmployeeInfoIfagent" />
+    <result column="OA_employee_info_state" jdbcType="VARCHAR" property="oaEmployeeInfoState" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="OA_employee_info_createTm" jdbcType="TIMESTAMP" property="oaEmployeeInfoCreatetm" />
+    <result column="OA_employee_info_OperationTm" jdbcType="TIMESTAMP" property="oaEmployeeInfoOperationtm" />
+    <result column="OA_employee_info_modifyTm" jdbcType="TIMESTAMP" property="oaEmployeeInfoModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OA_employee_info_code, OA_employee_info_name, OA_employee_info_English, OA_employee_info_nation, 
+    OA_employee_info_idType, OA_employee_info_idCOde, OA_employee_info_birth, OA_employee_info_sex, 
+    OA_employee_info_age, OA_employee_info_mobile, OA_employee_info_mail, OA_employee_info_married, 
+    OA_employee_info_address, OA_employee_info_currentAddress, OA_employee_info_entryTime, 
+    OA_employee_info_regularTime, OA_employee_info_DepartureTime, OA_employee_info_Department, 
+    OA_employee_info_organization, OA_employee_info_ifAgent, OA_employee_info_state, 
+    OA_company_Account_code, OA_employee_info_createTm, OA_employee_info_OperationTm, 
+    OA_employee_info_modifyTm
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oa_employee_info
+    where OA_employee_info_code = #{oaEmployeeInfoCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oa_employee_info
+    where OA_employee_info_code = #{oaEmployeeInfoCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.OaEmployeeInfo">
+    insert into oa_employee_info (OA_employee_info_code, OA_employee_info_name, 
+      OA_employee_info_English, OA_employee_info_nation, 
+      OA_employee_info_idType, OA_employee_info_idCOde, 
+      OA_employee_info_birth, OA_employee_info_sex, 
+      OA_employee_info_age, OA_employee_info_mobile, 
+      OA_employee_info_mail, OA_employee_info_married, 
+      OA_employee_info_address, OA_employee_info_currentAddress, 
+      OA_employee_info_entryTime, OA_employee_info_regularTime, 
+      OA_employee_info_DepartureTime, OA_employee_info_Department, 
+      OA_employee_info_organization, OA_employee_info_ifAgent, 
+      OA_employee_info_state, OA_company_Account_code, 
+      OA_employee_info_createTm, OA_employee_info_OperationTm, 
+      OA_employee_info_modifyTm)
+    values (#{oaEmployeeInfoCode,jdbcType=VARCHAR}, #{oaEmployeeInfoName,jdbcType=VARCHAR}, 
+      #{oaEmployeeInfoEnglish,jdbcType=VARCHAR}, #{oaEmployeeInfoNation,jdbcType=VARCHAR}, 
+      #{oaEmployeeInfoIdtype,jdbcType=VARCHAR}, #{oaEmployeeInfoIdcode,jdbcType=VARCHAR}, 
+      #{oaEmployeeInfoBirth,jdbcType=VARCHAR}, #{oaEmployeeInfoSex,jdbcType=VARCHAR}, 
+      #{oaEmployeeInfoAge,jdbcType=INTEGER}, #{oaEmployeeInfoMobile,jdbcType=VARCHAR}, 
+      #{oaEmployeeInfoMail,jdbcType=VARCHAR}, #{oaEmployeeInfoMarried,jdbcType=VARCHAR}, 
+      #{oaEmployeeInfoAddress,jdbcType=VARCHAR}, #{oaEmployeeInfoCurrentaddress,jdbcType=VARCHAR}, 
+      #{oaEmployeeInfoEntrytime,jdbcType=VARCHAR}, #{oaEmployeeInfoRegulartime,jdbcType=VARCHAR}, 
+      #{oaEmployeeInfoDeparturetime,jdbcType=VARCHAR}, #{oaEmployeeInfoDepartment,jdbcType=VARCHAR}, 
+      #{oaEmployeeInfoOrganization,jdbcType=VARCHAR}, #{oaEmployeeInfoIfagent,jdbcType=VARCHAR}, 
+      #{oaEmployeeInfoState,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{oaEmployeeInfoCreatetm,jdbcType=TIMESTAMP}, #{oaEmployeeInfoOperationtm,jdbcType=TIMESTAMP}, 
+      #{oaEmployeeInfoModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.OaEmployeeInfo">
+    insert into oa_employee_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oaEmployeeInfoCode != null">
+        OA_employee_info_code,
+      </if>
+      <if test="oaEmployeeInfoName != null">
+        OA_employee_info_name,
+      </if>
+      <if test="oaEmployeeInfoEnglish != null">
+        OA_employee_info_English,
+      </if>
+      <if test="oaEmployeeInfoNation != null">
+        OA_employee_info_nation,
+      </if>
+      <if test="oaEmployeeInfoIdtype != null">
+        OA_employee_info_idType,
+      </if>
+      <if test="oaEmployeeInfoIdcode != null">
+        OA_employee_info_idCOde,
+      </if>
+      <if test="oaEmployeeInfoBirth != null">
+        OA_employee_info_birth,
+      </if>
+      <if test="oaEmployeeInfoSex != null">
+        OA_employee_info_sex,
+      </if>
+      <if test="oaEmployeeInfoAge != null">
+        OA_employee_info_age,
+      </if>
+      <if test="oaEmployeeInfoMobile != null">
+        OA_employee_info_mobile,
+      </if>
+      <if test="oaEmployeeInfoMail != null">
+        OA_employee_info_mail,
+      </if>
+      <if test="oaEmployeeInfoMarried != null">
+        OA_employee_info_married,
+      </if>
+      <if test="oaEmployeeInfoAddress != null">
+        OA_employee_info_address,
+      </if>
+      <if test="oaEmployeeInfoCurrentaddress != null">
+        OA_employee_info_currentAddress,
+      </if>
+      <if test="oaEmployeeInfoEntrytime != null">
+        OA_employee_info_entryTime,
+      </if>
+      <if test="oaEmployeeInfoRegulartime != null">
+        OA_employee_info_regularTime,
+      </if>
+      <if test="oaEmployeeInfoDeparturetime != null">
+        OA_employee_info_DepartureTime,
+      </if>
+      <if test="oaEmployeeInfoDepartment != null">
+        OA_employee_info_Department,
+      </if>
+      <if test="oaEmployeeInfoOrganization != null">
+        OA_employee_info_organization,
+      </if>
+      <if test="oaEmployeeInfoIfagent != null">
+        OA_employee_info_ifAgent,
+      </if>
+      <if test="oaEmployeeInfoState != null">
+        OA_employee_info_state,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="oaEmployeeInfoCreatetm != null">
+        OA_employee_info_createTm,
+      </if>
+      <if test="oaEmployeeInfoOperationtm != null">
+        OA_employee_info_OperationTm,
+      </if>
+      <if test="oaEmployeeInfoModifytm != null">
+        OA_employee_info_modifyTm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oaEmployeeInfoCode != null">
+        #{oaEmployeeInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoName != null">
+        #{oaEmployeeInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoEnglish != null">
+        #{oaEmployeeInfoEnglish,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoNation != null">
+        #{oaEmployeeInfoNation,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoIdtype != null">
+        #{oaEmployeeInfoIdtype,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoIdcode != null">
+        #{oaEmployeeInfoIdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoBirth != null">
+        #{oaEmployeeInfoBirth,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoSex != null">
+        #{oaEmployeeInfoSex,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoAge != null">
+        #{oaEmployeeInfoAge,jdbcType=INTEGER},
+      </if>
+      <if test="oaEmployeeInfoMobile != null">
+        #{oaEmployeeInfoMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoMail != null">
+        #{oaEmployeeInfoMail,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoMarried != null">
+        #{oaEmployeeInfoMarried,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoAddress != null">
+        #{oaEmployeeInfoAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoCurrentaddress != null">
+        #{oaEmployeeInfoCurrentaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoEntrytime != null">
+        #{oaEmployeeInfoEntrytime,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoRegulartime != null">
+        #{oaEmployeeInfoRegulartime,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoDeparturetime != null">
+        #{oaEmployeeInfoDeparturetime,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoDepartment != null">
+        #{oaEmployeeInfoDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoOrganization != null">
+        #{oaEmployeeInfoOrganization,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoIfagent != null">
+        #{oaEmployeeInfoIfagent,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoState != null">
+        #{oaEmployeeInfoState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoCreatetm != null">
+        #{oaEmployeeInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeInfoOperationtm != null">
+        #{oaEmployeeInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeInfoModifytm != null">
+        #{oaEmployeeInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.OaEmployeeInfo">
+    update oa_employee_info
+    <set>
+      <if test="oaEmployeeInfoName != null">
+        OA_employee_info_name = #{oaEmployeeInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoEnglish != null">
+        OA_employee_info_English = #{oaEmployeeInfoEnglish,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoNation != null">
+        OA_employee_info_nation = #{oaEmployeeInfoNation,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoIdtype != null">
+        OA_employee_info_idType = #{oaEmployeeInfoIdtype,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoIdcode != null">
+        OA_employee_info_idCOde = #{oaEmployeeInfoIdcode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoBirth != null">
+        OA_employee_info_birth = #{oaEmployeeInfoBirth,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoSex != null">
+        OA_employee_info_sex = #{oaEmployeeInfoSex,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoAge != null">
+        OA_employee_info_age = #{oaEmployeeInfoAge,jdbcType=INTEGER},
+      </if>
+      <if test="oaEmployeeInfoMobile != null">
+        OA_employee_info_mobile = #{oaEmployeeInfoMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoMail != null">
+        OA_employee_info_mail = #{oaEmployeeInfoMail,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoMarried != null">
+        OA_employee_info_married = #{oaEmployeeInfoMarried,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoAddress != null">
+        OA_employee_info_address = #{oaEmployeeInfoAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoCurrentaddress != null">
+        OA_employee_info_currentAddress = #{oaEmployeeInfoCurrentaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoEntrytime != null">
+        OA_employee_info_entryTime = #{oaEmployeeInfoEntrytime,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoRegulartime != null">
+        OA_employee_info_regularTime = #{oaEmployeeInfoRegulartime,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoDeparturetime != null">
+        OA_employee_info_DepartureTime = #{oaEmployeeInfoDeparturetime,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoDepartment != null">
+        OA_employee_info_Department = #{oaEmployeeInfoDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoOrganization != null">
+        OA_employee_info_organization = #{oaEmployeeInfoOrganization,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoIfagent != null">
+        OA_employee_info_ifAgent = #{oaEmployeeInfoIfagent,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoState != null">
+        OA_employee_info_state = #{oaEmployeeInfoState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoCreatetm != null">
+        OA_employee_info_createTm = #{oaEmployeeInfoCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeInfoOperationtm != null">
+        OA_employee_info_OperationTm = #{oaEmployeeInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeInfoModifytm != null">
+        OA_employee_info_modifyTm = #{oaEmployeeInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where OA_employee_info_code = #{oaEmployeeInfoCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.OaEmployeeInfo">
+    update oa_employee_info
+    set OA_employee_info_name = #{oaEmployeeInfoName,jdbcType=VARCHAR},
+      OA_employee_info_English = #{oaEmployeeInfoEnglish,jdbcType=VARCHAR},
+      OA_employee_info_nation = #{oaEmployeeInfoNation,jdbcType=VARCHAR},
+      OA_employee_info_idType = #{oaEmployeeInfoIdtype,jdbcType=VARCHAR},
+      OA_employee_info_idCOde = #{oaEmployeeInfoIdcode,jdbcType=VARCHAR},
+      OA_employee_info_birth = #{oaEmployeeInfoBirth,jdbcType=VARCHAR},
+      OA_employee_info_sex = #{oaEmployeeInfoSex,jdbcType=VARCHAR},
+      OA_employee_info_age = #{oaEmployeeInfoAge,jdbcType=INTEGER},
+      OA_employee_info_mobile = #{oaEmployeeInfoMobile,jdbcType=VARCHAR},
+      OA_employee_info_mail = #{oaEmployeeInfoMail,jdbcType=VARCHAR},
+      OA_employee_info_married = #{oaEmployeeInfoMarried,jdbcType=VARCHAR},
+      OA_employee_info_address = #{oaEmployeeInfoAddress,jdbcType=VARCHAR},
+      OA_employee_info_currentAddress = #{oaEmployeeInfoCurrentaddress,jdbcType=VARCHAR},
+      OA_employee_info_entryTime = #{oaEmployeeInfoEntrytime,jdbcType=VARCHAR},
+      OA_employee_info_regularTime = #{oaEmployeeInfoRegulartime,jdbcType=VARCHAR},
+      OA_employee_info_DepartureTime = #{oaEmployeeInfoDeparturetime,jdbcType=VARCHAR},
+      OA_employee_info_Department = #{oaEmployeeInfoDepartment,jdbcType=VARCHAR},
+      OA_employee_info_organization = #{oaEmployeeInfoOrganization,jdbcType=VARCHAR},
+      OA_employee_info_ifAgent = #{oaEmployeeInfoIfagent,jdbcType=VARCHAR},
+      OA_employee_info_state = #{oaEmployeeInfoState,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      OA_employee_info_createTm = #{oaEmployeeInfoCreatetm,jdbcType=TIMESTAMP},
+      OA_employee_info_OperationTm = #{oaEmployeeInfoOperationtm,jdbcType=TIMESTAMP},
+      OA_employee_info_modifyTm = #{oaEmployeeInfoModifytm,jdbcType=TIMESTAMP}
+    where OA_employee_info_code = #{oaEmployeeInfoCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

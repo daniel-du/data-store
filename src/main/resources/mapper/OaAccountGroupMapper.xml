@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OaAccountGroupMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.OaAccountGroup">
+    <id column="oa_account_group_code" jdbcType="VARCHAR" property="oaAccountGroupCode" />
+    <result column="oa_account_group_name" jdbcType="VARCHAR" property="oaAccountGroupName" />
+    <result column="oa_account_group_desc" jdbcType="VARCHAR" property="oaAccountGroupDesc" />
+    <result column="oa_account_group_state" jdbcType="VARCHAR" property="oaAccountGroupState" />
+    <result column="oa_company_account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="oa_account_group_createTm" jdbcType="TIMESTAMP" property="oaAccountGroupCreatetm" />
+    <result column="oa_account_group_modifyTm" jdbcType="TIMESTAMP" property="oaAccountGroupModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    oa_account_group_code, oa_account_group_name, oa_account_group_desc, oa_account_group_state, 
+    oa_company_account_code, oa_account_group_createTm, oa_account_group_modifyTm
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oa_account_group
+    where oa_account_group_code = #{oaAccountGroupCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oa_account_group
+    where oa_account_group_code = #{oaAccountGroupCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.OaAccountGroup">
+    insert into oa_account_group (oa_account_group_code, oa_account_group_name, 
+      oa_account_group_desc, oa_account_group_state, 
+      oa_company_account_code, oa_account_group_createTm, 
+      oa_account_group_modifyTm)
+    values (#{oaAccountGroupCode,jdbcType=VARCHAR}, #{oaAccountGroupName,jdbcType=VARCHAR}, 
+      #{oaAccountGroupDesc,jdbcType=VARCHAR}, #{oaAccountGroupState,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{oaAccountGroupCreatetm,jdbcType=TIMESTAMP}, 
+      #{oaAccountGroupModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.OaAccountGroup">
+    insert into oa_account_group
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oaAccountGroupCode != null">
+        oa_account_group_code,
+      </if>
+      <if test="oaAccountGroupName != null">
+        oa_account_group_name,
+      </if>
+      <if test="oaAccountGroupDesc != null">
+        oa_account_group_desc,
+      </if>
+      <if test="oaAccountGroupState != null">
+        oa_account_group_state,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code,
+      </if>
+      <if test="oaAccountGroupCreatetm != null">
+        oa_account_group_createTm,
+      </if>
+      <if test="oaAccountGroupModifytm != null">
+        oa_account_group_modifyTm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oaAccountGroupCode != null">
+        #{oaAccountGroupCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaAccountGroupName != null">
+        #{oaAccountGroupName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaAccountGroupDesc != null">
+        #{oaAccountGroupDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="oaAccountGroupState != null">
+        #{oaAccountGroupState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaAccountGroupCreatetm != null">
+        #{oaAccountGroupCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaAccountGroupModifytm != null">
+        #{oaAccountGroupModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.OaAccountGroup">
+    update oa_account_group
+    <set>
+      <if test="oaAccountGroupName != null">
+        oa_account_group_name = #{oaAccountGroupName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaAccountGroupDesc != null">
+        oa_account_group_desc = #{oaAccountGroupDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="oaAccountGroupState != null">
+        oa_account_group_state = #{oaAccountGroupState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        oa_company_account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaAccountGroupCreatetm != null">
+        oa_account_group_createTm = #{oaAccountGroupCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaAccountGroupModifytm != null">
+        oa_account_group_modifyTm = #{oaAccountGroupModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where oa_account_group_code = #{oaAccountGroupCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.OaAccountGroup">
+    update oa_account_group
+    set oa_account_group_name = #{oaAccountGroupName,jdbcType=VARCHAR},
+      oa_account_group_desc = #{oaAccountGroupDesc,jdbcType=VARCHAR},
+      oa_account_group_state = #{oaAccountGroupState,jdbcType=VARCHAR},
+      oa_company_account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      oa_account_group_createTm = #{oaAccountGroupCreatetm,jdbcType=TIMESTAMP},
+      oa_account_group_modifyTm = #{oaAccountGroupModifytm,jdbcType=TIMESTAMP}
+    where oa_account_group_code = #{oaAccountGroupCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

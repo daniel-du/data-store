@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="InsProductLandingpagemanageMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.InsProductLandingpagemanage">
+    <id column="INS_PRODUCT_LandingPageManageNo" jdbcType="VARCHAR" property="insProductLandingpagemanageno" />
+    <result column="INS_product_info_Code" jdbcType="VARCHAR" property="insProductInfoCode" />
+    <result column="INS_product_info_VersionPayWay" jdbcType="VARCHAR" property="insProductInfoVersionpayway" />
+    <result column="INS_PRODUCT_LandingPageManageVersion" jdbcType="INTEGER" property="insProductLandingpagemanageversion" />
+    <result column="INS_PRODUCT_LandingPageManageChain" jdbcType="VARCHAR" property="insProductLandingpagemanagechain" />
+    <result column="INS_PRODUCT_LandingPageManageExplain" jdbcType="VARCHAR" property="insProductLandingpagemanageexplain" />
+    <result column="INS_PRODUCT_LandingPageManage_Day" jdbcType="TIMESTAMP" property="insProductLandingpagemanageDay" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="INS_product_info_VersionDesc" jdbcType="VARCHAR" property="insProductInfoVersiondesc" />
+    <result column="INS_PRODUCT_LandingPageManage_OperationTM" jdbcType="TIMESTAMP" property="insProductLandingpagemanageOperationtm" />
+    <result column="INS_PRODUCT_LandingPageManage_MODIFYTM" jdbcType="TIMESTAMP" property="insProductLandingpagemanageModifytm" />
+    <result column="INS_PRODUCT_LandingPageManage_CreateTM" jdbcType="TIMESTAMP" property="insProductLandingpagemanageCreatetm" />
+    <result column="INS_PRODUCT_LandingPageManage_css" jdbcType="VARCHAR" property="insProductLandingpagemanageCss" />
+    <result column="INS_PRODUCT_LandingPageManage_LaunchFlag" jdbcType="CHAR" property="insProductLandingpagemanageLaunchflag" />
+    <result column="INS_PRODUCT_LandingPageManage_RenewalFlag" jdbcType="VARCHAR" property="insProductLandingpagemanageRenewalflag" />
+    <result column="INS_PRODUCT_LandingPageManage_templateJson" jdbcType="VARCHAR" property="insProductLandingpagemanageTemplatejson" />
+    <result column="INS_PRODUCT_LandingPageManage_footerJson" jdbcType="VARCHAR" property="insProductLandingpagemanageFooterjson" />
+    <result column="INS_PRODUCT_LandingPageManage_status" jdbcType="VARCHAR" property="insProductLandingpagemanageStatus" />
+    <result column="oa_merchant_info_No" jdbcType="VARCHAR" property="oaMerchantInfoNo" />
+    <result column="INS_PRODUCT_LandingPageManage_basicprod" jdbcType="VARCHAR" property="insProductLandingpagemanageBasicprod" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    INS_PRODUCT_LandingPageManageNo, INS_product_info_Code, INS_product_info_VersionPayWay, 
+    INS_PRODUCT_LandingPageManageVersion, INS_PRODUCT_LandingPageManageChain, INS_PRODUCT_LandingPageManageExplain, 
+    INS_PRODUCT_LandingPageManage_Day, OA_company_Account_code, INS_product_info_VersionDesc, 
+    INS_PRODUCT_LandingPageManage_OperationTM, INS_PRODUCT_LandingPageManage_MODIFYTM, 
+    INS_PRODUCT_LandingPageManage_CreateTM, INS_PRODUCT_LandingPageManage_css, INS_PRODUCT_LandingPageManage_LaunchFlag, 
+    INS_PRODUCT_LandingPageManage_RenewalFlag, INS_PRODUCT_LandingPageManage_templateJson, 
+    INS_PRODUCT_LandingPageManage_footerJson, INS_PRODUCT_LandingPageManage_status, oa_merchant_info_No, 
+    INS_PRODUCT_LandingPageManage_basicprod
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ins_product_landingpagemanage
+    where INS_PRODUCT_LandingPageManageNo = #{insProductLandingpagemanageno,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from ins_product_landingpagemanage
+    where INS_PRODUCT_LandingPageManageNo = #{insProductLandingpagemanageno,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.InsProductLandingpagemanage">
+    insert into ins_product_landingpagemanage (INS_PRODUCT_LandingPageManageNo, INS_product_info_Code, 
+      INS_product_info_VersionPayWay, INS_PRODUCT_LandingPageManageVersion, 
+      INS_PRODUCT_LandingPageManageChain, INS_PRODUCT_LandingPageManageExplain, 
+      INS_PRODUCT_LandingPageManage_Day, OA_company_Account_code, 
+      INS_product_info_VersionDesc, INS_PRODUCT_LandingPageManage_OperationTM, 
+      INS_PRODUCT_LandingPageManage_MODIFYTM, INS_PRODUCT_LandingPageManage_CreateTM, 
+      INS_PRODUCT_LandingPageManage_css, INS_PRODUCT_LandingPageManage_LaunchFlag, 
+      INS_PRODUCT_LandingPageManage_RenewalFlag, INS_PRODUCT_LandingPageManage_templateJson, 
+      INS_PRODUCT_LandingPageManage_footerJson, INS_PRODUCT_LandingPageManage_status, 
+      oa_merchant_info_No, INS_PRODUCT_LandingPageManage_basicprod
+      )
+    values (#{insProductLandingpagemanageno,jdbcType=VARCHAR}, #{insProductInfoCode,jdbcType=VARCHAR}, 
+      #{insProductInfoVersionpayway,jdbcType=VARCHAR}, #{insProductLandingpagemanageversion,jdbcType=INTEGER}, 
+      #{insProductLandingpagemanagechain,jdbcType=VARCHAR}, #{insProductLandingpagemanageexplain,jdbcType=VARCHAR}, 
+      #{insProductLandingpagemanageDay,jdbcType=TIMESTAMP}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{insProductInfoVersiondesc,jdbcType=VARCHAR}, #{insProductLandingpagemanageOperationtm,jdbcType=TIMESTAMP}, 
+      #{insProductLandingpagemanageModifytm,jdbcType=TIMESTAMP}, #{insProductLandingpagemanageCreatetm,jdbcType=TIMESTAMP}, 
+      #{insProductLandingpagemanageCss,jdbcType=VARCHAR}, #{insProductLandingpagemanageLaunchflag,jdbcType=CHAR}, 
+      #{insProductLandingpagemanageRenewalflag,jdbcType=VARCHAR}, #{insProductLandingpagemanageTemplatejson,jdbcType=VARCHAR}, 
+      #{insProductLandingpagemanageFooterjson,jdbcType=VARCHAR}, #{insProductLandingpagemanageStatus,jdbcType=VARCHAR}, 
+      #{oaMerchantInfoNo,jdbcType=VARCHAR}, #{insProductLandingpagemanageBasicprod,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.InsProductLandingpagemanage">
+    insert into ins_product_landingpagemanage
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="insProductLandingpagemanageno != null">
+        INS_PRODUCT_LandingPageManageNo,
+      </if>
+      <if test="insProductInfoCode != null">
+        INS_product_info_Code,
+      </if>
+      <if test="insProductInfoVersionpayway != null">
+        INS_product_info_VersionPayWay,
+      </if>
+      <if test="insProductLandingpagemanageversion != null">
+        INS_PRODUCT_LandingPageManageVersion,
+      </if>
+      <if test="insProductLandingpagemanagechain != null">
+        INS_PRODUCT_LandingPageManageChain,
+      </if>
+      <if test="insProductLandingpagemanageexplain != null">
+        INS_PRODUCT_LandingPageManageExplain,
+      </if>
+      <if test="insProductLandingpagemanageDay != null">
+        INS_PRODUCT_LandingPageManage_Day,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="insProductInfoVersiondesc != null">
+        INS_product_info_VersionDesc,
+      </if>
+      <if test="insProductLandingpagemanageOperationtm != null">
+        INS_PRODUCT_LandingPageManage_OperationTM,
+      </if>
+      <if test="insProductLandingpagemanageModifytm != null">
+        INS_PRODUCT_LandingPageManage_MODIFYTM,
+      </if>
+      <if test="insProductLandingpagemanageCreatetm != null">
+        INS_PRODUCT_LandingPageManage_CreateTM,
+      </if>
+      <if test="insProductLandingpagemanageCss != null">
+        INS_PRODUCT_LandingPageManage_css,
+      </if>
+      <if test="insProductLandingpagemanageLaunchflag != null">
+        INS_PRODUCT_LandingPageManage_LaunchFlag,
+      </if>
+      <if test="insProductLandingpagemanageRenewalflag != null">
+        INS_PRODUCT_LandingPageManage_RenewalFlag,
+      </if>
+      <if test="insProductLandingpagemanageTemplatejson != null">
+        INS_PRODUCT_LandingPageManage_templateJson,
+      </if>
+      <if test="insProductLandingpagemanageFooterjson != null">
+        INS_PRODUCT_LandingPageManage_footerJson,
+      </if>
+      <if test="insProductLandingpagemanageStatus != null">
+        INS_PRODUCT_LandingPageManage_status,
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        oa_merchant_info_No,
+      </if>
+      <if test="insProductLandingpagemanageBasicprod != null">
+        INS_PRODUCT_LandingPageManage_basicprod,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="insProductLandingpagemanageno != null">
+        #{insProductLandingpagemanageno,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoCode != null">
+        #{insProductInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoVersionpayway != null">
+        #{insProductInfoVersionpayway,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageversion != null">
+        #{insProductLandingpagemanageversion,jdbcType=INTEGER},
+      </if>
+      <if test="insProductLandingpagemanagechain != null">
+        #{insProductLandingpagemanagechain,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageexplain != null">
+        #{insProductLandingpagemanageexplain,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageDay != null">
+        #{insProductLandingpagemanageDay,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoVersiondesc != null">
+        #{insProductInfoVersiondesc,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageOperationtm != null">
+        #{insProductLandingpagemanageOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insProductLandingpagemanageModifytm != null">
+        #{insProductLandingpagemanageModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insProductLandingpagemanageCreatetm != null">
+        #{insProductLandingpagemanageCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insProductLandingpagemanageCss != null">
+        #{insProductLandingpagemanageCss,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageLaunchflag != null">
+        #{insProductLandingpagemanageLaunchflag,jdbcType=CHAR},
+      </if>
+      <if test="insProductLandingpagemanageRenewalflag != null">
+        #{insProductLandingpagemanageRenewalflag,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageTemplatejson != null">
+        #{insProductLandingpagemanageTemplatejson,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageFooterjson != null">
+        #{insProductLandingpagemanageFooterjson,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageStatus != null">
+        #{insProductLandingpagemanageStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageBasicprod != null">
+        #{insProductLandingpagemanageBasicprod,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.InsProductLandingpagemanage">
+    update ins_product_landingpagemanage
+    <set>
+      <if test="insProductInfoCode != null">
+        INS_product_info_Code = #{insProductInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoVersionpayway != null">
+        INS_product_info_VersionPayWay = #{insProductInfoVersionpayway,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageversion != null">
+        INS_PRODUCT_LandingPageManageVersion = #{insProductLandingpagemanageversion,jdbcType=INTEGER},
+      </if>
+      <if test="insProductLandingpagemanagechain != null">
+        INS_PRODUCT_LandingPageManageChain = #{insProductLandingpagemanagechain,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageexplain != null">
+        INS_PRODUCT_LandingPageManageExplain = #{insProductLandingpagemanageexplain,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageDay != null">
+        INS_PRODUCT_LandingPageManage_Day = #{insProductLandingpagemanageDay,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductInfoVersiondesc != null">
+        INS_product_info_VersionDesc = #{insProductInfoVersiondesc,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageOperationtm != null">
+        INS_PRODUCT_LandingPageManage_OperationTM = #{insProductLandingpagemanageOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insProductLandingpagemanageModifytm != null">
+        INS_PRODUCT_LandingPageManage_MODIFYTM = #{insProductLandingpagemanageModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insProductLandingpagemanageCreatetm != null">
+        INS_PRODUCT_LandingPageManage_CreateTM = #{insProductLandingpagemanageCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insProductLandingpagemanageCss != null">
+        INS_PRODUCT_LandingPageManage_css = #{insProductLandingpagemanageCss,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageLaunchflag != null">
+        INS_PRODUCT_LandingPageManage_LaunchFlag = #{insProductLandingpagemanageLaunchflag,jdbcType=CHAR},
+      </if>
+      <if test="insProductLandingpagemanageRenewalflag != null">
+        INS_PRODUCT_LandingPageManage_RenewalFlag = #{insProductLandingpagemanageRenewalflag,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageTemplatejson != null">
+        INS_PRODUCT_LandingPageManage_templateJson = #{insProductLandingpagemanageTemplatejson,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageFooterjson != null">
+        INS_PRODUCT_LandingPageManage_footerJson = #{insProductLandingpagemanageFooterjson,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageStatus != null">
+        INS_PRODUCT_LandingPageManage_status = #{insProductLandingpagemanageStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        oa_merchant_info_No = #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      </if>
+      <if test="insProductLandingpagemanageBasicprod != null">
+        INS_PRODUCT_LandingPageManage_basicprod = #{insProductLandingpagemanageBasicprod,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where INS_PRODUCT_LandingPageManageNo = #{insProductLandingpagemanageno,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.InsProductLandingpagemanage">
+    update ins_product_landingpagemanage
+    set INS_product_info_Code = #{insProductInfoCode,jdbcType=VARCHAR},
+      INS_product_info_VersionPayWay = #{insProductInfoVersionpayway,jdbcType=VARCHAR},
+      INS_PRODUCT_LandingPageManageVersion = #{insProductLandingpagemanageversion,jdbcType=INTEGER},
+      INS_PRODUCT_LandingPageManageChain = #{insProductLandingpagemanagechain,jdbcType=VARCHAR},
+      INS_PRODUCT_LandingPageManageExplain = #{insProductLandingpagemanageexplain,jdbcType=VARCHAR},
+      INS_PRODUCT_LandingPageManage_Day = #{insProductLandingpagemanageDay,jdbcType=TIMESTAMP},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      INS_product_info_VersionDesc = #{insProductInfoVersiondesc,jdbcType=VARCHAR},
+      INS_PRODUCT_LandingPageManage_OperationTM = #{insProductLandingpagemanageOperationtm,jdbcType=TIMESTAMP},
+      INS_PRODUCT_LandingPageManage_MODIFYTM = #{insProductLandingpagemanageModifytm,jdbcType=TIMESTAMP},
+      INS_PRODUCT_LandingPageManage_CreateTM = #{insProductLandingpagemanageCreatetm,jdbcType=TIMESTAMP},
+      INS_PRODUCT_LandingPageManage_css = #{insProductLandingpagemanageCss,jdbcType=VARCHAR},
+      INS_PRODUCT_LandingPageManage_LaunchFlag = #{insProductLandingpagemanageLaunchflag,jdbcType=CHAR},
+      INS_PRODUCT_LandingPageManage_RenewalFlag = #{insProductLandingpagemanageRenewalflag,jdbcType=VARCHAR},
+      INS_PRODUCT_LandingPageManage_templateJson = #{insProductLandingpagemanageTemplatejson,jdbcType=VARCHAR},
+      INS_PRODUCT_LandingPageManage_footerJson = #{insProductLandingpagemanageFooterjson,jdbcType=VARCHAR},
+      INS_PRODUCT_LandingPageManage_status = #{insProductLandingpagemanageStatus,jdbcType=VARCHAR},
+      oa_merchant_info_No = #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      INS_PRODUCT_LandingPageManage_basicprod = #{insProductLandingpagemanageBasicprod,jdbcType=VARCHAR}
+    where INS_PRODUCT_LandingPageManageNo = #{insProductLandingpagemanageno,jdbcType=VARCHAR}
+  </update>
+</mapper>

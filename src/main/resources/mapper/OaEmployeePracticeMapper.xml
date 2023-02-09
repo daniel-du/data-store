@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OaEmployeePracticeMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.OaEmployeePractice">
+    <id column="OA_employee_info_code" jdbcType="VARCHAR" property="oaEmployeeInfoCode" />
+    <result column="OA_employee_Practice_code" jdbcType="VARCHAR" property="oaEmployeePracticeCode" />
+    <result column="OA_employee_Practice_name" jdbcType="VARCHAR" property="oaEmployeePracticeName" />
+    <result column="OA_employee_Practice_Range" jdbcType="VARCHAR" property="oaEmployeePracticeRange" />
+    <result column="OA_employee_Practice_area" jdbcType="VARCHAR" property="oaEmployeePracticeArea" />
+    <result column="OA_employee_Practice_issueTm" jdbcType="VARCHAR" property="oaEmployeePracticeIssuetm" />
+    <result column="OA_employee_Practice_registerTm" jdbcType="VARCHAR" property="oaEmployeePracticeRegistertm" />
+    <result column="OA_employee_Practice_number" jdbcType="VARCHAR" property="oaEmployeePracticeNumber" />
+    <result column="OA_employee_Practice_createTm" jdbcType="TIMESTAMP" property="oaEmployeePracticeCreatetm" />
+    <result column="OA_employee_Practice_OperationTm" jdbcType="TIMESTAMP" property="oaEmployeePracticeOperationtm" />
+    <result column="OA_employee_Practice_modifyTm" jdbcType="TIMESTAMP" property="oaEmployeePracticeModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OA_employee_info_code, OA_employee_Practice_code, OA_employee_Practice_name, OA_employee_Practice_Range, 
+    OA_employee_Practice_area, OA_employee_Practice_issueTm, OA_employee_Practice_registerTm, 
+    OA_employee_Practice_number, OA_employee_Practice_createTm, OA_employee_Practice_OperationTm, 
+    OA_employee_Practice_modifyTm
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oa_employee_practice
+    where OA_employee_info_code = #{oaEmployeeInfoCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oa_employee_practice
+    where OA_employee_info_code = #{oaEmployeeInfoCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.OaEmployeePractice">
+    insert into oa_employee_practice (OA_employee_info_code, OA_employee_Practice_code, 
+      OA_employee_Practice_name, OA_employee_Practice_Range, 
+      OA_employee_Practice_area, OA_employee_Practice_issueTm, 
+      OA_employee_Practice_registerTm, OA_employee_Practice_number, 
+      OA_employee_Practice_createTm, OA_employee_Practice_OperationTm, 
+      OA_employee_Practice_modifyTm)
+    values (#{oaEmployeeInfoCode,jdbcType=VARCHAR}, #{oaEmployeePracticeCode,jdbcType=VARCHAR}, 
+      #{oaEmployeePracticeName,jdbcType=VARCHAR}, #{oaEmployeePracticeRange,jdbcType=VARCHAR}, 
+      #{oaEmployeePracticeArea,jdbcType=VARCHAR}, #{oaEmployeePracticeIssuetm,jdbcType=VARCHAR}, 
+      #{oaEmployeePracticeRegistertm,jdbcType=VARCHAR}, #{oaEmployeePracticeNumber,jdbcType=VARCHAR}, 
+      #{oaEmployeePracticeCreatetm,jdbcType=TIMESTAMP}, #{oaEmployeePracticeOperationtm,jdbcType=TIMESTAMP}, 
+      #{oaEmployeePracticeModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.OaEmployeePractice">
+    insert into oa_employee_practice
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oaEmployeeInfoCode != null">
+        OA_employee_info_code,
+      </if>
+      <if test="oaEmployeePracticeCode != null">
+        OA_employee_Practice_code,
+      </if>
+      <if test="oaEmployeePracticeName != null">
+        OA_employee_Practice_name,
+      </if>
+      <if test="oaEmployeePracticeRange != null">
+        OA_employee_Practice_Range,
+      </if>
+      <if test="oaEmployeePracticeArea != null">
+        OA_employee_Practice_area,
+      </if>
+      <if test="oaEmployeePracticeIssuetm != null">
+        OA_employee_Practice_issueTm,
+      </if>
+      <if test="oaEmployeePracticeRegistertm != null">
+        OA_employee_Practice_registerTm,
+      </if>
+      <if test="oaEmployeePracticeNumber != null">
+        OA_employee_Practice_number,
+      </if>
+      <if test="oaEmployeePracticeCreatetm != null">
+        OA_employee_Practice_createTm,
+      </if>
+      <if test="oaEmployeePracticeOperationtm != null">
+        OA_employee_Practice_OperationTm,
+      </if>
+      <if test="oaEmployeePracticeModifytm != null">
+        OA_employee_Practice_modifyTm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oaEmployeeInfoCode != null">
+        #{oaEmployeeInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeePracticeCode != null">
+        #{oaEmployeePracticeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeePracticeName != null">
+        #{oaEmployeePracticeName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeePracticeRange != null">
+        #{oaEmployeePracticeRange,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeePracticeArea != null">
+        #{oaEmployeePracticeArea,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeePracticeIssuetm != null">
+        #{oaEmployeePracticeIssuetm,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeePracticeRegistertm != null">
+        #{oaEmployeePracticeRegistertm,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeePracticeNumber != null">
+        #{oaEmployeePracticeNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeePracticeCreatetm != null">
+        #{oaEmployeePracticeCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeePracticeOperationtm != null">
+        #{oaEmployeePracticeOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeePracticeModifytm != null">
+        #{oaEmployeePracticeModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.OaEmployeePractice">
+    update oa_employee_practice
+    <set>
+      <if test="oaEmployeePracticeCode != null">
+        OA_employee_Practice_code = #{oaEmployeePracticeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeePracticeName != null">
+        OA_employee_Practice_name = #{oaEmployeePracticeName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeePracticeRange != null">
+        OA_employee_Practice_Range = #{oaEmployeePracticeRange,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeePracticeArea != null">
+        OA_employee_Practice_area = #{oaEmployeePracticeArea,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeePracticeIssuetm != null">
+        OA_employee_Practice_issueTm = #{oaEmployeePracticeIssuetm,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeePracticeRegistertm != null">
+        OA_employee_Practice_registerTm = #{oaEmployeePracticeRegistertm,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeePracticeNumber != null">
+        OA_employee_Practice_number = #{oaEmployeePracticeNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeePracticeCreatetm != null">
+        OA_employee_Practice_createTm = #{oaEmployeePracticeCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeePracticeOperationtm != null">
+        OA_employee_Practice_OperationTm = #{oaEmployeePracticeOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeePracticeModifytm != null">
+        OA_employee_Practice_modifyTm = #{oaEmployeePracticeModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where OA_employee_info_code = #{oaEmployeeInfoCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.OaEmployeePractice">
+    update oa_employee_practice
+    set OA_employee_Practice_code = #{oaEmployeePracticeCode,jdbcType=VARCHAR},
+      OA_employee_Practice_name = #{oaEmployeePracticeName,jdbcType=VARCHAR},
+      OA_employee_Practice_Range = #{oaEmployeePracticeRange,jdbcType=VARCHAR},
+      OA_employee_Practice_area = #{oaEmployeePracticeArea,jdbcType=VARCHAR},
+      OA_employee_Practice_issueTm = #{oaEmployeePracticeIssuetm,jdbcType=VARCHAR},
+      OA_employee_Practice_registerTm = #{oaEmployeePracticeRegistertm,jdbcType=VARCHAR},
+      OA_employee_Practice_number = #{oaEmployeePracticeNumber,jdbcType=VARCHAR},
+      OA_employee_Practice_createTm = #{oaEmployeePracticeCreatetm,jdbcType=TIMESTAMP},
+      OA_employee_Practice_OperationTm = #{oaEmployeePracticeOperationtm,jdbcType=TIMESTAMP},
+      OA_employee_Practice_modifyTm = #{oaEmployeePracticeModifytm,jdbcType=TIMESTAMP}
+    where OA_employee_info_code = #{oaEmployeeInfoCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

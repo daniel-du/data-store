@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="InsConfigCssMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.InsConfigCss">
+    <id column="ins_config_css_code" jdbcType="VARCHAR" property="insConfigCssCode" />
+    <result column="ins_config_css_name" jdbcType="VARCHAR" property="insConfigCssName" />
+    <result column="ins_config_css_describe" jdbcType="VARCHAR" property="insConfigCssDescribe" />
+    <result column="ins_config_css_detectFlag" jdbcType="VARCHAR" property="insConfigCssDetectflag" />
+    <result column="ins_config_css_type" jdbcType="VARCHAR" property="insConfigCssType" />
+    <result column="ins_config_css_attribute" jdbcType="VARCHAR" property="insConfigCssAttribute" />
+    <result column="ins_config_css_payway" jdbcType="VARCHAR" property="insConfigCssPayway" />
+    <result column="ins_config_css_supportdetect" jdbcType="VARCHAR" property="insConfigCssSupportdetect" />
+    <result column="ins_config_css_explain" jdbcType="VARCHAR" property="insConfigCssExplain" />
+    <result column="ins_config_css_state" jdbcType="VARCHAR" property="insConfigCssState" />
+    <result column="ins_config_css_templatevsersion" jdbcType="VARCHAR" property="insConfigCssTemplatevsersion" />
+    <result column="ins_config_css_templateversion" jdbcType="VARCHAR" property="insConfigCssTemplateversion" />
+    <result column="ins_config_css_templateId" jdbcType="VARCHAR" property="insConfigCssTemplateid" />
+    <result column="ins_config_css_templateName" jdbcType="VARCHAR" property="insConfigCssTemplatename" />
+    <result column="ins_config_css_templateJson" jdbcType="VARCHAR" property="insConfigCssTemplatejson" />
+    <result column="ins_config_css_templatePath" jdbcType="VARCHAR" property="insConfigCssTemplatepath" />
+    <result column="ins_config_css_level" jdbcType="INTEGER" property="insConfigCssLevel" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="ins_config_css_CreateTM" jdbcType="TIMESTAMP" property="insConfigCssCreatetm" />
+    <result column="ins_config_css_MODIFYTM" jdbcType="TIMESTAMP" property="insConfigCssModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ins_config_css_code, ins_config_css_name, ins_config_css_describe, ins_config_css_detectFlag, 
+    ins_config_css_type, ins_config_css_attribute, ins_config_css_payway, ins_config_css_supportdetect, 
+    ins_config_css_explain, ins_config_css_state, ins_config_css_templatevsersion, ins_config_css_templateversion, 
+    ins_config_css_templateId, ins_config_css_templateName, ins_config_css_templateJson, 
+    ins_config_css_templatePath, ins_config_css_level, OA_company_Account_code, ins_config_css_CreateTM, 
+    ins_config_css_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ins_config_css
+    where ins_config_css_code = #{insConfigCssCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from ins_config_css
+    where ins_config_css_code = #{insConfigCssCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.InsConfigCss">
+    insert into ins_config_css (ins_config_css_code, ins_config_css_name, 
+      ins_config_css_describe, ins_config_css_detectFlag, 
+      ins_config_css_type, ins_config_css_attribute, 
+      ins_config_css_payway, ins_config_css_supportdetect, 
+      ins_config_css_explain, ins_config_css_state, 
+      ins_config_css_templatevsersion, ins_config_css_templateversion, 
+      ins_config_css_templateId, ins_config_css_templateName, 
+      ins_config_css_templateJson, ins_config_css_templatePath, 
+      ins_config_css_level, OA_company_Account_code, 
+      ins_config_css_CreateTM, ins_config_css_MODIFYTM
+      )
+    values (#{insConfigCssCode,jdbcType=VARCHAR}, #{insConfigCssName,jdbcType=VARCHAR}, 
+      #{insConfigCssDescribe,jdbcType=VARCHAR}, #{insConfigCssDetectflag,jdbcType=VARCHAR}, 
+      #{insConfigCssType,jdbcType=VARCHAR}, #{insConfigCssAttribute,jdbcType=VARCHAR}, 
+      #{insConfigCssPayway,jdbcType=VARCHAR}, #{insConfigCssSupportdetect,jdbcType=VARCHAR}, 
+      #{insConfigCssExplain,jdbcType=VARCHAR}, #{insConfigCssState,jdbcType=VARCHAR}, 
+      #{insConfigCssTemplatevsersion,jdbcType=VARCHAR}, #{insConfigCssTemplateversion,jdbcType=VARCHAR}, 
+      #{insConfigCssTemplateid,jdbcType=VARCHAR}, #{insConfigCssTemplatename,jdbcType=VARCHAR}, 
+      #{insConfigCssTemplatejson,jdbcType=VARCHAR}, #{insConfigCssTemplatepath,jdbcType=VARCHAR}, 
+      #{insConfigCssLevel,jdbcType=INTEGER}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{insConfigCssCreatetm,jdbcType=TIMESTAMP}, #{insConfigCssModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.InsConfigCss">
+    insert into ins_config_css
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="insConfigCssCode != null">
+        ins_config_css_code,
+      </if>
+      <if test="insConfigCssName != null">
+        ins_config_css_name,
+      </if>
+      <if test="insConfigCssDescribe != null">
+        ins_config_css_describe,
+      </if>
+      <if test="insConfigCssDetectflag != null">
+        ins_config_css_detectFlag,
+      </if>
+      <if test="insConfigCssType != null">
+        ins_config_css_type,
+      </if>
+      <if test="insConfigCssAttribute != null">
+        ins_config_css_attribute,
+      </if>
+      <if test="insConfigCssPayway != null">
+        ins_config_css_payway,
+      </if>
+      <if test="insConfigCssSupportdetect != null">
+        ins_config_css_supportdetect,
+      </if>
+      <if test="insConfigCssExplain != null">
+        ins_config_css_explain,
+      </if>
+      <if test="insConfigCssState != null">
+        ins_config_css_state,
+      </if>
+      <if test="insConfigCssTemplatevsersion != null">
+        ins_config_css_templatevsersion,
+      </if>
+      <if test="insConfigCssTemplateversion != null">
+        ins_config_css_templateversion,
+      </if>
+      <if test="insConfigCssTemplateid != null">
+        ins_config_css_templateId,
+      </if>
+      <if test="insConfigCssTemplatename != null">
+        ins_config_css_templateName,
+      </if>
+      <if test="insConfigCssTemplatejson != null">
+        ins_config_css_templateJson,
+      </if>
+      <if test="insConfigCssTemplatepath != null">
+        ins_config_css_templatePath,
+      </if>
+      <if test="insConfigCssLevel != null">
+        ins_config_css_level,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="insConfigCssCreatetm != null">
+        ins_config_css_CreateTM,
+      </if>
+      <if test="insConfigCssModifytm != null">
+        ins_config_css_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="insConfigCssCode != null">
+        #{insConfigCssCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssName != null">
+        #{insConfigCssName,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssDescribe != null">
+        #{insConfigCssDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssDetectflag != null">
+        #{insConfigCssDetectflag,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssType != null">
+        #{insConfigCssType,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssAttribute != null">
+        #{insConfigCssAttribute,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssPayway != null">
+        #{insConfigCssPayway,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssSupportdetect != null">
+        #{insConfigCssSupportdetect,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssExplain != null">
+        #{insConfigCssExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssState != null">
+        #{insConfigCssState,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssTemplatevsersion != null">
+        #{insConfigCssTemplatevsersion,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssTemplateversion != null">
+        #{insConfigCssTemplateversion,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssTemplateid != null">
+        #{insConfigCssTemplateid,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssTemplatename != null">
+        #{insConfigCssTemplatename,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssTemplatejson != null">
+        #{insConfigCssTemplatejson,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssTemplatepath != null">
+        #{insConfigCssTemplatepath,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssLevel != null">
+        #{insConfigCssLevel,jdbcType=INTEGER},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssCreatetm != null">
+        #{insConfigCssCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insConfigCssModifytm != null">
+        #{insConfigCssModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.InsConfigCss">
+    update ins_config_css
+    <set>
+      <if test="insConfigCssName != null">
+        ins_config_css_name = #{insConfigCssName,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssDescribe != null">
+        ins_config_css_describe = #{insConfigCssDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssDetectflag != null">
+        ins_config_css_detectFlag = #{insConfigCssDetectflag,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssType != null">
+        ins_config_css_type = #{insConfigCssType,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssAttribute != null">
+        ins_config_css_attribute = #{insConfigCssAttribute,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssPayway != null">
+        ins_config_css_payway = #{insConfigCssPayway,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssSupportdetect != null">
+        ins_config_css_supportdetect = #{insConfigCssSupportdetect,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssExplain != null">
+        ins_config_css_explain = #{insConfigCssExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssState != null">
+        ins_config_css_state = #{insConfigCssState,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssTemplatevsersion != null">
+        ins_config_css_templatevsersion = #{insConfigCssTemplatevsersion,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssTemplateversion != null">
+        ins_config_css_templateversion = #{insConfigCssTemplateversion,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssTemplateid != null">
+        ins_config_css_templateId = #{insConfigCssTemplateid,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssTemplatename != null">
+        ins_config_css_templateName = #{insConfigCssTemplatename,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssTemplatejson != null">
+        ins_config_css_templateJson = #{insConfigCssTemplatejson,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssTemplatepath != null">
+        ins_config_css_templatePath = #{insConfigCssTemplatepath,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssLevel != null">
+        ins_config_css_level = #{insConfigCssLevel,jdbcType=INTEGER},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insConfigCssCreatetm != null">
+        ins_config_css_CreateTM = #{insConfigCssCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insConfigCssModifytm != null">
+        ins_config_css_MODIFYTM = #{insConfigCssModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ins_config_css_code = #{insConfigCssCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.InsConfigCss">
+    update ins_config_css
+    set ins_config_css_name = #{insConfigCssName,jdbcType=VARCHAR},
+      ins_config_css_describe = #{insConfigCssDescribe,jdbcType=VARCHAR},
+      ins_config_css_detectFlag = #{insConfigCssDetectflag,jdbcType=VARCHAR},
+      ins_config_css_type = #{insConfigCssType,jdbcType=VARCHAR},
+      ins_config_css_attribute = #{insConfigCssAttribute,jdbcType=VARCHAR},
+      ins_config_css_payway = #{insConfigCssPayway,jdbcType=VARCHAR},
+      ins_config_css_supportdetect = #{insConfigCssSupportdetect,jdbcType=VARCHAR},
+      ins_config_css_explain = #{insConfigCssExplain,jdbcType=VARCHAR},
+      ins_config_css_state = #{insConfigCssState,jdbcType=VARCHAR},
+      ins_config_css_templatevsersion = #{insConfigCssTemplatevsersion,jdbcType=VARCHAR},
+      ins_config_css_templateversion = #{insConfigCssTemplateversion,jdbcType=VARCHAR},
+      ins_config_css_templateId = #{insConfigCssTemplateid,jdbcType=VARCHAR},
+      ins_config_css_templateName = #{insConfigCssTemplatename,jdbcType=VARCHAR},
+      ins_config_css_templateJson = #{insConfigCssTemplatejson,jdbcType=VARCHAR},
+      ins_config_css_templatePath = #{insConfigCssTemplatepath,jdbcType=VARCHAR},
+      ins_config_css_level = #{insConfigCssLevel,jdbcType=INTEGER},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      ins_config_css_CreateTM = #{insConfigCssCreatetm,jdbcType=TIMESTAMP},
+      ins_config_css_MODIFYTM = #{insConfigCssModifytm,jdbcType=TIMESTAMP}
+    where ins_config_css_code = #{insConfigCssCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

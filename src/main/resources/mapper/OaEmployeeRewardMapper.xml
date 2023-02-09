@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OaEmployeeRewardMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.OaEmployeeReward">
+    <id column="OA_employee_Reward_id" jdbcType="VARCHAR" property="oaEmployeeRewardId" />
+    <result column="OA_employee_info_code" jdbcType="VARCHAR" property="oaEmployeeInfoCode" />
+    <result column="OA_employee_Reward_name" jdbcType="VARCHAR" property="oaEmployeeRewardName" />
+    <result column="OA_employee_Reward_date" jdbcType="VARCHAR" property="oaEmployeeRewardDate" />
+    <result column="OA_employee_Reward_createTm" jdbcType="TIMESTAMP" property="oaEmployeeRewardCreatetm" />
+    <result column="OA_employee_Reward_OperationTm" jdbcType="TIMESTAMP" property="oaEmployeeRewardOperationtm" />
+    <result column="OA_employee_Reward_modifyTm" jdbcType="TIMESTAMP" property="oaEmployeeRewardModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OA_employee_Reward_id, OA_employee_info_code, OA_employee_Reward_name, OA_employee_Reward_date, 
+    OA_employee_Reward_createTm, OA_employee_Reward_OperationTm, OA_employee_Reward_modifyTm
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oa_employee_reward
+    where OA_employee_Reward_id = #{oaEmployeeRewardId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oa_employee_reward
+    where OA_employee_Reward_id = #{oaEmployeeRewardId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.OaEmployeeReward">
+    insert into oa_employee_reward (OA_employee_Reward_id, OA_employee_info_code, 
+      OA_employee_Reward_name, OA_employee_Reward_date, 
+      OA_employee_Reward_createTm, OA_employee_Reward_OperationTm, 
+      OA_employee_Reward_modifyTm)
+    values (#{oaEmployeeRewardId,jdbcType=VARCHAR}, #{oaEmployeeInfoCode,jdbcType=VARCHAR}, 
+      #{oaEmployeeRewardName,jdbcType=VARCHAR}, #{oaEmployeeRewardDate,jdbcType=VARCHAR}, 
+      #{oaEmployeeRewardCreatetm,jdbcType=TIMESTAMP}, #{oaEmployeeRewardOperationtm,jdbcType=TIMESTAMP}, 
+      #{oaEmployeeRewardModifytm,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.OaEmployeeReward">
+    insert into oa_employee_reward
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oaEmployeeRewardId != null">
+        OA_employee_Reward_id,
+      </if>
+      <if test="oaEmployeeInfoCode != null">
+        OA_employee_info_code,
+      </if>
+      <if test="oaEmployeeRewardName != null">
+        OA_employee_Reward_name,
+      </if>
+      <if test="oaEmployeeRewardDate != null">
+        OA_employee_Reward_date,
+      </if>
+      <if test="oaEmployeeRewardCreatetm != null">
+        OA_employee_Reward_createTm,
+      </if>
+      <if test="oaEmployeeRewardOperationtm != null">
+        OA_employee_Reward_OperationTm,
+      </if>
+      <if test="oaEmployeeRewardModifytm != null">
+        OA_employee_Reward_modifyTm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oaEmployeeRewardId != null">
+        #{oaEmployeeRewardId,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeInfoCode != null">
+        #{oaEmployeeInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeRewardName != null">
+        #{oaEmployeeRewardName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeRewardDate != null">
+        #{oaEmployeeRewardDate,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeRewardCreatetm != null">
+        #{oaEmployeeRewardCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeRewardOperationtm != null">
+        #{oaEmployeeRewardOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeRewardModifytm != null">
+        #{oaEmployeeRewardModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.OaEmployeeReward">
+    update oa_employee_reward
+    <set>
+      <if test="oaEmployeeInfoCode != null">
+        OA_employee_info_code = #{oaEmployeeInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeRewardName != null">
+        OA_employee_Reward_name = #{oaEmployeeRewardName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeRewardDate != null">
+        OA_employee_Reward_date = #{oaEmployeeRewardDate,jdbcType=VARCHAR},
+      </if>
+      <if test="oaEmployeeRewardCreatetm != null">
+        OA_employee_Reward_createTm = #{oaEmployeeRewardCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeRewardOperationtm != null">
+        OA_employee_Reward_OperationTm = #{oaEmployeeRewardOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaEmployeeRewardModifytm != null">
+        OA_employee_Reward_modifyTm = #{oaEmployeeRewardModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where OA_employee_Reward_id = #{oaEmployeeRewardId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.OaEmployeeReward">
+    update oa_employee_reward
+    set OA_employee_info_code = #{oaEmployeeInfoCode,jdbcType=VARCHAR},
+      OA_employee_Reward_name = #{oaEmployeeRewardName,jdbcType=VARCHAR},
+      OA_employee_Reward_date = #{oaEmployeeRewardDate,jdbcType=VARCHAR},
+      OA_employee_Reward_createTm = #{oaEmployeeRewardCreatetm,jdbcType=TIMESTAMP},
+      OA_employee_Reward_OperationTm = #{oaEmployeeRewardOperationtm,jdbcType=TIMESTAMP},
+      OA_employee_Reward_modifyTm = #{oaEmployeeRewardModifytm,jdbcType=TIMESTAMP}
+    where OA_employee_Reward_id = #{oaEmployeeRewardId,jdbcType=VARCHAR}
+  </update>
+</mapper>

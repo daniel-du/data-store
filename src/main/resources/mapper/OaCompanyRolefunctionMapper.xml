@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OaCompanyRolefunctionMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.OaCompanyRolefunction">
+    <id column="OA_company_Rolefunction_no" jdbcType="VARCHAR" property="oaCompanyRolefunctionNo" />
+    <result column="OA_company_Role_code" jdbcType="VARCHAR" property="oaCompanyRoleCode" />
+    <result column="OA_company_function_code" jdbcType="VARCHAR" property="oaCompanyFunctionCode" />
+    <result column="OA_company_Account_Createcode" jdbcType="VARCHAR" property="oaCompanyAccountCreatecode" />
+    <result column="OA_company_Rolefunction_OperationTM" jdbcType="TIMESTAMP" property="oaCompanyRolefunctionOperationtm" />
+    <result column="OA_company_Rolefunction_MODIFYTM" jdbcType="TIMESTAMP" property="oaCompanyRolefunctionModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OA_company_Rolefunction_no, OA_company_Role_code, OA_company_function_code, OA_company_Account_Createcode, 
+    OA_company_Rolefunction_OperationTM, OA_company_Rolefunction_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oa_company_rolefunction
+    where OA_company_Rolefunction_no = #{oaCompanyRolefunctionNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oa_company_rolefunction
+    where OA_company_Rolefunction_no = #{oaCompanyRolefunctionNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.OaCompanyRolefunction">
+    insert into oa_company_rolefunction (OA_company_Rolefunction_no, OA_company_Role_code, 
+      OA_company_function_code, OA_company_Account_Createcode, 
+      OA_company_Rolefunction_OperationTM, OA_company_Rolefunction_MODIFYTM
+      )
+    values (#{oaCompanyRolefunctionNo,jdbcType=VARCHAR}, #{oaCompanyRoleCode,jdbcType=VARCHAR}, 
+      #{oaCompanyFunctionCode,jdbcType=VARCHAR}, #{oaCompanyAccountCreatecode,jdbcType=VARCHAR}, 
+      #{oaCompanyRolefunctionOperationtm,jdbcType=TIMESTAMP}, #{oaCompanyRolefunctionModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.OaCompanyRolefunction">
+    insert into oa_company_rolefunction
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oaCompanyRolefunctionNo != null">
+        OA_company_Rolefunction_no,
+      </if>
+      <if test="oaCompanyRoleCode != null">
+        OA_company_Role_code,
+      </if>
+      <if test="oaCompanyFunctionCode != null">
+        OA_company_function_code,
+      </if>
+      <if test="oaCompanyAccountCreatecode != null">
+        OA_company_Account_Createcode,
+      </if>
+      <if test="oaCompanyRolefunctionOperationtm != null">
+        OA_company_Rolefunction_OperationTM,
+      </if>
+      <if test="oaCompanyRolefunctionModifytm != null">
+        OA_company_Rolefunction_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oaCompanyRolefunctionNo != null">
+        #{oaCompanyRolefunctionNo,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyRoleCode != null">
+        #{oaCompanyRoleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionCode != null">
+        #{oaCompanyFunctionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCreatecode != null">
+        #{oaCompanyAccountCreatecode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyRolefunctionOperationtm != null">
+        #{oaCompanyRolefunctionOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyRolefunctionModifytm != null">
+        #{oaCompanyRolefunctionModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.OaCompanyRolefunction">
+    update oa_company_rolefunction
+    <set>
+      <if test="oaCompanyRoleCode != null">
+        OA_company_Role_code = #{oaCompanyRoleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyFunctionCode != null">
+        OA_company_function_code = #{oaCompanyFunctionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCreatecode != null">
+        OA_company_Account_Createcode = #{oaCompanyAccountCreatecode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyRolefunctionOperationtm != null">
+        OA_company_Rolefunction_OperationTM = #{oaCompanyRolefunctionOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyRolefunctionModifytm != null">
+        OA_company_Rolefunction_MODIFYTM = #{oaCompanyRolefunctionModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where OA_company_Rolefunction_no = #{oaCompanyRolefunctionNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.OaCompanyRolefunction">
+    update oa_company_rolefunction
+    set OA_company_Role_code = #{oaCompanyRoleCode,jdbcType=VARCHAR},
+      OA_company_function_code = #{oaCompanyFunctionCode,jdbcType=VARCHAR},
+      OA_company_Account_Createcode = #{oaCompanyAccountCreatecode,jdbcType=VARCHAR},
+      OA_company_Rolefunction_OperationTM = #{oaCompanyRolefunctionOperationtm,jdbcType=TIMESTAMP},
+      OA_company_Rolefunction_MODIFYTM = #{oaCompanyRolefunctionModifytm,jdbcType=TIMESTAMP}
+    where OA_company_Rolefunction_no = #{oaCompanyRolefunctionNo,jdbcType=VARCHAR}
+  </update>
+</mapper>

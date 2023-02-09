@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OaCompanySkillMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.OaCompanySkill">
+    <id column="oa_company_skill_code" jdbcType="VARCHAR" property="oaCompanySkillCode" />
+    <result column="oa_company_skill_name" jdbcType="VARCHAR" property="oaCompanySkillName" />
+    <result column="obd_channel_info_code" jdbcType="VARCHAR" property="obdChannelInfoCode" />
+    <result column="oa_company_skill_supplierCode" jdbcType="VARCHAR" property="oaCompanySkillSuppliercode" />
+    <result column="oa_company_skill_supplierName" jdbcType="VARCHAR" property="oaCompanySkillSuppliername" />
+    <result column="oa_company_skill_status" jdbcType="VARCHAR" property="oaCompanySkillStatus" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="oa_company_skill_createTM" jdbcType="TIMESTAMP" property="oaCompanySkillCreatetm" />
+    <result column="oa_company_skill_operationTM" jdbcType="TIMESTAMP" property="oaCompanySkillOperationtm" />
+    <result column="oa_company_skill_modifyTM" jdbcType="TIMESTAMP" property="oaCompanySkillModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    oa_company_skill_code, oa_company_skill_name, obd_channel_info_code, oa_company_skill_supplierCode, 
+    oa_company_skill_supplierName, oa_company_skill_status, OA_company_Account_code, 
+    oa_company_skill_createTM, oa_company_skill_operationTM, oa_company_skill_modifyTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oa_company_skill
+    where oa_company_skill_code = #{oaCompanySkillCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oa_company_skill
+    where oa_company_skill_code = #{oaCompanySkillCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.OaCompanySkill">
+    insert into oa_company_skill (oa_company_skill_code, oa_company_skill_name, 
+      obd_channel_info_code, oa_company_skill_supplierCode, 
+      oa_company_skill_supplierName, oa_company_skill_status, 
+      OA_company_Account_code, oa_company_skill_createTM, 
+      oa_company_skill_operationTM, oa_company_skill_modifyTM
+      )
+    values (#{oaCompanySkillCode,jdbcType=VARCHAR}, #{oaCompanySkillName,jdbcType=VARCHAR}, 
+      #{obdChannelInfoCode,jdbcType=VARCHAR}, #{oaCompanySkillSuppliercode,jdbcType=VARCHAR}, 
+      #{oaCompanySkillSuppliername,jdbcType=VARCHAR}, #{oaCompanySkillStatus,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountCode,jdbcType=VARCHAR}, #{oaCompanySkillCreatetm,jdbcType=TIMESTAMP}, 
+      #{oaCompanySkillOperationtm,jdbcType=TIMESTAMP}, #{oaCompanySkillModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.OaCompanySkill">
+    insert into oa_company_skill
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oaCompanySkillCode != null">
+        oa_company_skill_code,
+      </if>
+      <if test="oaCompanySkillName != null">
+        oa_company_skill_name,
+      </if>
+      <if test="obdChannelInfoCode != null">
+        obd_channel_info_code,
+      </if>
+      <if test="oaCompanySkillSuppliercode != null">
+        oa_company_skill_supplierCode,
+      </if>
+      <if test="oaCompanySkillSuppliername != null">
+        oa_company_skill_supplierName,
+      </if>
+      <if test="oaCompanySkillStatus != null">
+        oa_company_skill_status,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="oaCompanySkillCreatetm != null">
+        oa_company_skill_createTM,
+      </if>
+      <if test="oaCompanySkillOperationtm != null">
+        oa_company_skill_operationTM,
+      </if>
+      <if test="oaCompanySkillModifytm != null">
+        oa_company_skill_modifyTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oaCompanySkillCode != null">
+        #{oaCompanySkillCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanySkillName != null">
+        #{oaCompanySkillName,jdbcType=VARCHAR},
+      </if>
+      <if test="obdChannelInfoCode != null">
+        #{obdChannelInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanySkillSuppliercode != null">
+        #{oaCompanySkillSuppliercode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanySkillSuppliername != null">
+        #{oaCompanySkillSuppliername,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanySkillStatus != null">
+        #{oaCompanySkillStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanySkillCreatetm != null">
+        #{oaCompanySkillCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanySkillOperationtm != null">
+        #{oaCompanySkillOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanySkillModifytm != null">
+        #{oaCompanySkillModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.OaCompanySkill">
+    update oa_company_skill
+    <set>
+      <if test="oaCompanySkillName != null">
+        oa_company_skill_name = #{oaCompanySkillName,jdbcType=VARCHAR},
+      </if>
+      <if test="obdChannelInfoCode != null">
+        obd_channel_info_code = #{obdChannelInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanySkillSuppliercode != null">
+        oa_company_skill_supplierCode = #{oaCompanySkillSuppliercode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanySkillSuppliername != null">
+        oa_company_skill_supplierName = #{oaCompanySkillSuppliername,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanySkillStatus != null">
+        oa_company_skill_status = #{oaCompanySkillStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanySkillCreatetm != null">
+        oa_company_skill_createTM = #{oaCompanySkillCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanySkillOperationtm != null">
+        oa_company_skill_operationTM = #{oaCompanySkillOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanySkillModifytm != null">
+        oa_company_skill_modifyTM = #{oaCompanySkillModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where oa_company_skill_code = #{oaCompanySkillCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.OaCompanySkill">
+    update oa_company_skill
+    set oa_company_skill_name = #{oaCompanySkillName,jdbcType=VARCHAR},
+      obd_channel_info_code = #{obdChannelInfoCode,jdbcType=VARCHAR},
+      oa_company_skill_supplierCode = #{oaCompanySkillSuppliercode,jdbcType=VARCHAR},
+      oa_company_skill_supplierName = #{oaCompanySkillSuppliername,jdbcType=VARCHAR},
+      oa_company_skill_status = #{oaCompanySkillStatus,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      oa_company_skill_createTM = #{oaCompanySkillCreatetm,jdbcType=TIMESTAMP},
+      oa_company_skill_operationTM = #{oaCompanySkillOperationtm,jdbcType=TIMESTAMP},
+      oa_company_skill_modifyTM = #{oaCompanySkillModifytm,jdbcType=TIMESTAMP}
+    where oa_company_skill_code = #{oaCompanySkillCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

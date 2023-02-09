@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OaCompanyAccountMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.OaCompanyAccount">
+    <id column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="OA_company_Account_No" jdbcType="VARCHAR" property="oaCompanyAccountNo" />
+    <result column="OA_company_Account_password" jdbcType="VARCHAR" property="oaCompanyAccountPassword" />
+    <result column="MK_Advertiser_Info_Code" jdbcType="VARCHAR" property="mkAdvertiserInfoCode" />
+    <result column="OA_company_Employee_code" jdbcType="VARCHAR" property="oaCompanyEmployeeCode" />
+    <result column="OA_company_Employee_name" jdbcType="VARCHAR" property="oaCompanyEmployeeName" />
+    <result column="OA_company_user_type" jdbcType="VARCHAR" property="oaCompanyUserType" />
+    <result column="OA_company_Account_PhoneNumber" jdbcType="VARCHAR" property="oaCompanyAccountPhonenumber" />
+    <result column="OA_company_department_Code" jdbcType="VARCHAR" property="oaCompanyDepartmentCode" />
+    <result column="OA_company_dept_code" jdbcType="VARCHAR" property="oaCompanyDeptCode" />
+    <result column="OA_company_Account_AliyunIdBefore" jdbcType="VARCHAR" property="oaCompanyAccountAliyunidbefore" />
+    <result column="OA_company_Account_AliyunIdAfter" jdbcType="VARCHAR" property="oaCompanyAccountAliyunidafter" />
+    <result column="OA_company_Account_outsourceFlag" jdbcType="VARCHAR" property="oaCompanyAccountOutsourceflag" />
+    <result column="oa_account_group_code" jdbcType="VARCHAR" property="oaAccountGroupCode" />
+    <result column="OA_company_Account_state" jdbcType="VARCHAR" property="oaCompanyAccountState" />
+    <result column="OA_company_Account_Createcode" jdbcType="VARCHAR" property="oaCompanyAccountCreatecode" />
+    <result column="OA_company_Account_OperationTM" jdbcType="TIMESTAMP" property="oaCompanyAccountOperationtm" />
+    <result column="OA_company_Account_MODIFYTM" jdbcType="TIMESTAMP" property="oaCompanyAccountModifytm" />
+    <result column="mk_media_info_code" jdbcType="VARCHAR" property="mkMediaInfoCode" />
+    <result column="mk_media_agent_code" jdbcType="VARCHAR" property="mkMediaAgentCode" />
+    <result column="OA_company_mkUser_type" jdbcType="VARCHAR" property="oaCompanyMkuserType" />
+    <result column="OA_company_account_agentUserName" jdbcType="VARCHAR" property="oaCompanyAccountAgentusername" />
+    <result column="OA_Login_failed_num" jdbcType="INTEGER" property="oaLoginFailedNum" />
+    <result column="OA_Password_expiredate" jdbcType="TIMESTAMP" property="oaPasswordExpiredate" />
+    <result column="OA_company_Employee_Mail" jdbcType="VARCHAR" property="oaCompanyEmployeeMail" />
+    <result column="INS_Insurance_relation_Parent" jdbcType="VARCHAR" property="insInsuranceRelationParent" />
+    <result column="ins_insurance_parent_Code" jdbcType="VARCHAR" property="insInsuranceParentCode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    OA_company_Account_code, OA_company_Account_No, OA_company_Account_password, MK_Advertiser_Info_Code, 
+    OA_company_Employee_code, OA_company_Employee_name, OA_company_user_type, OA_company_Account_PhoneNumber, 
+    OA_company_department_Code, OA_company_dept_code, OA_company_Account_AliyunIdBefore, 
+    OA_company_Account_AliyunIdAfter, OA_company_Account_outsourceFlag, oa_account_group_code, 
+    OA_company_Account_state, OA_company_Account_Createcode, OA_company_Account_OperationTM, 
+    OA_company_Account_MODIFYTM, mk_media_info_code, mk_media_agent_code, OA_company_mkUser_type, 
+    OA_company_account_agentUserName, OA_Login_failed_num, OA_Password_expiredate, OA_company_Employee_Mail, 
+    INS_Insurance_relation_Parent, ins_insurance_parent_Code
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oa_company_account
+    where OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oa_company_account
+    where OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.OaCompanyAccount">
+    insert into oa_company_account (OA_company_Account_code, OA_company_Account_No, 
+      OA_company_Account_password, MK_Advertiser_Info_Code, 
+      OA_company_Employee_code, OA_company_Employee_name, 
+      OA_company_user_type, OA_company_Account_PhoneNumber, 
+      OA_company_department_Code, OA_company_dept_code, 
+      OA_company_Account_AliyunIdBefore, OA_company_Account_AliyunIdAfter, 
+      OA_company_Account_outsourceFlag, oa_account_group_code, 
+      OA_company_Account_state, OA_company_Account_Createcode, 
+      OA_company_Account_OperationTM, OA_company_Account_MODIFYTM, 
+      mk_media_info_code, mk_media_agent_code, OA_company_mkUser_type, 
+      OA_company_account_agentUserName, OA_Login_failed_num, 
+      OA_Password_expiredate, OA_company_Employee_Mail, 
+      INS_Insurance_relation_Parent, ins_insurance_parent_Code
+      )
+    values (#{oaCompanyAccountCode,jdbcType=VARCHAR}, #{oaCompanyAccountNo,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountPassword,jdbcType=VARCHAR}, #{mkAdvertiserInfoCode,jdbcType=VARCHAR}, 
+      #{oaCompanyEmployeeCode,jdbcType=VARCHAR}, #{oaCompanyEmployeeName,jdbcType=VARCHAR}, 
+      #{oaCompanyUserType,jdbcType=VARCHAR}, #{oaCompanyAccountPhonenumber,jdbcType=VARCHAR}, 
+      #{oaCompanyDepartmentCode,jdbcType=VARCHAR}, #{oaCompanyDeptCode,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountAliyunidbefore,jdbcType=VARCHAR}, #{oaCompanyAccountAliyunidafter,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountOutsourceflag,jdbcType=VARCHAR}, #{oaAccountGroupCode,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountState,jdbcType=VARCHAR}, #{oaCompanyAccountCreatecode,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountOperationtm,jdbcType=TIMESTAMP}, #{oaCompanyAccountModifytm,jdbcType=TIMESTAMP}, 
+      #{mkMediaInfoCode,jdbcType=VARCHAR}, #{mkMediaAgentCode,jdbcType=VARCHAR}, #{oaCompanyMkuserType,jdbcType=VARCHAR}, 
+      #{oaCompanyAccountAgentusername,jdbcType=VARCHAR}, #{oaLoginFailedNum,jdbcType=INTEGER}, 
+      #{oaPasswordExpiredate,jdbcType=TIMESTAMP}, #{oaCompanyEmployeeMail,jdbcType=VARCHAR}, 
+      #{insInsuranceRelationParent,jdbcType=VARCHAR}, #{insInsuranceParentCode,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.OaCompanyAccount">
+    insert into oa_company_account
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="oaCompanyAccountNo != null">
+        OA_company_Account_No,
+      </if>
+      <if test="oaCompanyAccountPassword != null">
+        OA_company_Account_password,
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        MK_Advertiser_Info_Code,
+      </if>
+      <if test="oaCompanyEmployeeCode != null">
+        OA_company_Employee_code,
+      </if>
+      <if test="oaCompanyEmployeeName != null">
+        OA_company_Employee_name,
+      </if>
+      <if test="oaCompanyUserType != null">
+        OA_company_user_type,
+      </if>
+      <if test="oaCompanyAccountPhonenumber != null">
+        OA_company_Account_PhoneNumber,
+      </if>
+      <if test="oaCompanyDepartmentCode != null">
+        OA_company_department_Code,
+      </if>
+      <if test="oaCompanyDeptCode != null">
+        OA_company_dept_code,
+      </if>
+      <if test="oaCompanyAccountAliyunidbefore != null">
+        OA_company_Account_AliyunIdBefore,
+      </if>
+      <if test="oaCompanyAccountAliyunidafter != null">
+        OA_company_Account_AliyunIdAfter,
+      </if>
+      <if test="oaCompanyAccountOutsourceflag != null">
+        OA_company_Account_outsourceFlag,
+      </if>
+      <if test="oaAccountGroupCode != null">
+        oa_account_group_code,
+      </if>
+      <if test="oaCompanyAccountState != null">
+        OA_company_Account_state,
+      </if>
+      <if test="oaCompanyAccountCreatecode != null">
+        OA_company_Account_Createcode,
+      </if>
+      <if test="oaCompanyAccountOperationtm != null">
+        OA_company_Account_OperationTM,
+      </if>
+      <if test="oaCompanyAccountModifytm != null">
+        OA_company_Account_MODIFYTM,
+      </if>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code,
+      </if>
+      <if test="mkMediaAgentCode != null">
+        mk_media_agent_code,
+      </if>
+      <if test="oaCompanyMkuserType != null">
+        OA_company_mkUser_type,
+      </if>
+      <if test="oaCompanyAccountAgentusername != null">
+        OA_company_account_agentUserName,
+      </if>
+      <if test="oaLoginFailedNum != null">
+        OA_Login_failed_num,
+      </if>
+      <if test="oaPasswordExpiredate != null">
+        OA_Password_expiredate,
+      </if>
+      <if test="oaCompanyEmployeeMail != null">
+        OA_company_Employee_Mail,
+      </if>
+      <if test="insInsuranceRelationParent != null">
+        INS_Insurance_relation_Parent,
+      </if>
+      <if test="insInsuranceParentCode != null">
+        ins_insurance_parent_Code,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountNo != null">
+        #{oaCompanyAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountPassword != null">
+        #{oaCompanyAccountPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeCode != null">
+        #{oaCompanyEmployeeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeName != null">
+        #{oaCompanyEmployeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyUserType != null">
+        #{oaCompanyUserType,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountPhonenumber != null">
+        #{oaCompanyAccountPhonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyDepartmentCode != null">
+        #{oaCompanyDepartmentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyDeptCode != null">
+        #{oaCompanyDeptCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountAliyunidbefore != null">
+        #{oaCompanyAccountAliyunidbefore,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountAliyunidafter != null">
+        #{oaCompanyAccountAliyunidafter,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountOutsourceflag != null">
+        #{oaCompanyAccountOutsourceflag,jdbcType=VARCHAR},
+      </if>
+      <if test="oaAccountGroupCode != null">
+        #{oaAccountGroupCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountState != null">
+        #{oaCompanyAccountState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCreatecode != null">
+        #{oaCompanyAccountCreatecode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountOperationtm != null">
+        #{oaCompanyAccountOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyAccountModifytm != null">
+        #{oaCompanyAccountModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyMkuserType != null">
+        #{oaCompanyMkuserType,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountAgentusername != null">
+        #{oaCompanyAccountAgentusername,jdbcType=VARCHAR},
+      </if>
+      <if test="oaLoginFailedNum != null">
+        #{oaLoginFailedNum,jdbcType=INTEGER},
+      </if>
+      <if test="oaPasswordExpiredate != null">
+        #{oaPasswordExpiredate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyEmployeeMail != null">
+        #{oaCompanyEmployeeMail,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceRelationParent != null">
+        #{insInsuranceRelationParent,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceParentCode != null">
+        #{insInsuranceParentCode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.OaCompanyAccount">
+    update oa_company_account
+    <set>
+      <if test="oaCompanyAccountNo != null">
+        OA_company_Account_No = #{oaCompanyAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountPassword != null">
+        OA_company_Account_password = #{oaCompanyAccountPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCode != null">
+        MK_Advertiser_Info_Code = #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeCode != null">
+        OA_company_Employee_code = #{oaCompanyEmployeeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyEmployeeName != null">
+        OA_company_Employee_name = #{oaCompanyEmployeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyUserType != null">
+        OA_company_user_type = #{oaCompanyUserType,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountPhonenumber != null">
+        OA_company_Account_PhoneNumber = #{oaCompanyAccountPhonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyDepartmentCode != null">
+        OA_company_department_Code = #{oaCompanyDepartmentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyDeptCode != null">
+        OA_company_dept_code = #{oaCompanyDeptCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountAliyunidbefore != null">
+        OA_company_Account_AliyunIdBefore = #{oaCompanyAccountAliyunidbefore,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountAliyunidafter != null">
+        OA_company_Account_AliyunIdAfter = #{oaCompanyAccountAliyunidafter,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountOutsourceflag != null">
+        OA_company_Account_outsourceFlag = #{oaCompanyAccountOutsourceflag,jdbcType=VARCHAR},
+      </if>
+      <if test="oaAccountGroupCode != null">
+        oa_account_group_code = #{oaAccountGroupCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountState != null">
+        OA_company_Account_state = #{oaCompanyAccountState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCreatecode != null">
+        OA_company_Account_Createcode = #{oaCompanyAccountCreatecode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountOperationtm != null">
+        OA_company_Account_OperationTM = #{oaCompanyAccountOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyAccountModifytm != null">
+        OA_company_Account_MODIFYTM = #{oaCompanyAccountModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mkMediaInfoCode != null">
+        mk_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mkMediaAgentCode != null">
+        mk_media_agent_code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyMkuserType != null">
+        OA_company_mkUser_type = #{oaCompanyMkuserType,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountAgentusername != null">
+        OA_company_account_agentUserName = #{oaCompanyAccountAgentusername,jdbcType=VARCHAR},
+      </if>
+      <if test="oaLoginFailedNum != null">
+        OA_Login_failed_num = #{oaLoginFailedNum,jdbcType=INTEGER},
+      </if>
+      <if test="oaPasswordExpiredate != null">
+        OA_Password_expiredate = #{oaPasswordExpiredate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaCompanyEmployeeMail != null">
+        OA_company_Employee_Mail = #{oaCompanyEmployeeMail,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceRelationParent != null">
+        INS_Insurance_relation_Parent = #{insInsuranceRelationParent,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceParentCode != null">
+        ins_insurance_parent_Code = #{insInsuranceParentCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.OaCompanyAccount">
+    update oa_company_account
+    set OA_company_Account_No = #{oaCompanyAccountNo,jdbcType=VARCHAR},
+      OA_company_Account_password = #{oaCompanyAccountPassword,jdbcType=VARCHAR},
+      MK_Advertiser_Info_Code = #{mkAdvertiserInfoCode,jdbcType=VARCHAR},
+      OA_company_Employee_code = #{oaCompanyEmployeeCode,jdbcType=VARCHAR},
+      OA_company_Employee_name = #{oaCompanyEmployeeName,jdbcType=VARCHAR},
+      OA_company_user_type = #{oaCompanyUserType,jdbcType=VARCHAR},
+      OA_company_Account_PhoneNumber = #{oaCompanyAccountPhonenumber,jdbcType=VARCHAR},
+      OA_company_department_Code = #{oaCompanyDepartmentCode,jdbcType=VARCHAR},
+      OA_company_dept_code = #{oaCompanyDeptCode,jdbcType=VARCHAR},
+      OA_company_Account_AliyunIdBefore = #{oaCompanyAccountAliyunidbefore,jdbcType=VARCHAR},
+      OA_company_Account_AliyunIdAfter = #{oaCompanyAccountAliyunidafter,jdbcType=VARCHAR},
+      OA_company_Account_outsourceFlag = #{oaCompanyAccountOutsourceflag,jdbcType=VARCHAR},
+      oa_account_group_code = #{oaAccountGroupCode,jdbcType=VARCHAR},
+      OA_company_Account_state = #{oaCompanyAccountState,jdbcType=VARCHAR},
+      OA_company_Account_Createcode = #{oaCompanyAccountCreatecode,jdbcType=VARCHAR},
+      OA_company_Account_OperationTM = #{oaCompanyAccountOperationtm,jdbcType=TIMESTAMP},
+      OA_company_Account_MODIFYTM = #{oaCompanyAccountModifytm,jdbcType=TIMESTAMP},
+      mk_media_info_code = #{mkMediaInfoCode,jdbcType=VARCHAR},
+      mk_media_agent_code = #{mkMediaAgentCode,jdbcType=VARCHAR},
+      OA_company_mkUser_type = #{oaCompanyMkuserType,jdbcType=VARCHAR},
+      OA_company_account_agentUserName = #{oaCompanyAccountAgentusername,jdbcType=VARCHAR},
+      OA_Login_failed_num = #{oaLoginFailedNum,jdbcType=INTEGER},
+      OA_Password_expiredate = #{oaPasswordExpiredate,jdbcType=TIMESTAMP},
+      OA_company_Employee_Mail = #{oaCompanyEmployeeMail,jdbcType=VARCHAR},
+      INS_Insurance_relation_Parent = #{insInsuranceRelationParent,jdbcType=VARCHAR},
+      ins_insurance_parent_Code = #{insInsuranceParentCode,jdbcType=VARCHAR}
+    where OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

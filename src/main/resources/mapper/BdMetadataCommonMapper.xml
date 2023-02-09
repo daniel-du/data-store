@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BdMetadataCommonMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.BdMetadataCommon">
+    <id column="BD_metaData_common_code" jdbcType="VARCHAR" property="bdMetadataCommonCode" />
+    <result column="BD_metaData_common_parent_code" jdbcType="VARCHAR" property="bdMetadataCommonParentCode" />
+    <result column="BD_metaData_common_child_code" jdbcType="VARCHAR" property="bdMetadataCommonChildCode" />
+    <result column="BD_metaData_common_data" jdbcType="VARCHAR" property="bdMetadataCommonData" />
+    <result column="BD_metaData_common_special" jdbcType="VARCHAR" property="bdMetadataCommonSpecial" />
+    <result column="BD_metaData_common_Name" jdbcType="VARCHAR" property="bdMetadataCommonName" />
+    <result column="BD_metaData_type_code" jdbcType="VARCHAR" property="bdMetadataTypeCode" />
+    <result column="BD_metaData_common_EName" jdbcType="VARCHAR" property="bdMetadataCommonEname" />
+    <result column="BD_metaData_common_REMARK" jdbcType="VARCHAR" property="bdMetadataCommonRemark" />
+    <result column="BD_metaData_common_max" jdbcType="NUMERIC" property="bdMetadataCommonMax" />
+    <result column="BD_metaData_common_min" jdbcType="NUMERIC" property="bdMetadataCommonMin" />
+    <result column="BD_metaData_common_sequence" jdbcType="INTEGER" property="bdMetadataCommonSequence" />
+    <result column="BD_metaData_common_State" jdbcType="VARCHAR" property="bdMetadataCommonState" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="BD_metaData_common_OperationTM" jdbcType="TIMESTAMP" property="bdMetadataCommonOperationtm" />
+    <result column="BD_metaData_common__MODIFYTM" jdbcType="TIMESTAMP" property="bdMetadataCommonModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    BD_metaData_common_code, BD_metaData_common_parent_code, BD_metaData_common_child_code, 
+    BD_metaData_common_data, BD_metaData_common_special, BD_metaData_common_Name, BD_metaData_type_code, 
+    BD_metaData_common_EName, BD_metaData_common_REMARK, BD_metaData_common_max, BD_metaData_common_min, 
+    BD_metaData_common_sequence, BD_metaData_common_State, OA_company_Account_code, BD_metaData_common_OperationTM, 
+    BD_metaData_common__MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bd_metadata_common
+    where BD_metaData_common_code = #{bdMetadataCommonCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from bd_metadata_common
+    where BD_metaData_common_code = #{bdMetadataCommonCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.BdMetadataCommon">
+    insert into bd_metadata_common (BD_metaData_common_code, BD_metaData_common_parent_code, 
+      BD_metaData_common_child_code, BD_metaData_common_data, 
+      BD_metaData_common_special, BD_metaData_common_Name, 
+      BD_metaData_type_code, BD_metaData_common_EName, 
+      BD_metaData_common_REMARK, BD_metaData_common_max, 
+      BD_metaData_common_min, BD_metaData_common_sequence, 
+      BD_metaData_common_State, OA_company_Account_code, 
+      BD_metaData_common_OperationTM, BD_metaData_common__MODIFYTM
+      )
+    values (#{bdMetadataCommonCode,jdbcType=VARCHAR}, #{bdMetadataCommonParentCode,jdbcType=VARCHAR}, 
+      #{bdMetadataCommonChildCode,jdbcType=VARCHAR}, #{bdMetadataCommonData,jdbcType=VARCHAR}, 
+      #{bdMetadataCommonSpecial,jdbcType=VARCHAR}, #{bdMetadataCommonName,jdbcType=VARCHAR}, 
+      #{bdMetadataTypeCode,jdbcType=VARCHAR}, #{bdMetadataCommonEname,jdbcType=VARCHAR}, 
+      #{bdMetadataCommonRemark,jdbcType=VARCHAR}, #{bdMetadataCommonMax,jdbcType=NUMERIC}, 
+      #{bdMetadataCommonMin,jdbcType=NUMERIC}, #{bdMetadataCommonSequence,jdbcType=INTEGER}, 
+      #{bdMetadataCommonState,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{bdMetadataCommonOperationtm,jdbcType=TIMESTAMP}, #{bdMetadataCommonModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.BdMetadataCommon">
+    insert into bd_metadata_common
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bdMetadataCommonCode != null">
+        BD_metaData_common_code,
+      </if>
+      <if test="bdMetadataCommonParentCode != null">
+        BD_metaData_common_parent_code,
+      </if>
+      <if test="bdMetadataCommonChildCode != null">
+        BD_metaData_common_child_code,
+      </if>
+      <if test="bdMetadataCommonData != null">
+        BD_metaData_common_data,
+      </if>
+      <if test="bdMetadataCommonSpecial != null">
+        BD_metaData_common_special,
+      </if>
+      <if test="bdMetadataCommonName != null">
+        BD_metaData_common_Name,
+      </if>
+      <if test="bdMetadataTypeCode != null">
+        BD_metaData_type_code,
+      </if>
+      <if test="bdMetadataCommonEname != null">
+        BD_metaData_common_EName,
+      </if>
+      <if test="bdMetadataCommonRemark != null">
+        BD_metaData_common_REMARK,
+      </if>
+      <if test="bdMetadataCommonMax != null">
+        BD_metaData_common_max,
+      </if>
+      <if test="bdMetadataCommonMin != null">
+        BD_metaData_common_min,
+      </if>
+      <if test="bdMetadataCommonSequence != null">
+        BD_metaData_common_sequence,
+      </if>
+      <if test="bdMetadataCommonState != null">
+        BD_metaData_common_State,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="bdMetadataCommonOperationtm != null">
+        BD_metaData_common_OperationTM,
+      </if>
+      <if test="bdMetadataCommonModifytm != null">
+        BD_metaData_common__MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bdMetadataCommonCode != null">
+        #{bdMetadataCommonCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonParentCode != null">
+        #{bdMetadataCommonParentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonChildCode != null">
+        #{bdMetadataCommonChildCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonData != null">
+        #{bdMetadataCommonData,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonSpecial != null">
+        #{bdMetadataCommonSpecial,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonName != null">
+        #{bdMetadataCommonName,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataTypeCode != null">
+        #{bdMetadataTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonEname != null">
+        #{bdMetadataCommonEname,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonRemark != null">
+        #{bdMetadataCommonRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonMax != null">
+        #{bdMetadataCommonMax,jdbcType=NUMERIC},
+      </if>
+      <if test="bdMetadataCommonMin != null">
+        #{bdMetadataCommonMin,jdbcType=NUMERIC},
+      </if>
+      <if test="bdMetadataCommonSequence != null">
+        #{bdMetadataCommonSequence,jdbcType=INTEGER},
+      </if>
+      <if test="bdMetadataCommonState != null">
+        #{bdMetadataCommonState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonOperationtm != null">
+        #{bdMetadataCommonOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="bdMetadataCommonModifytm != null">
+        #{bdMetadataCommonModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.BdMetadataCommon">
+    update bd_metadata_common
+    <set>
+      <if test="bdMetadataCommonParentCode != null">
+        BD_metaData_common_parent_code = #{bdMetadataCommonParentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonChildCode != null">
+        BD_metaData_common_child_code = #{bdMetadataCommonChildCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonData != null">
+        BD_metaData_common_data = #{bdMetadataCommonData,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonSpecial != null">
+        BD_metaData_common_special = #{bdMetadataCommonSpecial,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonName != null">
+        BD_metaData_common_Name = #{bdMetadataCommonName,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataTypeCode != null">
+        BD_metaData_type_code = #{bdMetadataTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonEname != null">
+        BD_metaData_common_EName = #{bdMetadataCommonEname,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonRemark != null">
+        BD_metaData_common_REMARK = #{bdMetadataCommonRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonMax != null">
+        BD_metaData_common_max = #{bdMetadataCommonMax,jdbcType=NUMERIC},
+      </if>
+      <if test="bdMetadataCommonMin != null">
+        BD_metaData_common_min = #{bdMetadataCommonMin,jdbcType=NUMERIC},
+      </if>
+      <if test="bdMetadataCommonSequence != null">
+        BD_metaData_common_sequence = #{bdMetadataCommonSequence,jdbcType=INTEGER},
+      </if>
+      <if test="bdMetadataCommonState != null">
+        BD_metaData_common_State = #{bdMetadataCommonState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataCommonOperationtm != null">
+        BD_metaData_common_OperationTM = #{bdMetadataCommonOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="bdMetadataCommonModifytm != null">
+        BD_metaData_common__MODIFYTM = #{bdMetadataCommonModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where BD_metaData_common_code = #{bdMetadataCommonCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.BdMetadataCommon">
+    update bd_metadata_common
+    set BD_metaData_common_parent_code = #{bdMetadataCommonParentCode,jdbcType=VARCHAR},
+      BD_metaData_common_child_code = #{bdMetadataCommonChildCode,jdbcType=VARCHAR},
+      BD_metaData_common_data = #{bdMetadataCommonData,jdbcType=VARCHAR},
+      BD_metaData_common_special = #{bdMetadataCommonSpecial,jdbcType=VARCHAR},
+      BD_metaData_common_Name = #{bdMetadataCommonName,jdbcType=VARCHAR},
+      BD_metaData_type_code = #{bdMetadataTypeCode,jdbcType=VARCHAR},
+      BD_metaData_common_EName = #{bdMetadataCommonEname,jdbcType=VARCHAR},
+      BD_metaData_common_REMARK = #{bdMetadataCommonRemark,jdbcType=VARCHAR},
+      BD_metaData_common_max = #{bdMetadataCommonMax,jdbcType=NUMERIC},
+      BD_metaData_common_min = #{bdMetadataCommonMin,jdbcType=NUMERIC},
+      BD_metaData_common_sequence = #{bdMetadataCommonSequence,jdbcType=INTEGER},
+      BD_metaData_common_State = #{bdMetadataCommonState,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      BD_metaData_common_OperationTM = #{bdMetadataCommonOperationtm,jdbcType=TIMESTAMP},
+      BD_metaData_common__MODIFYTM = #{bdMetadataCommonModifytm,jdbcType=TIMESTAMP}
+    where BD_metaData_common_code = #{bdMetadataCommonCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

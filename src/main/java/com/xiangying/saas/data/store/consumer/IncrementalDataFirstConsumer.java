@@ -42,9 +42,9 @@ public class IncrementalDataFirstConsumer  implements RocketMQListener<String> {
     public void onMessage(String s) {
         DataDetail dataDetail = JSONObject.parseObject(s, DataDetail.class);
         log.info("IncrementalDataFirstConsumer接收消息, dataDetail：{}", JSONObject.toJSONString(dataDetail));
-        if (!"cus_basic_wechat".equals(dataDetail.getDbTable()) && !"mk_advertiser_plancost".equals(dataDetail.getDbTable())) {
-            return;
-        }
+//        if (!"cus_basic_wechat".equals(dataDetail.getDbTable()) && !"mk_advertiser_plancost".equals(dataDetail.getDbTable())) {
+//            return;
+//        }
         dataConsumerService.saveData(dataDetail);
         log.info("IncrementalDataFirstConsumer消费结束");
     }

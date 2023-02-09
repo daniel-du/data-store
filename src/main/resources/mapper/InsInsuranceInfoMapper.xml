@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="InsInsuranceInfoMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.InsInsuranceInfo">
+    <id column="INS_Insurance_Info_Code" jdbcType="VARCHAR" property="insInsuranceInfoCode" />
+    <result column="INS_Insurance_Info_Name" jdbcType="VARCHAR" property="insInsuranceInfoName" />
+    <result column="INS_Insurance_Info_abbreviation" jdbcType="VARCHAR" property="insInsuranceInfoAbbreviation" />
+    <result column="INS_Insurance_Info_type" jdbcType="VARCHAR" property="insInsuranceInfoType" />
+    <result column="INS_Insurance_Info_Key" jdbcType="VARCHAR" property="insInsuranceInfoKey" />
+    <result column="INS_Insurance_Info_State" jdbcType="VARCHAR" property="insInsuranceInfoState" />
+    <result column="INS_Insurance_Info_ParentCode" jdbcType="VARCHAR" property="insInsuranceInfoParentcode" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="INS_Channel_Info_OperationTM" jdbcType="TIMESTAMP" property="insChannelInfoOperationtm" />
+    <result column="INS_Channel_Info_MODIFYTM" jdbcType="TIMESTAMP" property="insChannelInfoModifytm" />
+    <result column="INS_Insurance_Info_CooperativeCode" jdbcType="VARCHAR" property="insInsuranceInfoCooperativecode" />
+    <result column="oa_merchant_info_No" jdbcType="VARCHAR" property="oaMerchantInfoNo" />
+    <result column="INS_Insurance_Info_ifSubtract" jdbcType="VARCHAR" property="insInsuranceInfoIfsubtract" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    INS_Insurance_Info_Code, INS_Insurance_Info_Name, INS_Insurance_Info_abbreviation, 
+    INS_Insurance_Info_type, INS_Insurance_Info_Key, INS_Insurance_Info_State, INS_Insurance_Info_ParentCode, 
+    OA_company_Account_code, INS_Channel_Info_OperationTM, INS_Channel_Info_MODIFYTM, 
+    INS_Insurance_Info_CooperativeCode, oa_merchant_info_No, INS_Insurance_Info_ifSubtract
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ins_insurance_info
+    where INS_Insurance_Info_Code = #{insInsuranceInfoCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from ins_insurance_info
+    where INS_Insurance_Info_Code = #{insInsuranceInfoCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.InsInsuranceInfo">
+    insert into ins_insurance_info (INS_Insurance_Info_Code, INS_Insurance_Info_Name, 
+      INS_Insurance_Info_abbreviation, INS_Insurance_Info_type, 
+      INS_Insurance_Info_Key, INS_Insurance_Info_State, 
+      INS_Insurance_Info_ParentCode, OA_company_Account_code, 
+      INS_Channel_Info_OperationTM, INS_Channel_Info_MODIFYTM, 
+      INS_Insurance_Info_CooperativeCode, oa_merchant_info_No, 
+      INS_Insurance_Info_ifSubtract)
+    values (#{insInsuranceInfoCode,jdbcType=VARCHAR}, #{insInsuranceInfoName,jdbcType=VARCHAR}, 
+      #{insInsuranceInfoAbbreviation,jdbcType=VARCHAR}, #{insInsuranceInfoType,jdbcType=VARCHAR}, 
+      #{insInsuranceInfoKey,jdbcType=VARCHAR}, #{insInsuranceInfoState,jdbcType=VARCHAR}, 
+      #{insInsuranceInfoParentcode,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{insChannelInfoOperationtm,jdbcType=TIMESTAMP}, #{insChannelInfoModifytm,jdbcType=TIMESTAMP}, 
+      #{insInsuranceInfoCooperativecode,jdbcType=VARCHAR}, #{oaMerchantInfoNo,jdbcType=VARCHAR}, 
+      #{insInsuranceInfoIfsubtract,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.InsInsuranceInfo">
+    insert into ins_insurance_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="insInsuranceInfoCode != null">
+        INS_Insurance_Info_Code,
+      </if>
+      <if test="insInsuranceInfoName != null">
+        INS_Insurance_Info_Name,
+      </if>
+      <if test="insInsuranceInfoAbbreviation != null">
+        INS_Insurance_Info_abbreviation,
+      </if>
+      <if test="insInsuranceInfoType != null">
+        INS_Insurance_Info_type,
+      </if>
+      <if test="insInsuranceInfoKey != null">
+        INS_Insurance_Info_Key,
+      </if>
+      <if test="insInsuranceInfoState != null">
+        INS_Insurance_Info_State,
+      </if>
+      <if test="insInsuranceInfoParentcode != null">
+        INS_Insurance_Info_ParentCode,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="insChannelInfoOperationtm != null">
+        INS_Channel_Info_OperationTM,
+      </if>
+      <if test="insChannelInfoModifytm != null">
+        INS_Channel_Info_MODIFYTM,
+      </if>
+      <if test="insInsuranceInfoCooperativecode != null">
+        INS_Insurance_Info_CooperativeCode,
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        oa_merchant_info_No,
+      </if>
+      <if test="insInsuranceInfoIfsubtract != null">
+        INS_Insurance_Info_ifSubtract,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="insInsuranceInfoCode != null">
+        #{insInsuranceInfoCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceInfoName != null">
+        #{insInsuranceInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceInfoAbbreviation != null">
+        #{insInsuranceInfoAbbreviation,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceInfoType != null">
+        #{insInsuranceInfoType,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceInfoKey != null">
+        #{insInsuranceInfoKey,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceInfoState != null">
+        #{insInsuranceInfoState,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceInfoParentcode != null">
+        #{insInsuranceInfoParentcode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insChannelInfoOperationtm != null">
+        #{insChannelInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insChannelInfoModifytm != null">
+        #{insChannelInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insInsuranceInfoCooperativecode != null">
+        #{insInsuranceInfoCooperativecode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceInfoIfsubtract != null">
+        #{insInsuranceInfoIfsubtract,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.InsInsuranceInfo">
+    update ins_insurance_info
+    <set>
+      <if test="insInsuranceInfoName != null">
+        INS_Insurance_Info_Name = #{insInsuranceInfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceInfoAbbreviation != null">
+        INS_Insurance_Info_abbreviation = #{insInsuranceInfoAbbreviation,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceInfoType != null">
+        INS_Insurance_Info_type = #{insInsuranceInfoType,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceInfoKey != null">
+        INS_Insurance_Info_Key = #{insInsuranceInfoKey,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceInfoState != null">
+        INS_Insurance_Info_State = #{insInsuranceInfoState,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceInfoParentcode != null">
+        INS_Insurance_Info_ParentCode = #{insInsuranceInfoParentcode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="insChannelInfoOperationtm != null">
+        INS_Channel_Info_OperationTM = #{insChannelInfoOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insChannelInfoModifytm != null">
+        INS_Channel_Info_MODIFYTM = #{insChannelInfoModifytm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insInsuranceInfoCooperativecode != null">
+        INS_Insurance_Info_CooperativeCode = #{insInsuranceInfoCooperativecode,jdbcType=VARCHAR},
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        oa_merchant_info_No = #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      </if>
+      <if test="insInsuranceInfoIfsubtract != null">
+        INS_Insurance_Info_ifSubtract = #{insInsuranceInfoIfsubtract,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where INS_Insurance_Info_Code = #{insInsuranceInfoCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.InsInsuranceInfo">
+    update ins_insurance_info
+    set INS_Insurance_Info_Name = #{insInsuranceInfoName,jdbcType=VARCHAR},
+      INS_Insurance_Info_abbreviation = #{insInsuranceInfoAbbreviation,jdbcType=VARCHAR},
+      INS_Insurance_Info_type = #{insInsuranceInfoType,jdbcType=VARCHAR},
+      INS_Insurance_Info_Key = #{insInsuranceInfoKey,jdbcType=VARCHAR},
+      INS_Insurance_Info_State = #{insInsuranceInfoState,jdbcType=VARCHAR},
+      INS_Insurance_Info_ParentCode = #{insInsuranceInfoParentcode,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      INS_Channel_Info_OperationTM = #{insChannelInfoOperationtm,jdbcType=TIMESTAMP},
+      INS_Channel_Info_MODIFYTM = #{insChannelInfoModifytm,jdbcType=TIMESTAMP},
+      INS_Insurance_Info_CooperativeCode = #{insInsuranceInfoCooperativecode,jdbcType=VARCHAR},
+      oa_merchant_info_No = #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      INS_Insurance_Info_ifSubtract = #{insInsuranceInfoIfsubtract,jdbcType=VARCHAR}
+    where INS_Insurance_Info_Code = #{insInsuranceInfoCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

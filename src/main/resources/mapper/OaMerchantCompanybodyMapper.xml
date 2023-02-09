@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OaMerchantCompanybodyMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.OaMerchantCompanybody">
+    <id column="oa_merchant_CompanyBody_No" jdbcType="VARCHAR" property="oaMerchantCompanybodyNo" />
+    <result column="oa_merchant_info_No" jdbcType="VARCHAR" property="oaMerchantInfoNo" />
+    <result column="MK_Advertiser_Info_CompanyBody" jdbcType="VARCHAR" property="mkAdvertiserInfoCompanybody" />
+    <result column="oa_merchant_CompanyBody_CreateTM" jdbcType="TIMESTAMP" property="oaMerchantCompanybodyCreatetm" />
+    <result column="oa_merchant_CompanyBody_OperationTM" jdbcType="TIMESTAMP" property="oaMerchantCompanybodyOperationtm" />
+    <result column="oa_merchant_CompanyBody_MODIFYTM" jdbcType="TIMESTAMP" property="oaMerchantCompanybodyModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    oa_merchant_CompanyBody_No, oa_merchant_info_No, MK_Advertiser_Info_CompanyBody, 
+    oa_merchant_CompanyBody_CreateTM, oa_merchant_CompanyBody_OperationTM, oa_merchant_CompanyBody_MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oa_merchant_companybody
+    where oa_merchant_CompanyBody_No = #{oaMerchantCompanybodyNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from oa_merchant_companybody
+    where oa_merchant_CompanyBody_No = #{oaMerchantCompanybodyNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.OaMerchantCompanybody">
+    insert into oa_merchant_companybody (oa_merchant_CompanyBody_No, oa_merchant_info_No, 
+      MK_Advertiser_Info_CompanyBody, oa_merchant_CompanyBody_CreateTM, 
+      oa_merchant_CompanyBody_OperationTM, oa_merchant_CompanyBody_MODIFYTM
+      )
+    values (#{oaMerchantCompanybodyNo,jdbcType=VARCHAR}, #{oaMerchantInfoNo,jdbcType=VARCHAR}, 
+      #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR}, #{oaMerchantCompanybodyCreatetm,jdbcType=TIMESTAMP}, 
+      #{oaMerchantCompanybodyOperationtm,jdbcType=TIMESTAMP}, #{oaMerchantCompanybodyModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.OaMerchantCompanybody">
+    insert into oa_merchant_companybody
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oaMerchantCompanybodyNo != null">
+        oa_merchant_CompanyBody_No,
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        oa_merchant_info_No,
+      </if>
+      <if test="mkAdvertiserInfoCompanybody != null">
+        MK_Advertiser_Info_CompanyBody,
+      </if>
+      <if test="oaMerchantCompanybodyCreatetm != null">
+        oa_merchant_CompanyBody_CreateTM,
+      </if>
+      <if test="oaMerchantCompanybodyOperationtm != null">
+        oa_merchant_CompanyBody_OperationTM,
+      </if>
+      <if test="oaMerchantCompanybodyModifytm != null">
+        oa_merchant_CompanyBody_MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oaMerchantCompanybodyNo != null">
+        #{oaMerchantCompanybodyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="oaMerchantInfoNo != null">
+        #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCompanybody != null">
+        #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR},
+      </if>
+      <if test="oaMerchantCompanybodyCreatetm != null">
+        #{oaMerchantCompanybodyCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaMerchantCompanybodyOperationtm != null">
+        #{oaMerchantCompanybodyOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaMerchantCompanybodyModifytm != null">
+        #{oaMerchantCompanybodyModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.OaMerchantCompanybody">
+    update oa_merchant_companybody
+    <set>
+      <if test="oaMerchantInfoNo != null">
+        oa_merchant_info_No = #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      </if>
+      <if test="mkAdvertiserInfoCompanybody != null">
+        MK_Advertiser_Info_CompanyBody = #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR},
+      </if>
+      <if test="oaMerchantCompanybodyCreatetm != null">
+        oa_merchant_CompanyBody_CreateTM = #{oaMerchantCompanybodyCreatetm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaMerchantCompanybodyOperationtm != null">
+        oa_merchant_CompanyBody_OperationTM = #{oaMerchantCompanybodyOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oaMerchantCompanybodyModifytm != null">
+        oa_merchant_CompanyBody_MODIFYTM = #{oaMerchantCompanybodyModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where oa_merchant_CompanyBody_No = #{oaMerchantCompanybodyNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.OaMerchantCompanybody">
+    update oa_merchant_companybody
+    set oa_merchant_info_No = #{oaMerchantInfoNo,jdbcType=VARCHAR},
+      MK_Advertiser_Info_CompanyBody = #{mkAdvertiserInfoCompanybody,jdbcType=VARCHAR},
+      oa_merchant_CompanyBody_CreateTM = #{oaMerchantCompanybodyCreatetm,jdbcType=TIMESTAMP},
+      oa_merchant_CompanyBody_OperationTM = #{oaMerchantCompanybodyOperationtm,jdbcType=TIMESTAMP},
+      oa_merchant_CompanyBody_MODIFYTM = #{oaMerchantCompanybodyModifytm,jdbcType=TIMESTAMP}
+    where oa_merchant_CompanyBody_No = #{oaMerchantCompanybodyNo,jdbcType=VARCHAR}
+  </update>
+</mapper>

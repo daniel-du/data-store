@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BdMetadataTypeMapper">
+  <resultMap id="BaseResultMap" type="com.xiangying.saas.data.store.model.BdMetadataType">
+    <id column="BD_metaData_type_code" jdbcType="VARCHAR" property="bdMetadataTypeCode" />
+    <result column="BD_metaData_type_Name" jdbcType="VARCHAR" property="bdMetadataTypeName" />
+    <result column="BD_metaData_type_field" jdbcType="VARCHAR" property="bdMetadataTypeField" />
+    <result column="BD_metaData_type_REMARK" jdbcType="VARCHAR" property="bdMetadataTypeRemark" />
+    <result column="BD_metaData_type_state" jdbcType="VARCHAR" property="bdMetadataTypeState" />
+    <result column="OA_company_Account_code" jdbcType="VARCHAR" property="oaCompanyAccountCode" />
+    <result column="BD_metaData_type_OperationTM" jdbcType="TIMESTAMP" property="bdMetadataTypeOperationtm" />
+    <result column="BD_metaData_type__MODIFYTM" jdbcType="TIMESTAMP" property="bdMetadataTypeModifytm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    BD_metaData_type_code, BD_metaData_type_Name, BD_metaData_type_field, BD_metaData_type_REMARK, 
+    BD_metaData_type_state, OA_company_Account_code, BD_metaData_type_OperationTM, BD_metaData_type__MODIFYTM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bd_metadata_type
+    where BD_metaData_type_code = #{bdMetadataTypeCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from bd_metadata_type
+    where BD_metaData_type_code = #{bdMetadataTypeCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiangying.saas.data.store.model.BdMetadataType">
+    insert into bd_metadata_type (BD_metaData_type_code, BD_metaData_type_Name, 
+      BD_metaData_type_field, BD_metaData_type_REMARK, 
+      BD_metaData_type_state, OA_company_Account_code, 
+      BD_metaData_type_OperationTM, BD_metaData_type__MODIFYTM
+      )
+    values (#{bdMetadataTypeCode,jdbcType=VARCHAR}, #{bdMetadataTypeName,jdbcType=VARCHAR}, 
+      #{bdMetadataTypeField,jdbcType=VARCHAR}, #{bdMetadataTypeRemark,jdbcType=VARCHAR}, 
+      #{bdMetadataTypeState,jdbcType=VARCHAR}, #{oaCompanyAccountCode,jdbcType=VARCHAR}, 
+      #{bdMetadataTypeOperationtm,jdbcType=TIMESTAMP}, #{bdMetadataTypeModifytm,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiangying.saas.data.store.model.BdMetadataType">
+    insert into bd_metadata_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bdMetadataTypeCode != null">
+        BD_metaData_type_code,
+      </if>
+      <if test="bdMetadataTypeName != null">
+        BD_metaData_type_Name,
+      </if>
+      <if test="bdMetadataTypeField != null">
+        BD_metaData_type_field,
+      </if>
+      <if test="bdMetadataTypeRemark != null">
+        BD_metaData_type_REMARK,
+      </if>
+      <if test="bdMetadataTypeState != null">
+        BD_metaData_type_state,
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code,
+      </if>
+      <if test="bdMetadataTypeOperationtm != null">
+        BD_metaData_type_OperationTM,
+      </if>
+      <if test="bdMetadataTypeModifytm != null">
+        BD_metaData_type__MODIFYTM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bdMetadataTypeCode != null">
+        #{bdMetadataTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataTypeName != null">
+        #{bdMetadataTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataTypeField != null">
+        #{bdMetadataTypeField,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataTypeRemark != null">
+        #{bdMetadataTypeRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataTypeState != null">
+        #{bdMetadataTypeState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataTypeOperationtm != null">
+        #{bdMetadataTypeOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="bdMetadataTypeModifytm != null">
+        #{bdMetadataTypeModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiangying.saas.data.store.model.BdMetadataType">
+    update bd_metadata_type
+    <set>
+      <if test="bdMetadataTypeName != null">
+        BD_metaData_type_Name = #{bdMetadataTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataTypeField != null">
+        BD_metaData_type_field = #{bdMetadataTypeField,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataTypeRemark != null">
+        BD_metaData_type_REMARK = #{bdMetadataTypeRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataTypeState != null">
+        BD_metaData_type_state = #{bdMetadataTypeState,jdbcType=VARCHAR},
+      </if>
+      <if test="oaCompanyAccountCode != null">
+        OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bdMetadataTypeOperationtm != null">
+        BD_metaData_type_OperationTM = #{bdMetadataTypeOperationtm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="bdMetadataTypeModifytm != null">
+        BD_metaData_type__MODIFYTM = #{bdMetadataTypeModifytm,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where BD_metaData_type_code = #{bdMetadataTypeCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiangying.saas.data.store.model.BdMetadataType">
+    update bd_metadata_type
+    set BD_metaData_type_Name = #{bdMetadataTypeName,jdbcType=VARCHAR},
+      BD_metaData_type_field = #{bdMetadataTypeField,jdbcType=VARCHAR},
+      BD_metaData_type_REMARK = #{bdMetadataTypeRemark,jdbcType=VARCHAR},
+      BD_metaData_type_state = #{bdMetadataTypeState,jdbcType=VARCHAR},
+      OA_company_Account_code = #{oaCompanyAccountCode,jdbcType=VARCHAR},
+      BD_metaData_type_OperationTM = #{bdMetadataTypeOperationtm,jdbcType=TIMESTAMP},
+      BD_metaData_type__MODIFYTM = #{bdMetadataTypeModifytm,jdbcType=TIMESTAMP}
+    where BD_metaData_type_code = #{bdMetadataTypeCode,jdbcType=VARCHAR}
+  </update>
+</mapper>
