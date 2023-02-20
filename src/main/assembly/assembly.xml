@@ -1,0 +1,21 @@
+<assembly>
+    <id>bin</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <fileSets>
+        <!-- 从目标目录拷贝文件去压缩 -->
+        <fileSet>
+            <directory>${project.basedir}/src/main/java</directory>
+            <includes>
+                <include>*/**</include>
+            </includes>
+            <outputDirectory>src/main/java</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>target/lib</directory>
+            <outputDirectory>/lib</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>

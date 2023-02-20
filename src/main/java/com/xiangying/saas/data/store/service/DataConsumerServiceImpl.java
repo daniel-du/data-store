@@ -35,16 +35,12 @@ public class DataConsumerServiceImpl implements DataConsumerService {
             Class<?> operatorClass = classLoader.loadClass(Constant.MAPPER_PACKAGE_PATH +  modelName + "Mapper");
             Class<?> modelClass = classLoader.loadClass(Constant.MODEL_PACKAGE_PATH + modelName);
             log.info("operatorClass:{}, modelClass:{}", operatorClass.getName(), modelClass.getName());
-//            Object modelIns = modelClass.newInstance();
-//            Method method = operatorClass.getMethod("insertSelective", modelIns.getClass());
-//            log.info("operatorClass:{}, method:{}", operatorClass.getName(), method.getName());
             Object jsonObject = JSONObject.toJavaObject(dataDetail.getFieldJson(), modelClass);
-//            dao.save("CusBasicWechatMapper.insertSelective", jsonObject);
             dao.save(modelName + "Mapper." + methodName, jsonObject);
         } catch (DuplicateKeyException e) {
             log.error("主键重复", e.getMessage());
-        } catch (Exception e) {
-            log.error("消费异常", e);
+        } catch (ClassNotFoundException e) {
+            log.error("处理类未找到", e.getMessage());
         }
     }
 

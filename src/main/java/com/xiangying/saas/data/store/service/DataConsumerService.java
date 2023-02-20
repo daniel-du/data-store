@@ -14,5 +14,5 @@ public interface DataConsumerService {
      * 数据存储
      * @param dataDetail
      */
-    void saveData(DataDetail dataDetail);
+    void saveData(DataDetail dataDetail) throws ClassNotFoundException;
 }
